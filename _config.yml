@@ -4,7 +4,7 @@ skin: "/assets/css/skins/light.css"
 title: "~"
 description: "Only A Theoretical Page."
 
-copyright: "Only A Theoretical Page."
+copyright: ""
 footer_links:
   - title: GitHub
     url: https://github.com/tkukurin
