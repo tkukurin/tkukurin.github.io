@@ -11,7 +11,7 @@ footer_links:
     icon: fab fa-github-square
   - title: Curriculum Vitae
     url: CV.pdf
-    icon: fas fa-infinity
+    icon: fab fa-qq
   - title: LinkedIn
     url: https://www.linkedin.com/in/toni/
     icon: fab fa-linkedin
