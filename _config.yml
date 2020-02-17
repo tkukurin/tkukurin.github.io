@@ -12,4 +12,7 @@ footer_links:
   - title: LinkedIn
     url: https://www.linkedin.com/in/toni/
     icon: fab fa-linkedin
+  - title: Curriculum Vitae
+    url: CV.pdf
+    icon: fa fa-file
 
