@@ -1,3 +1,14 @@
 remote_theme: "mmistakes/so-simple-theme@3.2.0"
 skin: "/assets/css/skins/light.css"
+
+
+
 copyright: "Only A Theoretical Page."
+footer_links:
+  - title: GitHub
+    url: https://github.com/tkukurin
+    icon: fab fa-github-square
+  - title: LinkedIn
+    url: https://www.linkedin.com/in/toni/
+    icon: fab fa-linkedin
+
