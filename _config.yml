@@ -1,7 +1,8 @@
 remote_theme: "mmistakes/so-simple-theme@3.2.0"
 skin: "/assets/css/skins/light.css"
 
-
+title: "~"
+description: "Only A Theoretical Page."
 
 copyright: "Only A Theoretical Page."
 footer_links:
