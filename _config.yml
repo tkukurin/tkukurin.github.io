@@ -2,10 +2,13 @@ remote_theme: "mmistakes/so-simple-theme@3.2.0"
 skin: "/assets/css/skins/light.css"
 
 title: "~"
-description: "Only A Theoretical Page."
+description: "caveat emptor"
 
 copyright: ""
 footer_links:
+  - title: Twitter
+    url: https://twitter.com/tkukurin
+    icon: fab fa-twitter-square
   - title: GitHub
     url: https://github.com/tkukurin
     icon: fab fa-github-square
