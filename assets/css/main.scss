@@ -7,18 +7,38 @@ sitemap: false
 
 @import "so-simple";
 
+
+.masthead {
+    margin-bottom: 0;
+}
+
+.dragon {
+    margin: 3em 0;
+    text-align: center;
+}
+
 .entry {
-    padding: 0;
     max-width:300px;
     margin: 0 auto;
-    padding: 3em;
+    padding: 0;
     a { color: inherit; text-decoration: underline; }
 }
 
-.entry-title {
+.entry-title, .page-title {
     font: 1rem normal inherit;
 }
 
-.entry-meta {
+.entry-meta, .entry-date, .page-date {
+    font: 1em normal inherit;
     color: #ddd;
+}
+
+.page-sidebar {
+    text-align: right;
+    font: 1rem normal inherit;
+}
+
+.page-sidebar h1 {
+    font-size: 1rem;
+    line-height: inherit;
 }
