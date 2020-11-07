@@ -3,7 +3,7 @@ title: "Try to catch the main in Java"
 tags:
   - tidbit
 last_modified_at: 2020-11-06T21:00:00+01:00
-published: false
+published: true
 ---
 
 How do you determine the application entry class?
