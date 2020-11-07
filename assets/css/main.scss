@@ -8,12 +8,8 @@ sitemap: false
 @import "so-simple";
 
 
-.masthead {
-    margin-bottom: 0;
-}
-
-.dragon {
-    margin: 3em 0;
+.dragon, .page-wrapper {
+    margin: 3em auto;
     text-align: center;
 }
 
@@ -25,20 +21,21 @@ sitemap: false
 }
 
 .entry-title, .page-title {
-    font: 1rem normal inherit;
+    font: 1rem normal $base-font-family;
 }
 
-.entry-meta, .entry-date, .page-date {
-    font: 1em normal inherit;
+.entry-meta, .entry-date, .page-date, time.entry-date {
+    font: 1em normal $base-font-family;
     color: #ddd;
 }
 
 .page-sidebar {
     text-align: right;
-    font: 1rem normal inherit;
+    font: 1rem normal $base-font-family;
 }
 
 .page-sidebar h1 {
     font-size: 1rem;
+    letter-spacing: -0.5px;
     line-height: inherit;
 }
