@@ -27,7 +27,8 @@ $base-font-family: $sans-serif-font-family !default;
 }
 
 .entry-meta, .entry-date, .page-date, time.entry-date {
-    font: normal 1rem $base-font-family;
+    font: normal 1rem $base-font-family !important;
+    letter-spacing: -1px;
     color: #ddd;
 }
 
@@ -38,6 +39,7 @@ $base-font-family: $sans-serif-font-family !default;
 
 .page-sidebar h1 {
     font: normal 1rem $base-font-family;
+    margin: 0;
     letter-spacing: -0.5px;
     line-height: inherit;
 }
