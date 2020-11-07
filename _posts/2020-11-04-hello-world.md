@@ -3,7 +3,7 @@ title: "Pre `c++20` string formatting"
 tags:
   - irreverent
 last_modified_at: 2020-11-04T15:42:00+01:00
-published: false
+published: true
 ---
 
 

@@ -1,0 +1,22 @@
+{% if entry.id %}
+  {% assign title = entry.title | markdownify | strip_html %}
+{% else %}
+  {% assign title = entry.title %}
+{% endif %}
+
+
+<article class="entry">
+{%- unless page.layout == 'collection' -%}
+<span class="post-meta">
+  <time class="entry-date dt-published" datetime="{{ entry.date | date_to_xmlschema }}">
+    {%- assign date_format = site.date_format | default: "%B %-d, %Y" -%}
+    {{ entry.date | date: date_format }}
+  </time>
+  {% if entry.tags %} {{entry.tags[0]}} {% endif %}
+</span>
+{%- endunless -%}
+
+<h3 class="entry-title p-name">
+<a href="{{ entry.url | relative_url }}" rel="bookmark">{{ title }}</a>
+</h3>
+</article>
