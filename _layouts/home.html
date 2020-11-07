@@ -15,8 +15,6 @@ layout: page
 
 </center>
 
-<ul class="entries-{{ page.entries_layout | default: 'list' }}">
-  {%- for entry in site.posts limit: 100 -%}
-    {% include entry.html %}
-  {%- endfor -%}
-</ul>
+{%- for entry in site.posts limit: 100 -%}
+  {% include entry.html %}
+{%- endfor -%}

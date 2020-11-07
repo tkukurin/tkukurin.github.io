@@ -7,11 +7,12 @@
 
 <article class="entry">
 {%- unless page.layout == 'collection' -%}
-<span class="post-meta">
+<span class="entry-meta">
   <time class="entry-date dt-published" datetime="{{ entry.date | date_to_xmlschema }}">
-    {%- assign date_format = site.date_format | default: "%B %-d, %Y" -%}
+    {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
     {{ entry.date | date: date_format }}
   </time>
+  in
   {% if entry.tags %} {{entry.tags[0]}} {% endif %}
 </span>
 {%- endunless -%}
