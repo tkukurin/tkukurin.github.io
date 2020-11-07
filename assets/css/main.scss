@@ -8,9 +8,11 @@ sitemap: false
 @import "so-simple";
 
 
+$base-font-family: $sans-serif-font-family !default;
+
+
 .dragon, .page-wrapper {
     margin: 3em auto;
-    text-align: center;
 }
 
 .entry {
@@ -35,7 +37,7 @@ sitemap: false
 }
 
 .page-sidebar h1 {
-    font-size: 1rem;
+    font: 1rem normal $base-font-family;
     letter-spacing: -0.5px;
     line-height: inherit;
 }

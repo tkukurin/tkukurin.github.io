@@ -16,3 +16,5 @@ footer_links:
     url: https://www.linkedin.com/in/toni/
     icon: fab fa-linkedin
 
+permalink: "/:title"
+date_format: "%b %-d, %Y"
