@@ -23,21 +23,21 @@ $base-font-family: $sans-serif-font-family !default;
 }
 
 .entry-title, .page-title {
-    font: 1rem normal $base-font-family;
+    font: normal 1rem $base-font-family;
 }
 
 .entry-meta, .entry-date, .page-date, time.entry-date {
-    font: 1em normal $base-font-family;
+    font: normal 1rem $base-font-family;
     color: #ddd;
 }
 
 .page-sidebar {
     text-align: right;
-    font: 1rem normal $base-font-family;
+    font: normal 1rem $base-font-family;
 }
 
 .page-sidebar h1 {
-    font: 1rem normal $base-font-family;
+    font: normal 1rem $base-font-family;
     letter-spacing: -0.5px;
     line-height: inherit;
 }
