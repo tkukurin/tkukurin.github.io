@@ -35,6 +35,9 @@ $base-font-family: $sans-serif-font-family !default;
 .page-sidebar {
     text-align: right;
     font: normal 1rem $base-font-family;
+    @include breakpoint($medium) {
+        text-align: left;
+    }
 }
 
 .page-sidebar h1 {
@@ -42,4 +45,13 @@ $base-font-family: $sans-serif-font-family !default;
     margin: 0;
     letter-spacing: -0.5px;
     line-height: inherit;
+    @include breakpoint($medium) {
+        font-weight: bold;
+    }
+}
+
+.page-taxonomies-title, .page-taxonomies {
+    @include breakpoint($medium) {
+        display: none;
+    }
 }
