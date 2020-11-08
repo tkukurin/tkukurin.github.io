@@ -1,12 +1,12 @@
 ---
-title: "Ad-hoc objects for free"
+title: "Money for nothing and ad-hoc objects for free"
 tags:
   - py
 last_modified_at: 2020-11-08T10:42:00+01:00
 published: true
 ---
 
-Sometimes you need a semantically meaningful tuple, but succumb to laziness.
+Sometimes lazy programmers also need semantically meaningful tuples.
 For that truly ad-hoc object creation.
 
 ```python
@@ -39,7 +39,7 @@ Or maybe this [mutable namedtuple with defaults](https://www.python.org/dev/peps
 from dataclasses import dataclass
 
 @dataclass
-class AutoGenerateMembers:
+class AdHoc:
   __slots__ = ('i', 'attach', 'meaning')
   i: str
   attach: str
