@@ -33,25 +33,23 @@ $base-font-family: $sans-serif-font-family !default;
 }
 
 .page-sidebar {
-    text-align: right;
+    text-align: left;
     font: normal 1rem $base-font-family;
-    @include breakpoint($small) {
-        text-align: left;
+    @include breakpoint($medium) {
+        text-align: right;
     }
 }
 
 .page-sidebar h1 {
-    font: normal 1rem $base-font-family;
+    font: bold 1rem $base-font-family;
     margin: 0;
     letter-spacing: -0.5px;
     line-height: inherit;
-    @include breakpoint($small) {
-        font-weight: bold;
-    }
 }
 
 .page-taxonomies-title, .page-taxonomies {
-    @include breakpoint($small) {
-        display: none;
+    display: none;
+    @include breakpoint($medium) {
+        display: block;
     }
 }
