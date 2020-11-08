@@ -35,7 +35,7 @@ $base-font-family: $sans-serif-font-family !default;
 .page-sidebar {
     text-align: left;
     font: normal 1rem $base-font-family;
-    @include breakpoint($medium) {
+    @include breakpoint($large) {
         text-align: right;
     }
 }
@@ -49,7 +49,7 @@ $base-font-family: $sans-serif-font-family !default;
 
 .page-taxonomies-title, .page-taxonomies {
     display: none;
-    @include breakpoint($medium) {
+    @include breakpoint($large) {
         display: block;
     }
 }
