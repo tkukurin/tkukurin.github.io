@@ -11,6 +11,7 @@ For that truly ad-hoc object creation.
 
 ```python
 from types import SimpleNamespace
+
 ad_hoc = SimpleNamespace(
   i='can',
   attach='anything',
