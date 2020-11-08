@@ -35,7 +35,7 @@ $base-font-family: $sans-serif-font-family !default;
 .page-sidebar {
     text-align: right;
     font: normal 1rem $base-font-family;
-    @include breakpoint($medium) {
+    @include breakpoint($small) {
         text-align: left;
     }
 }
@@ -45,13 +45,13 @@ $base-font-family: $sans-serif-font-family !default;
     margin: 0;
     letter-spacing: -0.5px;
     line-height: inherit;
-    @include breakpoint($medium) {
+    @include breakpoint($small) {
         font-weight: bold;
     }
 }
 
 .page-taxonomies-title, .page-taxonomies {
-    @include breakpoint($medium) {
+    @include breakpoint($small) {
         display: none;
     }
 }
