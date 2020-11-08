@@ -29,7 +29,7 @@ ClassicNt = NamedTuple(
 class NewNt(NamedTuple):
   i: str
   attach: str
-  meaning: int = 42  # since 3.6.1.
+  meaning: int = 42  # defaults since 3.6.1.
 ```
 
 Or maybe this [mutable namedtuple with defaults](https://www.python.org/dev/peps/pep-0557/) since 3.7.
@@ -42,5 +42,5 @@ class AutoGenerateMembers:
   __slots__ = ('i', 'attach', 'meaning')
   i: str
   attach: str
-  meaning: int = 42  # since 3.6.1.
+  meaning: int = 42
 ```
