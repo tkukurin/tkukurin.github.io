@@ -29,6 +29,8 @@ by ResNet-50 and a `<bos>` initial token, speaker `s` encodes the message into:
 
 \\[
 h_t^s = \textrm{GRU}_{\textrm{speaker}}(m_{t-1}, \textrm{MLP}_1(h_{t-1}))
+\\]
+\\[
 m_t = \textrm{GumbelSoftmax}(\textrm{MLP}_2(h_t^s))
 \\]
 
