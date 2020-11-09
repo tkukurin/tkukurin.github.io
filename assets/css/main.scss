@@ -22,6 +22,15 @@ $base-font-family: $sans-serif-font-family !default;
     a { color: inherit; text-decoration: underline; }
 }
 
+.entry#about {
+    padding: 0 0 1em;
+    margin: 0 auto;
+    font-variant: small-caps;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
 .entry-title, .page-title {
     font: normal 1rem $base-font-family;
 }
