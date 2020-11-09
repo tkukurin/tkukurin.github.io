@@ -24,22 +24,22 @@ and [ArXiv](https://arxiv.org/pdf/2011.00890.pdf).
 
 ## Emergent Communications pre-training
 
-Starting from a 2048-dimensional image representation $$I=h_0$$ produced
+Starting from a 2048-dimensional image representation \\(I=h_0\\) produced
 by ResNet-50 and a `<bos>` initial token, speaker `s` encodes the message into:
 
-$$
+\\[
 h_t^s = \textrm{GRU}_{\textrm{speaker}}(m_{t-1}, \textrm{MLP}_1(h_{t-1}))
 m_t = \textrm{GumbelSoftmax}(\textrm{MLP}_2(h_t^s))
-$$
+\\]
 
 The goal of the cooperative game is for the listener GRU to reconstruct a
-representation as close to `I` as possible, based on the sequence $$m_t$$.
+representation as close to `I` as possible, based on the sequence \\(m_t\\).
 
 Inverse squared error for a compatibility score:
 
-$$
+\\[
 S(m,I) = \left \| h_{|m|}^l - \textrm{MLP}_1(I) \right \|^{-2}
-$$
+\\]
 
 Loss function is softmax of true `S` over a set of negative sampled images.
 Two listener/speaker pairs are separately trained (source and target languages).
