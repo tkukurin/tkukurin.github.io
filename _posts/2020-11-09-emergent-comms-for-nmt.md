@@ -1,12 +1,12 @@
 ---
 title: "Emergent Comms Pretraining for Few-Shot NMT"
-image:
-    path: https://github.com/cambridgeltl/ECNMT/raw/master/model.png
-    caption: "Listener/speaker emergent comms."
+#image:
+#    path: https://github.com/cambridgeltl/ECNMT/raw/master/model.png
+#    caption: "Listener/speaker emergent comms."
 tags:
   - nlp
   - research
-last_modified_at: 2020-11-09T15:42:00+01:00
+last_modified_at: 2020-11-09T16:42:00+01:00
 published: true
 ---
 
@@ -24,7 +24,7 @@ and [ArXiv](https://arxiv.org/pdf/2011.00890.pdf).
 
 ## Emergent Communications pre-training
 
-Starting from a 2048-dimensional image representation `I=h<sub>0</sub>` produced
+Starting from a 2048-dimensional image representation $$I=h_0$$ produced
 by ResNet-50 and a `<bos>` initial token, speaker `s` encodes the message into:
 
 $$
@@ -33,7 +33,7 @@ m_t = \textrm{GumbelSoftmax}(\textrm{MLP}_2(h_t^s))
 $$
 
 The goal of the cooperative game is for the listener GRU to reconstruct a
-representation as close to `I` as possible, based on the sequence `m<sub>t</sub>`.
+representation as close to `I` as possible, based on the sequence $$m_t$$.
 
 Inverse squared error for a compatibility score:
 
