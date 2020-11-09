@@ -20,7 +20,4 @@ permalink: "/:title"
 date_format: "%b %-d, %Y"
 
 markdown: kramdown
-mathjax:
-  enable: true
-  combo: "tex-svg"
-  tags: "ams"
+mathjax: true
