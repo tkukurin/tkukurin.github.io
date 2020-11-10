@@ -22,6 +22,8 @@ date_format: "%b %-d, %Y"
 markdown: kramdown
 mathjax: true
 
+exclude: [".ipynb"]
+
 # unsupported :(
 # plugins:
 #  - jekyll-jupyter-notebook
