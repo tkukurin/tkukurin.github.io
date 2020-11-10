@@ -1,4 +1,3 @@
-
 ---
 title: "Towards Embodied Language Understanding"
 tags:
