@@ -7,13 +7,6 @@ published: true
 ---
 
 
-<!-- Does not work.
-{::nomarkdown}
-{% jupyter_notebook "2020-11-10-jupyter-ascending.ipynb" %}
-{:/nomarkdown}
--->
-
-
 Configure Jupyter from [`~/.jupyter/jupyter_notebook_config.py`](https://jupyter-notebook.readthedocs.io/en/stable/config.html).
 Backend options can be found in `jupyter notebook --help`.
 
