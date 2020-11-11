@@ -9,7 +9,7 @@ published: true
 
 Discrete Probability Trees (or Staged Tree Models) are one of the simplest models of causal generative processes, different from Causal Bayesian Networks (CBNs) and Structural Causal Models (SCMs).
 
-A directed edge $e=(h,t)$ between two nodes in this graph is interpreted as the head being the cause of the tail.
+A directed edge $$e=(h,t)$$ between two nodes in this graph is interpreted as the head being the cause of the tail.
 Every node is a collection of statements.
 
 Their implementation is quite simple, as most algorithms can be mapped almost 1:1 from the paper. Based on [Algorithms for Causal Reasoning in Probability Trees](https://arxiv.org/pdf/2010.12237.pdf).
@@ -21,7 +21,7 @@ from collections import namedtuple
 from typing import Iterable, Tuple
 ```
 
-They represent PT nodes as $n=(u,S,C)$: unique identifier, list of statements (e.g. `W=rainy` and `X=0`) and a set of transitions.
+They represent PT nodes as $$n=(u,S,C)$$: unique identifier, list of statements (e.g. `W=rainy` and `X=0`) and a set of transitions.
 
 > A (total) realization in the probability tree is a path from the root to a leaf, and its probability is obtained by multiplying the transition probabilities along the path; and a partial realization is any connected sub-path within a total realization.
 
