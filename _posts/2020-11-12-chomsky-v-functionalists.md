@@ -1,10 +1,10 @@
---
+---
 title: "Language Wars"
 tags:
   - linguistics
 last_modified_at: 2020-11-12T00:42:00+01:00
 published: true
---
+---
 
 
 The two major camps in linguistics consist of formalists and functionalists (NB,
