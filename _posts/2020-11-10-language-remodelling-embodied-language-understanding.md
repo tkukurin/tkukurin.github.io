@@ -11,7 +11,7 @@ published: true
 [ArXiv](https://arxiv.org/pdf/2005.00311.pdf). Position paper argues for
 focusing AI on building *mental models*. The question of *how humans represent
 language internally* is shared between NLU
-(cf. [functionalists]({% post_url 2020-11-12-chomsky-v-functionalists.md %}))
+(cf. [functionalists]({% post_url 2020-11-12-chomsky-v-functionalists %}))
 and AI. Similar to Bisk et al's
 recent [Experience Grounds Language](https://arxiv.org/pdf/2004.10151.pdf) and
 many earlier works, e.g. Winograd (1971):
@@ -52,7 +52,7 @@ through hierarchical, compositional, metaphoric mappings over a limited
 vocabulary of embodied schema. Abstract concepts are expressed using more
 literal concepts.
 
-Early ECL [implementations]({% post_url 2020-11-12-frame-semantics.md%}):
+Early ECL implementations:
 * [Embodied Construction Grammar (Bergen and Chang, 2005)](https://www1.icsi.berkeley.edu/~nchang/pubs/ecg.pdf)
   * language can be seen as in interface to simulation
 * [FrameNet (Ruppenhofer et al., 2016)](https://framenet.icsi.berkeley.edu/fndrupal/)
