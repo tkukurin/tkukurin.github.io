@@ -3,14 +3,16 @@ title: "Towards Embodied Language Understanding"
 tags:
   - nlp
   - research
-last_modified_at: 2020-11-10T01:00:00+01:00
+last_modified_at: 2020-11-12T00:00:00+01:00
 published: true
 ---
 
 
 [ArXiv](https://arxiv.org/pdf/2005.00311.pdf). Position paper argues for
 focusing AI on building *mental models*. The question of *how humans represent
-language internally* is shared between NLU and AI. Similar to Bisk et al's
+language internally* is shared between NLU
+(cf. [functionalists]({% post_url 2020-11-12-chomsky-v-functionalists.md %}))
+and AI. Similar to Bisk et al's
 recent [Experience Grounds Language](https://arxiv.org/pdf/2004.10151.pdf) and
 many earlier works, e.g. Winograd (1971):
 
@@ -50,13 +52,20 @@ through hierarchical, compositional, metaphoric mappings over a limited
 vocabulary of embodied schema. Abstract concepts are expressed using more
 literal concepts.
 
-Early ECL implementations:
-* Embodied Construction Grammar (Bergen and Chang, 2005)
-* FrameNet (Ruppenhofer et al., 2016)
-* MetaNet (David and Dodge, 2014)
+Early ECL [implementations]({% post_url 2020-11-12-frame-semantics.md%}):
+* [Embodied Construction Grammar (Bergen and Chang, 2005)](https://www1.icsi.berkeley.edu/~nchang/pubs/ecg.pdf)
+  * language can be seen as in interface to simulation
+* [FrameNet (Ruppenhofer et al., 2016)](https://framenet.icsi.berkeley.edu/fndrupal/)
+  * lexical units evoke specific [frames](https://en.wikipedia.org/wiki/Frame_semantics_(linguistics))
+* [MetaNet (David and Dodge, 2014)](https://metanet.icsi.berkeley.edu/metanet/)
+  * systematically identify and analyze metaphors that people use to discuss and
+    reason about a broad range of topics and domains
 
-Some research shows linguistic message is not present in the words (Stolk et al.
-2016, David et al. 2016).
+Some research shows linguistic message is [not present in the words (Stolk et
+al. 2016, David et al. 2016)](https://www.researchgate.net/figure/A-Shift-in-Our-Conceptualization-of-Human-Mutual-Understanding-To-date-several_fig1_290220014).
+According to the conceptual alignment framework, human communicators mutually
+coordinate a fleeting conceptual space in which signals are merely a means to
+seek and provide evidence for mutual understanding.
 
 Lol at section 4: "*[our] proposal centers around the view of natural language as
 a kind of neural programming languages*". The two NLPs have finally converged.
@@ -78,11 +87,10 @@ Cf. [selective analogical inference](https://groups.psych.northwestern.edu/gentn
 
 ## Architecture and implementation
 
-Memory as a combined short-term mental model (akin to a small GNN?)
-and compiled knowledge (traditional KB, I guess Watson).
-
-Parser maps perceptive stimuli to internal state representation (I guess
+*Memory* as a combined (1) short-term mental model (akin to a small GNN, or
+conceptually what [Stolk et al.](https://www.researchgate.net/publication/290220014_Conceptual_Alignment_How_Brains_Achieve_Mutual_Understanding)
+propose) and (2) compiled knowledge (traditional KB, maybe something like Watson).
+*Parser* maps perceptive stimuli to internal state representation (I guess
 something like [C-SWM](https://arxiv.org/abs/1911.12247)).
-
-Emulator outputs a new state based on the current mental model.
+*Emulator* outputs a new state based on the current mental model.
 
