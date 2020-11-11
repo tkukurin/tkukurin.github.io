@@ -9,7 +9,7 @@ published: true
 
 The two major camps in linguistics consist of formalists and functionalists (NB,
 not the [humanistic functionalists](https://en.wikipedia.org/wiki/Social_constructionism#Definition)).
-[^1]
+<sup id="a1">[1](#f1)</sup>
 
 
 ## Formalists
@@ -57,6 +57,8 @@ to read a bit more about that.
 
 ---
 
-[^1] Note that the dichotomy formalist/functionalist is overly simplistic.
+<b id="f1">1</b>
+Note that the dichotomy formalist/functionalist is overly simplistic.
 Entire books are written to disambiguate the distinctions. Kind of meta.
+[↩](#a1)
 
