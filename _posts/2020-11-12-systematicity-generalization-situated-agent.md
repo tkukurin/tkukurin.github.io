@@ -21,8 +21,8 @@ aspects significantly affecting performance:
 
 ## Model
 
-*Visual* $$W \cross H \cross 3$$ into a 3-layer CNN (64, 64, 32).
-*Linguistic* pipeline consists of a word-level LSTM. Hidden state 128.
+**Visual** $$W \times H \times 3$$ into a 3-layer CNN (64, 64, 32).
+**Linguistic** pipeline consists of a word-level LSTM. Hidden state 128.
 The two representations are fused together, and passed into a 128-unit LSTM.
 At each timestep, hidden state is softmaxed into $$A$$ (26) actions.
 Training is performed using IMPALA.
@@ -60,8 +60,8 @@ Train on queries of the form
 and "find a not $$x$$" for $$x \in X_1 \subset X$$.
 Then test on "find a not $$x$$" for $$x \in X \setminus X_1$$.
 
-This does not work well (when $$|X_1|=6$$, accuracy is below chance).
-Works better on more data ($$|X_1|=100$$ is 0.91 train, 0.78 test).
+This does not work well (when $$\|X_1\|=6$$, accuracy is below chance).
+Works better on more data ($$\|X_1\|=100$$ is 0.91 train, 0.78 test).
 
 Maybe interesting further reading: history learning logical operators in
 connectionist models and the importance of negation in language processing
