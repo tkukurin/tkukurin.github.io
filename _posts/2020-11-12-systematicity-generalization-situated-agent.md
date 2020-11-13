@@ -32,7 +32,6 @@ Training is performed using IMPALA.
 
 2D (9x9 gridworld) and 3D (Unity) environments.
 Evaluation focused on accuracy.
-Model
 
 In 3D, **Lift** action is defined as the agent picking up an object for 2 secs.
 **Find** action is defined as the agent approaching within 2m of an object and
@@ -50,6 +49,8 @@ Examples:
 
 Control is far simpler than the real world; all objects are lifted the same,
 regardless of shape.
+Actions: `NOOP, {GRAB+,}{MOVE,LOOK}\_{U,L,R,D}{+SPIN_{U,L,R,D},PUSH,PULL}`.
+A white box appears around any object that's in grabbing range.
 
 
 ### Language negation
@@ -70,10 +71,29 @@ connectionist models and the importance of negation in language processing
 
 ### 2D world
 
+Only 3 different objects to pick up.
+Agent rewarded for moving to target placement object while holding target pickup
+object. 0 if moves onto another.
+
+> The grid-world environment consisted of a 9×9 room surrounded by a wall of
+> width 1 square, for a total size of 11×11. These squares were rendered at a
+> 9×9 pixel resolution, for a total visual input size of 99×99
+
 Statistically significant improvement in test performance when narrowing agent's
-field of view. I would've interpreted performance improvement as happening
-because there's higher chance of a single object being on-screen at once (less
-visual stimuli, no distraction).
+field of view (5x5 scrolling instead of 9x9). I would've interpreted performance
+improvement as happening because there's higher chance of a single object being
+on-screen at once (less visual stimuli, no distraction).
+
+But also: the agent is always in the center of the screen in scrolling setup.
+
+They put the object in place of agent in the gridworld (see Appendix D).
+E.g. agent is white and object red; after picking up, agent becomes red.
+This is said to "simulate view obstruction" of the 3D world after pickup.
+
+They also tried to display object *in* agent (e.g. white border around red
+object while carrying), but that worsened performance.
+Hypothesis: this is because of too few training objects, since in 3D obscured
+view is not a problem.
 
 
 ### Compare classifier vs. agent
@@ -92,4 +112,8 @@ Pick one set and reward +4 if agent collects *all* elements, 0 if *single*
 incorrect. Without language, should pick 1st element randomly (+2 expected
 reward). With language, tell agent what to collect (+4 expected).
 
+> For the language vs. no-language comparison (section 4.5), if the agent moved
+> onto a correct object, it received a reward of 1. This reward was both used as
+> a training signal, and given as input on the next time-step, to help the agent
+> figure out which objects to pick up.
 
