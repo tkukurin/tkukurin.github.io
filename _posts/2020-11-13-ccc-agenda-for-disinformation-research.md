@@ -12,9 +12,9 @@ published: true
 Categorizes suggested future policies.
 Calls for the creation of new tools to fight disinformation.
 Calls for understanding both on the *supply* and *demand* end of consumption.
-Calls for an interdisciplinary approach.
-
-*Six strategic targets*:
+Calls for an interdisciplinary approach (blend of humanities, social science,
+education, journalism, and computer and science [...and politics]).
+*Six strategic targets*
 1. Detection at scale
 2. Measurement of impact
 3. Data infra
