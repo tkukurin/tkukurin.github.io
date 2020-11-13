@@ -86,14 +86,15 @@ on-screen at once (less visual stimuli, no distraction).
 
 But also: the agent is always in the center of the screen in scrolling setup.
 
-They put the object in place of agent in the gridworld (see Appendix D).
-E.g. agent is white and object red; after picking up, agent becomes red.
-This is said to "simulate view obstruction" of the 3D world after pickup.
+After pickup, they put the object in place of agent in the gridworld (see
+Appendix D). E.g. agent is white and object red; after picking up, agent becomes
+red. This is said to "simulate view obstruction" of the 3D world after pickup.
 
 They also tried to display object *in* agent (e.g. white border around red
 object while carrying), but that worsened performance.
 Hypothesis: this is because of too few training objects, since in 3D obscured
 view is not a problem.
+Maybe I misunderstood that, because I'm not sure how convincing it is.
 
 
 ### Compare classifier vs. agent
