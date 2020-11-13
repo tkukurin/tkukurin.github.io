@@ -49,7 +49,7 @@ Examples:
 
 Control is far simpler than the real world; all objects are lifted the same,
 regardless of shape.
-Actions: `NOOP, {GRAB+,}{MOVE,LOOK}\_{U,L,R,D}{+SPIN_{U,L,R,D},PUSH,PULL}`.
+Actions: `NOOP, {GRAB+,}{MOVE,LOOK}_{U,L,R,D}{+SPIN_{U,L,R,D},PUSH,PULL}`.
 A white box appears around any object that's in grabbing range.
 
 
@@ -66,7 +66,7 @@ Works better on more data ($$\|X_1\|=100$$ is 0.91 train, 0.78 test).
 
 Maybe interesting further reading: history learning logical operators in
 connectionist models and the importance of negation in language processing
-(Steedman, 1999; 2011).
+([Steedman: Connectionist Sentence Processing in Perspective (1999)](http://www.coli.uni-saarland.de/~crocker/Teaching/Connectionist/CogSci99-Steedman.pdf)).
 
 
 ### 2D world
