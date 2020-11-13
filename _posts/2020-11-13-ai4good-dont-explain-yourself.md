@@ -26,7 +26,7 @@ Also note: ~400 routine clinical practices contradicted by studies.
 So what kind of *transparency* is useful?
 Perhaps understand when to reject model output and
 on which strata it fails
-(something like datasheets and modelcards),
+(akin to [datasheets](https://arxiv.org/abs/1803.09010) and [model cards](https://arxiv.org/abs/1810.03993.pdf))
 rather than necessarily "white-boxing".
 Transparency in process is easier to achieve.
 Transparency via post-hoc explanations is useful if consistent.
