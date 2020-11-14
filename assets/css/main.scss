@@ -9,7 +9,7 @@ sitemap: false
 
 
 $base-font-family: $sans-serif-font-family !default;
-
+$color-opaque: #ddd
 
 .dragon, .page-wrapper {
     margin: 3em auto;
@@ -23,22 +23,27 @@ $base-font-family: $sans-serif-font-family !default;
 }
 
 .entry#about {
-    padding: 0 0 1em;
-    margin: 0 auto;
-    font-variant: small-caps;
-    text-transform: lowercase;
-    letter-spacing: 1px;
     text-align: center;
+    text-transform: lowercase;
+    h4 {
+      font-variant: small-caps;
+      letter-spacing: 1px;
+      margin: 0;
+    }
+    p {
+      color: $color-opaque;
+    }
 }
 
 .entry-title, .page-title {
     font: normal 1rem $base-font-family;
 }
 
+
 .entry-meta, .entry-date, .page-date, time.entry-date {
     font: normal 1rem $base-font-family !important;
     letter-spacing: -1px;
-    color: #ddd;
+    color: $color-opaque;
 }
 
 .page-sidebar {
