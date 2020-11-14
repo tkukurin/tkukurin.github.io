@@ -4,8 +4,10 @@
   {% assign title = entry.title %}
 {% endif %}
 
-
 <article class="entry">
+
+<h3 class="entry-title p-name">
+<a href="{{ entry.url | relative_url }}" rel="bookmark">{{ title }}</a>
 {%- unless page.layout == 'collection' -%}
 <span class="entry-meta">
   <time class="entry-date dt-published" datetime="{{ entry.date | date_to_xmlschema }}">
@@ -16,8 +18,5 @@
   {% if entry.tags %} {{entry.tags[0]}} {% endif %}
 </span>
 {%- endunless -%}
-
-<h3 class="entry-title p-name">
-<a href="{{ entry.url | relative_url }}" rel="bookmark">{{ title }}</a>
 </h3>
 </article>
