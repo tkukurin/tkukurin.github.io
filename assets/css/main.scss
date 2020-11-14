@@ -4,66 +4,64 @@ sitemap: false
 ---
 
 @charset "utf-8";
-
 @import "so-simple";
-
 
 $base-font-family: $sans-serif-font-family !default;
 $color-opaque: #ddd;
 
 .dragon, .page-wrapper {
-    margin: 3em auto;
+  margin: 3em auto;
 }
 
 .entry {
-    max-width:300px;
-    margin: 0 auto;
-    padding: 0;
-    a { color: inherit; text-decoration: underline; }
+  max-width:300px;
+  margin: 0 auto;
+  padding: 0;
+  a { color: inherit; text-decoration: underline; }
 }
 
 .entry#about {
-    text-align: center;
-    text-transform: lowercase;
-    h4 {
-      font-variant: small-caps;
-      letter-spacing: 1px;
-      margin: 0;
-    }
-    p {
-      color: $color-opaque;
-    }
+  text-align: center;
+  text-transform: lowercase;
+  h4 {
+    font-variant: small-caps;
+    letter-spacing: 1px;
+    margin: 0;
+  }
+  p {
+    color: $color-opaque;
+  }
 }
 
 .entry-title, .page-title {
-    font: normal 1rem $base-font-family;
+  font: normal 1rem $base-font-family;
 }
 
-
 .entry-meta, .entry-date, .page-date, time.entry-date {
-    font: normal 1rem $base-font-family !important;
-    letter-spacing: -1px;
-    color: $color-opaque;
+  font: normal 1rem $base-font-family !important;
+  letter-spacing: -1px;
+  color: $color-opaque;
+  text-transform: lowercase;
 }
 
 .page-sidebar {
-    text-align: left;
-    font: normal 1rem $base-font-family;
-    @include breakpoint($large) {
-        text-align: right;
-    }
+  text-align: left;
+  font: normal 1rem $base-font-family;
+  @include breakpoint($large) {
+      text-align: right;
+  }
 }
 
 .page-sidebar h1 {
-    font: bold 1rem $base-font-family;
-    margin: 0;
-    letter-spacing: -0.5px;
-    line-height: inherit;
+  font: bold 1rem $base-font-family;
+  margin: 0;
+  letter-spacing: -0.5px;
+  line-height: inherit;
 }
 
 .page-taxonomies-title, .page-taxonomies {
-    display: none;
-    @include breakpoint($large) {
-        display: block;
-    }
+  display: none;
+  @include breakpoint($large) {
+    display: block;
+  }
 }
