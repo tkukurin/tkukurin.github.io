@@ -87,7 +87,7 @@ understand and communicate about generic and familiar situations.
 The *Medial Temporal Lobe* (MTL) stores an integrated representation of the
 neocortical system state arising from a situation.
 
-![Sketch of the brain's understanding system](/assets/img/2020-11-16-brain-understanding-system.md)
+![Sketch of the brain's understanding system](/assets/img/2020-11-16-brain-understanding-system.png)
 
 People w/MTL damage have difficulty understanding or producing extended
 narratives.
