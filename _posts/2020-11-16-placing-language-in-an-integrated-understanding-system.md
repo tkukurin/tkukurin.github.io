@@ -1,5 +1,5 @@
 ---
-title: Placing language in an integrated understanding system: Next steps toward human-level performance in neural language models
+title: "Placing language in an integrated understanding system: Next steps toward human-level performance in neural language models"
 tags:
   - nlu
 last_modified_at: 2020-11-16T10:42:00+01:00
@@ -86,6 +86,8 @@ understand and communicate about generic and familiar situations.
 
 The *Medial Temporal Lobe* (MTL) stores an integrated representation of the
 neocortical system state arising from a situation.
+
+![Sketch of the brain's understanding system](/assets/img/2020-11-16-brain-understanding-system.md)
 
 People w/MTL damage have difficulty understanding or producing extended
 narratives.
