@@ -108,7 +108,7 @@ The human learner is afforded the opportunity to experience the compositional
 structure of the environment through his own actions.
 
 They tried some LSTM in this context: F. Hill et al. [Environmental drivers of
-systematicity and generalization in a situated agent]({% post_url 2020-11-12-systematicity-generalization-situated-agent.md %}).
+systematicity and generalization in a situated agent]({% post_url 2020-11-12-systematicity-generalization-situated-agent %}).
 TL;DR lift 20 objects trained to put 10 in some location, can still place the
 remaining ones with 90% accuracy.
 
