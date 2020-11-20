@@ -5,11 +5,10 @@ tags:
   - research
 last_modified_at: 2020-11-20T14:42:00+01:00
 published: true
-ref: "https://www.researchgate.net/profile/Dietrich_Doerner/publication/260984170_PSI_A_Computational_Architecture_of_Cognition_Motivation_and_Emotion/links/0deec532dc59f52328000000/PSI-A-Computational-Architecture-of-Cognition-Motivation-and-Emotion.pdf"
 ---
 
 
-Psi (introduced 1999; [this paper 2013]({% layout.ref %}))
+Psi (introduced 1999; [this paper 2013](https://www.researchgate.net/profile/Dietrich_Doerner/publication/260984170_PSI_A_Computational_Architecture_of_Cognition_Motivation_and_Emotion/links/0deec532dc59f52328000000/PSI-A-Computational-Architecture-of-Cognition-Motivation-and-Emotion.pdf))
 is a formalized computational architecture that simulates cognitive,
 motivational and emotional processes in their interactions.
 
