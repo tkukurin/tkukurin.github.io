@@ -33,6 +33,7 @@ Cf. also [MicroPsi implementation in Java](http://www.cognitive-ai.com/page2/pag
 ## MicroPsi
 
 [Bach's presentation](https://www.youtube.com/watch?v=rDnEoyye86A).
+Cf. [longer version of slides](https://courses.media.mit.edu/2016spring/mass63/wp-content/uploads/sites/40/2015/09/MicroPsi-FutureAI-Spring-2016.pdf).
 Featured in MicroPsi: Grounded representations,
 emotions as configuration of the system,
 motivation (system can set its own social/cognitive goals).
