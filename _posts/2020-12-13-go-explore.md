@@ -16,7 +16,7 @@ and [Jeff's presentation](https://www.youtube.com/watch?v=SWcuTgk2di8).
 Grand challenge in RL: deceptive and sparse rewards. Canonical exmaple is
 Montezuma's revenge (MR), usually not well handled by traditional RL algo's and
 tackled by variants of Intrinsic Motivation (IM) - pseudo-counts, #exploration,
-RND, Deep Curiosity Search, Prediction, Bootstrapped DQN,...).
+RND, Deep Curiosity Search, Prediction, Bootstrapped DQN,...
 
 Hypothesized reasons why IM doesn't work:
 1. *Detachment* is the idea that an agent driven by IM could become detached
