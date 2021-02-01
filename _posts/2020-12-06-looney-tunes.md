@@ -3,14 +3,15 @@ title: "Autonomous navigation of stratospheric looney tunes using RL"
 tags:
   - rl
   - research
-last_modified_at: 2020-12-06T09:42:00+01:00
+last_modified_at: 2021-02-01T14:42:00+01:00
 published: true
 ---
 
 [Nature article by Google Brain and Loon](https://www.nature.com/articles/s41586-020-2939-8?fbclid=IwAR2BtsAuFw3GyKj-lhASiQCZmw_EZns1PmsiJNaAa3q9qMJjMJN3OqnZ83Y).
 The problem they are solving is stratospheric superpressure baloon navigation.
 Balloons can navigate vertically by pumping air, while horizontal motion is
-achieved by wind currents. RL model is in production at Loon.
+achieved by wind currents. RL model is in production at Loon (update:
+I guess [not anymore](https://spacenews.com/google-to-shut-down-loon/) :().
 
 Balloons should be maintained within 50km of a given *station*.
 Problems: partial observability (sparse wind measurements), errors in prediction
