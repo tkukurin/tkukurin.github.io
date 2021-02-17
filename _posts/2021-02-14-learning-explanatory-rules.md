@@ -29,7 +29,7 @@ Differentiable Forth. Most recently, [Apperception Engine](https://deepmind.com/
 
 In dILP, a *valuation* is a value representing how likely an atom is true.
 Each clause is then compiled into a function on valuations:
-$$F_c: [0,1]^n \rightarrow [0,1]^n$, e.g. $p(X) \leftarrow q(X)$$.
+$$F_c: [0,1]^n \rightarrow [0,1]^n$$, e.g. $$p(X) \leftarrow q(X)$$.
 
 FizzBuzz: NNs can suffer from "propositional fixation", i.e. not learning 1st
 order rules.
