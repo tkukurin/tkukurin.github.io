@@ -13,7 +13,7 @@ Evans' work currently seems to also focus on program induction from data (cf.
 and [Making Sense of Sensory Input](https://deepmind.com/research/publications/Making-sense-of-sensory-input)).
 
 
-# TL;DR version based on this [YouTube talk](https://www.youtube.com/watch?v=_wuFBF_Cgm0)
+## TL;DR version based on this [YouTube talk](https://www.youtube.com/watch?v=_wuFBF_Cgm0)
 
 Symbolic Program Synthesis (SPS) is
 data-efficient, interpretable, generalizes;
@@ -29,7 +29,7 @@ Differentiable Forth. Most recently, [Apperception Engine](https://deepmind.com/
 
 In dILP, a *valuation* is a value representing how likely an atom is true.
 Each clause is then compiled into a function on valuations:
-$F_c: [0,1]^n \rightarrow [0,1]^n$, e.g. $p(X) \leftarrow q(X)$.
+$$F_c: [0,1]^n \rightarrow [0,1]^n$, e.g. $p(X) \leftarrow q(X)$$.
 
 FizzBuzz: NNs can suffer from "propositional fixation", i.e. not learning 1st
 order rules.
