@@ -96,5 +96,5 @@ David: The agents are quite passive.
 Have you modeled something like *joy* in the agents?
 Nope; what does joy mean for a human player?
 
-![Penguins are fun](https://image.flaticon.com/icons/png/512/826/826963.png)
+![Penguins are fun](https://image.flaticon.com/icons/png/512/826/826963.png =75x)
 
