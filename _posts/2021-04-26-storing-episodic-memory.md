@@ -2,7 +2,7 @@
 title: "Storing episodic memory"
 tags:
   - neuro
-last_modified_at: 2021-04-26T01:42:00+01:00
+last_modified_at: 2021-04-26T00:42:00+01:00
 published: true
 ---
 
@@ -27,7 +27,8 @@ a different environment (~proportional to change in environment).
 fire at regular intervals *across the entire environment*, storing info
 about location, distance, and direction. Seemingly assists keeping track of
 location in absence of sensory input. Cf. [recent work by DeepMind](https://www.biorxiv.org/content/10.1101/2020.11.11.378141v1)
-on modeling this relation via RNNs, as well as [Place cells, grid cells, and memory](https://www.researchgate.net/publication/272839931_Place_Cells_Grid_Cells_and_Memory).
+on modeling this relation via RNNs, as well as [Place cells, grid cells, and
+memory](https://www.researchgate.net/publication/272839931_Place_Cells_Grid_Cells_and_Memory).
 
 > Grid patterns appear on the first entrance of an animal into a novel
 > environment, and usually remain stable thereafter. When an animal is moved
@@ -43,4 +44,17 @@ Centers of grid cells' firing fields produce a triangular grid.
 > through the maze and get a record of lots of these points. [source](https://biology.stackexchange.com/questions/64957/understanding-the-concept-of-a-place-field-and-the-difference-between-place-ce)
 
 ![Grid cells form triangular shapes](https://i.stack.imgur.com/n5axH.png)
+
+Cf. also [The Hippocampus, Memory, and Place Cells](https://www.cell.com/neuron/fulltext/S0896-6273%2800%2980773-4) (1999).
+for an overview + history (note, paper written pre-grid cells).
+
+> [...] spatial information was encoded within the cellular activity of the very
+> hippocampal structures that are necessary for spatial learning and memory
+
+> one can readily correlate dramatic increases in a place cell’s firing rate
+> when the rat arrives at a particular location, called the “place field.” From
+> a baseline of <1 spike/s, the firing rate can exceed 100 Hz
+
+> cognitive mapping may be only a specific example of a more general hippocampal
+> function
 
