@@ -28,7 +28,6 @@ The simplest server implementation:
 from wsgiref.simple_server import make_server
 
 def app(environ, start_response):
-  setup_testing_defaults(environ)
   start_response('200 OK', [('Content-type', 'text/plain; charset=utf-8')])
   yield 'Heyo'.encode('utf-8')
   yield from (f'{k}:{v}\n'.encode("utf-8") for k, v in environ.items())
