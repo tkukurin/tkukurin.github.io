@@ -136,7 +136,6 @@ Similarities and differences: what does X relate to?
 ```
 Q. How is stock different from soup broth?
 A. Soup broth has a more complete flavor; stock isn’t meant to stand on its own.
-
 ```
 
 Parts and wholes: What are X's constituents? What's the broader category?
@@ -196,23 +195,32 @@ rearranging, merging sentences [NOTE: hah let's make git for learning?].
 These resources have been especially useful to me as I’ve developed an
 understanding of how to write good prompts:
 
-* Piotr Wozniak’s Effective learning: Twenty rules of formulating knowledge and
-  the more detailed Knowledge structuring and representation in learning based
-on active recall tackle the same topic as this guide from a different
-perspective.
-* Michael Nielsen’s Augmenting Long-term Memory: a thorough review of how spaced
-  repetition works and why you should care; more details on how to practically
-integrate prompt-writing into your reading practices, particularly when reading
-academic literature; notes on creative applications; and much more.
-* Michael Nielsen’s Using spaced repetition systems to see through a piece of
-  mathematics demonstrates how to iteratively deepen one’s understanding of a
-piece of mathematics, using spaced repetition prompts as a lever.
+* [Effective learning: Twenty rules of formulating knowledge](https://www.supermemo.com/en/archives1990-2015/articles/20rules)
+* [Knowledge structuring and representation in learning based on active recall](https://www.supermemo.com/en/archives1990-2015/english/ol/ks)
+* [Nielsen: Augmenting Long-term Memory](http://augmentingcognition.com/ltm.html)
+* [Nielsen: Using spaced repetition systems to see through a piece of math](http://cognitivemedium.com/srs-mathematics)
+* [Soren Bjornstad’s series on memory systems](https://controlaltbackspace.org/memory/designing-precise-cards/)
+  (but also check out other memory writings on his blog)
+  * Questions should ask exactly one thing
+  * Questions should permit exactly one answer
+  * Questions should not ask you to enumerate things
+    * (a) understand each member of the set through separate cards; (b) order
+      the set into an enumeration, develop a mnemonic device (e.g. acronym)
+  * Questions should not ask for y/n answers
+  * Questions should be context-free
+* [Nicky Case’s (illustrated) How To Remember Anything Forever-ish](https://ncase.me/remember/)
+  * [Leitner box](https://youtu.be/uvF1XuseZFE) recall
+    (group by level; recall every $$2^l$$ days)
+> Cognitive science shows you need memorization for creativity & critical
+> thinking. (Imagine writing an essay if you know no words!)
 
-For more perspectives on this and related topics, see:
+* [How can we develop transformative tools for thought?](https://numinous.productions/ttft/)
 
-* Soren Bjornstad’s series on memory systems helpfully covers many practical topics in maintaining a prompt library, including some advice on prompt-writing.
-* Nicky Case’s How To Remember Anything Forever-ish introduces spaced repetition
-  and covers some prompt-writing techniques through delightful illustrations.
-* How can we develop transformative tools for thought? (from Michael Nielsen and
-  me) discusses the challenges of prompt-writing with particular focus on the
-“mnemonic medium,” which involves embedding prompts in narrative prose.
+Tying into similar ideas,
+cf. [Adam Wiggins](https://twitter.com/_adamwiggins_/status/1388944154953228288)'
+[Metamuse](https://museapp.com/podcast/)
+and his [Muse app](https://twitter.com/MuseAppHQ).
+I also think [karlicoss' Promnesia](https://github.com/karlicoss/promnesia)
+could be a great tool for developers (open source).
+Check out [his infrastructure](https://beepb00p.xyz/myinfra.html).
+
