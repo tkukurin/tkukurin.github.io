@@ -192,9 +192,6 @@ rearranging, merging sentences [NOTE: hah let's make git for learning?].
 
 ## Further reading
 
-These resources have been especially useful to me as I’ve developed an
-understanding of how to write good prompts:
-
 * [Effective learning: Twenty rules of formulating knowledge](https://www.supermemo.com/en/archives1990-2015/articles/20rules)
 * [Knowledge structuring and representation in learning based on active recall](https://www.supermemo.com/en/archives1990-2015/english/ol/ks)
 * [Nielsen: Augmenting Long-term Memory](http://augmentingcognition.com/ltm.html)
