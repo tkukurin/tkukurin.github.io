@@ -208,9 +208,8 @@ rearranging, merging sentences [NOTE: hah let's make git for learning?].
 * [Nicky Case’s (illustrated) How To Remember Anything Forever-ish](https://ncase.me/remember/)
   * [Leitner box](https://youtu.be/uvF1XuseZFE) recall
     (group by level; recall every $$2^l$$ days)
-> Cognitive science shows you need memorization for creativity & critical
-> thinking. (Imagine writing an essay if you know no words!)
-
+  * Cogsci: you need memorization for creativity & critical thinking
+    (imagine writing an essay if you know no words!)
 * [How can we develop transformative tools for thought?](https://numinous.productions/ttft/)
 
 Tying into similar ideas,
