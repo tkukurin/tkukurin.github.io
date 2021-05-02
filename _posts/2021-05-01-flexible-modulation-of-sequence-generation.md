@@ -13,7 +13,7 @@ different objectives:
 > generated sequences for particular cognitive functions and propose a neural
 > mechanism by which this may be accomplished within the EHC.
 
-[Background on place/grid cells and EHC to follow this paper]({% post_url 2021-04-26-storing-episodic-memory.md %})
+[Background on place/grid cells and EHC to follow this paper]({% post_url 2021-04-26-storing-episodic-memory %})
 
 
 ## Entorhinal-Hippocampal Circuit (EHC)
@@ -42,7 +42,7 @@ consistent with search efficiency optimization.
 
 In all diagrams, time flows yellow-to-red:
 
-![Mice](../assets/img/2021-05-01-fig1.md)
+![Mice](../assets/img/2021-05-01-fig1.png)
 
 $$x = (x_0, x_1, \cdots, x_t)$$, where state space $$X$$ is considered discrete.
 "Master equation" defined by e.g. rodent initial position $$\rho_0 = p(x_0)$$;
