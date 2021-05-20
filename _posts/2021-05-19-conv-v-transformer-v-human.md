@@ -53,6 +53,23 @@ They also measure "shape bias":
 According to fig. 7, humans bias heavily towards shape *except for* planes,
 knives and boats?! I don't get it. How does shape/texture conflict exactly?
 
+[Blake Richards](https://twitter.com/tyrell_turing/status/1395073954776240131):
+
+> I find it slightly odd that anyone is ever surprised that ANNs trained using
+> nothing but still images focus on shape less than humans (who live in a 3D
+> world where they can actually *feel* shapes with their hands)...
+> Still it's interesting that transformers do that a bit less.
+> Nonetheless, my bet is no architecture trained on still images would ever
+> focus on shape to the extent humans do unless forced to by some really strong
+> inductive biases.
+
+[Understanding Robustness of Transformers for Image Classification](https://arxiv.org/abs/2103.14586)
+notes that shape accuracy in transformers is primarily related to patch size:
+
+![Shape accuracy is a function of patch size](https://pbs.twimg.com/media/E1xP7T2WYAMNefM?format=png)
+
+---
+
 TL;DR transformers seem more consistent with humans according to their
 experiments. Some interesting ideas for future work:
 * comparing between different transformers
