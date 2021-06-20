@@ -7,7 +7,7 @@ published: true
 ---
 
 [Apperception Engine](https://deepmind.com/research/publications/Evaluating-the-Apperception-Engine)
-and [Making Sense of Sensory Input](https://deepmind.com/research/publications/Making-sense-of-sensory-input)).
+and [Making Sense of Sensory Input](https://deepmind.com/research/publications/Making-sense-of-sensory-input).
 Ref. to [previous post]({% post_url ./2021-02-14-learning-explanatory-rules %}).
 
 *Apperception*: assimilating information into a coherent integrated theory.
