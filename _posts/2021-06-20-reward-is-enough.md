@@ -3,7 +3,7 @@ title: "Reward is enough"
 tags:
   - research
   - rl
-last_modified_at: 2021-06-20T22:00:00+01:00
+last_modified_at: 2021-06-27T11:42:00+01:00
 published: true
 ---
 
@@ -13,9 +13,13 @@ a lively debate on Learning Salon.
 To me the the paper makes perfect sense. Argues that general intelligence arises
 in complex environments, even from seemingly innocuous signals.
 Wasn't some version of this written by Skinner in the mid-1900s?
+Aren't economists usually writing these types of papers, substituting
+intelligence for some other behavior that's supposed to emerge from a model?
 
 Anyhow. My **TL;DR**: intelligence is emergent behavior facilitated by any kind
 of reward present in a complex environment.
+Titled "Reward is Enough" for likely PR reasons, actually argues to say reward
+is a necessary but insufficient condition.
 
 > The behaviour of the squirrel may be understood as maximising a cumulative
 > reward such as satiation (i.e. negative hunger). In order for a squirrel to
@@ -43,16 +47,26 @@ accidents, minimizing pain.
 They kind of relate *language* to social intelligence, saying it arises from an
 agent's need to communicate its complex environment to achieve goals.
 
+I guess a simplified view of the perception hierarchy goes something like:
+* Survival
+  * Energy
+    * Food acquisition
+      * Discern edible items
+        * Perception
+    * Minimize pain
+      * Avoid hurtful situations (e.g. falling off a cliff)
+        * Perception
+
 Then some not-too-convincing lamentation about *generalization* being useful for
 maximizing an agent's understanding within a rich environment.
-Maybe I just don't understand what they're trying to say.
 I would've claimed that an agent perhaps has limited cognitive capacity, and as
 such generalization is a consequence of interference but what do I know.
+Maybe I don't get what they're trying to say.
 
 > We do not offer any theoretical guarantee on the sample efficiency of
 > reinforcement learning agents. Indeed, the rate at and degree to which
 > abilities emerge will depend upon the speciﬁc environment, learning algorithm,
-> and inductive biases
+> and inductive biases.
 
 
 ***
@@ -82,3 +96,23 @@ the single learning signal will actually lead to the emergence of "sub-signals"
 > associate future reward with features of observations, through value function
 > approximation, which in turn provide rich secondary signals that drive
 > learning of deeper associations through a recursive bootstrapping process.
+
+***
+
+Lest I forget:
+there is no distinction being made between "useful" and "intelligent".
+
+Asking a self-driving car to bring you closer to a specific location, even in
+the presence of a perfectly complex environment, may lead to both intelligent
+and "wrong" behavior, failing to deliver on the promise of AI.
+
+But I guess the same is true with humans, so eh.
+I'm sure Yudkowski would have some comments there.
+
+*Some kind of summary*:
+Under the "reward is enough" framework, every intelligent agent is wired to
+follow a simple reward but the behavior that emerges is largely influenced by
+priors ("model weights") and environment interactions ("gradient descent").
+Thus it's just shifting the burdern of explaining intelligence towards other
+parts of the system.
+
