@@ -11,6 +11,10 @@ published: true
 He's by now advanced to a beta for the language he started designing way back.
 Focuses on applications for gaming (i.e. efficiency).
 
+* [The full Jai language playlist on YouTube](https://www.youtube.com/playlist?list=PLmV5I2fxaiCKfxMBrNsU1kgKJXD3PkyxO).
+* [A more comprenehsive collection of various talks and resources](https://inductive.no/jai/).
+* [Jai primer on GitHub](https://github.com/BSVino/JaiPrimer/blob/master/JaiPrimer.md)
+
 Alternatives to C++:
 Go is good, but GC'd and wrong concurrency model for games.
 D has optional GC, but too close to C++? Maybe some other reasons.
