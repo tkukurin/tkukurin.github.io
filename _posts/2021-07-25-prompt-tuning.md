@@ -1,5 +1,9 @@
 ---
 title: "Simple Few-Shot Learning with Language Models"
+tags:
+  - nlp
+last_modified_at: 2021-08-01T16:42:00+01:00
+published: true
 ---
 
 [FAIR/UCL: Few-shot learning with LMs](https://arxiv.org/pdf/2106.13353.pdf).
