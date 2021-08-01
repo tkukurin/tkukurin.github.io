@@ -89,9 +89,10 @@ Good teachers "project" meta learning?
 [I think it's about a particular way of presenting knowledge. Good teachers
 capture a good way to model the distribution of learners.]
 
-Ida: Some previous paper discusses task "domains" and task "rules". [@1h5m35s](https://youtu.be/zH615GQTbnk?t=1h5m35s)
-E.g. font color of a number.
-Much richer than what exists in ML.
+Ida: [Sakai and Passingham](https://www.jneurosci.org/content/26/4/1211) discuss
+task "domains" and "rules." [@1h5m35s](https://youtu.be/zH615GQTbnk?t=1h5m35s)
+E.g. domain of numbers, but rule can be font color or the actual quantity.
+Descriptive quality in cogsci is much richer than what exists in ML.
 We should enrich how tasks and distributions of tasks are defined.
 
 Rules for generalizing? [@1h9m3s](https://youtu.be/zH615GQTbnk?t=1h9m3s)
