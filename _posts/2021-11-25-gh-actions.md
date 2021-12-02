@@ -23,6 +23,7 @@ Some terminology [based on the tutorial](https://docs.github.com/en/actions):
 
 ## Basic YAML to test Python (+ some unnecessary details for showcase)
 
+{% raw %}
 ```yaml
 name: Python package
 on: [push]
@@ -56,14 +57,18 @@ jobs:
         run: |
           pytest
 ```
+{% endraw %}
 
 
 ## Tidbits from the tutorial
 
 [In complex workflows tutorial](https://docs.github.com/en/actions/learn-github-actions/managing-complex-workflows):
-* secrets (`env.xyz: ${{ secrets.XYZ }}` [tutorial on creating them](https://docs.github.com/en/actions/security-guides/encrypted-secrets))
+
+
+* secrets ({% raw %}`env.xyz: ${{ secrets.XYZ }}` {% endraw %}[tutorial on creating them](https://docs.github.com/en/actions/security-guides/encrypted-secrets))
 * dependent jobs (`jobs.setup: ... ; jobs.build.needs: setup` [reference](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idneeds))
 * build matrices
+{% raw %}
 ```
 jobs:
   build:
@@ -73,6 +78,7 @@ jobs:
       - uses: actions/setup-node@v2
         with.node-version: ${{ matrix.node }}
 ```
+{% endraw %}
 * caching dependencies across workflows in a repo (`actions/cache@v2`)
 
 You can share workflow templates within an org in a `.github` repository.
@@ -80,7 +86,7 @@ You can share workflow templates within an org in a `.github` repository.
 and put `name-ci.yaml` and `name-ci.properties.json` in it.
 [Templates can be inited from the "Actions" tab](https://docs.github.com/en/actions/learn-github-actions/using-workflow-templates).
 
-[Environment variables via `env.X` and `${{ env.X }}`](https://docs.github.com/en/actions/learn-github-actions/environment-variables).
+[Environment variables via `env.X` and {% raw %}`${{ env.X }}`{% endraw %}](https://docs.github.com/en/actions/learn-github-actions/environment-variables).
 
 Also see [guides for specific use-cases](https://docs.github.com/en/actions/guides).
 
