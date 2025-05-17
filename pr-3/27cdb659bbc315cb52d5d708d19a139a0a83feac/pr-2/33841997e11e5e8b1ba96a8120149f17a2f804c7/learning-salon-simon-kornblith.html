@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    <title>Learning Salon: Simon Kornblith</title>
+    <meta name="description" content="YouTube.">
+    <link rel="canonical" href="https://tkukurin.github.io/learning-salon-simon-kornblith">
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/light.css">
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  learning-salon-simon-kornblith">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">~</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">caveat emptor</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <div class="page-sidebar">
+        
+            
+            <h1 id="page-title" class="page-title p-name">Learning Salon: Simon Kornblith
+</h1>
+        
+        <div class="page-author h-card p-author"><div class="author-info">
+    <time class="page-date dt-published" datetime="2021-04-02T00:00:00+00:00"><a class="u-url" href="">Apr 2, 2021</a>
+</time>
+
+  </div>
+</div>
+
+        
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">research</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p><a href="https://www.youtube.com/watch?v=lvAOJm2SjzQ">YouTube</a>.</p>
+
+<h2 id="presentation-do-cv-models-need-to-learn-like-humans">Presentation: Do CV models need to learn like humans?</h2>
+
+<p>Simon thinks CV models <em>don’t</em> need to learn the same way as humans.</p>
+
+<p>Transfer learning via representation learning is a cornerstone of CV.
+[I guess of NLP, too, nowadays.] <a href="http://proceedings.mlr.press/v32/donahue14.html">DeCAF (2014)</a>
+introduced fine-tuning on frozen representations.</p>
+
+<p>Correlation between ImageNet and other datasets given “human understanding of
+similarity between tasks”. <a href="https://youtu.be/lvAOJm2SjzQ?t=09m17s">YT</a>.
+I.e. humans would judge the <em>other</em> datasets are dissimilar (no formal notion).</p>
+
+<p>Better ImageNet = better perf under distribution shift. <a href="https://youtu.be/lvAOJm2SjzQ?t=15m17s">YT</a>.</p>
+
+<p>ImageNet has 1.3 million image-level labels (less than brain).
+Maybe we’re learning funny things because of that number.
+SimCLR (contrastive learning on distorted image crops) can match supervised
+performance of ResNet but needs to be 16 times larger and have 100x more
+computation. <a href="https://youtu.be/lvAOJm2SjzQ?t=19m56s">YT</a>.</p>
+
+<p>What is unsupervised learning discussion heh. <a href="https://youtu.be/lvAOJm2SjzQ?t=25m21s">YT</a>.</p>
+
+<p>Shape/texture conlicts. <a href="https://youtu.be/lvAOJm2SjzQ?t=32m37s">YT</a>.</p>
+
+<hr />
+
+<p>Simon seems to advocate the “bitter lesson” view; in essence, neural nets are
+<em>reasonable</em> given the amount of data we give them.
+In the limit they should be able to generalize (we’re nowhere near overfit
+regime). Andrew: SVM with RBF kernel has infinite dimensions, but it works
+because regularization. SGD is the same way. Core behind DL is regularization.</p>
+
+<h2 id="discussion">Discussion</h2>
+
+<p>Ida: is SimCLR adversarially robust? Simon: didn’t test this; probably not.
+Mention <a href="https://poggio-lab.mit.edu/publications/foveation-based-mechanisms-alleviate-adversarial-examples">Poggio’s work</a>.
+<a href="https://youtu.be/lvAOJm2SjzQ?t=42m06s">YT</a>.
+[There is no free lunch for adversarial examples]</p>
+
+<p>John: Are optical illusions adversarial examples for humans? Not really, since
+it’s a different (topdown imposition of priors) mechanism. Simon agrees, Jovo not.</p>
+
+<p>Because humans have seen more stuff we’re more adversarially robust and so the
+solution to adversarial examples is more data [I guess that’s his claim?].
+<a href="https://youtu.be/lvAOJm2SjzQ?t=48m19s">YT</a>.</p>
+
+<p>John: What if the model sees catwoman or puss in boots as input? What’s its
+output? [Basically standard issue - it will give its best prediction given
+known training labels]</p>
+
+<p>Simon mentions that representations generalize well regardless of labels.
+E.g. if you take the second-to-last layer output, then the embedding looks
+<em>reasonable</em> given its neighbors. [How is the neighborhood defined?]</p>
+
+<p>Jovo: if you defined a metric of representation similarity <em>a priori</em> and then
+find that deep nets are similar with that respect to humans, but other types of
+predictive models don’t, that would be interesting.</p>
+
+<p>John: you can read out occipital cortex to infer arm movements, but nobody
+really thinks they cause arm movement. [What?]</p>
+
+<p>Jovo: I don’t want human-like behavior; I’d just make another human. I want HCI.
+Ida: big NO! Knowing if AI can simulate human behavior is interesting of itself.
+Model that has good performance, less human-like is less interesting than a
+model with human-like behavior. [Simon agrees, no real contention here.]</p>
+
+<p>(…)</p>
+
+<p>Shaiyan: Many images from ImageNet contain objects from multiple classes.
+For example, “chairs” often have people sitting on them.
+A subset of a picture of a dog might not include any part of a dog - for
+example, it might just contain ‘floor’ or ‘sky’ - do you control for this?
+Simon: We don’t. It’s true that dog photos might contain these fragments, but
+maybe it’s useful. [I guess in the sense of biasing output given environment]</p>
+
+<p>Simon: We don’t think representations learned by SimCLR are significantly
+different from other models; however it’s difficult to measure that.
+[I mean you could define some metrics to measure cross-model similarity? Am I
+missing something?]</p>
+
+
+        </div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/muzero">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> MuZero
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/emacs">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Emacs config
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://twitter.com/tkukurin"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/tkukurin"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="https://www.linkedin.com/in/toni/"><i class="fab fa-linkedin fa-2x" title="LinkedIn"></i></a></div><div class="copyright">
+    
+      
+
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>
