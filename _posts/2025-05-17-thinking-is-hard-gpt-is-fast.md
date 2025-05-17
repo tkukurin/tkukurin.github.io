@@ -19,53 +19,52 @@ Something poetic in prompting LMs to assist with this task.
 No shade to Cruyff, but I like H. Jackson Brown's best --
 
 > Opportunity dances with those already on the dance floor.
-> — H. Jackson Brown Jr.
 
 Other sports figures with similar insight --
 
 > I skate to where the puck is going to be, not where it has been. 
-> — Wayne Gretzky
+> (Wayne Gretzky)
 
 > Precision beats power, and timing beats speed.
-> — Conor McGregor
+> (Conor McGregor)
 
 > The harder I practice, the luckier I get
-> - Gary Player (golf maxim)
+> (Gary Player, golf maxim)
 
 To the pithy --
 
 > Chance favors the prepared mind. 
-> — Louis Pasteur
+> (Louis Pasteur)
 
 > Never confuse motion for action. 
-> — Hemingway
+> (Ernest Hemingway)
 
 > Slow is smooth, smooth is fast
-> - US Navy SEAL Proverb
+> (US Navy SEAL Proverb)
 
 And the pithy historic --
 
 > Every battle is won before it’s ever fought.
-> — Sun Tzu, The Art of War
+> (Sun Tzu)
 
 > Dress me slowly, I’m in a hurry.
-> — (attributed to) Napoleon Bonaparte
+> (attributed to Napoleon Bonaparte)
 
 > Luck is what happens when preparation meets opportunity.
-> — Seneca
+> (Seneca)
 
 
 To the serendipitous finds --
 
 > Vision without action is a daydream; action without vision is a nightmare.
-> — Japanese Proverb
+> (Japanese Proverb)
 
 > Talent hits a target no one else can hit; genius hits a target no one else can see.
-> – Arthur Schopenhauer
+> (Arthur Schopenhauer)
 
 
 And finally, one recalled without GPT assistance --
 
 > If intelligence is making hard problems easy, genius is making problems go away.
-> - [David Krakauer](https://nautil.us/ingenious-david-krakauer-235383/?utm_source=chatgpt.com)
+> ([David Krakauer](https://nautil.us/ingenious-david-krakauer-235383/?utm_source=chatgpt.com))
 
