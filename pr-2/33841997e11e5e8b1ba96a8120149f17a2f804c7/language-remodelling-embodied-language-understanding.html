@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    <title>Towards Embodied Language Understanding</title>
+    <meta name="description" content="ArXiv. Position paper argues for focusing AI on building mental models. The question of how humans represent language internally is shared between NLU (cf. f...">
+    <link rel="canonical" href="https://tkukurin.github.io/language-remodelling-embodied-language-understanding">
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/light.css">
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  towards-embodied-language-understanding">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">~</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">caveat emptor</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <div class="page-sidebar">
+        
+            
+            <h1 id="page-title" class="page-title p-name">Towards Embodied Language Understanding
+</h1>
+        
+        <div class="page-author h-card p-author"><div class="author-info">
+    <time class="page-date dt-published" datetime="2020-11-10T00:00:00+00:00"><a class="u-url" href="">Nov 10, 2020</a>
+</time>
+
+  </div>
+</div>
+
+        
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">nlp</li><li class="page-taxonomy">research</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p><a href="https://arxiv.org/pdf/2005.00311.pdf">ArXiv</a>. Position paper argues for
+focusing AI on building <em>mental models</em>. The question of <em>how humans represent
+language internally</em> is shared between NLU
+(cf. <a href="/chomsky-v-functionalists">functionalists</a>)
+and AI. Similar to Bisk et al’s
+recent <a href="https://arxiv.org/pdf/2004.10151.pdf">Experience Grounds Language</a> and
+many earlier works, e.g. Winograd (1971):</p>
+
+<blockquote>
+  <p>In order to talk about concepts, we must understand the importance of mental
+models… we set up a model of the world which serves as a framework in which
+to organize our thoughts. We abstract the presence of particular objects,
+having properties, and entering into events and relationships.</p>
+</blockquote>
+
+<h2 id="embodied-cognitive-linguistics">Embodied cognitive linguistics</h2>
+
+<p>In contrast to early theories assuming disembodied symbolic knowledge
+representation, Embodied Cognition (EC) argues knowledge is stored using
+multi-modal representations arising from world interaction. Embodied Cognitive
+Linguistics (ECL) postulates linguistic representations are grounded in neural
+modal systems. Note that ECL is still missing <a href="https://arxiv.org/pdf/2004.10151.pdf">WorldScope
+5</a>, i.e.  social learning (e.g. sign
+“BULL” mandates social knowledge to infer bull is most likely on the other side
+of the fence).</p>
+
+<p>The conceptual foundations of ECL:</p>
+<ol>
+  <li>Embodied schemata, pre-linguistic structures (containment)</li>
+  <li>Metaphoric inference. “Example <em>in</em> mind” suggests the abstract <em>mind</em> is
+mapped to the concrete <em>container</em>.</li>
+  <li>Mental simulation</li>
+</ol>
+
+<p>Lakoff and Johnson (1980), Feldman and Narayanan (2004):</p>
+
+<p><strong>Hypothesis 1 (Simulation)</strong>: Humans understand the meaning of language by
+mentally simulating its content. Language in context evokes a simulation
+structured by embodied schemata and metaphoric mappings, utilizing the same
+neural structures for action and perception in the environment. Understanding
+involves inferring and running the best fitting simulation.</p>
+
+<p><strong>Hypothesis 2 (Metaphoric Representation)</strong>: Human concepts are expressible
+through hierarchical, compositional, metaphoric mappings over a limited
+vocabulary of embodied schema. Abstract concepts are expressed using more
+literal concepts.</p>
+
+<p>Early ECL implementations:</p>
+<ul>
+  <li><a href="https://www1.icsi.berkeley.edu/~nchang/pubs/ecg.pdf">Embodied Construction Grammar (Bergen and Chang, 2005)</a>
+    <ul>
+      <li>language can be seen as in interface to simulation</li>
+    </ul>
+  </li>
+  <li><a href="https://framenet.icsi.berkeley.edu/fndrupal/">FrameNet (Ruppenhofer et al., 2016)</a>
+    <ul>
+      <li>lexical units evoke specific <a href="https://en.wikipedia.org/wiki/Frame_semantics_(linguistics)">frames</a></li>
+    </ul>
+  </li>
+  <li><a href="https://metanet.icsi.berkeley.edu/metanet/">MetaNet (David and Dodge, 2014)</a>
+    <ul>
+      <li>systematically identify and analyze metaphors that people use to discuss and
+reason about a broad range of topics and domains</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Some research shows linguistic message is <a href="https://www.researchgate.net/figure/A-Shift-in-Our-Conceptualization-of-Human-Mutual-Understanding-To-date-several_fig1_290220014">not present in the words (Stolk et
+al. 2016, David et al. 2016)</a>.
+According to the conceptual alignment framework, human communicators mutually
+coordinate a fleeting conceptual space in which signals are merely a means to
+seek and provide evidence for mutual understanding.</p>
+
+<p>Lol at section 4: “<em>[our] proposal centers around the view of natural language as
+a kind of neural programming languages</em>”. The two NLPs have finally converged.</p>
+
+<h2 id="proposed-embodied-language-understanding-model">Proposed embodied language understanding model</h2>
+
+<p>Consciousness Prior.
+Abstract low-d states, as in Kipf’s Structured World Models.</p>
+
+<p>Agent A sequentially generates utterances \(u_t\) to convey a goal state \(G*\),
+B comprehends \(s_t=C(s_{t-1},u_t)\).</p>
+
+<p>Challenges: linguistic communication bandwidth is way lower than mental.
+Discourse needs common ground (priors) which is accumulated.</p>
+
+<p>Cf. <a href="https://groups.psych.northwestern.edu/gentner/papers/gentner&amp;Forbus_2011.pdf">selective analogical inference</a></p>
+
+<h2 id="architecture-and-implementation">Architecture and implementation</h2>
+
+<p><em>Memory</em> as a combined (1) short-term mental model (akin to a small GNN, or
+conceptually what <a href="https://www.researchgate.net/publication/290220014_Conceptual_Alignment_How_Brains_Achieve_Mutual_Understanding">Stolk et al.</a>
+propose) and (2) compiled knowledge (traditional KB, maybe something like Watson).
+<em>Parser</em> maps perceptive stimuli to internal state representation (I guess
+something like <a href="https://arxiv.org/abs/1911.12247">C-SWM</a>).
+<em>Emulator</em> outputs a new state based on the current mental model.</p>
+
+
+        </div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/emergent-comms-for-nmt">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Emergent Communications Pretraining for Few-Shot NMT
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/to-the-jupyter-config-and-back">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        To the Jupyter config and back
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://twitter.com/tkukurin"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/tkukurin"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="https://www.linkedin.com/in/toni/"><i class="fab fa-linkedin fa-2x" title="LinkedIn"></i></a></div><div class="copyright">
+    
+      
+
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

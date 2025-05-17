@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    <title>The dark ages of `C++20` string formatting</title>
+    <meta name="description" content="Abhorrent.">
+    <link rel="canonical" href="https://tkukurin.github.io/hello-world">
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/light.css">
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  the-dark-ages-of-c-20-string-formatting">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">~</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">caveat emptor</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <div class="page-sidebar">
+        
+            
+            <h1 id="page-title" class="page-title p-name">The dark ages of C++20 string formatting
+</h1>
+        
+        <div class="page-author h-card p-author"><div class="author-info">
+    <time class="page-date dt-published" datetime="2020-11-04T00:00:00+00:00"><a class="u-url" href="">Nov 4, 2020</a>
+</time>
+
+  </div>
+</div>
+
+        
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">cpp</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>Abhorrent.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="n">strbuf</span><span class="p">[</span><span class="mi">10</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">meaning</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">sprintf</span><span class="p">(</span><span class="n">strbuf</span><span class="p">,</span> <span class="s">"%010d"</span><span class="p">,</span> <span class="n">meaning</span><span class="p">);</span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="nf">message</span><span class="p">(</span><span class="n">strbuf</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Soon <a href="https://en.cppreference.com/w/cpp/utility/format">21<sup>st</sup> century will catch up</a>.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">message</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"The answer is {:010d}."</span><span class="p">,</span> <span class="mi">42</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>In the meantime, <a href="https://abseil.io/docs/cpp/guides/format">Abseil</a>.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">"absl/strings/str_format.h"</span><span class="cp">
+</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">message</span> <span class="o">=</span> <span class="n">absl</span><span class="o">::</span><span class="n">StrFormat</span><span class="p">(</span><span class="s">"The answer is %010d."</span><span class="p">,</span> <span class="mi">42</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>And don’t forget to include <code class="language-plaintext highlighter-rouge">str_format</code> in your <code class="language-plaintext highlighter-rouge">BUILD</code> <a href="https://abseil.io/docs/cpp/quickstart">Bazel file</a>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cc_binary</span><span class="p">(</span>
+  <span class="n">name</span><span class="o">=</span><span class="s">"hello_world"</span><span class="p">,</span>
+  <span class="n">deps</span><span class="o">=</span><span class="p">[</span><span class="s">"@com_google_absl//absl/strings:str_format"</span><span class="p">,],</span>
+  <span class="n">srcs</span><span class="o">=</span><span class="p">[</span><span class="s">"hello_world.cc"</span><span class="p">]</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+        </div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+
+  
+    <a class="page-next" href="/pylost">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Lost in Python
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://twitter.com/tkukurin"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/tkukurin"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="https://www.linkedin.com/in/toni/"><i class="fab fa-linkedin fa-2x" title="LinkedIn"></i></a></div><div class="copyright">
+    
+      
+
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>
