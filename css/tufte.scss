@@ -462,12 +462,17 @@ ul.footer-links li{
 
 //Full width page styling stuff
 
-body.full-width, .content-listing, ul.content-listing li.listing{ width: 90%;
-       margin-left: auto;
-       margin-right: auto;
-       padding: 0% 5%;
-
+body.full-width {
+   width: 90%;
+   margin-left: auto;
+   margin-right: auto;
+   padding: 0% 5%;
 }
+
+ul.content-listing{
+  margin: 0 auto;
+}
+
 .full-width article p{
   width: 90%;
 }
@@ -483,17 +488,13 @@ h1.content-listing-header{
 li.listing hr{
   width:100%;
 }
-.listing, .listing h3
-{
-  display: inline-block;
-  margin:0;
-}
-li.listing {
-  margin:0;
-  & p{
-    width: 100%
-  }
-}
+// .listing, .listing h3 { display: inline-block; margin:0; }
+// li.listing {
+//   margin:0;
+//   & p{
+//     width: 100%
+//   }
+// }
 
 
 li.listing:last-of-type{
