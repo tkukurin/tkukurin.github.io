@@ -243,7 +243,21 @@ ul,ol { width: 45%;
      -webkit-padding-end: 5%;
      list-style-type: none; }
 
-li ul { width: 100%; } // tk adhoc bugfix
+li ul, li blockquote p, li blockquote { width: 100%; } // tk adhoc bugfix
+blockquote {
+    font-style: italic;
+    position: relative;
+}
+blockquote::before {
+    content: '“';
+    position: absolute;
+    top: .4em;
+    left: -.5em;
+    font-size: 10em;
+    line-height: 0;
+    display: block;
+    color: beige;
+}
 
 //li { padding: 0.5em 0; } //vertical padding on list items screws up vertical rhythym
 
@@ -651,20 +665,3 @@ hr.slender {
   content: "\eae4";
 }
 /*-- End of Icomoon icon font section --*/
-
-// tk fix
-li blockquote p { width: 100%; }
-blockquote {
-    font-style: italic;
-    position: relative;
-}
-blockquote::before {
-    content: '“';
-    position: absolute;
-    top: .4em;
-    left: -.5em;
-    font-size: 10em;
-    line-height: 0;
-    display: block;
-    color: beige;
-}
