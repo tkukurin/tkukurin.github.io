@@ -101,6 +101,10 @@ h1 { font-weight: 400;
      margin-bottom: 1.568rem;
      font-size: 2.5rem;
      line-height: 0.784; }
+h1.posthead {
+  width: 45%;
+  line-height: 1;
+}
 
 h2 { font-style: italic;
      font-weight: 400;
@@ -238,13 +242,14 @@ article { position: relative;
 section { padding-top: 1rem;
           padding-bottom: 1rem; }
 
-ul,ol { width: 45%;
-     -webkit-padding-start: 5%;
-     -webkit-padding-end: 5%;
-     list-style-type: none; }
+ul,ol {
+  width: 45%;
+  //-webkit-padding-start: 5%;
+  -webkit-padding-end: 5%;
+  list-style-type: none;  // replaced below
+}
 
 li ul, li blockquote p, li blockquote { width: 100%; } // tk adhoc bugfix
-
 li { 
     position: relative;
     margin-top: 0.2em;
@@ -469,11 +474,9 @@ body.full-width {
    padding: 0% 5%;
 }
 
-ul.content-listing{
-  margin: 0 auto;
-}
+//ul.content-listing{ margin: 0 auto; }
 
-.full-width article p{
+.full-width article p {
   width: 90%;
 }
 
