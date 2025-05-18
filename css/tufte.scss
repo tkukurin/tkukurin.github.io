@@ -300,9 +300,14 @@ blockquote .sidenote, blockquote .marginnote { margin-right: -79% }
                    color: $contrast-color;
                    top: 0rem; } //removed superscripting for numerical reference in sidenote
 
-p, footer, div.table-wrapper,  .MJXc-display, .MathJax { width: 55%; }
+p, footer, div.table-wrapper,  .MJXc-display, .MathJax {
+    // blockquote, ul, ol ?
+    width: 55%;
+    // margin-left: auto;
+    // margin-right: auto;
+}
 
-div.table-wrapper, table { overflow-x: auto; } //changed all overflow values to 'auto' so scroll bars appear only as needed
+div.table-wrapper, table { overflow-x: auto; } 
 
 @media screen and (max-width: 760px) { p, footer { width: 90%; }
                                        pre code { width: 87.5%; }
@@ -646,3 +651,20 @@ hr.slender {
   content: "\eae4";
 }
 /*-- End of Icomoon icon font section --*/
+
+// tk fix
+li blockquote p { width: 100%; }
+blockquote {
+    font-style: italic;
+    position: relative;
+}
+blockquote::before {
+    content: '“';
+    position: absolute;
+    top: .4em;
+    left: -.5em;
+    font-size: 10em;
+    line-height: 0;
+    display: block;
+    color: beige;
+}
