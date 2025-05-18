@@ -248,6 +248,9 @@ ul,ol {
   -webkit-padding-end: 5%;
   list-style-type: none;  // replaced below
 }
+ul ul, ol ol {
+  -webkit-padding-start: 5%;
+}
 
 li ul, li blockquote p, li blockquote { width: 100%; } // tk adhoc bugfix
 li { 
