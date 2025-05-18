@@ -175,8 +175,8 @@ blockquote footer {  font-size: 1.1rem;
 .sans { font-family: $sans-font;
         letter-spacing: .03em; }
 
-pre, pre code, p code, p pre code { font-family: $code-font;  // removed .code 'class' since code is an actual html tag
-        font-size: 1.2rem;                   // also added p code, p pre code and pre selector to account for Markdown parsing
+pre, pre code, p code, p pre code, li code { font-family: $code-font;  // removed .code 'class' since code is an actual html tag
+        font-size: 1rem;                   // also added p code, p pre code and pre selector to account for Markdown parsing
         line-height: 1.71428571;        // of triple backticks plus rationalized line-heights and margins
         margin-top: 1.71428571rem; }
 
