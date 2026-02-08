@@ -41,10 +41,9 @@ html {
 @media (min-width: 1200px) { html { font-size: 15px; } }
 
 body {
-  width: 87.5%;
-  max-width: 1400px;
+  max-width: 50rem;
   margin: 0 auto;
-  padding-left: 12.5%;
+  padding: 0 1.5rem;
   font-family: var(--body-font);
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -81,7 +80,6 @@ p, ol, ul {
 }
 
 p {
-  width: 55%;
   margin: 1.4rem 0;
 }
 
@@ -105,7 +103,6 @@ a:hover {
 
 /* === Lists === */
 ul, ol {
-  width: 50%;
   padding-left: 1.5rem;
 }
 
@@ -132,7 +129,6 @@ code, pre {
 }
 
 pre {
-  width: 55%;
   padding: 1rem;
   overflow-x: auto;
   background: rgba(0, 0, 0, 0.03);
@@ -184,6 +180,10 @@ footer {
 }
 
 /* === Header === */
+header {
+  text-align: center;
+}
+
 .home-link {
   display: inline-block;
   color: var(--contrast-color);
@@ -227,28 +227,19 @@ footer {
   color: var(--muted-color);
   font-size: 1.2rem;
   margin: 0.5rem 0 1.5rem;
-  width: 55%;
 }
 
 /* Sententia - featured essays */
 .sententia {
-  margin-bottom: 4rem;
+  padding-bottom: 0;
 }
 
 .entry--featured {
-  margin: 2rem 0;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-@media (prefers-color-scheme: dark) {
-  .entry--featured {
-    border-bottom-color: rgba(255, 255, 255, 0.1);
-  }
+  margin: 1.5rem 0;
 }
 
 .entry--featured:last-child {
-  border-bottom: none;
+  margin-bottom: 0;
 }
 
 .entry--featured h3 {
@@ -265,7 +256,7 @@ footer {
 }
 
 .entry--featured .excerpt {
-  width: 55%;
+  width: 100%;
   color: var(--muted-color);
   font-size: 1.2rem;
   margin-top: 0.8rem;
@@ -273,7 +264,18 @@ footer {
 
 /* Archive section */
 .archive {
-  margin-top: 3rem;
+  padding-top: 0;
+}
+
+/* Typographic section divider (dinkus) */
+.archive::before {
+  content: "⁂";
+  display: block;
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--muted-color);
+  padding: 1.5rem 0;
+  letter-spacing: 0.5em;
 }
 
 .archive h2 {
@@ -291,7 +293,7 @@ footer {
 
 .archive-columns {
   display: flex;
-  gap: 4rem;
+  gap: 3rem;
   flex-wrap: wrap;
 }
 
@@ -341,7 +343,6 @@ footer {
 
 /* === Post layout === */
 .posthead {
-  width: 55%;
   line-height: 1.15;
 }
 
@@ -377,20 +378,6 @@ footer {
 
 /* === Responsive === */
 @media (max-width: 760px) {
-  body {
-    width: 90%;
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-
-  p, .section-desc, .entry--featured .excerpt, pre, ul, ol {
-    width: 100%;
-  }
-
-  .posthead {
-    width: 100%;
-  }
-
   .archive-columns {
     flex-direction: column;
     gap: 2rem;
@@ -404,17 +391,12 @@ footer {
 /* === Print === */
 @media print {
   body {
-    width: 100%;
     padding: 0;
     font-size: 12pt;
   }
 
   header, footer {
     display: none;
-  }
-
-  p, pre, ul, ol {
-    width: 100%;
   }
 
   .sidenote, .marginnote {

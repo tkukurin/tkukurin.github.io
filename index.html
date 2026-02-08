@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Selected Works
+title: almost worth reading.
 ---
 
 <h1>Wits and scribbles</h1>
@@ -35,15 +35,13 @@ title: Selected Works
 {% endif %}
 
 <section class="archive">
-  <h2>Archive</h2>
-
   <div class="archive-columns">
     <div class="archive-column">
       <h3>Marginalia</h3>
       <p class="section-desc">Demanded post-scriptum.</p>
       <ul class="archive-list">
         {% for post in marginalia limit: 10 %}
-        <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+        <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a><span class="date">{{ post.date | date: "%b %Y" }}</span></li>
         {% endfor %}
         {% if marginalia.size > 10 %}
         <li class="more"><a href="{{ '/marginalia' | relative_url }}">{{ marginalia.size | minus: 10 }} more &rarr;</a></li>
@@ -56,7 +54,7 @@ title: Selected Works
       <p class="section-desc">Compelled a record.</p>
       <ul class="archive-list">
         {% for post in symposia %}
-        <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+        <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a><span class="date">{{ post.date | date: "%b %Y" }}</span></li>
         {% endfor %}
       </ul>
     </div>
