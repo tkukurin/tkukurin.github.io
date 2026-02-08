@@ -1,8 +1,7 @@
 ---
 title: "Learning to communicate about shared procedural abstractions"
 tags:
-  - cogsci
-  - research
+  - marginalia
 ---
 
 [Learning to communicate about shared procedural abstractions](https://rxdhawkins.files.wordpress.com/2021/05/caml_cogsci-1.pdf)

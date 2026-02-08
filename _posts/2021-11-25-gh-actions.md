@@ -1,8 +1,7 @@
 ---
 title: "GitHub actions 101"
 tags:
-  - eng
-  - automation
+  - impedimenta
 last_modified_at: 2021-11-25T23:42:00+01:00
 published: true
 ---

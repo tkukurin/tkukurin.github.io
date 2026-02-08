@@ -1,7 +1,7 @@
 ---
 title: "Catching a main class"
 tags:
-  - java
+  - impedimenta
 last_modified_at: 2020-11-06T21:00:00+01:00
 published: true
 ---

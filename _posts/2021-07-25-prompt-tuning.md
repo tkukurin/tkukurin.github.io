@@ -1,7 +1,7 @@
 ---
 title: "Simple Few-Shot Learning with Language Models"
 tags:
-  - nlp
+  - marginalia
 last_modified_at: 2021-08-01T16:42:00+01:00
 published: true
 ---

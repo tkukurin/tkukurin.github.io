@@ -1,6 +1,5 @@
 ---
-title: "Flexible modulation of sequence generation in the entorhinal–hippocampal
-system"
+title: "Flexible modulation of sequence generation in the entorhinal–hippocampal system"
 published: false
 ---
 
@@ -128,4 +127,3 @@ Model is reminiscent of conceptual disorganization, symptom of schizophrenia.
 > sequence generation.
 
 Then they mention some suggestions for future work way beyond my comprehension.
-

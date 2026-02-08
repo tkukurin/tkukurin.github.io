@@ -1,8 +1,7 @@
 ---
 title: "KG-based world models"
 tags:
-  - rl
-  - nlp
+  - marginalia
 last_modified_at: 2021-10-09T13:42:00+01:00
 published: true
 ---

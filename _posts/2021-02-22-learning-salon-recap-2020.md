@@ -1,9 +1,7 @@
 ---
 title: "Learning Salon: Recap and Panel Discussion"
 tags:
-  - rl
-  - philosophy
-  - research
+  - symposia
 last_modified_at: 2021-02-22T15:42:00+01:00
 published: true
 ---

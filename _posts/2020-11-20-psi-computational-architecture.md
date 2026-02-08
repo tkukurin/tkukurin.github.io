@@ -1,8 +1,7 @@
 ---
 title: "Psi: A Computational Architecture"
 tags:
-  - psy
-  - research
+  - marginalia
 last_modified_at: 2020-11-20T14:42:00+01:00
 published: true
 ---

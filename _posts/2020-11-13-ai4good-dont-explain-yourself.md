@@ -4,8 +4,7 @@ image:
     path: https://www.explainxkcd.com/wiki/images/0/01/here_to_help.png
     caption: "Now that I'VE tried, WE know it's hard"
 tags:
-  - applied
-  - research
+  - marginalia
 last_modified_at: 2020-11-13T15:42:00+01:00
 published: true
 ---

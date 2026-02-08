@@ -1,8 +1,7 @@
 ---
 title: "If Deep Learning is the answer, what is the question?"
 tags:
-  - neuro
-  - research
+  - marginalia
 last_modified_at: 2020-11-24T14:42:00+01:00
 published: true
 ---

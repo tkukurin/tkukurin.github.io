@@ -1,8 +1,7 @@
 ---
 title: "Algorithms for Causal Reasoning in Probability Trees"
 tags:
-  - causality
-  - research
+  - marginalia
 last_modified_at: 2020-11-11T22:02:00+01:00
 published: true
 ---

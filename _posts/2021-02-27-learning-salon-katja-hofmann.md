@@ -1,8 +1,7 @@
 ---
 title: "Learning Salon: Katja Hofmann, Deep RL for Games"
 tags:
-  - neuro
-  - rl
+  - symposia
 last_modified_at: 2021-02-27T18:42:00+01:00
 published: true
 ---

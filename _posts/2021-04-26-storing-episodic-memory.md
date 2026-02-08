@@ -1,7 +1,7 @@
 ---
 title: "Storing episodic memory: place and grid cells"
 tags:
-  - neuro
+  - marginalia
 last_modified_at: 2021-08-06T00:42:00+01:00
 published: true
 ---

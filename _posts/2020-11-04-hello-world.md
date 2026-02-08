@@ -1,7 +1,7 @@
 ---
 title: "The dark ages of `C++20` string formatting"
 tags:
-  - cpp
+  - impedimenta
 last_modified_at: 2020-11-04T15:42:00+01:00
 published: true
 ---

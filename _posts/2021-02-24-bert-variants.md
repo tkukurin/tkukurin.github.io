@@ -1,9 +1,7 @@
 ---
 title: "BERT objectives"
 tags:
-  - nlp
-  - transformers
-  - research
+  - marginalia
 last_modified_at: 2021-02-24T13:42:00+01:00
 published: true
 ---

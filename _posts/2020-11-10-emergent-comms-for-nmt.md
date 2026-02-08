@@ -4,8 +4,7 @@ title: "Emergent Communications Pretraining for Few-Shot NMT"
 #    path: https://github.com/cambridgeltl/ECNMT/raw/master/model.png
 #    caption: "Listener/speaker emergent comms."
 tags:
-  - nlp
-  - research
+  - marginalia
 last_modified_at: 2020-11-10T16:42:00+01:00
 published: true
 ---

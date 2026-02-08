@@ -1,8 +1,7 @@
 ---
 title: "Autonomous navigation of stratospheric looney tunes using RL"
 tags:
-  - rl
-  - research
+  - marginalia
 last_modified_at: 2021-02-01T14:42:00+01:00
 published: true
 ---

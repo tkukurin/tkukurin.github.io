@@ -1,8 +1,7 @@
 ---
 title: "An agenda for disinformation research"
 tags:
-  - policy
-  - research
+  - marginalia
 last_modified_at: 2020-11-13T09:02:00+01:00
 published: true
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Frame semantics"
 tags:
-  - nlu
+  - marginalia
 last_modified_at: 2020-11-15T19:42:00+01:00
 published: true
 ---
