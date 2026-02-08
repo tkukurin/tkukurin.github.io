@@ -1,0 +1,423 @@
+/* Tufte-inspired CSS for Selected Works
+ * Based on Tufte CSS by Dave Liepmann
+ * Simplified and extended for tkukurin.github.io
+ */
+
+/* === Variables as custom properties === */
+:root {
+  --bg-color: #fffff8;
+  --text-color: #111;
+  --contrast-color: #a00000;
+  --border-color: #333;
+  --muted-color: #666;
+  --body-font: et-book, Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --sans-font: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  --code-font: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #151515;
+    --text-color: #ddd;
+    --contrast-color: #e07070;
+    --border-color: #555;
+    --muted-color: #999;
+  }
+}
+
+/* === Reset and base === */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 12px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 800px) { html { font-size: 13px; } }
+@media (min-width: 1000px) { html { font-size: 14px; } }
+@media (min-width: 1200px) { html { font-size: 15px; } }
+
+body {
+  width: 87.5%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: 12.5%;
+  font-family: var(--body-font);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  counter-reset: sidenote-counter;
+}
+
+/* === Typography === */
+h1 {
+  font-weight: 400;
+  font-size: 2.5rem;
+  line-height: 1.1;
+  margin: 2rem 0 1rem;
+}
+
+h2 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.1;
+  margin: 2.5rem 0 0.5rem;
+}
+
+h3 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  margin: 2rem 0 0.5rem;
+}
+
+p, ol, ul {
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+
+p {
+  width: 55%;
+  margin: 1.4rem 0;
+}
+
+.subtitle {
+  font-style: italic;
+  font-size: 1.6rem;
+  margin: 0.5rem 0 2rem;
+  color: var(--muted-color);
+}
+
+/* === Links === */
+a {
+  color: var(--contrast-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+/* === Lists === */
+ul, ol {
+  width: 50%;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin: 0.3rem 0;
+}
+
+/* === Blockquotes === */
+blockquote {
+  font-style: italic;
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--border-color);
+}
+
+blockquote p {
+  width: 90%;
+}
+
+/* === Code === */
+code, pre {
+  font-family: var(--code-font);
+  font-size: 1rem;
+}
+
+pre {
+  width: 55%;
+  padding: 1rem;
+  overflow-x: auto;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 3px;
+}
+
+@media (prefers-color-scheme: dark) {
+  pre {
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* === Tables === */
+table {
+  border-spacing: 0;
+  border-top: 2px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
+  margin: 1.4rem 0;
+  font-size: 1.2rem;
+}
+
+th {
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.5em;
+  font-weight: normal;
+}
+
+td {
+  padding: 0.5em;
+}
+
+/* === Layout === */
+article {
+  padding: 2rem 0;
+}
+
+section {
+  padding: 1rem 0;
+}
+
+header {
+  padding: 2rem 0 1rem;
+}
+
+footer {
+  padding: 2rem 0;
+  margin-top: 3rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* === Header === */
+.home-link {
+  display: inline-block;
+  color: var(--contrast-color);
+  transition: color 0.2s;
+}
+
+.home-link:hover {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+/* === Footer === */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  width: auto;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.footer-links li {
+  margin: 0;
+}
+
+.footer-links li::before {
+  display: none;
+}
+
+.credits {
+  text-align: center;
+  font-family: var(--sans-font);
+  font-size: 1rem;
+  color: var(--muted-color);
+  margin-top: 1rem;
+}
+
+/* === Selected Works Homepage === */
+.section-desc {
+  font-style: italic;
+  color: var(--muted-color);
+  font-size: 1.2rem;
+  margin: 0.5rem 0 1.5rem;
+  width: 55%;
+}
+
+/* Sententia - featured essays */
+.sententia {
+  margin-bottom: 4rem;
+}
+
+.entry--featured {
+  margin: 2rem 0;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .entry--featured {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.entry--featured:last-child {
+  border-bottom: none;
+}
+
+.entry--featured h3 {
+  font-style: normal;
+  font-size: 1.8rem;
+  margin: 0 0 0.3rem;
+}
+
+.entry--featured .date {
+  font-size: 1rem;
+  color: var(--muted-color);
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+}
+
+.entry--featured .excerpt {
+  width: 55%;
+  color: var(--muted-color);
+  font-size: 1.2rem;
+  margin-top: 0.8rem;
+}
+
+/* Archive section */
+.archive {
+  margin-top: 3rem;
+}
+
+.archive h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.archive h3 {
+  font-size: 1.3rem;
+  font-style: normal;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  margin-top: 0;
+}
+
+.archive-columns {
+  display: flex;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.archive-column {
+  flex: 1;
+  min-width: 250px;
+}
+
+.archive-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.archive-list li {
+  margin: 0.4rem 0;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.archive-list li::before {
+  display: none;
+}
+
+.archive-list a {
+  color: var(--text-color);
+}
+
+.archive-list a:hover {
+  color: var(--contrast-color);
+}
+
+.archive-list .more {
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+.archive-list .more a {
+  color: var(--contrast-color);
+}
+
+.archive-list .date {
+  color: var(--muted-color);
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+}
+
+/* === Post layout === */
+.posthead {
+  width: 55%;
+  line-height: 1.15;
+}
+
+/* === Sidenotes and margin notes === */
+.sidenote, .marginnote {
+  float: right;
+  clear: right;
+  margin-right: -60%;
+  width: 50%;
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  position: relative;
+}
+
+.sidenote-number {
+  counter-increment: sidenote-counter;
+}
+
+.sidenote-number::after {
+  content: counter(sidenote-counter);
+  font-size: 0.8rem;
+  position: relative;
+  top: -0.4rem;
+  color: var(--contrast-color);
+}
+
+.sidenote::before {
+  content: counter(sidenote-counter) ". ";
+  color: var(--contrast-color);
+}
+
+/* === Responsive === */
+@media (max-width: 760px) {
+  body {
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  p, .section-desc, .entry--featured .excerpt, pre, ul, ol {
+    width: 100%;
+  }
+
+  .posthead {
+    width: 100%;
+  }
+
+  .archive-columns {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .sidenote, .marginnote {
+    display: none;
+  }
+}
+
+/* === Print === */
+@media print {
+  body {
+    width: 100%;
+    padding: 0;
+    font-size: 12pt;
+  }
+
+  header, footer {
+    display: none;
+  }
+
+  p, pre, ul, ol {
+    width: 100%;
+  }
+
+  .sidenote, .marginnote {
+    display: none;
+  }
+}

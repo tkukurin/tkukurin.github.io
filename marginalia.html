@@ -1,0 +1,18 @@
+---
+layout: default
+title: Marginalia
+---
+
+<h1>Marginalia</h1>
+<p class="subtitle">Notes in the margins of papers.</p>
+
+{% assign posts = site.posts | where_exp: "post", "post.tags contains 'marginalia'" %}
+
+<ul class="archive-list">
+  {% for post in posts %}
+  <li>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <span class="date">{{ post.date | date: "%b %Y" }}</span>
+  </li>
+  {% endfor %}
+</ul>
