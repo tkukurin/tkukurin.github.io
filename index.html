@@ -6,15 +6,23 @@ title: Selected Works
 <h1>Wits and scribbles</h1>
 <i class="subtitle">Some thoughts, almost worth reading.</i>
 
+{% assign featured = site.posts | where: "featured", true %}
 {% assign sententia = site.posts | where_exp: "post", "post.tags contains 'sententia'" %}
 {% assign marginalia = site.posts | where_exp: "post", "post.tags contains 'marginalia'" %}
 {% assign symposia = site.posts | where_exp: "post", "post.tags contains 'symposia'" %}
 
-{% if sententia.size > 0 %}
+{% assign featured_non_sententia = "" | split: "" %}
+{% for post in featured %}
+  {% unless post.tags contains 'sententia' %}
+    {% assign featured_non_sententia = featured_non_sententia | push: post %}
+  {% endunless %}
+{% endfor %}
+{% assign top_posts = sententia | concat: featured_non_sententia | uniq %}
+{% if top_posts.size > 0 %}
 <section class="sententia">
   <h2>Sententia</h2>
   <p class="section-desc">Conjectures and refutations</p>
-  {% for post in sententia %}
+  {% for post in top_posts %}
   <div class="entry entry--featured">
     <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
     <span class="date">{{ post.date | date: "%B %Y" }}</span>
