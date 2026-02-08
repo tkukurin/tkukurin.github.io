@@ -1,8 +1,7 @@
 ---
 title: "Learning salon: Zenna Tavares"
 tags:
-  - neuro
-  - philosophy
+  - symposia
 last_modified_at: 2021-05-29T16:42:00+01:00
 published: true
 ---

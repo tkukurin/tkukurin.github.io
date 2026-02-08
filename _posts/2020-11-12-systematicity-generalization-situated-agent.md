@@ -1,8 +1,7 @@
 ---
 title: "Environmental drivers of systematicity and generalisation in a situated agent"
 tags:
-  - grounding
-  - research
+  - marginalia
 last_modified_at: 2020-11-12T16:42:00+01:00
 published: true
 ---

@@ -1,8 +1,7 @@
 ---
 title: "Object-based attention for spatio-temporal reasoning"
 tags:
-  - rl
-  - research
+  - marginalia
 last_modified_at: 2020-01-17T23:42:00+01:00
 published: true
 ---

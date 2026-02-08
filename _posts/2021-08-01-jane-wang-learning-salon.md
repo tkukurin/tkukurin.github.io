@@ -1,8 +1,7 @@
 ---
 title: "Learning salon: Jane Wang"
 tags:
-  - neuro
-  - rl
+  - symposia
 last_modified_at: 2021-08-01T16:42:00+01:00
 published: true
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Semantic Grounding of Novel Spoken Words in the Primary Visual Cortex"
 tags:
-  - neuro
+  - marginalia
 last_modified_at: 2021-02-27T22:42:00+01:00
 published: true
 ---

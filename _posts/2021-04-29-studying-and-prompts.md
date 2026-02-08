@@ -1,7 +1,7 @@
 ---
 title: "Studying and prompts"
 tags:
-  - learning
+  - marginalia
 last_modified_at: 2021-04-29T12:42:00+01:00
 published: true
 ---

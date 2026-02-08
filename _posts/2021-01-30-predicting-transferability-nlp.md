@@ -1,8 +1,7 @@
 ---
 title: "Predicting Transferability in NLP"
 tags:
-  - nlp
-  - research
+  - marginalia
 last_modified_at: 2020-01-30T23:42:00+01:00
 published: true
 ---

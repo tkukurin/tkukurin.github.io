@@ -1,7 +1,7 @@
 ---
 title: "Symbolic Behavior in AI"
 tags:
-  - research
+  - marginalia
 last_modified_at: 2021-02-13T15:42:00+01:00
 published: true
 ---

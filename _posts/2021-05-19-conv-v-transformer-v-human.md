@@ -1,9 +1,7 @@
 ---
 title: Are Convolutional NNs or Transformers more like Human Vision?
 tags:
-  - research
-  - neuro
-  - vision
+  - marginalia
 last_modified_at: 2021-05-19T07:42:00+01:00
 published: true
 ---

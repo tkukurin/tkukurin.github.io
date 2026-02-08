@@ -1,7 +1,7 @@
 ---
 title: "Back to Square One: Artifact Detection, Training and Commonsense Disentanglement in the Winograd Schema"
 tags:
-  - nlp
+  - marginalia
 last_modified_at: 2021-10-16T22:42:00+01:00
 published: true
 ---

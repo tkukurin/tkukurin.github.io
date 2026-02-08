@@ -1,7 +1,7 @@
 ---
 title: "Making Sense of Sensory Input; Apperception code"
 tags:
-  - research
+  - marginalia
 last_modified_at: 2021-06-19T23:42:00+01:00
 published: true
 ---

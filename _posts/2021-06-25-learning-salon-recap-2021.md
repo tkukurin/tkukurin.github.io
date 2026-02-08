@@ -1,8 +1,7 @@
 ---
 title: "Learning Salon: Recap & Discussion"
 tags:
-  - neuro
-  - phil
+  - symposia
 ---
 
 

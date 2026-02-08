@@ -1,8 +1,7 @@
 ---
 title: "Reward is enough"
 tags:
-  - research
-  - rl
+  - marginalia
 last_modified_at: 2021-06-27T11:42:00+01:00
 published: true
 ---

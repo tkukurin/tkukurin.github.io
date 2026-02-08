@@ -1,8 +1,7 @@
 ---
 title: "Go Explore"
 tags:
-  - rl
-  - research
+  - marginalia
 last_modified_at: 2020-12-13T09:42:00+01:00
 published: true
 ---

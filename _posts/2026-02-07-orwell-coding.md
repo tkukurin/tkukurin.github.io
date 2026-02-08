@@ -1,7 +1,7 @@
 ---
 title: "The limits of my prompt"
 tags:
-  - llm
+  - sententia
 last_modified_at: 2026-02-07T10:42:00+01:00
 published: true
 ---

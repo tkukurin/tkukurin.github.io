@@ -1,7 +1,7 @@
 ---
 title: "Learning Salon: Simon Kornblith"
 tags:
-  - research
+  - symposia
 last_modified_at: 2021-04-03T09:42:00+01:00
 published: true
 ---

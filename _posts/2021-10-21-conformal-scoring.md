@@ -1,7 +1,7 @@
 ---
 title: "Conformal Classification of Neural Networks"
 tags:
-  - ml
+  - marginalia
 last_modified_at: 2021-10-21T19:42:00+01:00
 published: true
 ---

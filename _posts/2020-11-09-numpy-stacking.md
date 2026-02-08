@@ -1,7 +1,7 @@
 ---
 title: "Lists of NumPy arrays"
 tags:
-  - py
+  - impedimenta
 last_modified_at: 2020-11-09T15:42:00+01:00
 published: true
 ---

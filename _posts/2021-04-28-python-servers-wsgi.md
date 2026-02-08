@@ -1,8 +1,7 @@
 ---
 title: "Python servers and WSGI"
 tags:
-  - eng
-  - py
+  - impedimenta
 last_modified_at: 2021-04-28T23:42:00+01:00
 published: true
 ---

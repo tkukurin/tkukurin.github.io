@@ -1,7 +1,7 @@
 ---
 title: "Money for nothing and ad-hoc objects for free"
 tags:
-  - py
+  - impedimenta
 last_modified_at: 2020-11-08T10:42:00+01:00
 published: true
 ---

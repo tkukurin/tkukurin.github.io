@@ -1,7 +1,7 @@
 ---
 title: "Placing language in an integrated understanding system: Next steps toward human-level performance in neural language models"
 tags:
-  - nlu
+  - marginalia
 last_modified_at: 2020-11-16T10:42:00+01:00
 published: true
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Learning to Speak and Act in a Fantasy Text Adventure Game"
 tags:
-  - grounding
+  - marginalia
 last_modified_at: 2020-11-18T19:42:00+01:00
 published: true
 ---

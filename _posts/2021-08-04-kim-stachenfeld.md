@@ -1,8 +1,7 @@
 ---
 title: "Learning salon: Kimberly Stachenfeld"
 tags:
-  - neuro
-  - rl
+  - symposia
 last_modified_at: 2021-08-04T16:42:00+01:00
 published: true
 ---

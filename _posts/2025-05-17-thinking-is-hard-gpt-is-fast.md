@@ -1,8 +1,7 @@
 ---
 title: "Tokens for nothing and your (cognitive) chips for free"
 tags:
-  - rng
-  - llm
+  - sententia
 last_modified_at: 2025-05-17T10:42:00+01:00
 published: true
 ---

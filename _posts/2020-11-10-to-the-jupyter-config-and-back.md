@@ -1,7 +1,7 @@
 ---
 title: "To the Jupyter config and back"
 tags:
-  - py
+  - impedimenta
 last_modified_at: 2020-11-10T13:42:00+01:00
 published: true
 ---

@@ -1,7 +1,7 @@
 ---
 title: Ideas about a new programming language for games
 tags:
-  - eng
+  - symposia
 last_modified_at: 2021-05-24T00:42:00+01:00
 published: true
 ---
