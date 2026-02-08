@@ -1,7 +1,4 @@
-remote_theme: "clayh53/tufte-jekyll"
-
-
-title: "~"
+title: "Selected Works"
 description: "caveat emptor"
 author: tkukurin
 
@@ -15,6 +12,17 @@ markdown: kramdown
 mathjax: true
 
 exclude: ["*.ipynb"]
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
 
 # unsupported :(
 # plugins:
