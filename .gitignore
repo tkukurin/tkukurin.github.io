@@ -1,4 +1,7 @@
 
 **/.ipynb_checkpoints/*
 nogit/
+_site/
+.jekyll-cache/
+.sass-cache/
 
