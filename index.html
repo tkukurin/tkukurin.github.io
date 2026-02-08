@@ -3,8 +3,8 @@ layout: default
 title: Selected Works
 ---
 
-<h1>Selected Works</h1>
-<p class="subtitle">Sententia, marginalia, and other scribblings</p>
+<h1>Wits and scribbles</h1>
+<i class="subtitle">Some thoughts, almost worth reading.</i>
 
 {% assign sententia = site.posts | where_exp: "post", "post.tags contains 'sententia'" %}
 {% assign marginalia = site.posts | where_exp: "post", "post.tags contains 'marginalia'" %}
@@ -13,7 +13,7 @@ title: Selected Works
 {% if sententia.size > 0 %}
 <section class="sententia">
   <h2>Sententia</h2>
-  <p class="section-desc">Original thinking, such as it is.</p>
+  <p class="section-desc">Conjectures and refutations</p>
   {% for post in sententia %}
   <div class="entry entry--featured">
     <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
@@ -32,7 +32,7 @@ title: Selected Works
   <div class="archive-columns">
     <div class="archive-column">
       <h3>Marginalia</h3>
-      <p class="section-desc">Notes in the margins of papers.</p>
+      <p class="section-desc">Demanded post-scriptum.</p>
       <ul class="archive-list">
         {% for post in marginalia limit: 10 %}
         <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
@@ -45,7 +45,7 @@ title: Selected Works
 
     <div class="archive-column">
       <h3>Symposia</h3>
-      <p class="section-desc">Notes from talks and lectures.</p>
+      <p class="section-desc">Compelled a record.</p>
       <ul class="archive-list">
         {% for post in symposia %}
         <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
