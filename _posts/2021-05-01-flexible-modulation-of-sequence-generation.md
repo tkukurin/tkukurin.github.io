@@ -1,9 +1,15 @@
 ---
 title: "Flexible modulation of sequence generation in the entorhinal–hippocampal system"
-published: false
+tags:
+  - marginalia
+last_modified_at: 2026-02-08T12:00:00+01:00
+published: true
 ---
 
-[Nature link](https://www.nature.com/articles/s41593-021-00831-7.epdf?sharing_token=nzEjjHplz6kQPSnFWnhy-tRgN0jAjWel9jnR3ZoTv0PsmOupqSJ0DUCdIN9pPy4hX45Su_uEAHA1E8DGEsV1m-dlxWj8vkMKrFbam2AxMNifNpF2H2DZDbhrLnygSTppdfyeRM6p1pPfvAYtTerBoJsM6OI4NQSTB4QEWwUFB7c%3D).
+* *Post status*: [Nature link](https://www.nature.com/articles/s41593-021-00831-7).
+* *In plain words*: Your brain replays memories differently depending on what it's trying to do.
+* *Why it matters*: Connects replay regimes (superdiffusive, diffusive) to cognitive functions (foraging, consolidation).
+
 They develop a theory of episodic memory sampling for optimal performance under
 different objectives:
 
