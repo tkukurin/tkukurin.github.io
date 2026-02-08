@@ -93,7 +93,7 @@ philosophical perspectives on representation & how they link to neurosci.
 
 ## Discussion [@25m56s](https://youtu.be/dEjL-di19F0?t=25m56s)
 
-Melanie starts the ["Reward is enough"]({% post_url ./2021-06-20-reward-is-enough %}).
+Melanie starts the ["Reward is enough"]({% post_url 2021-06-20-reward-is-enough %}).
 discussion [@38m10s](https://youtu.be/dEjL-di19F0?t=38m10s)
 
 John [@41m15s](https://youtu.be/dEjL-di19F0?t=41m15s)
