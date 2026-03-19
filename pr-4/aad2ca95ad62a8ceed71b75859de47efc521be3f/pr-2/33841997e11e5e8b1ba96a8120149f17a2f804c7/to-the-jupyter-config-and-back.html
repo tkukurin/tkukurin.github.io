@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    <title>To the Jupyter config and back</title>
+    <meta name="description" content="Configure Jupyter from ~/.jupyter/jupyter_notebook_config.py. Backend options can be found in jupyter notebook --help.">
+    <link rel="canonical" href="https://tkukurin.github.io/to-the-jupyter-config-and-back">
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/light.css">
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  to-the-jupyter-config-and-back">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">~</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">caveat emptor</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <div class="page-sidebar">
+        
+            
+            <h1 id="page-title" class="page-title p-name">To the Jupyter config and back
+</h1>
+        
+        <div class="page-author h-card p-author"><div class="author-info">
+    <time class="page-date dt-published" datetime="2020-11-10T00:00:00+00:00"><a class="u-url" href="">Nov 10, 2020</a>
+</time>
+
+  </div>
+</div>
+
+        
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">py</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>Configure Jupyter from <a href="https://jupyter-notebook.readthedocs.io/en/stable/config.html"><code class="language-plaintext highlighter-rouge">~/.jupyter/jupyter_notebook_config.py</code></a>.
+Backend options can be found in <code class="language-plaintext highlighter-rouge">jupyter notebook --help</code>.</p>
+
+<p>As of Nov 10, 2020 <a href="https://jupyter-notebook.readthedocs.io/en/stable/frontend_config.html">frontend config is still WIP</a>.
+You can change things in some weird way via front-end JavaScript, though.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">cell</span> <span class="o">=</span> <span class="nx">Jupyter</span><span class="p">.</span><span class="nx">notebook</span><span class="p">.</span><span class="nx">get_selected_cell</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="nx">cell</span><span class="p">.</span><span class="nx">config</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">patch</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">CodeCell</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="na">cm_config</span><span class="p">:</span> <span class="p">{</span><span class="na">indentUnit</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">config</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">patch</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Jupyter uses the <a href="https://codemirror.net/doc/manual.html">CodeMirror front-end</a>
+to render Python (NB, also check out the various
+<a href="https://codemirror.net/doc/manual.html#commands">hooks</a>).
+Under the hood, Jupyter will persist the preferred configuration settings in
+<code class="language-plaintext highlighter-rouge">~/.jupyter/nbconfig/&lt;section&gt;.json</code>, where section is not formalized but can be
+at least some of <code class="language-plaintext highlighter-rouge">common</code>, <code class="language-plaintext highlighter-rouge">notebook</code>, <code class="language-plaintext highlighter-rouge">tree</code>, <code class="language-plaintext highlighter-rouge">editor</code>.
+E.g. my current <code class="language-plaintext highlighter-rouge">notebook.json</code>:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"CodeCell"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"cm_config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"indentUnit"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tabSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"indentWithTabs"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+
+        </div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/language-remodelling-embodied-language-understanding">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Towards Embodied Language Understanding
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/causal-reasoning-in-proba-trees">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Algorithms for Causal Reasoning in Probability Trees
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://twitter.com/tkukurin"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/tkukurin"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="https://www.linkedin.com/in/toni/"><i class="fab fa-linkedin fa-2x" title="LinkedIn"></i></a></div><div class="copyright">
+    
+      
+
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

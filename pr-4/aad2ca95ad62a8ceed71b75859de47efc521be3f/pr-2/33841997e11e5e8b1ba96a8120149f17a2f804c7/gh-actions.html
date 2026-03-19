@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    <title>GitHub actions 101</title>
+    <meta name="description" content="What are GitHub actions? Sets of steps (= workflows) triggered by events. GitHub hosts their virtual machines dedicated to serving GitHub-related workflows i...">
+    <link rel="canonical" href="https://tkukurin.github.io/gh-actions">
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/light.css">
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  github-actions-101">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">~</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">caveat emptor</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <div class="page-sidebar">
+        
+            
+            <h1 id="page-title" class="page-title p-name">GitHub actions 101
+</h1>
+        
+        <div class="page-author h-card p-author"><div class="author-info">
+    <time class="page-date dt-published" datetime="2021-11-25T00:00:00+00:00"><a class="u-url" href="">Nov 25, 2021</a>
+</time>
+
+  </div>
+</div>
+
+        
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">eng</li><li class="page-taxonomy">automation</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>What are GitHub actions? Sets of steps (= workflows) triggered by <em>events</em>.
+GitHub hosts their virtual machines dedicated to serving GitHub-related
+workflows in public repos (private cost $$$).
+Alternatively, you can also self-host <a href="https://github.com/actions/runner">action runners (written in C#)</a>.
+Some terminology <a href="https://docs.github.com/en/actions">based on the tutorial</a>:</p>
+
+<ul>
+  <li>Event: whatever triggers workflows (e.g. <code class="language-plaintext highlighter-rouge">on: [push]</code>)</li>
+  <li>Runner: server w/ <a href="https://github.com/actions/runner">GH actions runner installed</a>.
+Also cf. <a href="https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners">details on GitHub’s virtual runners</a></li>
+  <li><code class="language-plaintext highlighter-rouge">workflow: [job1: [step1:[action1.1, a1.2, ...], s2:[a2.1, ...], ...]</code>
+    <ul>
+      <li>Actions run on the same runner; can share data. <a href="https://docs.github.com/en/actions/learn-github-actions/finding-and-customizing-actions">Find actions</a></li>
+      <li>Job history under the “actions” tab <a href="https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#viewing-the-jobs-activity">reference</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="basic-yaml-to-test-python--some-unnecessary-details-for-showcase">Basic YAML to test Python (+ some unnecessary details for showcase)</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">name</span><span class="pi">:</span> <span class="s">Python package</span>
+<span class="na">on</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">push</span><span class="pi">]</span>
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">build</span><span class="pi">:</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">env</span><span class="pi">:</span>
+      <span class="na">ADDITIONAL_INSTALL</span><span class="pi">:</span> <span class="s">pytorch</span>
+      <span class="na">FAKE_DB</span><span class="pi">:</span> <span class="s">${{ secrets.DB_CREDENTIALS }}</span>
+    <span class="na">strategy</span><span class="pi">:</span>
+      <span class="na">matrix</span><span class="pi">:</span>
+        <span class="na">python-version</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">3.6</span><span class="pi">,</span> <span class="nv">3.7</span><span class="pi">,</span> <span class="nv">3.8</span><span class="pi">,</span> <span class="nv">3.9</span><span class="pi">]</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v2</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Set up Python ${{ matrix.python-version }}</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/setup-python@v2</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">python-version</span><span class="pi">:</span> <span class="s">${{ matrix.python-version }}</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install dependencies</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
+          <span class="s">python -m pip install --upgrade pip</span>
+          <span class="s">pip install flake8 pytest ${{ env.ADDITIONAL_INSTALL }}</span>
+          <span class="s">if [ -f requirements.txt ]; then pip install -r requirements.txt; fi</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Lint with flake8</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
+          <span class="s"># stop the build if there are Python syntax errors or undefined names</span>
+          <span class="s">flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics</span>
+          <span class="s"># exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide</span>
+          <span class="s">flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Test with pytest</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
+          <span class="s">pytest</span>
+</code></pre></div></div>
+
+<h2 id="tidbits-from-the-tutorial">Tidbits from the tutorial</h2>
+
+<p><a href="https://docs.github.com/en/actions/learn-github-actions/managing-complex-workflows">In complex workflows tutorial</a>:</p>
+
+<ul>
+  <li>secrets (<code class="language-plaintext highlighter-rouge">env.xyz: ${{ secrets.XYZ }}</code> <a href="https://docs.github.com/en/actions/security-guides/encrypted-secrets">tutorial on creating them</a>)</li>
+  <li>dependent jobs (<code class="language-plaintext highlighter-rouge">jobs.setup: ... ; jobs.build.needs: setup</code> <a href="https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idneeds">reference</a>)</li>
+  <li>build matrices</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy.matrix.node: [6, 8, 10]
+    steps:
+      - uses: actions/setup-node@v2
+        with.node-version: ${{ matrix.node }}
+</code></pre></div></div>
+
+<ul>
+  <li>caching dependencies across workflows in a repo (<code class="language-plaintext highlighter-rouge">actions/cache@v2</code>)</li>
+</ul>
+
+<p>You can share workflow templates within an org in a <code class="language-plaintext highlighter-rouge">.github</code> repository.
+<a href="https://docs.github.com/en/actions/learn-github-actions/creating-workflow-templates">Create a <code class="language-plaintext highlighter-rouge">workflow-templates</code> directory</a>
+and put <code class="language-plaintext highlighter-rouge">name-ci.yaml</code> and <code class="language-plaintext highlighter-rouge">name-ci.properties.json</code> in it.
+<a href="https://docs.github.com/en/actions/learn-github-actions/using-workflow-templates">Templates can be inited from the “Actions” tab</a>.</p>
+
+<p><a href="https://docs.github.com/en/actions/learn-github-actions/environment-variables">Environment variables via <code class="language-plaintext highlighter-rouge">env.X</code> and <code class="language-plaintext highlighter-rouge">${{ env.X }}</code></a>.</p>
+
+<p>Also see <a href="https://docs.github.com/en/actions/guides">guides for specific use-cases</a>.</p>
+
+
+        </div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/conformal-scoring">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Conformal Classification of Neural Networks
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/joblib">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Joblib for memoization
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://twitter.com/tkukurin"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/tkukurin"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="https://www.linkedin.com/in/toni/"><i class="fab fa-linkedin fa-2x" title="LinkedIn"></i></a></div><div class="copyright">
+    
+      
+
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

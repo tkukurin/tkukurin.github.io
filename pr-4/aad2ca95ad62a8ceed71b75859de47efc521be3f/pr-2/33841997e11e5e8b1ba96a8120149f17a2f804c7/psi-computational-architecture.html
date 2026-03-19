@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    <title>Psi: A Computational Architecture</title>
+    <meta name="description" content="Psi (introduced 1999; this paper 2013) is a formalized computational architecture that simulates cognitive, motivational and emotional processes in their int...">
+    <link rel="canonical" href="https://tkukurin.github.io/psi-computational-architecture">
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/light.css">
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  psi-a-computational-architecture">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">~</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">caveat emptor</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <div class="page-sidebar">
+        
+            
+            <h1 id="page-title" class="page-title p-name">Psi: A Computational Architecture
+</h1>
+        
+        <div class="page-author h-card p-author"><div class="author-info">
+    <time class="page-date dt-published" datetime="2020-11-20T00:00:00+00:00"><a class="u-url" href="">Nov 20, 2020</a>
+</time>
+
+  </div>
+</div>
+
+        
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">psy</li><li class="page-taxonomy">research</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>Psi (introduced 1999; <a href="https://www.researchgate.net/profile/Dietrich_Doerner/publication/260984170_PSI_A_Computational_Architecture_of_Cognition_Motivation_and_Emotion/links/0deec532dc59f52328000000/PSI-A-Computational-Architecture-of-Cognition-Motivation-and-Emotion.pdf">this paper 2013</a>)
+is a formalized computational architecture that simulates cognitive,
+motivational and emotional processes in their interactions.</p>
+
+<p>Covers 14 of the 22 major areas of cognitive functioning (DARPA): memory,
+learning, executive processes, language, sociality/emotion, consciousness,
+knowledge representation, logical reasoning, elementary vision, object
+perception, spatial perception, spatial cognition, attentional mechanisms, and
+motivation.</p>
+
+<blockquote>
+  <p>Yet, we also would like to mention that certain psychological processes such
+ as language or self-reflection are not yet simulated in great detail in PSI.</p>
+</blockquote>
+
+<p>Cf. also <a href="http://www.cognitive-ai.com/page2/page2.html">MicroPsi implementation in Java</a>,
+<a href="https://github.com/joschabach/micropsi2">MicroPsi 2 in Python</a>.
+<a href="https://github.com/microsoft/psi">Microsoft’s open-sourced Platform for Situated Intelligence (C#)</a>.</p>
+
+<p><img src="/assets/img/2020-11-20-psi-brain.png" alt="Psi framework sketch" /></p>
+
+<h2 id="micropsi">MicroPsi</h2>
+
+<p><a href="https://www.youtube.com/watch?v=rDnEoyye86A">Bach’s presentation</a>.
+Cf. <a href="https://courses.media.mit.edu/2016spring/mass63/wp-content/uploads/sites/40/2015/09/MicroPsi-FutureAI-Spring-2016.pdf">longer version of slides</a>.
+Featured in MicroPsi: Grounded representations,
+emotions as configuration of the system,
+motivation (system can set its own social/cognitive goals).
+(Hyper-)Graph based architecture.
+In paradigmatic, but not computational opposition
+to logic, rule, neuromimetic, hybrid based systems -
+<em>concept node</em> (essentially KB?) as a core building block.
+Spreading activation (what?) nets as a special case of <strong>message passing</strong>.
+An agent is a network of nodes.
+Current applications: modeling human problem solving; social planning.
+Hotheaven AG (Berlin School of Mind and Brain).</p>
+
+<h3 id="some-general-notes-from-the-talk">Some general notes from the talk</h3>
+
+<p>AGI encompasses creativity, empathy, etc.
+Cogsci morphed into neurosci, which is now concerned with AGI.
+A combination of important topics:</p>
+<ul>
+  <li>autonomous decision making, reflection, adaptation</li>
+  <li>acquisition and control of internal complexity</li>
+  <li>perceptual processing</li>
+  <li>cognitive operations, language, logic</li>
+  <li>environmental interaction (other agents &amp; the world)</li>
+  <li>resource management: attentional processing, <a href="https://en.wikipedia.org/wiki/Anytime_algorithm">anytime characteristics (works even if interrupted before completion)</a></li>
+</ul>
+
+<p>Problems (MicroPsi is concerned with?):</p>
+<ul>
+  <li>percept encoding (bottom up), hypothesis formation (top down), modal and amodal</li>
+  <li>fuzzy processing (operations on mental representations; analogies)</li>
+  <li>localist, combinatorial processing domains (?): planning, language, construction</li>
+</ul>
+
+
+        </div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/learning-to-speak-act-fantasy-game">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Learning to Speak and Act in a Fantasy Text Adventure Game
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/if-dl-is-the-answer">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        If Deep Learning is the answer, what is the question?
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://twitter.com/tkukurin"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/tkukurin"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="https://www.linkedin.com/in/toni/"><i class="fab fa-linkedin fa-2x" title="LinkedIn"></i></a></div><div class="copyright">
+    
+      
+
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

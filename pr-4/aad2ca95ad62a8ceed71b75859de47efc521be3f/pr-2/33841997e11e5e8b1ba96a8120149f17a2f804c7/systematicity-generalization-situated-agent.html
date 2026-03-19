@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    <title>Environmental drivers of systematicity and generalisation in a situated agent</title>
+    <meta name="description" content="ArXiv. Simple NN architecture performs well in 3D Unity environment, but interesting experiments demonstrate various aspects significantly affecting performa...">
+    <link rel="canonical" href="https://tkukurin.github.io/systematicity-generalization-situated-agent">
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/light.css">
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  environmental-drivers-of-systematicity-and-generalisation-in-a-situated-agent">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">~</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">caveat emptor</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <div class="page-sidebar">
+        
+            
+            <h1 id="page-title" class="page-title p-name">Environmental drivers of systematicity and generalisation in a situated agent
+</h1>
+        
+        <div class="page-author h-card p-author"><div class="author-info">
+    <time class="page-date dt-published" datetime="2020-11-12T00:00:00+00:00"><a class="u-url" href="">Nov 12, 2020</a>
+</time>
+
+  </div>
+</div>
+
+        
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">grounding</li><li class="page-taxonomy">research</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p><a href="https://arxiv.org/pdf/1910.00571.pdf">ArXiv</a>. Simple NN architecture performs
+well in 3D Unity environment, but interesting experiments demonstrate various
+aspects significantly affecting performance:</p>
+
+<blockquote>
+  <p>(a) the number of object/word experiences in the training set; (b) the visual
+invariances afforded by the agent’s perspective, or frame of reference; and
+(c) the variety of visual input inherent in the perceptual aspect of the
+agent’s perception. (…) the degree of generalisation that networks exhibit
+can depend critically on particulars of the environment (…)</p>
+</blockquote>
+
+<h2 id="model">Model</h2>
+
+<p><strong>Visual</strong> \(W \times H \times 3\) into a 3-layer CNN (64, 64, 32).
+<strong>Linguistic</strong> pipeline consists of a word-level LSTM. Hidden state 128.
+The two representations are fused together, and passed into a 128-unit LSTM.
+At each timestep, hidden state is softmaxed into \(A\) (26) actions.
+Training is performed using IMPALA.</p>
+
+<h2 id="environment-and-experiments">Environment and experiments</h2>
+
+<p>2D (9x9 gridworld) and 3D (Unity) environments.
+Evaluation focused on accuracy.</p>
+
+<p>In 3D, <strong>Lift</strong> action is defined as the agent picking up an object for 2 secs.
+<strong>Find</strong> action is defined as the agent approaching within 2m of an object and
+fixing its gaze for 5 timesteps, without lifting the object.
+<strong>Put</strong> action has a “distractor” large object and a “target” large object. One
+of three smaller objects (\(X_1 \subset X\)) should be placed atop the larger.
+Test consists of asking an object from \(X \setminus X_1\) to be moved.</p>
+
+<p><em>Objects</em> in train and test differ;
+goal is to study <em>action</em> (lift, find, put) generalization.
+Examples:</p>
+<ul>
+  <li>“find a green object”</li>
+  <li>“lift a pencil”</li>
+  <li>“find a pencil or find a blue object”</li>
+</ul>
+
+<p>Control is far simpler than the real world; all objects are lifted the same,
+regardless of shape.
+Actions: <code class="language-plaintext highlighter-rouge">NOOP, {GRAB+,}{MOVE,LOOK}_{U,L,R,D}{+SPIN_{U,L,R,D},PUSH,PULL}</code>.
+A white box appears around any object that’s in grabbing range.</p>
+
+<h3 id="language-negation">Language negation</h3>
+
+<p>In a Unity room, place 2 objects.
+Train on queries of the form
+“find a \(x\)” for all \(x \in X\),
+and “find a not \(x\)” for \(x \in X_1 \subset X\).
+Then test on “find a not \(x\)” for \(x \in X \setminus X_1\).</p>
+
+<p>This does not work well (when \(\|X_1\|=6\), accuracy is below chance).
+Works better on more data (\(\|X_1\|=100\) is 0.91 train, 0.78 test).</p>
+
+<p>Maybe interesting further reading: history learning logical operators in
+connectionist models and the importance of negation in language processing
+(<a href="http://www.coli.uni-saarland.de/~crocker/Teaching/Connectionist/CogSci99-Steedman.pdf">Steedman: Connectionist Sentence Processing in Perspective (1999)</a>).</p>
+
+<h3 id="2d-world">2D world</h3>
+
+<p>Only 3 different objects to pick up.
+Agent rewarded for moving to target placement object while holding target pickup
+object. 0 if moves onto another.</p>
+
+<blockquote>
+  <p>The grid-world environment consisted of a 9×9 room surrounded by a wall of
+width 1 square, for a total size of 11×11. These squares were rendered at a
+9×9 pixel resolution, for a total visual input size of 99×99</p>
+</blockquote>
+
+<p>Statistically significant improvement in test performance when narrowing agent’s
+field of view (5x5 scrolling instead of 9x9). I would’ve interpreted performance
+improvement as happening because there’s higher chance of a single object being
+on-screen at once (less visual stimuli, no distraction).</p>
+
+<p>But also: the agent is always in the center of the screen in scrolling setup.</p>
+
+<p>After pickup, they put the object in place of agent in the gridworld (see
+Appendix D). E.g. agent is white and object red; after picking up, agent becomes
+red. This is said to “simulate view obstruction” of the 3D world after pickup.</p>
+
+<p>They also tried to display object <em>in</em> agent (e.g. white border around red
+object while carrying), but that worsened performance.
+Hypothesis: this is because of too few training objects, since in 3D obscured
+view is not a problem.
+Maybe I misunderstood that, because I’m not sure how convincing it is.</p>
+
+<h3 id="compare-classifier-vs-agent">Compare classifier vs. agent</h3>
+
+<p>An agent performs better compared to supervised classifier (pick L/R on still
+photo); conclusion: implicit data augmentation caused by moving in environment.</p>
+
+<h3 id="language">Language</h3>
+
+<p>Interesting negative result: performance with/without language is similar.</p>
+
+<p>Setup: place 8 gridworld objects randomly (4 of one color/shape, 4 of another).
+Sets differ <em>either</em> in shape or in color (to test generalization on both).
+Pick one set and reward +4 if agent collects <em>all</em> elements, 0 if <em>single</em>
+incorrect. Without language, should pick 1st element randomly (+2 expected
+reward). With language, tell agent what to collect (+4 expected).</p>
+
+<blockquote>
+  <p>For the language vs. no-language comparison (section 4.5), if the agent moved
+onto a correct object, it received a reward of 1. This reward was both used as
+a training signal, and given as input on the next time-step, to help the agent
+figure out which objects to pick up.</p>
+</blockquote>
+
+
+        </div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/chomsky-v-functionalists">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Language Wars
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/ai4good-dont-explain-yourself">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        [AI4Good 2020] Don’t ExplAIn yourself
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://twitter.com/tkukurin"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/tkukurin"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="https://www.linkedin.com/in/toni/"><i class="fab fa-linkedin fa-2x" title="LinkedIn"></i></a></div><div class="copyright">
+    
+      
+
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>
