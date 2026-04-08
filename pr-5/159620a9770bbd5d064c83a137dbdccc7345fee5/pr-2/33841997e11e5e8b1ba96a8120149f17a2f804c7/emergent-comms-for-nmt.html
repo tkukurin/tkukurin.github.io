@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    <title>Emergent Communications Pretraining for Few-Shot NMT</title>
+    <meta name="description" content="The functional aspect of language can be captured by artificial multi-agent games. This paper leverages a listener/speaker (encoder/decoder) paradigm, “refer...">
+    <link rel="canonical" href="https://tkukurin.github.io/emergent-comms-for-nmt">
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/light.css">
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  emergent-communications-pretraining-for-few-shot-nmt">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">~</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">caveat emptor</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <div class="page-sidebar">
+        
+            
+            <h1 id="page-title" class="page-title p-name">Emergent Communications Pretraining for Few-Shot NMT
+</h1>
+        
+        <div class="page-author h-card p-author"><div class="author-info">
+    <time class="page-date dt-published" datetime="2020-11-10T00:00:00+00:00"><a class="u-url" href="">Nov 10, 2020</a>
+</time>
+
+  </div>
+</div>
+
+        
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">nlp</li><li class="page-taxonomy">research</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>The functional aspect of language can be captured by artificial multi-agent
+games. This paper leverages a listener/speaker (encoder/decoder) paradigm,
+“referential game on raw images”, to pre-train neural translation models.
+The kicker is that it’s self-supervised - zero image captions in training data.
+<a href="https://github.com/cambridgeltl/ECNMT">GitHub</a>
+and <a href="https://arxiv.org/pdf/2011.00890.pdf">ArXiv</a>.</p>
+
+<blockquote>
+  <p>Our key assumption is that grounding communication on images—as a crude
+approximation of real-world environments—inductively biases the model towards
+learning natural languages.</p>
+</blockquote>
+
+<h2 id="emergent-communications-pre-training">Emergent Communications pre-training</h2>
+
+<p>Starting from a 2048-dimensional image representation \(I=h_0\) produced
+by ResNet-50 and a <code class="language-plaintext highlighter-rouge">&lt;bos&gt;</code> initial token, speaker \(s\) encodes the message into:</p>
+
+<p>\[
+h_t^s = \textrm{GRU}_{\textrm{speaker}}(m_{t-1}, \textrm{MLP}_1(h_{t-1}))
+\]
+\[
+m_t = \textrm{GumbelSoftmax}(\textrm{MLP}_2(h_t^s))
+\]</p>
+
+<p>The goal of the cooperative game is for the listener \(l\) GRU to reconstruct a
+representation as close to \(I\) as possible, based on the sequence \(m_t\).</p>
+
+<p>Inverse squared error for a compatibility score:</p>
+
+<p>\[
+S(m,I) = \lVert h_{|m|}^l - \textrm{MLP}_1(I) \rVert^{-2}
+\]</p>
+
+<p>Loss function is softmax of true \(S\) over a set of negative sampled images.
+Two listener/speaker pairs are separately trained (source and target languages).</p>
+
+<h2 id="neural-machine-translation-fine-tuning">Neural Machine Translation fine-tuning</h2>
+
+<p>After pre-training, listener GRUs become encoders in a seq2seq translation
+tasks, while the speaker GRUs become decoders. A small neural Adapter (linear
+with residual connections and dropout) is jointly fine-tuned with the model 
+parameters to facilitate more effective domain transfer.</p>
+
+<p><img src="https://github.com/cambridgeltl/ECNMT/raw/master/model.png" alt="Pre-training and transfer procedure" /></p>
+
+        </div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/dat-class">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Dat Python, dataclass
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/language-remodelling-embodied-language-understanding">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Towards Embodied Language Understanding
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://twitter.com/tkukurin"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/tkukurin"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="https://www.linkedin.com/in/toni/"><i class="fab fa-linkedin fa-2x" title="LinkedIn"></i></a></div><div class="copyright">
+    
+      
+
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    <title>Ideas about a new programming language for games</title>
+    <meta name="description" content="Jonathan Blow’s 2014 talk. He’s by now advanced to a beta for the language he started designing way back. Focuses on applications for gaming (i.e. efficiency).">
+    <link rel="canonical" href="https://tkukurin.github.io/jonathan-blow-programming-language-for-games">
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/light.css">
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  ideas-about-a-new-programming-language-for-games">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">~</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">caveat emptor</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <div class="page-sidebar">
+        
+            
+            <h1 id="page-title" class="page-title p-name">Ideas about a new programming language for games
+</h1>
+        
+        <div class="page-author h-card p-author"><div class="author-info">
+    <time class="page-date dt-published" datetime="2021-05-23T00:00:00+00:00"><a class="u-url" href="">May 23, 2021</a>
+</time>
+
+  </div>
+</div>
+
+        
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">eng</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p><a href="https://youtu.be/TH9VCN6UkyQ">Jonathan Blow’s 2014 talk</a>.
+He’s by now advanced to a beta for the language he started designing way back.
+Focuses on applications for gaming (i.e. efficiency).</p>
+
+<ul>
+  <li><a href="https://www.youtube.com/playlist?list=PLmV5I2fxaiCKfxMBrNsU1kgKJXD3PkyxO">The full Jai language playlist on YouTube</a>.</li>
+  <li><a href="https://inductive.no/jai/">A more comprenehsive collection of various talks and resources</a>.</li>
+  <li><a href="https://github.com/BSVino/JaiPrimer/blob/master/JaiPrimer.md">Jai primer on GitHub</a></li>
+</ul>
+
+<p>Alternatives to C++:
+Go is good, but GC’d and wrong concurrency model for games.
+D has optional GC, but too close to C++? Maybe some other reasons.
+Rust is new, no GC but too concerned with safety (not a primary for games).</p>
+
+<p>Making a language (parsing/converting to bytecode) is “easy”.
+Optimizing and generating machine code for multiple target platforms is hard.
+Apparently can leverage <a href="https://llvm.org/">LLVM</a> for that.</p>
+
+<blockquote>
+  <p>LLVM is a collection of modular and reusable compiler and toolchain
+technologies.</p>
+</blockquote>
+
+<p>His philosophy: don’t optimize for bad programmers.
+Start with C, design for 85% of cases.
+Software is expensive; optimize for completion <em>cost</em>.</p>
+
+<h2 id="memory-focused-language">Memory-focused language</h2>
+
+<p>RAII was created to deal with exceptions, but it’s crap because “resource” is a
+bad abstraction. Memory is the only resource that matters.
+File handles, textures, etc. rarely an issue.</p>
+
+<blockquote>
+  <p>What does my program do besides fill memory? I don’t even know. That’s its
+main purpose. <a href="https://youtu.be/TH9VCN6UkyQ?t=36m34s">@36:34</a></p>
+</blockquote>
+
+<p><a href="https://youtu.be/TH9VCN6UkyQ?t=42m31s">Exceptions and RAII make your job harder</a>.
+<a href="https://youtu.be/TH9VCN6UkyQ?t=45m06s">“Go does it right: error codes, multiple return values”</a>.
+[I kinda agree with that. Just pattern match, no?]</p>
+
+<p>Use pointers within <code class="language-plaintext highlighter-rouge">unsafe</code> blocks.</p>
+
+<h2 id="ideas">Ideas</h2>
+
+<p>Suggestion: C++11 but enhanced.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="nc">PartyMember</span> <span class="p">{</span>
+  <span class="kt">char</span> <span class="o">*!</span> <span class="n">name</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="c1">// "I own this memory"</span>
+  <span class="kt">int</span> <span class="n">health_max</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">current_level</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Compiler can statically reason about where double frees occur.
+Why not <code class="language-plaintext highlighter-rouge">std::unique_ptr</code>? Biggest complaint seems to be: ugly.</p>
+
+<p>Dereferencing freed memory: <code class="language-plaintext highlighter-rouge">0xfeeefeee</code> up until now,
+but debugger can also reason about this (similar: <code class="language-plaintext highlighter-rouge">0xcdcdcdcd</code>, <code class="language-plaintext highlighter-rouge">0xcccccccc</code>).
+<a href="https://youtu.be/TH9VCN6UkyQ?t=59m19s">@59m19s</a></p>
+
+<p>Meshes are usually allocated on the heap.
+Implicit destructor and <code class="language-plaintext highlighter-rouge">joint</code> makes construction part of the type system:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="nc">Mesh</span> <span class="p">{</span>
+  <span class="n">Vector3</span> <span class="p">[]</span><span class="o">!</span> <span class="n">positions</span><span class="p">;</span>
+  <span class="c1">// Belongs to the same block of memory as vec3</span>
+  <span class="kt">int</span> <span class="p">[]</span><span class="o">!</span> <span class="n">indices</span><span class="p">;</span> <span class="err">@</span><span class="n">joint</span> <span class="n">positions</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In C this code is scary. Not anymore. <a href="https://youtu.be/TH9VCN6UkyQ?t=01h13m19s">@1h13m19s</a></p>
+
+<h2 id="list-of-other-features">List of other features</h2>
+
+<ul>
+  <li>No goddamn header files.</li>
+  <li>Refactorability - no more <code class="language-plaintext highlighter-rouge">-&gt;</code> vs. <code class="language-plaintext highlighter-rouge">.</code>, follow Go’s syntax</li>
+  <li>Haha, criticisms about C++ lambda syntax: “don’t get me started”</li>
+  <li>Optionals, e.g. <code class="language-plaintext highlighter-rouge">Entity ?a</code>. Doesn’t think Swift’s <code class="language-plaintext highlighter-rouge">a?.x</code> is necessary.</li>
+  <li>Make concurrency less crazy <a href="https://youtu.be/TH9VCN6UkyQ?t=01h21m02s">@1h21m02s</a>
+    <blockquote>
+      <p>The older the code is, the more likely it is that it calls some function that
+calls some function that calls a macro that uses some piece of global state.</p>
+    </blockquote>
+  </li>
+  <li>Fewer / no implicit type conversions? (Go’s model)</li>
+  <li>Named argument passing</li>
+  <li>Introspection and serialization, maybe w/ version syntax:
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="nc">Entity_Substance</span> <span class="p">{</span> <span class="err">@</span><span class="n">version</span> <span class="mi">37</span>
+<span class="n">Vector4</span> <span class="n">scale_color</span> <span class="o">=</span> <span class="n">Vector4</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> <span class="err">@</span><span class="mi">15</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>The program specifies how to build it.
+Language spec says the compiler just does everything: compiling, linking, etc.</li>
+  <li>Better preprocessor (use same lang for compile-time and runtime statements)
+    <ul>
+      <li>metaprogramming?</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="qa-1h34m28s">Q&amp;A <a href="https://youtu.be/TH9VCN6UkyQ?t=01h34m28s">@1h34m28s</a></h2>
+
+<p>Also some interesting things, didn’t follow that much.</p>
+
+
+        </div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/conv-v-transformer-v-human">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Are Convolutional NNs or Transformers more like Human Vision?
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/learning-salon-zenna-tavares">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Learning salon: Zenna Tavares
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://twitter.com/tkukurin"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/tkukurin"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="https://www.linkedin.com/in/toni/"><i class="fab fa-linkedin fa-2x" title="LinkedIn"></i></a></div><div class="copyright">
+    
+      
+
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

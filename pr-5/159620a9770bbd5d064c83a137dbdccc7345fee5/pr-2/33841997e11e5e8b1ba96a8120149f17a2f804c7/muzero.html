@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    <title>MuZero</title>
+    <meta name="description" content="Mastering Atari, Go, Chess and Shogi by Planning with a Learned Model. Great stuff. Prior to studying RL in more detail I was wondering why more people don’t...">
+    <link rel="canonical" href="https://tkukurin.github.io/muzero">
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/light.css">
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  muzero">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">~</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">caveat emptor</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <div class="page-sidebar">
+        
+            
+            <h1 id="page-title" class="page-title p-name">MuZero
+</h1>
+        
+        <div class="page-author h-card p-author"><div class="author-info">
+    <time class="page-date dt-published" datetime="2021-03-30T00:00:00+00:00"><a class="u-url" href="">Mar 30, 2021</a>
+</time>
+
+  </div>
+</div>
+
+        
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">rl</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p><a href="https://arxiv.org/abs/1911.08265">Mastering Atari, Go, Chess and Shogi by Planning with a Learned Model</a>.
+Great stuff.
+Prior to studying RL in more detail I was wondering why more people don’t try
+this type of hybrid approach; the gist of it is, as with 99% of RL, “it’s
+complicated”.</p>
+
+<p>Cf. also <a href="http://www.furidamu.org/blog/2020/12/22/muzero-intuition/">Julian Schrittwieser’s explanation</a>
+and <a href="https://deepmind.com/blog/article/muzero-mastering-go-chess-shogi-and-atari-without-rules">DeepMind’s post</a>
+and <a href="https://www.youtube.com/watch?v=L0A86LmH7Yw">Julian’s presentation</a>
+and <a href="https://gist.github.com/tkukurin/45b3a4cdccf2c99ad7aa013798183fb9">the pseudocode</a>.</p>
+
+<p><img src="https://paperswithcode.com/media/methods/Screen_Shot_2020-06-29_at_9.29.21_PM.png" alt="MuZero figure" /></p>
+
+<p>Delta from AlphaZero is that this planning approach assumes “no knowledge”, i.e.
+the simulator and representations and actions are all bootstrapped using NNs.</p>
+
+<h2 id="neural-networks">Neural networks</h2>
+
+<p>The idea here is to entirely plan in NN-generated latent space while acting
+according to MCTS policy counts. The NNs consist of:</p>
+
+<ul>
+  <li>Representation network \(h\) converts current game observation history to
+latent state \(s_0\)</li>
+  <li>Unroll network \(g\) converts latent state and action \((s_{k-1}, a_k)\) to
+next latent state and reward \((s_k, r_k)\).</li>
+  <li>Policy and value network \(f\) produces value and action \((v_k, a_k)\)
+given state \(s_k\).</li>
+</ul>
+
+<h2 id="training-planning-as-an-improvement-operator">Training: planning as an improvement operator</h2>
+
+<p>Loss function consists of <a href="https://gist.github.com/tkukurin/45b3a4cdccf2c99ad7aa013798183fb9#file-muzero-py-L578">4 different components</a>,
+namely:</p>
+<ul>
+  <li>Matching loss (MCTS policy versus NN policy)</li>
+  <li>Value loss (NN versus long-term reward)</li>
+  <li>Reward loss (NN versus immediate reward)</li>
+  <li>L2 regularization</li>
+</ul>
+
+<p>In board games, there is no discounting as only value signal is the end result
+(binary win/loss).</p>
+
+<p>NNs are trained to match ground-truth replay data from self-play episodes.</p>
+
+<h2 id="acting">Acting</h2>
+
+<p>Cf. <a href="https://gist.github.com/tkukurin/45b3a4cdccf2c99ad7aa013798183fb9#file-muzero-py-L442"><code class="language-plaintext highlighter-rouge">run_mcts</code></a>
+in the pseudocode.</p>
+
+<p>Some hyperparams were picked according to previous work on AlphaZero or
+generally according to RL “conventions” (e.g. ALE settings).
+They don’t really mention how they chose others, so I assume empirical (for
+instance, rollout is for \(K=5\) steps in all experiments).</p>
+
+<p>Due to a smaller action space, it suffices to pick a sticky action for Atari
+every 4 steps and do 50 simulations per step.
+For board games, an action is chosen every step after 800 MCTS simulations.</p>
+
+<p><strong>Actions are sampled</strong> according to visit counts of MCTS policy and PUCT.
+PUCT basically ensures a tradeoff between policy and value NN predictions (the
+more times a policy has been visited, the more confident we are in its presumed
+utility). \(c_1=1.25\), \(c_2=19.652\) seem oddly specific:</p>
+
+\[a^k = \mathrm{arg}\max_a \left\{
+Q(s,a) +
+P(s,a) \frac{\sqrt{\sum_b N(s,b)}}{N(s,a)+1}
+\left [ c_1 + \log \left (\frac{\sum_bN(s,b) + c_2 + 1}{c_2}\right)
+\right ] \right\}\]
+
+<p>In order to keep rewards general, Q-values are normalized:</p>
+
+\[\bar Q(s^{k-1}, a^k) =
+\frac{Q(s^{k-1}, a^k) - \min_{s,a \in \mathrm{Tree}} Q(s,a) }
+{ \max_{s,a \in \mathrm{Tree}} Q(s,a) - \min_{s,a \in \mathrm{Tree}} Q(s,a) }\]
+
+<p><strong>Dirichlet exploration noise</strong> added at tree root, because it boosts the prior
+of ~1-2 random actions high enough to be explored.
+<strong>Temperature</strong> is decayed to ensure convergence over time (starts high).</p>
+
+<h2 id="representation">Representation</h2>
+
+<p>Moves in Go were represented as 19x19x1 board (one-hot placement).
+Moves in chess 8x8x8 (starting position, ending position, whether the move is
+valid; the rest was reserved for piece promotion - e.g. rook, queen, etc.).
+Moves in Shogi similar to chess.</p>
+
+<h2 id="results">Results</h2>
+
+<p>Curiously, it seems that using a different number of simulations during
+evaluation time doesn’t alter performance.</p>
+
+<p>Using “reanalyze” they show that training can also be done on static episodes.</p>
+
+<p>“Don’t try this at home” since you won’t be able to, anyway:</p>
+<ul>
+  <li>Board games: 16 TPUs training / 1000 TPUs self-play. 5 hours training.</li>
+  <li>Atari (less simulations): 8 TPUs train / 32 self-play.</li>
+</ul>
+
+<p>Within a million training frames, results are SOTA.</p>
+
+<p><strong>Future work</strong> suggests generalizations of MuZero: to stochastic, continuous,
+non-stationary, temporally extended environments, to imperfect information on
+general sum games. Zero-shot generalization and model sharing between
+environments (single model, multiple games).</p>
+
+<h2 id="code-exploration-from-pseudocode">Code exploration from <a href="https://gist.github.com/tkukurin/45b3a4cdccf2c99ad7aa013798183fb9">pseudocode</a></h2>
+
+<p>(<em>Update 2021-06-20</em>: <a href="https://github.com/google-research/google-research/tree/master/muzero">Implementation in the Google Research repo</a>)</p>
+
+<p><a href="https://gist.github.com/tkukurin/45b3a4cdccf2c99ad7aa013798183fb9#file-muzero-py-L240">Game</a>
+is a stateful engine running the “real world” actions
+<a href="https://gist.github.com/tkukurin/45b3a4cdccf2c99ad7aa013798183fb9#file-muzero-py-L418">instantiated before playing an episode</a>.
+Keeps track of action history, reward history,
+<a href="https://gist.github.com/tkukurin/45b3a4cdccf2c99ad7aa013798183fb9#file-muzero-py-L434">visit statistics for tree nodes</a>.
+[NOTE: Why the last one? Seems kinda out of place.]</p>
+
+<p>A <a href="https://gist.github.com/tkukurin/45b3a4cdccf2c99ad7aa013798183fb9#file-muzero-py-L423">new root node</a>
+is created before taking an action.
+<a href="https://gist.github.com/tkukurin/45b3a4cdccf2c99ad7aa013798183fb9#file-muzero-py-L502">Node expansion</a>
+is potentially inefficient for large action spaces (attempts <em>all</em> actions,
+regardless of validity). Seems to be called in one of two ways:</p>
+<ul>
+  <li>for first simulation step, limit only to <a href="https://gist.github.com/tkukurin/45b3a4cdccf2c99ad7aa013798183fb9#file-muzero-py-L461">legal actions</a></li>
+  <li>for all next steps, <a href="https://gist.github.com/tkukurin/45b3a4cdccf2c99ad7aa013798183fb9#file-muzero-py-L461">base on history</a>;
+I guess the network will gradually prune illegal actions in the limit.</li>
+</ul>
+
+<p>In <a href="https://gist.github.com/tkukurin/45b3a4cdccf2c99ad7aa013798183fb9#file-muzero-py-L515">backpropagation</a>,
+a discounted value is updated along the simulation path.</p>
+
+<p>Training is standard:
+a number of actors <a href="https://gist.github.com/tkukurin/45b3a4cdccf2c99ad7aa013798183fb9#file-muzero-py-L391">generate episodes</a>
+in self-play mode.
+The training code <a href="https://gist.github.com/tkukurin/45b3a4cdccf2c99ad7aa013798183fb9#file-muzero-py-L552">samples replay buffer</a>,
+and for each sample
+<a href="https://gist.github.com/tkukurin/45b3a4cdccf2c99ad7aa013798183fb9#file-muzero-py-L562">runs network inference</a>
+on the raw observation,
+<a href="https://gist.github.com/tkukurin/45b3a4cdccf2c99ad7aa013798183fb9#file-muzero-py-L567">comparing simulation steps to actual actions</a>.
+The replay buffer sampling constructs
+<a href="https://gist.github.com/tkukurin/45b3a4cdccf2c99ad7aa013798183fb9#file-muzero-py-L323"><code class="language-plaintext highlighter-rouge">(image, history, traget)</code> tuples</a>,
+where the <a href="https://gist.github.com/tkukurin/45b3a4cdccf2c99ad7aa013798183fb9#file-muzero-py-L278">targets</a>
+consist of actual observed replay values.</p>
+
+
+        </div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/kotlin">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Kotlin codebase
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/learning-salon-simon-kornblith">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Learning Salon: Simon Kornblith
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://twitter.com/tkukurin"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/tkukurin"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="https://www.linkedin.com/in/toni/"><i class="fab fa-linkedin fa-2x" title="LinkedIn"></i></a></div><div class="copyright">
+    
+      
+
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    <title>Importance-weighted Actor-Learner Architecture</title>
+    <meta name="description" content="IMPALA (no, not the animal; no, not the music band). Also cf. Lilian Weng’s explanation (of much more than just IMPALA).">
+    <link rel="canonical" href="https://tkukurin.github.io/impala">
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/light.css">
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  importance-weighted-actor-learner-architecture">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+  
+  
+  
+
+  <div class="page-image">
+    <img src="https://lh3.googleusercontent.com/t_mzk5RIyMwOp8d8syj8-d46X9RITKqlyroYhtgHsEnoluwDZ6V-zgCop26Ski9Iq_AXUv_YYNU05I_U4PogIfvkPjg3DSFN1Blx1w=w1440-rw-v1" class="entry-feature-image u-photo" alt="Importance-weighted Actor-Learner Architecture" style="margin-top: 0;">
+    
+  </div>
+
+
+    <div class="page-wrapper">
+      <div class="page-sidebar">
+        
+            
+            <h1 id="page-title" class="page-title p-name">Importance-weighted Actor-Learner Architecture
+</h1>
+        
+        <div class="page-author h-card p-author"><div class="author-info">
+    <time class="page-date dt-published" datetime="2020-11-17T00:00:00+00:00"><a class="u-url" href="">Nov 17, 2020</a>
+</time>
+
+  </div>
+</div>
+
+        
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">rl</li><li class="page-taxonomy">research</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p><a href="https://deepmind.com/research/publications/impala-scalable-distributed-deep-rl-importance-weighted-actor-learner-architectures">IMPALA</a>
+(no, not the animal; no, not the music band).
+Also cf. <a href="https://lilianweng.github.io/lil-log/2018/04/08/policy-gradient-algorithms.html#impala">Lilian Weng’s explanation</a>
+(of much more than just IMPALA).</p>
+
+<p>In older approaches (e.g. A3C, UNREAL), each actor computes its own gradient and
+sends to learner.
+This is slow, so IMPALA operates on actors’ trajectories instead.
+Separating learning and acting increases system throughput.</p>
+
+<p><img src="https://lh3.googleusercontent.com/0ckuJ0Pk6xj5qyEEEaUnM4BxOhLpzmDhMf6izLynFP3m3r0Q0Q509haojKNc1YFzw3V7WRGN2nsmKrEIqLkn-efAPrwi0_0GZN3N=w1440-rw-v1" alt="IMPALA vs batched A2C" /></p>
+
+<p>The learning is off-policy because each actor’s <strong>behavior policies</strong> \(\mu\)
+lag behind the <strong>target policy</strong> \(\pi\) from the learner.
+The V-trace algorithm presented in this paper accounts for this discrepancy.
+Discounted infinite-horizon RL in MDP:
+\(\max V^{\pi}(x)=E[\sum_t{\gamma^t r_t}]\)</p>
+
+<h2 id="importance-sampling-v-trace-target">Importance sampling, V-trace target</h2>
+
+<p>This V-trace target gets computed for each actor following a behavior policy
+\(\mu\). The actor generates a trajectory \((x_t, a_t, r_t)\).</p>
+
+<p>The <em>n-steps V-trace target</em> for the value approximation \(V(x_s)\) is</p>
+
+\[v_s = V(x_s) + \sum_{t=s}^{s+n-1} \gamma^{t-s} (\prod_{i=s}^{t-1} c_i)  \delta_t V\]
+
+<p>With temporal difference</p>
+
+\[δ_tV = ρ_t * (r_t + γV(x_{t+1}) − V (x_t))\]
+
+<p>The ratio of target and agent policy is defined by
+\(R_i=\frac{\pi(a_i|x_i)}{\mu(a_i|x_i)}\), used for importance sampling (IS):</p>
+
+\[\rho_i=\min(\bar\rho, R_i)\]
+
+\[c_i=\min(\bar c, R_i)\]
+
+<p>This reduces to the on-policy Bellman target if <code class="language-plaintext highlighter-rouge">target == behavioral</code> policy.
+So \(\pi_\rho\) is always between target and behavior.
+Fixed point of the update is when \(v_s = V(x_s)\).</p>
+
+<h2 id="actor-critic-algorithm">Actor-critic algorithm</h2>
+
+<p>Policy parameter update in the direction of:</p>
+
+\[E_{a_s \tilde{} \mu (\cdot|x_s)} [\frac{\pi_\bar\rho(a_s|x_s)}{\mu(a_s|x_s)} \nabla \log \pi_\rho(a_s|x_s) q_s | x_s ]\]
+
+<p>Where \(q_s = r_s + \rho v_{s+1}\)</p>
+
+<blockquote>
+  <p>To reduce the variance of the policy gradient estimate, we usually subtract
+from \(q_s\) a state-dependent <strong>baseline</strong> (e.g. \(V(x_s)\)).</p>
+</blockquote>
+
+<p>From <a href="https://github.com/dennybritz/reinforcement-learning/blob/b7b4d3d7ac91d5e0f09f50581c7560c59e378fad/PolicyGradient/README.md#L22">Denny Britz</a>,
+instead of measuring the absolute goodness of an action we want to
+know <em>how much better than “average”</em> it is to take an action given a state.
+Some states are naturally bad and always give negative reward. This is called
+the <em>advantage</em> and is defined as \(Q(s, a) - V(s)\). We use that for our policy
+update, e.g. \(g_t - V(s)\) for REINFORCE.</p>
+
+<h2 id="canonical-v-trace-actor-critic">Canonical V-trace actor-critic</h2>
+
+<p>This part of the paper gives a concrete overview.</p>
+
+<p>At training time s, the value params \(\theta\) are updated by gradient descent
+on the l2 loss to the target \(v_s\), ie in the direction of</p>
+
+\[(v_s − V_\theta(x_s)) (\nabla_\theta V_\theta)(x_s)\]
+
+<p>And the policy params \(\omega\) in the direction of the policy gradient:</p>
+
+\[\rho_s \nabla_\omega \log \pi_\omega(a_s|x_s) r_s + \gamma v_{s+1} - V_\theta(x_s)\]
+
+<p>In order to prevent premature convergence we may add an entropy bonus like A3C:</p>
+
+\[-\nabla_\omega \sum{\pi_\omega(a|x_s) \log(\pi_\omega(a|x_s))}\]
+
+<blockquote>
+  <p>The overall update is obtained by summing these three gradients rescaled by
+appropriate coefficients (hyperparameters of the algorithm).</p>
+</blockquote>
+
+<h1 id="some-kind-of-not-really-pseudocode-in-python">Some kind-of-not-really pseudocode in Python</h1>
+
+<p>Cf. the PyTorch implementation <a href="https://github.com/facebookresearch/torchbeast/tree/master/torchbeast/core">TorchBeast</a>
+for less-handwavy specifics.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">learner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+  <span class="c1"># "What Would Learner Do" in my place
+</span>  <span class="n">behavior_policy</span><span class="p">,</span> <span class="n">replay_buffer</span> <span class="o">=</span> <span class="n">many_actors_rollouts</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+  <span class="n">target_policy</span> <span class="o">=</span> <span class="n">learner</span><span class="p">(</span><span class="n">replay_buffer</span><span class="p">)</span>
+
+  <span class="c1"># vtrace (they also do some grad clipping which I omit)
+</span>  <span class="n">nll</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">policy</span><span class="p">:</span> <span class="n">nll_loss</span><span class="p">(</span><span class="n">log_softmax</span><span class="p">(</span><span class="n">policy</span><span class="p">),</span> <span class="n">action</span><span class="p">)</span>
+  <span class="n">rho</span> <span class="o">=</span> <span class="n">nll</span><span class="p">(</span><span class="n">behavior_policy</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span> <span class="o">-</span> <span class="n">nll</span><span class="p">(</span><span class="n">target_policy</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span>
+
+  <span class="n">cs</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">clamp</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+  <span class="n">deltas</span> <span class="o">=</span> <span class="n">rho</span> <span class="o">*</span> <span class="p">(</span><span class="n">rewards</span> <span class="o">+</span> <span class="n">discounts</span> <span class="o">*</span> <span class="n">vt_plus1</span> <span class="o">-</span> <span class="n">vt</span><span class="p">)</span>
+
+  <span class="c1"># xs_k = d_k + c_k * disc_k * xs_{k+1} where xs_T = 0
+</span>  <span class="n">acc</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">discounts</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span> <span class="c1"># t in {T,T-1, ... 1,0}
+</span>    <span class="n">acc</span> <span class="o">=</span> <span class="n">deltas</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">+</span> <span class="n">cs</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">*</span> <span class="n">discounts</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">*</span> <span class="n">acc</span>
+    <span class="n">result</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">acc</span><span class="p">)</span>
+  <span class="n">result</span><span class="p">.</span><span class="n">reverse</span><span class="p">()</span>
+  <span class="n">v_minus_v_xs</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">stack</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre></div></div>
+
+
+        </div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/placing-language-in-an-integrated-understanding-system">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Placing language in an integrated understanding system: Next steps toward human-level performance in neural language models
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/learning-to-speak-act-fantasy-game">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Learning to Speak and Act in a Fantasy Text Adventure Game
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://twitter.com/tkukurin"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/tkukurin"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="https://www.linkedin.com/in/toni/"><i class="fab fa-linkedin fa-2x" title="LinkedIn"></i></a></div><div class="copyright">
+    
+      
+
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>
