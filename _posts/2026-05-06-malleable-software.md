@@ -23,7 +23,9 @@ system prompts, scope, and UI theming during a standard session.
 <span class="speaker">User</span>
 <p>I would like you to respond terser to me. Answer in bullet points and don't fluff around. Is this the best and shortest prompt we can ask to ensure you follow this instruction?</p>
 </div>
-<span class="marginnote">The request sounds trivial. But it's a demand that the system rewrite its own governing rules—from within.</span>
+<span class="marginnote">
+    UX preference? <em>Gödel numbering in miniature?</em>
+</span>
 </div>
 
 <div class="exchange">
@@ -46,7 +48,11 @@ Project settings (.pi/settings.json) override global settings... I will create a
 <li>Shorter prompts are processed faster and leave less room for misinterpretation</li>
 </ul>
 </div>
-<span class="marginnote">The agent parses its own documentation and modifies its <code>settings.json</code>. A new behavior for this instance.</span>
+<span class="marginnote">
+    The system consults its own axioms for a new theorem.
+    Hofstadter would approve;
+    though perhaps, _theorem_ is a tiny bit generous for a JSON file.
+</span>
 </div>
 
 <div class="exchange">
@@ -54,7 +60,11 @@ Project settings (.pi/settings.json) override global settings... I will create a
 <span class="speaker">User</span>
 <p>I want this applied globally—always when I start.</p>
 </div>
-<span class="marginnote">The scope of malleability expands. The user elevates a local hack to a system-wide permanent condition.</span>
+<span class="marginnote">
+    Promoting a derived theorem back into the axiom set.
+    Formal systems wouldn't allow it;
+    here, you just `rm` the old file.
+</span>
 </div>
 
 <div class="exchange">
@@ -72,7 +82,10 @@ Removing local .pi/settings.json. Writing to ~/.pi/agent/AGENTS.md since it is a
 <li>The instruction will now apply automatically across all your projects</li>
 </ul>
 </div>
-<span class="marginnote"><em>Lemma (1):</em> if a file is read on every boot, writing to it permanently rewrites the organism's DNA. A classic <strong>Strange Loop</strong>—the system alters the rules of its own execution from within.</span>
+<span class="marginnote">
+    A file parsed at startup *is* the genome. 
+    Writing from inside the running process: Strange Loop, 
+    except the loop closes in about 200ms and nobody has to prove any fixed-point theorems.
 </div>
 
 <div class="exchange">
@@ -80,7 +93,27 @@ Removing local .pi/settings.json. Writing to ~/.pi/agent/AGENTS.md since it is a
 <span class="speaker">User</span>
 <p>Can you also edit the theme? I am using Ghostty and right now you're covering my nice theme with ugly colors. I want a "passthrough" look.</p>
 </div>
-<span class="marginnote">From behavioral constraints to aesthetic ones. The user demands the agent disappear into the host environment.</span>
+<span class="marginnote">
+    Same fugue, different key.
+    From behavioral to aesthetic self-modification.
+    My terminal emulator is Bach.
+    This is the Art of Fugue.
+</span>
+</div>
+
+<div class="exchange">
+<div>
+<span class="speaker">Agent</span>
+<div class="thought">
+<span class="thought-header">Agent's internal log</span>
+Let me read docs/themes.md...<br>
+<code>$ cat docs/themes.md</code><br>
+Themes require 51 specific tokens. Empty strings map to default terminal colors. Creating ~/.pi/agent/themes/passthrough.json...
+</div>
+<ul>
+<li>Created a <code>passthrough</code> theme in <code>~/.pi/agent/themes/passthrough.json</code></li>
+<li>Set <code>"theme": "passthrough"</code> in global settings</li>
+</span>
 </div>
 
 <div class="exchange">
@@ -98,7 +131,10 @@ Themes require 51 specific tokens. Empty strings map to default terminal colors.
 <li>Your terminal colors (Ghostty theme) will now completely dictate my appearance</li>
 </ul>
 </div>
-<span class="marginnote">The agent reads its UI schema, generates a valid JSON theme dynamically, and applies it to itself—hot-reloading instantly. The proxy becomes the product.</span>
+<span class="marginnote">
+    TODO: something better here.
+    The proxy becomes the product.
+</span>
 </div>
 
 <div class="exchange">
@@ -106,7 +142,11 @@ Themes require 51 specific tokens. Empty strings map to default terminal colors.
 <span class="speaker">User</span>
 <p>Now everything is black &amp; white. Are you sure this is the way to do it? My Ghostty terminal has some colors.</p>
 </div>
-<span class="marginnote"><em>Caveat emptor:</em> the first aesthetic attempt fails due to a misunderstanding of terminal emulator rendering protocols.</span>
+<span class="marginnote">
+    TODO: something better here.
+    MU puzzle in the flesh.
+    Agent knows given rules but can't sidestep its assumptions.
+    Outside observer has to intervene.
 </div>
 
 <div class="exchange">
@@ -129,7 +169,9 @@ Empty strings ("") map to the literal default terminal foreground color, which s
   "userMessageBg": ""
 }</code></pre>
 </div>
-<span class="marginnote">The agent corrects its understanding of ANSI escape codes versus default text properties. Irony: the machine must be taught how the machine displays colors.</span>
+<span class="marginnote">
+    _Gödel's incomplete terminal colors._
+</span>
 </div>
 
 <div class="exchange">
@@ -137,7 +179,25 @@ Empty strings ("") map to the literal default terminal foreground color, which s
 <span class="speaker">User</span>
 <p>Could you make a single minimalist HTML file with our conversation to demonstrate this as a concept for malleable software? Create a Bringhurst-like single html file with Akari Dawn style theme.</p>
 </div>
-<span class="marginnote">The user shifts from shaping the agent's environment to demanding it synthesize the interaction into an educational artifact. Meta-cognition ensues.</span>
+<span class="marginnote">
+    TODO something better here
+</span>
+</div>
+
+<div class="exchange">
+<div>
+<span class="speaker">Agent</span>
+<div class="thought">
+<span class="thought-header">Agent's internal log</span>
+Writing HTML... Applying Akari Dawn variables. Palatino/Iowan Old Style for Bringhurst typography. Smooth scroll and JS toggle logic.<br>
+<code>$ &gt; malleable_software.html</code>
+</div>
+<ul>
+<li>Created <code>malleable_software.html</code> demonstrating the dialogue</li>
+<li>Styled with minimalist typography (Bringhurst) and a warm palette (Akari Dawn)</li>
+<li>Focused entirely on the agent modifying its own configuration and themes</li>
+</ul>
+</span>
 </div>
 
 <div class="exchange">
@@ -154,7 +214,9 @@ Writing HTML... Applying Akari Dawn variables. Palatino/Iowan Old Style for Brin
 <li>Focused entirely on the agent modifying its own configuration and themes</li>
 </ul>
 </div>
-<span class="marginnote">The agent steps outside its conversational UI to author a standalone document—simultaneously the software, the developer, and the documentarian.</span>
+<span class="marginnote">
+    Escher's Print Gallery: the picture contains the gallery that contains the picture. Who's narrating here? Not this margin, surely.
+</span>
 </div>
 
 ---
