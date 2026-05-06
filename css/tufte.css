@@ -123,19 +123,34 @@ blockquote p {
 }
 
 /* === Code === */
-code, pre {
+code {
   font-family: var(--code-font);
-  font-size: 1rem;
+  font-size: 0.85em;
+  background: rgba(0, 0, 0, 0.04);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
 }
 
 pre {
+  font-family: var(--code-font);
+  font-size: 0.85em;
   padding: 1rem;
   overflow-x: auto;
   background: rgba(0, 0, 0, 0.03);
   border-radius: 3px;
+  line-height: 1.5;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
 }
 
 @media (prefers-color-scheme: dark) {
+  code {
+    background: rgba(255, 255, 255, 0.08);
+  }
   pre {
     background: rgba(255, 255, 255, 0.05);
   }
@@ -346,16 +361,12 @@ header {
   line-height: 1.15;
 }
 
-/* === Sidenotes and margin notes === */
+/* === Sidenotes and margin notes (legacy inline) === */
 .sidenote, .marginnote {
-  float: right;
-  clear: right;
-  margin-right: -60%;
-  width: 50%;
-  margin-top: 0.3rem;
-  margin-bottom: 1rem;
   font-size: 1.1rem;
   line-height: 1.4;
+  color: var(--muted-color);
+  font-style: italic;
   position: relative;
 }
 
@@ -376,6 +387,104 @@ header {
   color: var(--contrast-color);
 }
 
+/* ============================================
+   DIALOGUE EXCHANGES WITH MARGIN NOTES
+   Grid-based: content left, note right.
+   No overflow, no float hacks.
+   ============================================ */
+
+.exchange {
+  display: grid;
+  grid-template-columns: 1fr 13rem;
+  gap: 2rem;
+  align-items: start;
+  padding: 1.2rem 1rem;
+  margin: 0.3rem -1rem;
+  border-radius: 6px;
+  transition: background-color 0.4s ease-out;
+}
+
+.exchange > *:not(.marginnote):not(.sidenote) {
+  grid-column: 1;
+}
+
+.exchange .marginnote,
+.exchange .sidenote {
+  grid-column: 2;
+  grid-row: 1 / -1;
+  align-self: center;
+
+  /* Reset any legacy float/margin */
+  float: none;
+  clear: none;
+  margin-right: 0;
+  width: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  /* Styling */
+  font-size: 1rem;
+  line-height: 1.45;
+  color: var(--muted-color);
+  font-style: italic;
+  cursor: pointer;
+  padding-left: 1rem;
+  border-left: 2px solid transparent;
+  transition: color 0.3s ease, border-left-color 0.3s ease;
+}
+
+.exchange .marginnote:hover,
+.exchange .sidenote:hover {
+  color: var(--contrast-color);
+  border-left-color: var(--contrast-color);
+}
+
+/* Active exchange (clicked) */
+.exchange.active {
+  background-color: rgba(160, 0, 0, 0.04);
+}
+
+@media (prefers-color-scheme: dark) {
+  .exchange.active {
+    background-color: rgba(224, 112, 112, 0.06);
+  }
+}
+
+.exchange.active .marginnote,
+.exchange.active .sidenote {
+  color: var(--text-color);
+  border-left-color: var(--contrast-color);
+}
+
+/* Speaker labels */
+.speaker {
+  display: block;
+  font-variant: small-caps;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  color: var(--contrast-color);
+  margin-bottom: 0.4rem;
+}
+
+/* Agent internal thought/log */
+.thought {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--muted-color);
+  border-left: 2px solid var(--contrast-color);
+  padding-left: 1rem;
+  margin: 0.6rem 0 1.2rem;
+}
+
+.thought-header {
+  font-style: italic;
+  display: block;
+  margin-bottom: 0.3rem;
+  font-variant: small-caps;
+  letter-spacing: 0.03em;
+}
+
 /* === Responsive === */
 @media (max-width: 760px) {
   .archive-columns {
@@ -383,8 +492,32 @@ header {
     gap: 2rem;
   }
 
+  /* Exchanges collapse to single column; notes fold inline */
+  .exchange {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 1rem 0.5rem;
+    margin: 0.3rem 0;
+  }
+
+  .exchange .marginnote,
+  .exchange .sidenote {
+    grid-column: 1;
+    grid-row: auto;
+    margin-top: 1rem;
+    padding-top: 0.8rem;
+    border-left-color: var(--border-color);
+    border-left-width: 2px;
+    border-left-style: solid;
+    font-size: 0.95rem;
+  }
+
+  /* Legacy standalone sidenotes: show inline on mobile */
   .sidenote, .marginnote {
-    display: none;
+    display: block;
+    float: none;
+    margin: 1rem 0;
+    width: 100%;
   }
 }
 
@@ -399,7 +532,16 @@ header {
     display: none;
   }
 
-  .sidenote, .marginnote {
-    display: none;
+  .exchange {
+    display: block;
+  }
+
+  .exchange .marginnote,
+  .exchange .sidenote {
+    display: block;
+    margin-top: 0.5rem;
+    border-left: 1px solid #999;
+    padding-left: 0.8rem;
+    font-size: 0.9em;
   }
 }
