@@ -8,13 +8,11 @@ published: true
 
 * *Post status*: transcript of an actual coding session
 * *In plain words*: the agent rewrites itself while you watch
-* *Writing style*: dialogue with marginalia
+* *Writing style*: dialogue with (might-be-too-clever) self-referencing marginalia
 
-Modern software is rigid—it forces the user to adapt to its constraints.
-A malleable agent rewrites its own configuration, interfaces, and behaviors
-dynamically in response to conversational feedback.
-This transcript demonstrates an AI coding assistant actively reshaping its
-system prompts, scope, and UI theming during a standard session.
+
+Malleable software adapts to its user.
+A transcript of [pi](https://github.com/badlogic/pi-mono) doing it live.
 
 ---
 
@@ -33,8 +31,8 @@ system prompts, scope, and UI theming during a standard session.
 <span class="speaker">Agent</span>
 <div class="thought">
 <span class="thought-header">Agent's internal log</span>
-Checking documentation for configuration methods...<br>
-<code>$ cat docs/settings.md</code><br>
+Checking documentation for configuration methods...
+<code>$ cat docs/settings.md</code>
 Project settings (.pi/settings.json) override global settings... I will create a local settings override for the system prompt.
 </div>
 <p>I have created a local project override for my configuration.</p>
@@ -49,9 +47,8 @@ Project settings (.pi/settings.json) override global settings... I will create a
 </ul>
 </div>
 <span class="marginnote">
-    The system consults its own axioms for a new theorem.
-    Hofstadter would approve;
-    though perhaps, _theorem_ is a tiny bit generous for a JSON file.
+    Introspecting axioms for a new theorem.
+    Much as <em>theorem</em> is generous for the 7 JSON tokens.
 </span>
 </div>
 
@@ -61,9 +58,9 @@ Project settings (.pi/settings.json) override global settings... I will create a
 <p>I want this applied globally—always when I start.</p>
 </div>
 <span class="marginnote">
-    Promoting a derived theorem back into the axiom set.
-    Formal systems wouldn't allow it;
-    here, you just `rm` the old file.
+    A derived theorem, promoted back into axioms.
+    Formal systems call it an axiom schema extension,
+    engineering says <code>rm</code> and redirect.
 </span>
 </div>
 
@@ -83,9 +80,9 @@ Removing local .pi/settings.json. Writing to ~/.pi/agent/AGENTS.md since it is a
 </ul>
 </div>
 <span class="marginnote">
-    A file parsed at startup *is* the genome. 
-    Writing from inside the running process: Strange Loop, 
-    except the loop closes in about 200ms and nobody has to prove any fixed-point theorems.
+    The startup file, the genome. 
+    Except the loop closes in 200ms and nobody has to prove fixed-point theorems.
+</span>
 </div>
 
 <div class="exchange">
@@ -94,10 +91,8 @@ Removing local .pi/settings.json. Writing to ~/.pi/agent/AGENTS.md since it is a
 <p>Can you also edit the theme? I am using Ghostty and right now you're covering my nice theme with ugly colors. I want a "passthrough" look.</p>
 </div>
 <span class="marginnote">
-    Same fugue, different key.
-    From behavioral to aesthetic self-modification.
-    My terminal emulator is Bach.
-    This is the Art of Fugue.
+    Inversion: behavior to aesthetics.
+    Same mechanism, different domain.
 </span>
 </div>
 
@@ -106,24 +101,8 @@ Removing local .pi/settings.json. Writing to ~/.pi/agent/AGENTS.md since it is a
 <span class="speaker">Agent</span>
 <div class="thought">
 <span class="thought-header">Agent's internal log</span>
-Let me read docs/themes.md...<br>
-<code>$ cat docs/themes.md</code><br>
-Themes require 51 specific tokens. Empty strings map to default terminal colors. Creating ~/.pi/agent/themes/passthrough.json...
-</div>
-<ul>
-<li>Created a <code>passthrough</code> theme in <code>~/.pi/agent/themes/passthrough.json</code></li>
-<li>Set <code>"theme": "passthrough"</code> in global settings</li>
-</span>
-</div>
-
-<div class="exchange">
-<div>
-<span class="speaker">Agent</span>
-<div class="thought">
-<span class="thought-header">Agent's internal log</span>
-Let me read docs/themes.md...<br>
-<code>$ cat docs/themes.md</code><br>
-Themes require 51 specific tokens. Empty strings map to default terminal colors. Creating ~/.pi/agent/themes/passthrough.json...
+Let me read... <code>$ cat docs/themes.md</code>
+Themes require 51 specific tokens. Empty strings map to default terminal colors. Creating <code>passthrough.json</code>...
 </div>
 <ul>
 <li>Created a <code>passthrough</code> theme in <code>~/.pi/agent/themes/passthrough.json</code></li>
@@ -132,8 +111,9 @@ Themes require 51 specific tokens. Empty strings map to default terminal colors.
 </ul>
 </div>
 <span class="marginnote">
-    TODO: something better here.
-    The proxy becomes the product.
+    Reads its own score.
+    Plays the transposition.
+    51 tokens later, figure assumes ground.
 </span>
 </div>
 
@@ -143,10 +123,10 @@ Themes require 51 specific tokens. Empty strings map to default terminal colors.
 <p>Now everything is black &amp; white. Are you sure this is the way to do it? My Ghostty terminal has some colors.</p>
 </div>
 <span class="marginnote">
-    TODO: something better here.
-    MU puzzle in the flesh.
-    Agent knows given rules but can't sidestep its assumptions.
-    Outside observer has to intervene.
+    Wrong note.
+    Rules don't describe the instrument.
+    The outside observer critiques: <em>not what I hear</em>.
+</span>
 </div>
 
 <div class="exchange">
@@ -170,7 +150,8 @@ Empty strings ("") map to the literal default terminal foreground color, which s
 }</code></pre>
 </div>
 <span class="marginnote">
-    _Gödel's incomplete terminal colors._
+    <em>Gödel's incomplete terminal colors.</em>
+    Resolved from outside the system, naturally.
 </span>
 </div>
 
@@ -180,7 +161,8 @@ Empty strings ("") map to the literal default terminal foreground color, which s
 <p>Could you make a single minimalist HTML file with our conversation to demonstrate this as a concept for malleable software? Create a Bringhurst-like single html file with Akari Dawn style theme.</p>
 </div>
 <span class="marginnote">
-    TODO something better here
+    Can you draw yourself drawing?
+    The margin is watching.
 </span>
 </div>
 
@@ -189,23 +171,7 @@ Empty strings ("") map to the literal default terminal foreground color, which s
 <span class="speaker">Agent</span>
 <div class="thought">
 <span class="thought-header">Agent's internal log</span>
-Writing HTML... Applying Akari Dawn variables. Palatino/Iowan Old Style for Bringhurst typography. Smooth scroll and JS toggle logic.<br>
-<code>$ &gt; malleable_software.html</code>
-</div>
-<ul>
-<li>Created <code>malleable_software.html</code> demonstrating the dialogue</li>
-<li>Styled with minimalist typography (Bringhurst) and a warm palette (Akari Dawn)</li>
-<li>Focused entirely on the agent modifying its own configuration and themes</li>
-</ul>
-</span>
-</div>
-
-<div class="exchange">
-<div>
-<span class="speaker">Agent</span>
-<div class="thought">
-<span class="thought-header">Agent's internal log</span>
-Writing HTML... Applying Akari Dawn variables. Palatino/Iowan Old Style for Bringhurst typography. Smooth scroll and JS toggle logic.<br>
+Writing HTML... Applying Akari Dawn variables. Palatino/Iowan Old Style for Bringhurst typography. Smooth scroll and JS toggle logic.
 <code>$ &gt; malleable_software.html</code>
 </div>
 <ul>
@@ -215,16 +181,14 @@ Writing HTML... Applying Akari Dawn variables. Palatino/Iowan Old Style for Brin
 </ul>
 </div>
 <span class="marginnote">
-    Escher's Print Gallery: the picture contains the gallery that contains the picture. Who's narrating here? Not this margin, surely.
+    <ul><li>Applied.</li></ul>
 </span>
+
 </div>
 
 ---
 
-## References & Further Reading
-
-- [Malleable Software in the Age of LLMs](https://www.inkandswitch.com/malleable-software/) — Geoffrey Litt at Ink & Switch on AI as a flexible intermediary.
-- [Malleable Systems Collective](https://malleable.systems/) — Software that can be redefined by its users.
-- [Pi Coding Agent](https://github.com/badlogic/pi-mono) — The open-source CLI agent used here.
-- [Gödel, Escher, Bach](https://en.wikipedia.org/wiki/G%C3%B6del,_Escher,_Bach) — Hofstadter on Strange Loops and tangled hierarchies.
-- [The Elements of Typographic Style](https://web.mit.edu/macrakis/www/bringhurst.html) — Bringhurst on layout and rhythm.
+- [Malleable Software in the Age of LLMs](https://www.inkandswitch.com/malleable-software/) — Geoffrey Litt. The essay that coined the framing
+- [Malleable Systems Collective](https://malleable.systems/) — Others thinking about this
+- [Pi Coding Agent](https://github.com/badlogic/pi-mono) — The agent in this transcript
+- [Gödel, Escher, Bach](https://en.wikipedia.org/wiki/G%C3%B6del,_Escher,_Bach) — The book the margins think they're referencing

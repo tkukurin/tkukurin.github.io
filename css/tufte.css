@@ -478,9 +478,6 @@ header {
 }
 
 .thought-header {
-  font-style: italic;
-  display: block;
-  margin-bottom: 0.3rem;
   font-variant: small-caps;
   letter-spacing: 0.03em;
 }
