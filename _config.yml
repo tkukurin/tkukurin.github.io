@@ -24,6 +24,12 @@ defaults:
     values:
       layout: "default"
 
+social:
+  github: tkukurin
+  twitter: tkukurin
+  bluesky: tkukurin.bsky.social
+  linkedin: toni
+
 # unsupported :(
 # plugins:
 #  - jekyll-jupyter-notebook

@@ -185,6 +185,7 @@ a.count:hover { color: var(--rubric); }
   line-height: 1.45;
   text-align: right;
   font-feature-settings: "onum", "kern";
+  position: relative;
 }
 .marg .day {
   font-variant: small-caps;
@@ -198,6 +199,8 @@ a.count:hover { color: var(--rubric); }
   color: var(--ink-3);
 }
 .marg .arrow {
+  position: absolute;
+  right: -1.4rem;
   opacity: 0;
   color: var(--rubric);
   transition: all 140ms ease;
@@ -286,6 +289,44 @@ a.count:hover { color: var(--rubric); }
   letter-spacing: 0.08em;
 }
 
+/* === Related posts === */
+.post-related {
+  margin-top: 3rem;
+  padding-top: 1.4rem;
+  border-top: 0.5px solid var(--rule);
+}
+.related-label {
+  font-variant: small-caps;
+  font-feature-settings: "smcp", "c2sc", "onum";
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  color: var(--ink-3);
+}
+.post-content .post-related ul {
+  list-style: none;
+  margin: 0.8rem 0 0;
+  padding: 0;
+}
+.post-related li {
+  padding: 0.4rem 0;
+  border-top: 0.5px solid var(--rule);
+  font-size: 0.92rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.post-related li a {
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  min-width: 0;
+  border-bottom: none;
+}
+.post-related li a:hover { color: var(--rubric); }
+
 /* === Footer === */
 .foot {
   margin-top: 4rem;
@@ -300,6 +341,26 @@ a.count:hover { color: var(--rubric); }
 }
 .foot a { color: var(--ink-2); text-decoration: none; border: 0; }
 .foot a:hover { color: var(--rubric); }
+.foot-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.foot-links a {
+  color: var(--ink-3);
+  border: 0;
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+  transition: color 120ms ease;
+}
+.foot-links a:hover { color: var(--rubric); }
+.foot-links svg {
+  display: block;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
 
 
 /* === Post content === */
