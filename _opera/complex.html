@@ -10,52 +10,21 @@ permalink: /complex/
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Complex Systems - AI Bookshelf</title>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inconsolata:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/tufte.css">
     <style>
-        /* === Variables (from tufte.css) === */
+        /* === App-specific overrides === */
         :root {
-            --paper:    oklch(0.978 0.006 85);
-            --paper-2:  oklch(0.965 0.010 80);
-            --ink:      oklch(0.22 0.012 60);
-            --ink-2:    oklch(0.42 0.014 60);
-            --ink-3:    oklch(0.62 0.012 60);
-            --rule:     oklch(0.84 0.008 70);
-            --rubric:   oklch(0.46 0.13 28);
-
-            --serif: 'EB Garamond', 'Hoefler Text', Garamond, Georgia, serif;
-            --mono:  'Inconsolata', ui-monospace, 'SF Mono', Menlo, monospace;
-
             --sidebar-width: 280px;
             --assistant-width: 320px;
             --transition-smooth: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --paper:    oklch(0.16 0.006 60);
-                --paper-2:  oklch(0.19 0.008 60);
-                --ink:      oklch(0.88 0.008 60);
-                --ink-2:    oklch(0.72 0.010 60);
-                --ink-3:    oklch(0.52 0.008 60);
-                --rule:     oklch(0.30 0.008 60);
-                --rubric:   oklch(0.65 0.13 28);
-            }
-        }
-
-        /* === Reset === */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-
-        body {
-            font-family: var(--serif);
-            background: var(--paper);
-            color: var(--ink);
-            line-height: 1.5;
-            font-size: 15px;
-            font-feature-settings: "kern", "liga", "onum";
-            -webkit-font-smoothing: antialiased;
+        html, body {
             overflow: hidden;
             display: flex;
             height: 100vh;
             width: 100vw;
+            font-size: 15px;
         }
 
         button {
@@ -66,9 +35,6 @@ permalink: /complex/
             cursor: pointer;
             text-align: left;
         }
-
-        a { color: inherit; text-decoration: none; }
-        a:hover { color: var(--rubric); }
 
         /* === 3-Pane Layout === */
         #pane-episodes {
@@ -461,28 +427,6 @@ permalink: /complex/
         .msg-text p:last-child { margin-bottom: 0; }
         .msg-text ul, .msg-text ol { margin-left: 1rem; margin-bottom: 0.5rem; }
         .msg-text li { margin-bottom: 0.2rem; }
-        .msg-text code {
-            font-family: var(--mono);
-            font-size: 0.82em;
-            background: oklch(0.92 0.005 70 / 0.5);
-            padding: 0.1em 0.3em;
-            border-radius: 2px;
-        }
-        .msg-text pre {
-            font-family: var(--mono);
-            font-size: 0.8em;
-            background: oklch(0.92 0.005 70 / 0.4);
-            padding: 0.6rem;
-            border-radius: 3px;
-            overflow-x: auto;
-            margin-bottom: 0.5rem;
-        }
-        .msg-text pre code { background: transparent; padding: 0; }
-
-        @media (prefers-color-scheme: dark) {
-            .msg-text code { background: oklch(0.25 0.005 60 / 0.6); }
-            .msg-text pre { background: oklch(0.22 0.005 60 / 0.6); }
-        }
 
         /* === Responsive === */
         @media (max-width: 900px) {
