@@ -1,0 +1,38 @@
+---
+layout: default
+title: Archive
+---
+
+{% assign visible_posts = "" | split: "" %}
+{% for post in site.posts %}
+  {% assign dominated_by_hidden = false %}
+  {% for tag in post.tags %}
+    {% assign tag_info = site.data.tags[tag] %}
+    {% if tag_info.visible == false %}
+      {% assign dominated_by_hidden = true %}
+    {% endif %}
+  {% endfor %}
+  {% unless dominated_by_hidden %}
+    {% assign visible_posts = visible_posts | push: post %}
+  {% endunless %}
+{% endfor %}
+
+<section class="sec">
+  <div class="l">Archive</div>
+  <div class="r"><h2>All posts</h2><span class="count">{{ visible_posts.size }} entries</span></div>
+</section>
+
+<ul class="list">
+  {% for post in visible_posts %}
+  <li class="row">
+    <div class="marg">
+      <span class="kind">{{ post.tags | first }}</span>
+      <span class="day">{{ post.date | date: "%b %-d, %Y" }}</span>
+      <span class="arrow">&rarr;</span>
+    </div>
+    <a class="post" href="{{ post.url | relative_url }}">
+      <p class="t">{{ post.title }}</p>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
