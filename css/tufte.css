@@ -58,29 +58,26 @@ a { color: inherit; text-decoration: none; }
 /* === Topbar === */
 .topbar {
   display: flex;
-  align-items: baseline;
   justify-content: space-between;
-  padding: 1.4rem 0;
-  border-bottom: 0.5px solid var(--rule);
-  font-size: 0.82rem;
+  align-items: baseline;
+  padding: 1.6rem 0 0;
 }
 
 .mark {
   font-style: italic;
   font-weight: 500;
-  color: var(--ink);
-  font-size: 1rem;
-  letter-spacing: -0.005em;
+  color: var(--ink-2);
+  font-size: 0.82rem;
+  text-decoration: none;
+  margin: 0;
 }
-.mark .amp { color: var(--rubric); font-style: italic; padding: 0 0.05em; }
+a.mark:hover { color: var(--rubric); }
+.mark .amp { color: var(--rubric); font-style: italic; padding: 0 0.02em; }
 
-.nav { display: flex; gap: 1.4rem; color: var(--ink-2); font-style: italic; }
-.nav a { position: relative; }
-.nav a:hover { color: var(--ink); }
-.nav a.is-here { color: var(--ink); }
-.nav a.is-here::after {
-  content: ""; position: absolute; left: 0; right: 0; bottom: -3px;
-  height: 0.5px; background: var(--rubric);
+.post-meta {
+  font-style: italic;
+  font-size: 0.78rem;
+  color: var(--ink-3);
 }
 
 /* === Intro === */
@@ -304,12 +301,6 @@ a.count:hover { color: var(--rubric); }
 .foot a { color: var(--ink-2); text-decoration: none; border: 0; }
 .foot a:hover { color: var(--rubric); }
 
-.post-meta {
-  font-style: italic;
-  font-size: 0.88rem;
-  color: var(--ink-3);
-  margin: 0 0 2rem;
-}
 
 /* === Post content === */
 .post-content {
@@ -319,28 +310,49 @@ a.count:hover { color: var(--rubric); }
   margin: 0 0 0 max(0px, calc(50% - var(--measure)/2 - var(--sidebar)/2 - var(--gap)/2));
 }
 
+.post-kicker {
+  font-variant: small-caps;
+  font-feature-settings: "smcp", "c2sc", "kern", "onum";
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  color: var(--rubric);
+  margin: 0 0 1rem;
+}
+
 .post-content h1 {
   font-weight: 500;
-  font-size: 2rem;
-  line-height: 1.15;
+  font-size: 2.4rem;
+  line-height: 1.1;
   margin: 0 0 0.5rem;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.012em;
 }
 
 .post-content h2 {
   font-style: italic;
   font-weight: 500;
-  font-size: 1.5rem;
-  line-height: 1.2;
-  margin: 2.5rem 0 0.5rem;
+  font-size: 1.15rem;
+  line-height: 1.3;
+  margin: 2.6rem 0 0.4rem;
+}
+.post-content h2::before {
+  content: "§ ";
+  color: var(--rubric);
+  font-style: normal;
+  margin-right: 0.1em;
 }
 
 .post-content h3 {
   font-style: italic;
   font-weight: 500;
-  font-size: 1.25rem;
-  line-height: 1.25;
-  margin: 2rem 0 0.5rem;
+  font-size: 1.05rem;
+  line-height: 1.3;
+  margin: 2rem 0 0.4rem;
+}
+.post-content h3::before {
+  content: "§ ";
+  color: var(--rubric);
+  font-style: normal;
+  margin-right: 0.1em;
 }
 
 .post-content p,
@@ -360,21 +372,32 @@ a.count:hover { color: var(--rubric); }
 }
 
 
-.post-content a { color: var(--rubric); }
-.post-content a:hover {
-  text-decoration: underline;
-  text-underline-offset: 0.15em;
+.post-content a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--rubric);
+  padding-bottom: 1px;
 }
+.post-content a:hover { color: var(--rubric); }
 
 .post-content ul, .post-content ol { padding-left: 1.5rem; }
 .post-content li { margin: 0.3rem 0; }
 
 .post-content blockquote {
   font-style: italic;
-  margin: 1.5rem 0;
-  padding-left: 1.5rem;
-  border-left: 2px solid var(--rule);
-  color: var(--ink-2);
+  margin: 1.4rem 0 1.4rem -0.4rem;
+  padding-left: 1.2rem;
+  border-left: 0.5px solid var(--rubric);
+  color: var(--ink);
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+.post-content blockquote > p:first-child::before {
+  content: open-quote;
+  color: var(--rubric);
+}
+.post-content blockquote > p:last-of-type::after {
+  content: close-quote;
+  color: var(--rubric);
 }
 
 .post-content hr {
@@ -577,6 +600,10 @@ pre code {
   margin: 1.8rem 0 0.4rem;
   line-height: 1.4;
 }
+.dialogue h2::before,
+.dialogue h3::before {
+  content: none;
+}
 
 /* Agent thought/log */
 .thought {
@@ -596,7 +623,7 @@ pre code {
 @media (max-width: 760px) {
   .shell { padding: 0 1.2rem; }
 
-  .topbar { flex-wrap: wrap; gap: 0.6rem 1rem; padding: 1rem 0; }
+  .topbar { padding: 1rem 0 0; }
 
   .intro, .sec, .row, .foot {
     grid-template-columns: 1fr;

@@ -16,14 +16,12 @@
 <body>
 
 <main class="shell">
+  {% unless page.url == '/' %}
   <header class="topbar">
-    <a class="mark" href="{{ '/' | relative_url }}"><em>Wits</em> <span class="amp">&amp;</span> <em>scribbles</em></a>
-    <nav class="nav">
-      <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="is-here"{% endif %}>Index</a>
-      <a href="{{ '/marginalia' | relative_url }}" {% if page.url == '/marginalia' or page.url == '/marginalia.html' %}class="is-here"{% endif %}>Marginalia</a>
-      <a href="{{ '/impedimenta' | relative_url }}" {% if page.url == '/impedimenta' or page.url == '/impedimenta.html' %}class="is-here"{% endif %}>Workshop</a>
-    </nav>
+    <a class="mark" href="{{ '/' | relative_url }}">← <em>W</em><span class="amp">&amp;</span><em>S</em> Index</a>
+    {% if page.date %}<span class="post-meta">{{ page.date | date: "%-d %b %Y" }}{% if page.tags.size > 0 %} · <em>{{ page.tags | join: ", " }}</em>{% endif %}</span>{% endif %}
   </header>
+  {% endunless %}
 
   {{ content }}
 
