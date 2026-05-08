@@ -11,9 +11,9 @@
   --serif: 'EB Garamond', 'Hoefler Text', Garamond, Georgia, serif;
   --mono:  'Inconsolata', ui-monospace, 'SF Mono', Menlo, monospace;
 
-  --measure: 30em;
-  --sidebar: 11rem;
-  --gap: 2.4rem;
+  --measure: 32em;
+  --sidebar: 14rem;
+  --gap: 2.5rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -36,7 +36,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--serif);
-  font-size: 17px;
+  font-size: 19px;
   line-height: 1.5;
   font-feature-settings: "kern", "liga", "clig", "onum";
   font-variant-numeric: oldstyle-nums proportional-nums;
@@ -228,7 +228,8 @@ a.count:hover { color: var(--rubric); }
 }
 .post .d em { font-style: normal; }
 
-/* featured row */
+/* featured row... not sure i like this */
+/* 
 .row.feat .post .t {
   font-size: 1.32rem;
   line-height: 1.22;
@@ -240,6 +241,7 @@ a.count:hover { color: var(--rubric); }
   font-size: 0.97rem;
 }
 .row.feat .post .d em { font-style: italic; }
+*/
 
 /* === Flowing two-column archive list === */
 .col-list {
@@ -289,34 +291,32 @@ a.count:hover { color: var(--rubric); }
 
 /* === Footer === */
 .foot {
-  display: grid;
-  grid-template-columns: var(--sidebar) 1fr;
-  gap: var(--gap);
-  padding: 3rem 0 4rem;
-  margin-top: 2rem;
+  margin-top: 4rem;
+  padding: 1.4rem 0 4rem;
   border-top: 0.5px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
   color: var(--ink-3);
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-style: italic;
 }
-.foot .l {
-  text-align: right;
-  font-variant: small-caps;
-  font-feature-settings: "smcp", "c2sc", "onum";
-  letter-spacing: 0.14em;
-  font-style: normal;
-  font-size: 0.74rem;
+.foot a { color: var(--ink-2); text-decoration: none; border: 0; }
+.foot a:hover { color: var(--rubric); }
+
+.post-meta {
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--ink-3);
+  margin: 0 0 2rem;
 }
-.foot .r { display: flex; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
-.foot a { border-bottom: 0.5px solid var(--rule); padding-bottom: 1px; }
-.foot a:hover { border-bottom-color: var(--rubric); color: var(--ink); }
 
 /* === Post content === */
 .post-content {
-  padding: 2rem 0 0;
-  margin-left: calc(var(--sidebar) + var(--gap));
+  padding: 1.6rem 0 0;
   max-width: var(--measure);
   position: relative;
+  margin: 0 0 0 max(0px, calc(50% - var(--measure)/2 - var(--sidebar)/2 - var(--gap)/2));
 }
 
 .post-content h1 {
@@ -359,6 +359,7 @@ a.count:hover { color: var(--rubric); }
   color: var(--ink-2);
 }
 
+
 .post-content a { color: var(--rubric); }
 .post-content a:hover {
   text-decoration: underline;
@@ -379,7 +380,9 @@ a.count:hover { color: var(--rubric); }
 .post-content hr {
   border: none;
   border-top: 0.5px solid var(--rule);
-  margin: 2rem 0;
+  margin: 2.2rem 0;
+  width: 6rem;
+  height: 0;
 }
 
 /* Code */
@@ -475,14 +478,11 @@ pre code {
 
 /* Sidenote mode (wide screens, activated by JS) */
 .post-content .fn-note {
-  float: left;
-  clear: left;
+  position: absolute;
+  right: calc(-1 * (var(--sidebar) + var(--gap)));
   width: var(--sidebar);
-  margin-left: calc(-1 * (var(--sidebar) + var(--gap)));
-  margin-top: 0;
-  margin-bottom: 1.4rem;
   font-family: var(--serif);
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
@@ -491,13 +491,17 @@ pre code {
   line-height: 1.45;
   color: var(--ink-2);
   font-feature-settings: "kern", "liga", "onum";
-  text-indent: 0;
-  text-align: right;
+  text-align: left;
 }
 .post-content .fn-note .fn-num {
   color: var(--rubric);
   font-feature-settings: "lnum";
-  margin-right: 0.4em;
+  margin-right: 0.3em;
+  display: inline;
+}
+.post-content .fn-note p {
+  display: inline;
+  margin: 0;
 }
 .post-content .fn-note em { font-style: italic; }
 .footnotes-hidden { display: none; }
@@ -598,9 +602,9 @@ pre code {
     grid-template-columns: 1fr;
     gap: 0.4rem;
   }
-  .post-content { margin-left: 0; }
+  .post-content { margin-left: 0; margin-right: 0; }
   .intro { padding: 1.6rem 0 1.4rem; }
-  .intro .l, .sec .l, .marg, .foot .l {
+  .intro .l, .sec .l, .marg {
     text-align: left;
     display: flex;
     flex-wrap: wrap;

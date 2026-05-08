@@ -28,16 +28,14 @@
   {{ content }}
 
   <footer class="foot">
-    <div class="l">Colophon</div>
-    <div class="r">
-      <span>Set in <em>EB Garamond</em>. Kept by <a href="https://github.com/tkukurin">tkukurin</a>.</span>
-      <span><a href="{{ '/impedimenta' | relative_url }}">Workshop</a></span>
-    </div>
+    <span>Set in <em>EB Garamond</em>. Kept by <a href="https://github.com/tkukurin">tkukurin</a>.</span>
+    <a href="{{ '/impedimenta' | relative_url }}">Workshop</a>
   </footer>
 </main>
 
 <script>
-// Lift kramdown footnotes into sidenotes on wide screens
+// Lift kramdown footnotes into margin notes on wide screens.
+// aside.fn-note positioned absolutely in the right margin of .post-content.
 (function(){
   if (window.innerWidth < 900) return;
   var content = document.querySelector('.post-content');
@@ -45,7 +43,10 @@
   var fnSection = content.querySelector('.footnotes');
   if (!fnSection) return;
 
+  // Collect all footnote refs
   var refs = content.querySelectorAll('a[role="doc-noteref"], sup[role="doc-noteref"] a');
+  var notes = [];
+
   refs.forEach(function(link, i) {
     var id = link.getAttribute('href').replace('#', '');
     var li = document.getElementById(id);
@@ -56,12 +57,33 @@
     note.innerHTML = '<span class="fn-num">' + (i + 1) + '.</span> ' +
       li.innerHTML.replace(/<a[^>]*class="reversefootnote"[^>]*>.*?<\/a>/g, '');
 
-    // Find the containing block element
-    var block = link.closest('h1, h2, h3, h4, h5, h6, p, li, blockquote, pre');
-    if (!block) block = link.parentElement;
+    // Append to .post-content; position absolutely relative to it.
+    content.appendChild(note);
 
-    // Insert after the block element (never inside headings — invalid DOM)
-    block.insertAdjacentElement('afterend', note);
+    // Align note top with the block element containing the ref.
+    var block = link.closest('h1, h2, h3, h4, h5, h6, p, li, blockquote, pre') || link.parentElement;
+    var top = block.offsetTop;
+
+    notes.push({ el: note, idealTop: top });
+  });
+
+  // Resolve overlaps: push notes down if they'd collide.
+  var gap = 6;
+  for (var i = 0; i < notes.length; i++) {
+    notes[i].el.style.top = notes[i].idealTop + 'px';
+  }
+  // Second pass: after rendering, fix collisions using actual heights.
+  requestAnimationFrame(function(){
+    var prevBottom = 0;
+    for (var i = 0; i < notes.length; i++) {
+      var el = notes[i].el;
+      var currentTop = parseFloat(el.style.top);
+      if (currentTop < prevBottom + gap) {
+        currentTop = prevBottom + gap;
+        el.style.top = currentTop + 'px';
+      }
+      prevBottom = currentTop + el.offsetHeight;
+    }
   });
 
   fnSection.classList.add('footnotes-hidden');
