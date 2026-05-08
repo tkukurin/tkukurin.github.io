@@ -1,142 +1,399 @@
-/* Tufte-inspired CSS for Selected Works
- * Based on Tufte CSS by Dave Liepmann
- * Simplified and extended for tkukurin.github.io
- */
-
-/* === Variables as custom properties === */
+/* === Variables === */
 :root {
-  --bg-color: #fffff8;
-  --text-color: #111;
-  --contrast-color: #a00000;
-  --border-color: #333;
-  --muted-color: #666;
-  --body-font: et-book, Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
-  --sans-font: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-  --code-font: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  --paper:    oklch(0.978 0.006 85);
+  --paper-2:  oklch(0.965 0.010 80);
+  --ink:      oklch(0.22 0.012 60);
+  --ink-2:    oklch(0.42 0.014 60);
+  --ink-3:    oklch(0.62 0.012 60);
+  --rule:     oklch(0.84 0.008 70);
+  --rubric:   oklch(0.46 0.13 28);
+
+  --serif: 'EB Garamond', 'Hoefler Text', Garamond, Georgia, serif;
+  --mono:  'Inconsolata', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --measure: 30em;
+  --sidebar: 11rem;
+  --gap: 2.4rem;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-color: #151515;
-    --text-color: #ddd;
-    --contrast-color: #e07070;
-    --border-color: #555;
-    --muted-color: #999;
+    --paper:    oklch(0.16 0.006 60);
+    --paper-2:  oklch(0.19 0.008 60);
+    --ink:      oklch(0.88 0.008 60);
+    --ink-2:    oklch(0.72 0.010 60);
+    --ink-3:    oklch(0.52 0.008 60);
+    --rule:     oklch(0.30 0.008 60);
+    --rubric:   oklch(0.65 0.13 28);
   }
 }
 
 /* === Reset and base === */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 12px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-@media (min-width: 800px) { html { font-size: 13px; } }
-@media (min-width: 1000px) { html { font-size: 14px; } }
-@media (min-width: 1200px) { html { font-size: 15px; } }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
 
 body {
-  max-width: 50rem;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.5;
+  font-feature-settings: "kern", "liga", "clig", "onum";
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: oklch(0.85 0.06 28 / 0.5); }
+a { color: inherit; text-decoration: none; }
+
+/* === Shell === */
+.shell {
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 1.5rem;
-  font-family: var(--body-font);
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  counter-reset: sidenote-counter;
+  padding: 0 2.5rem;
 }
 
-/* === Typography === */
-h1 {
-  font-weight: 400;
-  font-size: 2.5rem;
-  line-height: 1.1;
-  margin: 2rem 0 1rem;
+/* === Topbar === */
+.topbar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 1.4rem 0;
+  border-bottom: 0.5px solid var(--rule);
+  font-size: 0.82rem;
 }
 
-h2 {
+.mark {
   font-style: italic;
-  font-weight: 400;
+  font-weight: 500;
+  color: var(--ink);
+  font-size: 1rem;
+  letter-spacing: -0.005em;
+}
+.mark .amp { color: var(--rubric); font-style: italic; padding: 0 0.05em; }
+
+.nav { display: flex; gap: 1.4rem; color: var(--ink-2); font-style: italic; }
+.nav a { position: relative; }
+.nav a:hover { color: var(--ink); }
+.nav a.is-here { color: var(--ink); }
+.nav a.is-here::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -3px;
+  height: 0.5px; background: var(--rubric);
+}
+
+/* === Intro === */
+.intro {
+  display: grid;
+  grid-template-columns: var(--sidebar) 1fr;
+  gap: var(--gap);
+  padding: 2.6rem 0 2.2rem;
+  border-bottom: 0.5px solid var(--rule);
+}
+.intro .l {
+  color: var(--ink-3);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  text-align: right;
+  padding-top: 0.35rem;
+}
+.intro .l .label {
+  display: block;
+  font-variant: small-caps;
+  font-feature-settings: "smcp", "c2sc", "onum";
+  letter-spacing: 0.14em;
+  color: var(--ink-2);
+  margin-bottom: 0.4rem;
+}
+.intro .l em { font-style: italic; color: var(--ink-2); }
+.intro h1 {
+  font-weight: 500;
+  font-size: 1.55rem;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  margin: 0 0 0.7rem;
+  max-width: 32rem;
+  text-wrap: balance;
+}
+.intro h1 em { color: var(--ink); font-style: italic; }
+.intro p {
+  margin: 0;
+  color: var(--ink-2);
+  max-width: 32rem;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+.intro p + p { margin-top: 0.55rem; }
+
+/* === Section header === */
+.sec {
+  display: grid;
+  grid-template-columns: var(--sidebar) 1fr;
+  gap: var(--gap);
+  align-items: baseline;
+  padding: 2rem 0 0.9rem;
+}
+.sec .l {
+  text-align: right;
+  font-variant: small-caps;
+  font-feature-settings: "smcp", "c2sc", "onum";
+  letter-spacing: 0.16em;
+  font-size: 0.74rem;
+  color: var(--ink-3);
+}
+.sec .r {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-top: 0.5px solid var(--rule);
+  padding-top: 0.7rem;
+}
+.sec .r h2 {
+  margin: 0;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--ink-2);
+}
+.sec .r .count {
+  font-size: 0.78rem;
+  color: var(--ink-3);
+  font-style: italic;
+  text-decoration: none;
+}
+a.count:hover { color: var(--rubric); }
+
+/* === Index list === */
+.list { list-style: none; margin: 0; padding: 0; }
+.row {
+  display: grid;
+  grid-template-columns: var(--sidebar) 1fr;
+  gap: var(--gap);
+  padding: 0.85rem 0;
+  border-top: 0.5px solid var(--rule);
+  align-items: baseline;
+  transition: background 120ms ease;
+}
+.row:hover { background: var(--paper-2); }
+.row:hover .marg .arrow { opacity: 1; transform: translateX(2px); }
+
+.marg {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 0.7rem;
+  color: var(--ink-3);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  text-align: right;
+  font-feature-settings: "onum", "kern";
+}
+.marg .day {
+  font-variant: small-caps;
+  font-feature-settings: "smcp", "c2sc", "onum";
+  letter-spacing: 0.1em;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+.marg .kind {
+  font-style: italic;
+  color: var(--ink-3);
+}
+.marg .arrow {
+  opacity: 0;
+  color: var(--rubric);
+  transition: all 140ms ease;
+  transform: translateX(-2px);
+  font-size: 0.85rem;
+}
+
+.post { display: block; }
+.post .t {
+  font-weight: 500;
+  font-size: 1.04rem;
+  line-height: 1.32;
+  color: var(--ink);
+  margin: 0 0 0.18rem;
+  letter-spacing: -0.002em;
+}
+.post .t em { font-style: italic; }
+.post .d {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  font-style: italic;
+  max-width: var(--measure);
+}
+.post .d em { font-style: normal; }
+
+/* featured row */
+.row.feat .post .t {
+  font-size: 1.32rem;
+  line-height: 1.22;
+  margin-bottom: 0.3rem;
+}
+.row.feat .post .d {
+  font-style: normal;
+  color: var(--ink-2);
+  font-size: 0.97rem;
+}
+.row.feat .post .d em { font-style: italic; }
+
+/* === Flowing two-column archive list === */
+.col-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.col-list.flow-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(10, auto); /* fixed rows = items flow top-down then into col 2 */
+  grid-auto-flow: column;
+  column-gap: 3rem;
+  margin-left: calc(var(--sidebar) + var(--gap)); /* align with content column */
+  width: calc(100% - var(--sidebar) - var(--gap)); /* don't exceed shell */
+  overflow: hidden; /* clip any overflow from nowrap text */
+}
+.col-list.flow-cols > li {
+  min-width: 0; /* override grid min-width:auto so 1fr can shrink below content size */
+}
+.col-list li {
+  padding: 0.45rem 0;
+  border-top: 0.5px solid var(--rule);
+  font-size: 0.95rem;
+  line-height: 1.35;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.col-list li a {
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  min-width: 0;
+}
+.col-list li a:hover { color: var(--rubric); }
+.col-date {
+  flex-shrink: 0;
+  font-size: 0.78rem;
+  color: var(--ink-3);
+  font-variant: small-caps;
+  font-feature-settings: "smcp", "c2sc", "onum";
+  letter-spacing: 0.08em;
+}
+
+/* === Footer === */
+.foot {
+  display: grid;
+  grid-template-columns: var(--sidebar) 1fr;
+  gap: var(--gap);
+  padding: 3rem 0 4rem;
+  margin-top: 2rem;
+  border-top: 0.5px solid var(--rule);
+  color: var(--ink-3);
+  font-size: 0.82rem;
+  font-style: italic;
+}
+.foot .l {
+  text-align: right;
+  font-variant: small-caps;
+  font-feature-settings: "smcp", "c2sc", "onum";
+  letter-spacing: 0.14em;
+  font-style: normal;
+  font-size: 0.74rem;
+}
+.foot .r { display: flex; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+.foot a { border-bottom: 0.5px solid var(--rule); padding-bottom: 1px; }
+.foot a:hover { border-bottom-color: var(--rubric); color: var(--ink); }
+
+/* === Post content === */
+.post-content {
+  padding: 2rem 0 0;
+}
+
+.post-content h1 {
+  font-weight: 500;
   font-size: 2rem;
-  line-height: 1.1;
+  line-height: 1.15;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.post-content h2 {
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.2;
   margin: 2.5rem 0 0.5rem;
 }
 
-h3 {
+.post-content h3 {
   font-style: italic;
-  font-weight: 400;
-  font-size: 1.6rem;
-  line-height: 1.2;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.25;
   margin: 2rem 0 0.5rem;
 }
 
-p, ol, ul {
-  font-size: 1.4rem;
-  line-height: 2rem;
+.post-content p,
+.post-content ol,
+.post-content ul {
+  font-size: 1.05rem;
+  line-height: 1.65;
 }
 
-p {
-  margin: 1.4rem 0;
-}
+.post-content p { margin: 1.2rem 0; }
 
-.subtitle {
+.post-content .subtitle {
   font-style: italic;
-  font-size: 1.6rem;
-  margin: 0.5rem 0 2rem;
-  color: var(--muted-color);
+  font-size: 1rem;
+  margin: 0 0 2rem;
+  color: var(--ink-2);
 }
 
-/* === Links === */
-a {
-  color: var(--contrast-color);
-  text-decoration: none;
-}
-
-a:hover {
+.post-content a { color: var(--rubric); }
+.post-content a:hover {
   text-decoration: underline;
   text-underline-offset: 0.15em;
 }
 
-/* === Lists === */
-ul, ol {
-  padding-left: 1.5rem;
-}
+.post-content ul, .post-content ol { padding-left: 1.5rem; }
+.post-content li { margin: 0.3rem 0; }
 
-li {
-  margin: 0.3rem 0;
-}
-
-/* === Blockquotes === */
-blockquote {
+.post-content blockquote {
   font-style: italic;
   margin: 1.5rem 0;
   padding-left: 1.5rem;
-  border-left: 3px solid var(--border-color);
+  border-left: 2px solid var(--rule);
+  color: var(--ink-2);
 }
 
-blockquote p {
-  width: 90%;
+.post-content hr {
+  border: none;
+  border-top: 0.5px solid var(--rule);
+  margin: 2rem 0;
 }
 
-/* === Code === */
+/* Code */
 code {
-  font-family: var(--code-font);
+  font-family: var(--mono);
   font-size: 0.85em;
-  background: rgba(0, 0, 0, 0.04);
+  background: oklch(0.92 0.005 70 / 0.5);
   padding: 0.1em 0.35em;
   border-radius: 3px;
 }
 
 pre {
-  font-family: var(--code-font);
-  font-size: 0.85em;
+  font-family: var(--mono);
+  font-size: 0.82em;
   padding: 1rem;
   overflow-x: auto;
-  background: rgba(0, 0, 0, 0.03);
+  background: oklch(0.92 0.005 70 / 0.4);
   border-radius: 3px;
   line-height: 1.5;
 }
@@ -148,258 +405,80 @@ pre code {
 }
 
 @media (prefers-color-scheme: dark) {
-  code {
-    background: rgba(255, 255, 255, 0.08);
-  }
-  pre {
-    background: rgba(255, 255, 255, 0.05);
-  }
+  code { background: oklch(0.25 0.005 60 / 0.6); }
+  pre { background: oklch(0.22 0.005 60 / 0.6); }
 }
 
-/* === Tables === */
-table {
+/* Tables */
+.post-content table {
   border-spacing: 0;
-  border-top: 2px solid var(--border-color);
-  border-bottom: 2px solid var(--border-color);
+  border-top: 1.5px solid var(--rule);
+  border-bottom: 1.5px solid var(--rule);
   margin: 1.4rem 0;
-  font-size: 1.2rem;
+  font-size: 0.95rem;
 }
-
-th {
-  border-bottom: 1px solid var(--border-color);
+.post-content th {
+  border-bottom: 1px solid var(--rule);
   padding: 0.5em;
-  font-weight: normal;
+  font-weight: 500;
 }
+.post-content td { padding: 0.5em; }
 
-td {
-  padding: 0.5em;
-}
-
-/* === Layout === */
-article {
-  padding: 2rem 0;
-}
-
-section {
-  padding: 1rem 0;
-}
-
-header {
-  padding: 2rem 0 1rem;
-}
-
-footer {
-  padding: 2rem 0;
-  margin-top: 3rem;
-  border-top: 1px solid var(--border-color);
-}
-
-/* === Header === */
-header {
-  text-align: center;
-}
-
-.home-link {
-  display: inline-block;
-  color: var(--contrast-color);
-  transition: color 0.2s;
-}
-
-.home-link:hover {
-  color: var(--text-color);
+/* === Footnotes (kramdown) as margin notes === */
+.post-content sup[role="doc-noteref"] a,
+.post-content .footnote {
+  color: var(--rubric);
+  font-size: 0.75em;
   text-decoration: none;
+  font-feature-settings: "lnum";
 }
 
-/* === Footer === */
-.footer-links {
-  list-style: none;
-  padding: 0;
-  width: auto;
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.footer-links li {
-  margin: 0;
-}
-
-.footer-links li::before {
-  display: none;
-}
-
-.credits {
-  text-align: center;
-  font-family: var(--sans-font);
-  font-size: 1rem;
-  color: var(--muted-color);
-  margin-top: 1rem;
-}
-
-/* === Selected Works Homepage === */
-.section-desc {
-  font-style: italic;
-  color: var(--muted-color);
-  font-size: 1.2rem;
-  margin: 0.5rem 0 1.5rem;
-}
-
-/* Sententia - featured essays */
-.sententia {
-  padding-bottom: 0;
-}
-
-.entry--featured {
-  margin: 1.5rem 0;
-}
-
-.entry--featured:last-child {
-  margin-bottom: 0;
-}
-
-.entry--featured h3 {
-  font-style: normal;
-  font-size: 1.8rem;
-  margin: 0 0 0.3rem;
-}
-
-.entry--featured .date {
-  font-size: 1rem;
-  color: var(--muted-color);
-  font-variant: small-caps;
-  letter-spacing: 0.05em;
-}
-
-.entry--featured .excerpt {
-  width: 100%;
-  color: var(--muted-color);
-  font-size: 1.2rem;
-  margin-top: 0.8rem;
-}
-
-/* Archive section */
-.archive {
-  padding-top: 0;
-}
-
-/* Typographic section divider (dinkus) */
-.archive::before {
-  content: "⁂";
-  display: block;
-  text-align: center;
-  font-size: 1.2rem;
-  color: var(--muted-color);
-  padding: 1.5rem 0;
-  letter-spacing: 0.5em;
-}
-
-.archive h2 {
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-}
-
-.archive h3 {
-  font-size: 1.3rem;
-  font-style: normal;
-  font-variant: small-caps;
-  letter-spacing: 0.05em;
-  margin-top: 0;
-}
-
-.archive-columns {
-  display: flex;
-  gap: 3rem;
-  flex-wrap: wrap;
-}
-
-.archive-column {
-  flex: 1;
-  min-width: 250px;
-}
-
-.archive-list {
-  list-style: none;
-  padding: 0;
-  width: 100%;
-}
-
-.archive-list li {
-  margin: 0.4rem 0;
-  font-size: 1.1rem;
+.post-content .footnotes {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 0.5px solid var(--rule);
+  font-size: 0.9rem;
+  color: var(--ink-2);
   line-height: 1.5;
 }
-
-.archive-list li::before {
-  display: none;
-}
-
-.archive-list a {
-  color: var(--text-color);
-}
-
-.archive-list a:hover {
-  color: var(--contrast-color);
-}
-
-.archive-list .more {
-  margin-top: 1rem;
-  font-style: italic;
-}
-
-.archive-list .more a {
-  color: var(--contrast-color);
-}
-
-.archive-list .date {
-  color: var(--muted-color);
+.post-content .footnotes ol {
+  padding-left: 1.2rem;
   font-size: 0.9rem;
-  margin-left: 0.5rem;
+}
+.post-content .footnotes li {
+  margin: 0.6rem 0;
+  color: var(--ink-2);
+}
+.post-content .footnotes p {
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+}
+.post-content .reversefootnote {
+  color: var(--rubric);
+  text-decoration: none;
+  margin-left: 0.3em;
 }
 
-/* === Post layout === */
-.posthead {
-  line-height: 1.15;
-}
-
-/* === Sidenotes and margin notes (legacy inline) === */
-.sidenote, .marginnote {
-  font-size: 1.1rem;
+/* Sidenote mode (wide screens, activated by JS) */
+.footnote-sidenote {
+  position: absolute;
+  right: 0;
+  width: 12rem;
+  font-size: 0.82rem;
   line-height: 1.4;
-  color: var(--muted-color);
+  color: var(--ink-3);
   font-style: italic;
-  position: relative;
 }
+.footnotes-hidden { display: none; }
 
-.sidenote-number {
-  counter-increment: sidenote-counter;
-}
-
-.sidenote-number::after {
-  content: counter(sidenote-counter);
-  font-size: 0.8rem;
-  position: relative;
-  top: -0.4rem;
-  color: var(--contrast-color);
-}
-
-.sidenote::before {
-  content: counter(sidenote-counter) ". ";
-  color: var(--contrast-color);
-}
-
-/* ============================================
-   DIALOGUE EXCHANGES WITH MARGIN NOTES
-   Grid-based: content left, note right.
-   No overflow, no float hacks.
-   ============================================ */
-
+/* === Dialogue exchanges === */
 .exchange {
   display: grid;
   grid-template-columns: 1fr 13rem;
   gap: 2rem;
   align-items: start;
-  padding: 1.2rem 1rem;
-  margin: 0.3rem -1rem;
+  padding: 1.2rem 0;
+  margin: 0.3rem 0;
   border-radius: 6px;
   transition: background-color 0.4s ease-out;
 }
@@ -413,19 +492,13 @@ header {
   grid-column: 2;
   grid-row: 1 / -1;
   align-self: center;
-
-  /* Reset any legacy float/margin */
   float: none;
   clear: none;
-  margin-right: 0;
+  margin: 0;
   width: auto;
-  margin-top: 0;
-  margin-bottom: 0;
-
-  /* Styling */
-  font-size: 1rem;
+  font-size: 0.85rem;
   line-height: 1.45;
-  color: var(--muted-color);
+  color: var(--ink-3);
   font-style: italic;
   cursor: pointer;
   padding-left: 1rem;
@@ -435,25 +508,24 @@ header {
 
 .exchange .marginnote:hover,
 .exchange .sidenote:hover {
-  color: var(--contrast-color);
-  border-left-color: var(--contrast-color);
+  color: var(--rubric);
+  border-left-color: var(--rubric);
 }
 
-/* Active exchange (clicked) */
 .exchange.active {
-  background-color: rgba(160, 0, 0, 0.04);
+  background-color: oklch(0.46 0.13 28 / 0.04);
 }
 
 @media (prefers-color-scheme: dark) {
   .exchange.active {
-    background-color: rgba(224, 112, 112, 0.06);
+    background-color: oklch(0.65 0.13 28 / 0.06);
   }
 }
 
 .exchange.active .marginnote,
 .exchange.active .sidenote {
-  color: var(--text-color);
-  border-left-color: var(--contrast-color);
+  color: var(--ink);
+  border-left-color: var(--rubric);
 }
 
 /* Speaker labels */
@@ -461,22 +533,21 @@ header {
   display: block;
   font-variant: small-caps;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   letter-spacing: 0.05em;
-  color: var(--contrast-color);
+  color: var(--rubric);
   margin-bottom: 0.4rem;
 }
 
-/* Agent internal thought/log */
+/* Agent thought/log */
 .thought {
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   line-height: 1.5;
-  color: var(--muted-color);
-  border-left: 2px solid var(--contrast-color);
+  color: var(--ink-2);
+  border-left: 2px solid var(--rubric);
   padding-left: 1rem;
   margin: 0.6rem 0 1.2rem;
 }
-
 .thought-header {
   font-variant: small-caps;
   letter-spacing: 0.03em;
@@ -484,55 +555,55 @@ header {
 
 /* === Responsive === */
 @media (max-width: 760px) {
-  .archive-columns {
-    flex-direction: column;
-    gap: 2rem;
+  .shell { padding: 0 1.2rem; }
+
+  .topbar { flex-wrap: wrap; gap: 0.6rem 1rem; padding: 1rem 0; }
+
+  .intro, .sec, .row, .foot {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+  .intro { padding: 1.6rem 0 1.4rem; }
+  .intro .l, .sec .l, .marg, .foot .l {
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: flex-start;
+  }
+  .sec .r { border-top: 0; padding-top: 0; }
+  .row.feat .post .t { font-size: 1.15rem; }
+
+  .col-list.flow-cols {
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    margin-left: 0;
   }
 
-  /* Exchanges collapse to single column; notes fold inline */
+  /* Exchanges collapse */
   .exchange {
     grid-template-columns: 1fr;
     gap: 0;
-    padding: 1rem 0.5rem;
-    margin: 0.3rem 0;
+    padding: 1rem 0;
   }
-
   .exchange .marginnote,
   .exchange .sidenote {
     grid-column: 1;
     grid-row: auto;
     margin-top: 1rem;
     padding-top: 0.8rem;
-    border-left-color: var(--border-color);
+    border-left-color: var(--rule);
     border-left-width: 2px;
     border-left-style: solid;
-    font-size: 0.95rem;
-  }
-
-  /* Legacy standalone sidenotes: show inline on mobile */
-  .sidenote, .marginnote {
-    display: block;
-    float: none;
-    margin: 1rem 0;
-    width: 100%;
+    font-size: 0.85rem;
   }
 }
 
 /* === Print === */
 @media print {
-  body {
-    padding: 0;
-    font-size: 12pt;
-  }
-
-  header, footer {
-    display: none;
-  }
-
-  .exchange {
-    display: block;
-  }
-
+  body { padding: 0; font-size: 12pt; }
+  .topbar, .foot { display: none; }
+  .exchange { display: block; }
   .exchange .marginnote,
   .exchange .sidenote {
     display: block;

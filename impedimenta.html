@@ -3,16 +3,23 @@ layout: default
 title: Impedimenta
 ---
 
-<h1>Impedimenta</h1>
-<p class="subtitle">Dev notes, configs, and other baggage.</p>
-
 {% assign posts = site.posts | where_exp: "post", "post.tags contains 'impedimenta'" %}
 
-<ul class="archive-list">
+<section class="sec">
+  <div class="l">Impedimenta</div>
+  <div class="r"><h2>Dev notes, configs, and other baggage</h2><span class="count">{{ posts.size }} entries</span></div>
+</section>
+
+<ul class="list">
   {% for post in posts %}
-  <li>
-    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    <span class="date">{{ post.date | date: "%b %Y" }}</span>
+  <li class="row">
+    <div class="marg">
+      <span class="day">{{ post.date | date: "%b %-d, %Y" }}</span>
+      <span class="arrow">&rarr;</span>
+    </div>
+    <a class="post" href="{{ post.url | relative_url }}">
+      <p class="t">{{ post.title }}</p>
+    </a>
   </li>
   {% endfor %}
 </ul>
