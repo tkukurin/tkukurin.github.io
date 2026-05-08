@@ -18,14 +18,6 @@ layout: default
     {% endfor %}
   {% endfor %}
   {% if related.size > 0 %}
-  <hr>
-  <nav class="post-related">
-    <span class="related-label">Related</span>
-    <ul>
-      {% for post in related limit: 4 %}
-      <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a><span class="col-date">{{ post.date | date: "%b %Y" }}</span></li>
-      {% endfor %}
-    </ul>
-  </nav>
+  <p class="see-also"><span class="see-also-label">See also:</span>{% for post in related limit: 4 %}{% unless forloop.first %} · {% endunless %}<a href="{{ post.url | relative_url }}">{{ post.title }}</a>{% endfor %}</p>
   {% endif %}
 </section>
