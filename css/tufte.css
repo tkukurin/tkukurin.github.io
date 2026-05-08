@@ -314,6 +314,8 @@ a.count:hover { color: var(--rubric); }
 /* === Post content === */
 .post-content {
   padding: 2rem 0 0;
+  margin-left: calc(var(--sidebar) + var(--gap));
+  max-width: var(--measure);
 }
 
 .post-content h1 {
@@ -462,8 +464,8 @@ pre code {
 /* Sidenote mode (wide screens, activated by JS) */
 .footnote-sidenote {
   position: absolute;
-  right: 0;
-  width: 12rem;
+  left: calc(100% + var(--gap));
+  width: 14rem;
   font-size: 0.82rem;
   line-height: 1.4;
   color: var(--ink-3);
@@ -563,6 +565,7 @@ pre code {
     grid-template-columns: 1fr;
     gap: 0.4rem;
   }
+  .post-content { margin-left: 0; }
   .intro { padding: 1.6rem 0 1.4rem; }
   .intro .l, .sec .l, .marg, .foot .l {
     text-align: left;
