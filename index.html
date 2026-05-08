@@ -34,7 +34,7 @@ title: almost worth reading.
 {% if sententia.size > 0 %}
 <section class="sec">
   <div class="l">Sententia</div>
-  <div class="r"><h2>Conjectures &amp; refutations</h2><a class="count" href="{{ '/archive' | relative_url }}">{{ sententia.size }} {% if sententia.size == 1 %}entry{% else %}entries{% endif %}</a></div>
+  <div class="r"><h2>Conjectures &amp; refutations</h2><a class="count" href="{{ '/archive' | relative_url }}"><span class="count-num">{{ sententia.size }} {% if sententia.size == 1 %}entry{% else %}entries{% endif %}</span></a></div>
 </section>
 
 <ul class="list">
@@ -58,7 +58,7 @@ title: almost worth reading.
 {% if archive.size > 0 %}
 <section class="sec">
   <div class="l">Archive</div>
-  <div class="r"><h2>Marginalia &amp; symposia</h2><a class="count" href="{{ '/archive' | relative_url }}">{{ archive.size }} entries</a></div>
+  <div class="r"><h2>Marginalia &amp; symposia</h2><a class="count" href="{{ '/archive' | relative_url }}"><span class="count-num">{{ archive.size }} entries</span></a></div>
 </section>
 
 <ul class="col-list flow-cols">

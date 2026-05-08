@@ -160,6 +160,9 @@ a.mark:hover { color: var(--rubric); }
   text-decoration: none;
 }
 a.count:hover { color: var(--rubric); }
+a.count:hover .count-num { display: none; }
+a.count::after { content: ""; }
+a.count:hover::after { content: "view all posts →"; }
 
 /* === Index list === */
 .list { list-style: none; margin: 0; padding: 0; }
@@ -292,8 +295,6 @@ a.count:hover { color: var(--rubric); }
 /* === Related posts === */
 .post-related {
   margin-top: 3rem;
-  padding-top: 1.4rem;
-  border-top: 0.5px solid var(--rule);
 }
 .related-label {
   font-variant: small-caps;
@@ -588,6 +589,16 @@ pre code {
   margin: 0;
 }
 .post-content .fn-note em { font-style: italic; }
+.post-content .fn-note.fn-highlight {
+  color: var(--ink);
+  transition: color 150ms ease;
+}
+.post-content a.fn-highlight {
+  background: oklch(0.85 0.06 28 / 0.25);
+  border-radius: 2px;
+  transition: background 150ms ease;
+}
+.post-content .fn-note { cursor: pointer; }
 .footnotes-hidden { display: none; }
 
 /* === Dialogue exchanges === */

@@ -57,8 +57,21 @@
 
     var note = document.createElement('aside');
     note.className = 'fn-note';
+    note.setAttribute('data-fn', id);
     note.innerHTML = '<span class="fn-num">' + (i + 1) + '.</span> ' +
       li.innerHTML.replace(/<a[^>]*class="reversefootnote"[^>]*>.*?<\/a>/g, '');
+
+    link.setAttribute('data-fn', id);
+
+    // Bidirectional hover highlight
+    link.addEventListener('mouseenter', function(){ note.classList.add('fn-highlight'); });
+    link.addEventListener('mouseleave', function(){ note.classList.remove('fn-highlight'); });
+    note.addEventListener('mouseenter', function(){ link.classList.add('fn-highlight'); });
+    note.addEventListener('mouseleave', function(){ link.classList.remove('fn-highlight'); });
+
+    // Click to scroll
+    link.addEventListener('click', function(e){ e.preventDefault(); note.scrollIntoView({behavior:'smooth', block:'center'}); });
+    note.addEventListener('click', function(){ link.scrollIntoView({behavior:'smooth', block:'center'}); });
 
     // Append to .post-content; position absolutely relative to it.
     content.appendChild(note);
