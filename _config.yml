@@ -25,6 +25,11 @@ defaults:
       layout: "post"
   - scope:
       path: ""
+      type: "opera"
+    values:
+      layout: "bare"
+  - scope:
+      path: ""
     values:
       layout: "default"
 
