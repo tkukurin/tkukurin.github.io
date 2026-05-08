@@ -372,13 +372,13 @@ a.count:hover { color: var(--rubric); }
 }
 
 
-.post-content a {
+.post-content a, .topbar a {
   color: var(--ink);
   text-decoration: none;
   border-bottom: 0.5px solid var(--rubric);
   padding-bottom: 1px;
 }
-.post-content a:hover { color: var(--rubric); }
+.post-content a:hover, .topbar a:hover { color: var(--rubric); }
 
 .post-content ul, .post-content ol { padding-left: 1.5rem; }
 .post-content li { margin: 0.3rem 0; }
