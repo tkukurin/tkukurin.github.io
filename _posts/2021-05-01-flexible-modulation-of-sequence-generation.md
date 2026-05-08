@@ -47,7 +47,7 @@ consistent with search efficiency optimization.
 
 In all diagrams, time flows yellow-to-red:
 
-![Mice](../assets/img/2021-05-01-fig1.png)
+![Mice](/assets/img/2021-05-01-fig1.png)
 
 $$x = (x_0, x_1, \cdots, x_t)$$, where state space $$X$$ is considered discrete.
 "Master equation" defined by e.g. rodent initial position $$\rho_0 = p(x_0)$$;
@@ -77,7 +77,7 @@ s.t. $$s_{\tau,\alpha}(\lambda) = \exp \{ -\tau^{-1} |\lambda|^\alpha$$.
 When alpha is less than 1, probability mass is distributed towards remote
 positions (fig 2d).
 
-![graphs from the paper](../assets/img/2021-05-01-fig2.png)
+![graphs from the paper](/assets/img/2021-05-01-fig2.png)
 
 
 ### Goal-directed with heterogeneous jumps
@@ -120,7 +120,7 @@ What is MEC activity?
 $$\alpha > 1$$ drives turbulent behavior.
 Model is reminiscent of conceptual disorganization, symptom of schizophrenia.
 
-![sampling regime performance](../assets/img/2021-05-01-fig7.png)
+![sampling regime performance](/assets/img/2021-05-01-fig7.png)
 
 
 ## Discussion

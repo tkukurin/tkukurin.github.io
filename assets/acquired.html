@@ -596,35 +596,35 @@ permalink: /acquired/
 
         const inlineBooksData = [
   {
-    "id": "1788404718",
-    "title": "Enzo",
-    "author": "Luca Del Monte",
-    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1788404718.jpg",
-    "amazonUrl": "https://www.amazon.com/Enzo-Ferrari-Definitive-Biography/dp/1788404718",
-    "category": "Business & Leadership",
-    "episodeRef": {
-      "name": "Ferrari",
-      "seasonNumber": 2026,
-      "episodeNumber": 2,
-      "slug": "ferrari"
-    },
-    "addedAt": "2026-04-18T21:07:32.754Z",
-    "source": "automated"
-  },
-  {
-    "id": "0547336055",
-    "title": "Go Like Hell",
+    "id": "wu0nvb",
+    "title": "Go Like Hell by A.J. Baime",
     "author": "A. J. Baime",
-    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0547336055.jpg",
+    "coverUrl": "https://covers.openlibrary.org/b/id/10315233-L.jpg",
     "amazonUrl": "https://www.amazon.com/Go-Like-Hell-Ferrari-Battle/dp/0547336055",
     "category": "Business & Leadership",
     "episodeRef": {
       "name": "Ferrari",
-      "seasonNumber": 2026,
+      "seasonNumber": 19,
       "episodeNumber": 2,
       "slug": "ferrari"
     },
-    "addedAt": "2026-04-18T21:07:32.852Z",
+    "addedAt": "2026-04-21T10:40:27.141Z",
+    "source": "automated"
+  },
+  {
+    "id": "sh88dx",
+    "title": "Enzo Ferrari by Luca Dal Monte",
+    "author": "Brock Yates",
+    "coverUrl": "https://covers.openlibrary.org/b/id/7146165-L.jpg",
+    "amazonUrl": "https://www.amazon.com/Enzo-Ferrari-Definitive-Biography/dp/1788404718",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Ferrari",
+      "seasonNumber": 19,
+      "episodeNumber": 2,
+      "slug": "ferrari"
+    },
+    "addedAt": "2026-04-21T10:40:26.851Z",
     "source": "automated"
   },
   {
@@ -3139,11 +3139,6 @@ permalink: /acquired/
   }
 ];
         const inlineEpisodesData = {
-  "ferrari": {
-    "title": "Ferrari",
-    "desc": "Ferrari is the pinnacle of luxury scarcity — across its entire 79-year history, the company has sold just 330,000 cars at an average price today of $500,000. For context, Hermès sells that many Birkins and Kellys roughly every 2 years, and Rolex moves that many watches every 3 months. And yet this ultimate luxury product also lives under the same roof with a widely beloved professional sports team… one with 400 million rabid fans from all walks of life who live and die by the Scuderia’s performance every F1 race weekend! How is it possible that these two seemingly contradictory customer bases can coexist within the same company? And far from destroying each other’s value, only reinforce it? The answer, it turns out, is a beautiful, bloody, tragic and romantic opera that spans two families and three generations — and just might be one of the best tales we’ve ever told on Acquired. Buckle up for the story of Ferrari.",
-    "link": "https://www.acquired.fm/episodes/ferrari"
-  },
   "formula-1": {
     "title": "Formula 1",
     "desc": "Formula 1 is three competitions in one: a 200mph battle of the world's best race car drivers, the world cup of engineering where thousand-person teams spend hundreds of millions designing cars from scratch, and — as one of our listeners perfectly put it — the “Real Housewives of the Garage”, a soap opera of billionaire egos, team politics, and paddock drama that makes for incredible reality television. It's also the world's most popular annual sporting series with over 827 million fans globally — a fact that would shock most Americans, who until a recent viral Netflix series had barely heard of it. Today we tell the story of how a chaotic, deadly, and gloriously dysfunctional European racing series became one of the greatest business stories in sports. For decades, brilliant engineers and daredevil drivers dedicated their lives (and too often lost them) to a league controlled for 45 years by a single man: a former London car dealer named Bernie Ecclestone, who centralized power and extracted billions, while also undeniably single-handedly making the sport successful. Then, in a move no one saw coming, the American company Liberty Media bought the whole thing in 2017, installed a team of Fox Sports and ESPN veterans, and did what Bernie never would — professionalized it. All of a sudden famously money-losing F1 teams turned into real businesses, with the average team valuation today clocking in at an astounding $3.6 billion. Buckle up for one of our most-requested episodes: the wild story of Formula 1.",
@@ -4208,6 +4203,11 @@ permalink: /acquired/
     "title": "Trailer: What is Acquired?",
     "desc": "Every company has a story. Learn the playbooks that built the world’s greatest companies — and how you can apply them. The episodes are deep and heavily-researched, uncovering the full histories behind household names you thought you already knew like Rolex, Amazon, Starbucks, or NVIDIA. Enjoy!",
     "link": "https://www.acquired.fm/episodes/trailer-what-is-acquired"
+  },
+  "ferrari": {
+    "title": "Ferrari",
+    "desc": "Ferrari is the pinnacle of luxury scarcity — across its entire 79-year history, the company has sold just 330,000 cars at an average price today of $500,000. For context, Hermès sells that many Birkins and Kellys roughly every 2 years, and Rolex moves that many watches every 3 months. And yet this ultimate luxury product also lives under the same roof with a widely beloved professional sports team… one with 400 million rabid fans from all walks of life who live and die by the Scuderia’s performance every F1 race weekend! How is it possible that these two seemingly contradictory customer bases can coexist within the same company? And far from destroying each other’s value, only reinforce it? The answer, it turns out, is a beautiful, bloody, tragic and romantic opera that spans two families and three generations — and just might be one of the best tales we’ve ever told on Acquired. Buckle up for the story of Ferrari.",
+    "link": "https://www.acquired.fm/episodes/ferrari"
   }
 };
 
@@ -4242,8 +4242,8 @@ permalink: /acquired/
                 // Fetch books and descriptions in parallel
                 // Data is now inlined
 /*
-                    fetch('books.json'),
-                    fetch('episodes.json').catch(() => ({ json: () => ({}) })) // Fallback if missing
+                    fetch('data/books.json'),
+                    fetch('data/episodes.json').catch(() => ({ json: () => ({}) })) // Fallback if missing
                 */
                 
                 const data = inlineBooksData;

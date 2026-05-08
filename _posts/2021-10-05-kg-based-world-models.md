@@ -104,7 +104,7 @@ Basically two transformer encoders w/ different objectives. Sample inputs:
 Pooled embeddings from the 2 encoders are concatenated.
 Decoder also (of course!) attends to individual token vectors.
 
-![Worldformer diagram](assets/img/2021-10-09-worldformer.png)
+![Worldformer diagram](/assets/img/2021-10-09-worldformer.png)
 
 Outputs, KG difference $$G_{t+1} − G_t$$ and the valid actions $$V_{t+1}$$,
 are both *Sets of Sequences*: token ordering matters within, but not between.

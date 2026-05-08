@@ -136,7 +136,7 @@ $$P(R=1|T=1)$$
 
 Algorithm just removes all probability mass from the false min cut in `d`, and normalizes probabilities across the rest of the tree.
 
-![See](http://www.adaptiveagents.org/_media/wiki/see.png)
+<!-- image unavailable: adaptiveagents.org is offline -->
 
 
 ```python
@@ -167,7 +167,7 @@ $$P(D=1|T\leftarrow1 \wedge R=1)$$
 
 > depending on the critical set, the intervention could assign different values to the same random variables in separate branches of the tree, or in fact even manipulate different random variables in every branch (a context-dependent "recipe"), in order to bring about a desired effect.
 
-![Do](http://www.adaptiveagents.org/_media/wiki/do.png)
+<!-- image unavailable: adaptiveagents.org is offline -->
 
 
 ```python
@@ -203,7 +203,7 @@ $$P(R_{T\leftarrow0}=1|T\leftarrow1;R=1)$$
 In the real world, "I have taken the treatment and recovered."
 What is the probability of "recovering," had "I not taken the treatment" instead?
 
-![Counterfactual](http://www.adaptiveagents.org/_media/wiki/cf.png)
+<!-- image unavailable: adaptiveagents.org is offline -->
 
 
 ```python

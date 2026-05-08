@@ -19,7 +19,7 @@ Claim to corroborate [Elman's findings](https://onlinelibrary.wiley.com/doi/pdf/
 > Our study is a small example of how language can be used as a channel to probe
 > and understand what exactly agents can learn from their environments.
 
-![TL;DR of the environment](assets/img/2021-10-09-emergent-semantics-fig1.png)
+![TL;DR of the environment](/assets/img/2021-10-09-emergent-semantics-fig1.png)
 
 They query factual knowledge about the environment:
 * shapes and colors ('What shape is the `<color>` object?')
@@ -80,5 +80,5 @@ Trained via cross-entropy, gradients are not propagated to action-LSTM.
 > unrolled for a fixed number of computation steps after which it predicts a
 > softmax distribution over the vocabulary of one-word answers.
 
-![TL;DR of the architecture](assets/img/2021-10-09-emergent-semantics-fig2.png)
+![TL;DR of the architecture](/assets/img/2021-10-09-emergent-semantics-fig2.png)
 
