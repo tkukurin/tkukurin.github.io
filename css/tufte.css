@@ -316,6 +316,7 @@ a.count:hover { color: var(--rubric); }
   padding: 2rem 0 0;
   margin-left: calc(var(--sidebar) + var(--gap));
   max-width: var(--measure);
+  position: relative;
 }
 
 .post-content h1 {
@@ -427,12 +428,23 @@ pre code {
 .post-content td { padding: 0.5em; }
 
 /* === Footnotes (kramdown) as margin notes === */
+.post-content a[role="doc-noteref"],
 .post-content sup[role="doc-noteref"] a,
 .post-content .footnote {
+  font-feature-settings: "sups", "onum";
   color: var(--rubric);
+  font-style: normal;
+  font-weight: 500;
   font-size: 0.75em;
   text-decoration: none;
-  font-feature-settings: "lnum";
+  border: 0;
+  padding: 0 0.08em;
+  border-radius: 2px;
+  transition: background 120ms ease;
+}
+.post-content a[role="doc-noteref"]:hover,
+.post-content .footnote:hover {
+  background: oklch(0.92 0.04 28 / 0.6);
 }
 
 .post-content .footnotes {
@@ -462,15 +474,32 @@ pre code {
 }
 
 /* Sidenote mode (wide screens, activated by JS) */
-.footnote-sidenote {
-  position: absolute;
-  left: calc(100% + var(--gap));
-  width: 14rem;
+.post-content .fn-note {
+  float: left;
+  clear: left;
+  width: var(--sidebar);
+  margin-left: calc(-1 * (var(--sidebar) + var(--gap)));
+  margin-top: 0;
+  margin-bottom: 1.4rem;
+  font-family: var(--serif);
   font-size: 0.82rem;
-  line-height: 1.4;
-  color: var(--ink-3);
-  font-style: italic;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  text-transform: none;
+  line-height: 1.45;
+  color: var(--ink-2);
+  font-feature-settings: "kern", "liga", "onum";
+  text-indent: 0;
+  text-align: right;
 }
+.post-content .fn-note .fn-num {
+  color: var(--rubric);
+  font-feature-settings: "lnum";
+  margin-right: 0.4em;
+}
+.post-content .fn-note em { font-style: italic; }
 .footnotes-hidden { display: none; }
 
 /* === Dialogue exchanges === */
@@ -531,14 +560,18 @@ pre code {
 }
 
 /* Speaker labels */
-.speaker {
+.speaker,
+.dialogue h2,
+.dialogue h3 {
   display: block;
   font-variant: small-caps;
   font-weight: 600;
   font-size: 0.95rem;
+  font-style: normal;
   letter-spacing: 0.05em;
   color: var(--rubric);
-  margin-bottom: 0.4rem;
+  margin: 1.8rem 0 0.4rem;
+  line-height: 1.4;
 }
 
 /* Agent thought/log */
@@ -602,6 +635,10 @@ pre code {
     border-left-style: solid;
     font-size: 0.85rem;
   }
+
+  /* Hide floated sidenotes on mobile, show bottom footnotes */
+  .post-content .fn-note { display: none; }
+  .footnotes-hidden { display: block !important; }
 }
 
 /* === Print === */

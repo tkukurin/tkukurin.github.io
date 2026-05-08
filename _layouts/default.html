@@ -45,23 +45,23 @@
   var fnSection = content.querySelector('.footnotes');
   if (!fnSection) return;
 
-  var refs = content.querySelectorAll('sup[role="doc-noteref"]');
-  refs.forEach(function(ref) {
-    var link = ref.querySelector('a');
-    if (!link) return;
+  var refs = content.querySelectorAll('a[role="doc-noteref"], sup[role="doc-noteref"] a');
+  refs.forEach(function(link, i) {
     var id = link.getAttribute('href').replace('#', '');
-    var li = fnSection.querySelector('#' + id);
+    var li = document.getElementById(id);
     if (!li) return;
 
-    var note = document.createElement('span');
-    note.className = 'footnote-sidenote';
-    note.innerHTML = li.innerHTML.replace(/<a[^>]*class="reversefootnote"[^>]*>.*?<\/a>/g, '');
+    var note = document.createElement('aside');
+    note.className = 'fn-note';
+    note.innerHTML = '<span class="fn-num">' + (i + 1) + '.</span> ' +
+      li.innerHTML.replace(/<a[^>]*class="reversefootnote"[^>]*>.*?<\/a>/g, '');
 
-    var parent = ref.parentElement;
-    if (parent) {
-      parent.style.position = 'relative';
-      parent.appendChild(note);
-    }
+    // Find the containing block element
+    var block = link.closest('h1, h2, h3, h4, h5, h6, p, li, blockquote, pre');
+    if (!block) block = link.parentElement;
+
+    // Insert after the block element (never inside headings — invalid DOM)
+    block.insertAdjacentElement('afterend', note);
   });
 
   fnSection.classList.add('footnotes-hidden');
