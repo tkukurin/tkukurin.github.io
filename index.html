@@ -67,3 +67,16 @@ title: almost worth reading.
   {% endfor %}
 </ul>
 {% endif %}
+
+{% if site.opera.size > 0 %}
+<section class="sec">
+  <div class="l">Opera</div>
+  <div class="r"><h2>Artifacts &amp; experiments</h2><span class="count"><span class="count-num">{{ site.opera.size }} {% if site.opera.size == 1 %}piece{% else %}pieces{% endif %}</span></span></div>
+</section>
+
+<ul class="col-list">
+  {% for page in site.opera %}
+  <li><a href="{{ page.url | relative_url }}">{{ page.title }}</a>{% if page.description %}<span class="col-date">{{ page.description }}</span>{% endif %}</li>
+  {% endfor %}
+</ul>
+{% endif %}

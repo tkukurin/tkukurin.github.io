@@ -252,14 +252,16 @@ a.count:hover::after { content: "view all posts →"; }
   margin: 0;
   padding: 0;
 }
+.col-list {
+  margin-left: calc(var(--sidebar) + var(--gap)); /* align with content column */
+  width: calc(100% - var(--sidebar) - var(--gap)); /* don't exceed shell */
+}
 .col-list.flow-cols {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(10, auto); /* fixed rows = items flow top-down then into col 2 */
   grid-auto-flow: column;
   column-gap: 3rem;
-  margin-left: calc(var(--sidebar) + var(--gap)); /* align with content column */
-  width: calc(100% - var(--sidebar) - var(--gap)); /* don't exceed shell */
   overflow: hidden; /* clip any overflow from nowrap text */
 }
 .col-list.flow-cols > li {
@@ -707,10 +709,13 @@ pre code {
   /* not sure i like this ... */
   /*.row.feat .post .t { font-size: 1.15rem; }*/
 
+  .col-list {
+    margin-left: 0;
+    width: auto;
+  }
   .col-list.flow-cols {
     grid-template-columns: 1fr;
     grid-auto-flow: row;
-    margin-left: 0;
   }
 
   /* Exchanges collapse */
