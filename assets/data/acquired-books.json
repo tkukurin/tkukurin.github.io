@@ -1,0 +1,2544 @@
+[
+  {
+    "id": "wu0nvb",
+    "title": "Go Like Hell by A.J. Baime",
+    "author": "A. J. Baime",
+    "coverUrl": "https://covers.openlibrary.org/b/id/10315233-L.jpg",
+    "amazonUrl": "https://www.amazon.com/Go-Like-Hell-Ferrari-Battle/dp/0547336055",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Ferrari",
+      "seasonNumber": 19,
+      "episodeNumber": 2,
+      "slug": "ferrari"
+    },
+    "addedAt": "2026-04-21T10:40:27.141Z",
+    "source": "automated"
+  },
+  {
+    "id": "sh88dx",
+    "title": "Enzo Ferrari by Luca Dal Monte",
+    "author": "Brock Yates",
+    "coverUrl": "https://covers.openlibrary.org/b/id/7146165-L.jpg",
+    "amazonUrl": "https://www.amazon.com/Enzo-Ferrari-Definitive-Biography/dp/1788404718",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Ferrari",
+      "seasonNumber": 19,
+      "episodeNumber": 2,
+      "slug": "ferrari"
+    },
+    "addedAt": "2026-04-21T10:40:26.851Z",
+    "source": "automated"
+  },
+  {
+    "id": "0063318628",
+    "title": "Formula",
+    "author": "Joshua Robinson",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0063318628.jpg",
+    "amazonUrl": "https://www.amazon.com/Formula-Rogues-Geniuses-Reengineered-Fastest-Growing/dp/0063318628",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Formula 1",
+      "seasonNumber": 2026,
+      "episodeNumber": 1
+    },
+    "addedAt": "2026-03-06T22:02:01.351Z",
+    "source": "automated"
+  },
+  {
+    "id": "0465054684",
+    "title": "For God, Country, and Coca-Cola",
+    "author": "Mark Pendergrast",
+    "coverUrl": "https://m.media-amazon.com/images/I/517M6ZRQeaL.jpg",
+    "amazonUrl": "https://www.amazon.com/God-Country-Coca-Cola-Mark-Pendergrast/dp/0465054684",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Coca-Cola",
+      "seasonNumber": 2025,
+      "episodeNumber": 12
+    },
+    "addedAt": "2025-11-24T06:44:46.594Z",
+    "source": "automated"
+  },
+  {
+    "id": "1504019857",
+    "title": "Secret Formula",
+    "author": "Frederick Allen",
+    "coverUrl": "https://m.media-amazon.com/images/I/61Vp7+pWbGL._SY522_.jpg",
+    "amazonUrl": "https://www.amazon.com/Secret-Formula-Inside-Coca-Cola-Best-Known/dp/1504019857/",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Coca-Cola",
+      "seasonNumber": 2025,
+      "episodeNumber": 12
+    },
+    "addedAt": "2025-11-24T06:44:46.675Z",
+    "source": "automated"
+  },
+  {
+    "id": "1400225434",
+    "title": "Becoming Trader Joe",
+    "author": "Joe Coulombe",
+    "coverUrl": "https://m.media-amazon.com/images/I/91FV-siymOL._SY522_.jpg",
+    "amazonUrl": "https://www.amazon.com/Becoming-Trader-Joe-Business-Still/dp/1400225434",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Trader Joe's",
+      "seasonNumber": 2025,
+      "episodeNumber": 11
+    },
+    "addedAt": "2025-10-27T07:23:50.117Z",
+    "source": "manual"
+  },
+  {
+    "id": "0979167337",
+    "title": "Build a Brand Like Trader Joe's",
+    "author": "Mark E. Gardiner",
+    "coverUrl": "https://m.media-amazon.com/images/I/51JRhp+TQsL.jpg",
+    "amazonUrl": "https://www.amazon.com/Build-Brand-Like-Trader-Joes/dp/0979167337",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Trader Joe's",
+      "seasonNumber": 2025,
+      "episodeNumber": 11
+    },
+    "addedAt": "2025-10-27T07:23:50.776Z",
+    "source": "manual"
+  },
+  {
+    "id": "B083RZFYZC",
+    "title": "The Secret Life of Groceries",
+    "author": "Benjamin Lorr",
+    "coverUrl": "https://m.media-amazon.com/images/I/91EI8RpDdkL._SY522_.jpg",
+    "amazonUrl": "https://www.amazon.com/Secret-Life-Groceries-American-Supermarket-ebook/dp/B083RZFYZC",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Trader Joe's",
+      "seasonNumber": 2025,
+      "episodeNumber": 11
+    },
+    "addedAt": "2025-10-27T07:23:50.883Z",
+    "source": "manual"
+  },
+  {
+    "id": "B0DR3873M9",
+    "title": "Empire of AI",
+    "author": "Karen Hao",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B0DR3873M9.jpg",
+    "amazonUrl": "https://www.amazon.com/Empire-AI-Dreams-Nightmares-Altmans/dp/B0DR3873M9/ref=tmm_aud_swatch_0",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Google: The AI Company",
+      "seasonNumber": 2025,
+      "episodeNumber": 10
+    },
+    "addedAt": "2025-10-18T07:10:25.366Z",
+    "source": "backfill"
+  },
+  {
+    "id": "B08CYBGCR1",
+    "title": "Genius Makers: The Mavericks Who Brought AI to Google, Facebook, and the World",
+    "author": "Cade Metz",
+    "coverUrl": "https://covers.openlibrary.org/b/id/13268752-L.jpg",
+    "amazonUrl": "https://www.amazon.com/Genius-Makers-Mavericks-Brought-Facebook/dp/B08CYBGCR1/ref=tmm_aud_swatch_0",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Google: The AI Company",
+      "seasonNumber": 2025,
+      "episodeNumber": 10
+    },
+    "addedAt": "2025-10-18T07:10:26.167Z",
+    "source": "backfill"
+  },
+  {
+    "id": "1250337747",
+    "title": "Supremacy: AI, ChatGPT, and the Race That Will Change the World",
+    "author": "Joe Seamans",
+    "coverUrl": "https://covers.openlibrary.org/b/id/14815392-L.jpg",
+    "amazonUrl": "https://www.amazon.com/Supremacy-ChatGPT-Race-Change-World/dp/1250337747/",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Google: The AI Company",
+      "seasonNumber": 2025,
+      "episodeNumber": 10
+    },
+    "addedAt": "2025-10-18T07:10:27.002Z",
+    "source": "backfill"
+  },
+  {
+    "id": "1416596585",
+    "title": "In the Plex",
+    "author": "Steven Levy",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1416596585.jpg",
+    "amazonUrl": "https://www.amazon.com/Plex-Google-Thinks-Works-Shapes/dp/1416596585",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Alphabet Inc.",
+      "seasonNumber": 2025,
+      "episodeNumber": 9
+    }
+  },
+  {
+    "id": "B0FHL3NVWK",
+    "title": "Yield: How Google Bought, Built, and Bullied Its Way to Advertising Dominance",
+    "author": "Ari Paparo",
+    "coverUrl": "https://m.media-amazon.com/images/I/81KYlemIgcL._SX522_.jpg",
+    "amazonUrl": "https://www.amazon.com/gp/product/B0FHL3NVWK/",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Alphabet Inc.",
+      "seasonNumber": 2025,
+      "episodeNumber": 9
+    },
+    "addedAt": "2025-10-18T07:10:21.232Z",
+    "source": "backfill"
+  },
+  {
+    "id": "B00HUU13Y0",
+    "title": "How Google Works",
+    "author": "Eric Schmidt",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B00HUU13Y0.jpg",
+    "amazonUrl": "https://www.amazon.com/How-Google-Works-Eric-Schmidt-ebook/dp/B00HUU13Y0/",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Google: The Origin of Search",
+      "seasonNumber": 2025,
+      "episodeNumber": 7
+    },
+    "addedAt": "2025-10-18T07:10:14.889Z",
+    "source": "backfill"
+  },
+  {
+    "id": "1591840880",
+    "title": "The Search: How Google and Its Rivals Rewrote the Rules of Business and Transformed Our Culture",
+    "author": "John Battelle",
+    "coverUrl": "https://covers.openlibrary.org/b/id/10479320-L.jpg",
+    "amazonUrl": "https://www.amazon.com/Search-Rewrote-Business-Transformed-Culture/dp/1591840880",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Google: The Origin of Search",
+      "seasonNumber": 2025,
+      "episodeNumber": 7
+    }
+  },
+  {
+    "id": "B002UZ5JR2",
+    "title": "Googled: The End of the World as We Know It",
+    "author": "Ken Auletta",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B002UZ5JR2.jpg",
+    "amazonUrl": "https://www.amazon.com/gp/product/B002UZ5JR2",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Google: The Origin of Search",
+      "seasonNumber": 2025,
+      "episodeNumber": 7
+    },
+    "addedAt": "2025-10-18T07:10:15.816Z",
+    "source": "backfill"
+  },
+  {
+    "id": "B000CCE4IU",
+    "title": "The Google Story",
+    "author": "Stephen Hoye",
+    "coverUrl": "https://m.media-amazon.com/images/I/81e125kf+YL._SX522_.jpg",
+    "amazonUrl": "https://www.amazon.com/gp/product/B000CCE4IU/",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Google: The Origin of Search",
+      "seasonNumber": 2025,
+      "episodeNumber": 7
+    },
+    "addedAt": "2025-10-18T07:10:16.650Z",
+    "source": "backfill"
+  },
+  {
+    "id": "0393338096",
+    "title": "Home Game",
+    "author": "Michael Lewis",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0393338096.jpg",
+    "amazonUrl": "https://www.amazon.com/Home-Game-Accidental-Guide-Fatherhood/dp/0393338096",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "10 Years of Acquired (with Michael Lewis)",
+      "seasonNumber": 2025,
+      "episodeNumber": 4,
+      "slug": "10-years-of-acquired-with-michael-lewis"
+    },
+    "addedAt": "2026-04-18T21:07:48.383Z",
+    "source": "automated"
+  },
+  {
+    "id": "0393324818",
+    "title": "Moneyball",
+    "author": "Michael Lewis",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0393324818.jpg",
+    "amazonUrl": "https://www.amazon.com/Moneyball-Art-Winning-Unfair-Game/dp/0393324818",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "10 Years of Acquired (with Michael Lewis)",
+      "seasonNumber": 2025,
+      "episodeNumber": 4,
+      "slug": "10-years-of-acquired-with-michael-lewis"
+    },
+    "addedAt": "2026-04-18T21:07:48.470Z",
+    "source": "automated"
+  },
+  {
+    "id": "039333869X",
+    "title": "Liar's Poker",
+    "author": "Michael Lewis",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/039333869X.jpg",
+    "amazonUrl": "https://www.amazon.com/Liars-Poker-Norton-Paperback-Michael/dp/039333869X",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "10 Years of Acquired (with Michael Lewis)",
+      "seasonNumber": 2025,
+      "episodeNumber": 4,
+      "slug": "10-years-of-acquired-with-michael-lewis"
+    },
+    "addedAt": "2026-04-18T21:07:48.608Z",
+    "source": "automated"
+  },
+  {
+    "id": "0393330478",
+    "title": "The Blind Side",
+    "author": "Michael Lewis",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0393330478.jpg",
+    "amazonUrl": "https://www.amazon.com/Blind-Side-Evolution-Game/dp/0393330478",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "10 Years of Acquired (with Michael Lewis)",
+      "seasonNumber": 2025,
+      "episodeNumber": 4,
+      "slug": "10-years-of-acquired-with-michael-lewis"
+    },
+    "addedAt": "2026-04-18T21:07:48.700Z",
+    "source": "automated"
+  },
+  {
+    "id": "0393254593",
+    "title": "The Undoing Project",
+    "author": "Michael Lewis",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0393254593.jpg",
+    "amazonUrl": "https://www.amazon.com/Undoing-Project-Friendship-Changed-Minds/dp/0393254593",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "10 Years of Acquired (with Michael Lewis)",
+      "seasonNumber": 2025,
+      "episodeNumber": 4,
+      "slug": "10-years-of-acquired-with-michael-lewis"
+    },
+    "addedAt": "2026-04-18T21:07:48.784Z",
+    "source": "automated"
+  },
+  {
+    "id": "0756404746",
+    "title": "The Name of the Wind",
+    "author": "Patrick Rothfuss",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0756404746.jpg",
+    "amazonUrl": "https://www.amazon.com/Name-Wind-Kingkiller-Chronicle/dp/0756404746",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "10 Years of Acquired (with Michael Lewis)",
+      "seasonNumber": 2025,
+      "episodeNumber": 4,
+      "slug": "10-years-of-acquired-with-michael-lewis"
+    },
+    "addedAt": "2026-04-18T21:07:48.870Z",
+    "source": "automated"
+  },
+  {
+    "id": "1416599541",
+    "title": "Last Man Standing",
+    "author": "Duff McDonald",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1416599541.jpg",
+    "amazonUrl": "https://www.amazon.com/Last-Man-Standing-Ascent-JPMorgan/dp/1416599541",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "10 Years of Acquired (with Michael Lewis)",
+      "seasonNumber": 2025,
+      "episodeNumber": 4,
+      "slug": "10-years-of-acquired-with-michael-lewis"
+    },
+    "addedAt": "2026-04-18T21:07:48.953Z",
+    "source": "automated"
+  },
+  {
+    "id": "B0F5585V8M",
+    "title": "The Art of Spending Money",
+    "author": "Morgan Housel",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B0F5585V8M.jpg",
+    "amazonUrl": "https://www.amazon.com/Art-Spending-Money-Simple-Choices/dp/B0F5585V8M/",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "10 Years of Acquired (with Michael Lewis)",
+      "seasonNumber": 2025,
+      "episodeNumber": 4,
+      "slug": "10-years-of-acquired-with-michael-lewis"
+    },
+    "addedAt": "2026-04-18T21:07:49.092Z",
+    "source": "automated"
+  },
+  {
+    "id": "0679421904",
+    "title": "The Emperors of Chocolate",
+    "author": "Joël Glenn Brenner",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0679421904.jpg",
+    "amazonUrl": "https://www.amazon.com/Emperors-Chocolate-Inside-Secret-Hershey/dp/0679421904",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "10 Years of Acquired (with Michael Lewis)",
+      "seasonNumber": 2025,
+      "episodeNumber": 4,
+      "slug": "10-years-of-acquired-with-michael-lewis"
+    },
+    "addedAt": "2026-04-18T21:07:49.197Z",
+    "source": "automated"
+  },
+  {
+    "id": "1788840232",
+    "title": "The Book of Rolex",
+    "author": "Jens Høy, Christian Frost",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1788840232.jpg",
+    "amazonUrl": "https://www.amazon.com/dp/1788840232",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Rolex",
+      "seasonNumber": 2025,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "3961715033",
+    "title": "The Watch Book Rolex",
+    "author": "Gisbert L. Brunner",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/3961715033.jpg",
+    "amazonUrl": "https://www.amazon.com/dp/3961715033",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Rolex",
+      "seasonNumber": 2025,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "0764300113",
+    "title": "The Best of Time: Rolex Wristwatches",
+    "author": "James M. Dowling, Jeffrey P. Hess",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0764300113.jpg",
+    "amazonUrl": "https://www.amazon.com/dp/0764300113",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Rolex",
+      "seasonNumber": 2025,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "0764345974",
+    "title": "The Rolex Story",
+    "author": "Franz-Christoph Heel",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0764345974.jpg",
+    "amazonUrl": "https://www.amazon.com/dp/0764345974",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Rolex",
+      "seasonNumber": 2025,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "1802797599",
+    "title": "Little Book of Rolex",
+    "author": "Josh Sims",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1802797599.jpg",
+    "amazonUrl": "https://www.amazon.com/dp/1802797599",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Rolex",
+      "seasonNumber": 2025,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "B0B5KXF578",
+    "title": "Selling the Crown: The Secret History of Marketing Rolex",
+    "author": "Brendan Michael Cunningham",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B0B5KXF578.jpg",
+    "amazonUrl": "https://www.amazon.com/dp/B0B5KXF578",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Rolex",
+      "seasonNumber": 2025,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "0670088730",
+    "title": "Not Out!",
+    "author": "Desh Gaurav Sekhri",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0670088730.jpg",
+    "amazonUrl": "https://www.amazon.com/Incredible-Story-Indian-Premier-League/dp/0670088730",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Indian Premier League Cricket",
+      "seasonNumber": 2025,
+      "episodeNumber": 3
+    },
+    "addedAt": "2026-03-06T22:02:18.177Z",
+    "source": "automated"
+  },
+  {
+    "id": "B0DZL6W797",
+    "title": "The Great Robot Race",
+    "author": "Joe Seamans",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B0DZL6W797.jpg",
+    "amazonUrl": "https://www.amazon.com/Great-Robot-Race-Joseph-Seamans/dp/B0DZL6W797/",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Google Part III: The AI Company",
+      "seasonNumber": 2025,
+      "episodeNumber": 1
+    },
+    "addedAt": "2026-03-06T22:02:31.615Z",
+    "source": "automated"
+  },
+  {
+    "id": "0767904575",
+    "title": "The Emperors of Chocolate: Inside the Secret World of Hershey and Mars",
+    "author": "Joël Glenn Brenner",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0767904575.jpg",
+    "amazonUrl": "https://www.amazon.com/dp/0767904575",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Mars Inc.",
+      "seasonNumber": 2024,
+      "episodeNumber": 4
+    }
+  },
+  {
+    "id": "1882605209",
+    "title": "Crisis in Candyland: Melting the Chocolate Shell of the Mars Family Empire",
+    "author": "Jan Pottker",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1882605209.jpg",
+    "amazonUrl": "https://www.amazon.com/dp/1882605209",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Mars Inc.",
+      "seasonNumber": 2024,
+      "episodeNumber": 4
+    }
+  },
+  {
+    "id": "B0DDJMZ8PL",
+    "title": "The Power, Privilege, and Legacy of the Mars Family Empire",
+    "author": "Ben White",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B0DDJMZ8PL.jpg",
+    "amazonUrl": "https://www.amazon.com/dp/B0DDJMZ8PL",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "Mars Inc.",
+      "seasonNumber": 2024,
+      "episodeNumber": 4
+    }
+  },
+  {
+    "id": "1616135603",
+    "title": "The Mars Family",
+    "author": "Joanne Mattern",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1616135603.jpg",
+    "amazonUrl": "https://www.amazon.com/dp/1616135603",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Mars Inc. (the chocolate story)",
+      "seasonNumber": 2024,
+      "episodeNumber": 4
+    },
+    "addedAt": "2026-03-06T22:02:43.747Z",
+    "source": "automated"
+  },
+  {
+    "id": "1426214987",
+    "title": "Great Moments in Chocolate History",
+    "author": "Howard-Yana Shapiro",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1426214987.jpg",
+    "amazonUrl": "https://www.amazon.com/dp/1426214987",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "Mars Inc. (the chocolate story)",
+      "seasonNumber": 2024,
+      "episodeNumber": 4
+    },
+    "addedAt": "2026-03-06T22:02:43.937Z",
+    "source": "automated"
+  },
+  {
+    "id": "1624034977",
+    "title": "Mars Family",
+    "author": "Joanne Mattern",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1624034977.jpg",
+    "amazonUrl": "https://www.amazon.com/dp/1624034977",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Mars Inc. (the chocolate story)",
+      "seasonNumber": 2024,
+      "episodeNumber": 4
+    },
+    "addedAt": "2026-03-06T22:02:44.198Z",
+    "source": "automated"
+  },
+  {
+    "id": "B00E8C5WAY",
+    "title": "A La Recherche Du Temps Perdu",
+    "author": "Marcel Proust",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B00E8C5WAY.jpg",
+    "amazonUrl": "https://www.amazon.com/dp/B00E8C5WAY",
+    "category": "Fiction & Literature",
+    "episodeRef": {
+      "name": "IKEA",
+      "seasonNumber": 2024,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "074948621X",
+    "title": "Strategic Sourcing and Category Management",
+    "author": "Magnus Carlsson",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/074948621X.jpg",
+    "amazonUrl": "https://www.amazon.com/dp/074948621X",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "IKEA",
+      "seasonNumber": 2024,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "0071777652",
+    "title": "The IKEA Edge",
+    "author": "Anders Dahlvig",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0071777652.jpg",
+    "amazonUrl": "https://www.amazon.com/IKEA-Edge-Building-Global-Growth/dp/0071777652",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "IKEA",
+      "seasonNumber": 2024,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "1783341726",
+    "title": "Ikea: How to Become the World’s Richest Man",
+    "author": "Johan Stenbo",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1783341726.jpg",
+    "amazonUrl": "https://www.amazon.com/dp/1783341726",
+    "category": "Economics & Finance",
+    "episodeRef": {
+      "name": "IKEA",
+      "seasonNumber": 2024,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "0735213151",
+    "title": "Facebook",
+    "author": "Steven Levy",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0735213151.jpg",
+    "amazonUrl": "https://www.amazon.com/Facebook-Inside-Story-Steven-Levy/dp/0735213151",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Meta",
+      "seasonNumber": 2024,
+      "episodeNumber": 2
+    }
+  },
+  {
+    "id": "B0CYBS9PFY",
+    "title": "Hardcore Software",
+    "author": "Steven Sinofsky",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B0CYBS9PFY.jpg",
+    "amazonUrl": "https://www.amazon.com/Hardcore-Software-Inside-Rise-Revolution-ebook/dp/B0CYBS9PFY",
+    "category": "Technology & Innovation",
+    "episodeRef": {
+      "name": "Microsoft Volume II",
+      "seasonNumber": 14,
+      "episodeNumber": 6
+    }
+  },
+  {
+    "id": "1400223903",
+    "title": "Microsoft Story",
+    "author": "Dan Good",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1400223903.jpg",
+    "amazonUrl": "https://www.amazon.com/Microsoft-Story-Rebooted-Upgraded-Storybook/dp/1400223903",
+    "category": "Economics & Finance",
+    "episodeRef": {
+      "name": "Microsoft Volume II",
+      "seasonNumber": 14,
+      "episodeNumber": 6
+    }
+  },
+  {
+    "id": "1416573259",
+    "title": "Breaking Windows",
+    "author": "David Bank",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1416573259.jpg",
+    "amazonUrl": "https://www.amazon.com/Breaking-Windows-Fumbled-Future-Microsoft/dp/1416573259",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Microsoft Volume II",
+      "seasonNumber": 14,
+      "episodeNumber": 6
+    }
+  },
+  {
+    "id": "B01HOT5SQA",
+    "title": "Hit Refresh",
+    "author": "Satya Nadella",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B01HOT5SQA.jpg",
+    "amazonUrl": "https://www.amazon.com/Hit-Refresh-Rediscover-Microsofts-Everyone-ebook/dp/B01HOT5SQA",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Microsoft Volume II",
+      "seasonNumber": 14,
+      "episodeNumber": 6
+    }
+  },
+  {
+    "id": "0470191384",
+    "title": "Microsoft 2.0",
+    "author": "Mary Jo Foley",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0470191384.jpg",
+    "amazonUrl": "https://www.amazon.com/Microsoft-2-0-Plans-Relevant-Post-Gates/dp/0470191384",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Microsoft Volume II",
+      "seasonNumber": 14,
+      "episodeNumber": 6
+    }
+  },
+  {
+    "id": "0375503668",
+    "title": "World War 3.0",
+    "author": "Ken Auletta",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0375503668.jpg",
+    "amazonUrl": "https://www.amazon.com/World-War-3-0-Microsoft-Enemies/dp/0375503668",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Microsoft Volume II",
+      "seasonNumber": 14,
+      "episodeNumber": 6
+    }
+  },
+  {
+    "id": "0670859133",
+    "title": "The Road Ahead",
+    "author": "Bill Gates",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0670859133.jpg",
+    "amazonUrl": "https://www.amazon.com/Road-Ahead-Bill-Gates/dp/0670859133",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Microsoft Volume I",
+      "seasonNumber": 14,
+      "episodeNumber": 5
+    }
+  },
+  {
+    "id": "1591845378",
+    "title": "Idea Man",
+    "author": "Allen, Paul",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1591845378.jpg",
+    "amazonUrl": "https://www.amazon.com/Idea-Man-Memoir-Cofounder-Microsoft/dp/1591845378",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Microsoft Volume I",
+      "seasonNumber": 14,
+      "episodeNumber": 5
+    }
+  },
+  {
+    "id": "0887306292",
+    "title": "Hard Drive",
+    "author": "James Wallace",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0887306292.jpg",
+    "amazonUrl": "https://www.amazon.com/Hard-Drive-Making-Microsoft-Empire/dp/0887306292",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "Microsoft Volume I",
+      "seasonNumber": 14,
+      "episodeNumber": 5
+    }
+  },
+  {
+    "id": "0471180416",
+    "title": "Overdrive",
+    "author": "James Wallace",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0471180416.jpg",
+    "amazonUrl": "https://www.amazon.com/Overdrive-Bill-Gates-Control-Cyberspace/dp/0471180416",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "Microsoft Volume I",
+      "seasonNumber": 14,
+      "episodeNumber": 5
+    }
+  },
+  {
+    "id": "0671880748",
+    "title": "Gates",
+    "author": "Stephen Manes",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0671880748.jpg",
+    "amazonUrl": "https://www.amazon.com/Gates-Microsofts-Reinvented-Industry-Himself/dp/0671880748",
+    "category": "Technology & Innovation",
+    "episodeRef": {
+      "name": "Microsoft Volume I",
+      "seasonNumber": 14,
+      "episodeNumber": 5
+    }
+  },
+  {
+    "id": "0201608340",
+    "title": "Undocumented Windows",
+    "author": "Andrew Schulman",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0201608340.jpg",
+    "amazonUrl": "https://www.amazon.com/Undocumented-Windows-Programmers-Microsoft-Programming/dp/0201608340",
+    "category": "Technology & Innovation",
+    "episodeRef": {
+      "name": "Microsoft Volume I",
+      "seasonNumber": 14,
+      "episodeNumber": 5
+    }
+  },
+  {
+    "id": "073521798X",
+    "title": "The Man Who Solved the Market",
+    "author": "Gregory Zuckerman",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/073521798X.jpg",
+    "amazonUrl": "https://www.amazon.com/Man-Who-Solved-Market-Revolution/dp/073521798X",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Renaissance Technologies",
+      "seasonNumber": 14,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "0307453383",
+    "title": "The Quants",
+    "author": "Scott Patterson",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0307453383.jpg",
+    "amazonUrl": "https://www.amazon.com/Quants-Whizzes-Conquered-Street-Destroyed/dp/0307453383",
+    "category": "Economics & Finance",
+    "episodeRef": {
+      "name": "Renaissance Technologies",
+      "seasonNumber": 14,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "180279011X",
+    "title": "Little Book of Hermès",
+    "author": "Karen Homer",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/180279011X.jpg",
+    "amazonUrl": "https://www.amazon.com/Little-Book-Herm%C3%A8s-Iconic-Fashion/dp/180279011X",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Hermès",
+      "seasonNumber": 14,
+      "episodeNumber": 2
+    }
+  },
+  {
+    "id": "1591843472",
+    "title": "The Score Takes Care of Itself",
+    "author": "Walsh, Bill",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1591843472.jpg",
+    "amazonUrl": "https://www.amazon.com/Score-Takes-Care-Itself-Philosophy/dp/1591843472",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Hermès",
+      "seasonNumber": 14,
+      "episodeNumber": 2
+    }
+  },
+  {
+    "id": "0312611749",
+    "title": "Breakthrough",
+    "author": "Thea Cooper",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0312611749.jpg",
+    "amazonUrl": "https://www.amazon.com/Breakthrough-Elizabeth-Discovery-Insulin-Medical/dp/0312611749",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Novo Nordisk (Ozempic)",
+      "seasonNumber": 14,
+      "episodeNumber": 1
+    }
+  },
+  {
+    "id": "1476733953",
+    "title": "Wool",
+    "author": "Hugh Howey",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1476733953.jpg",
+    "amazonUrl": "https://www.amazon.com/Wool-Hugh-Howey/dp/1476733953",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Novo Nordisk (Ozempic)",
+      "seasonNumber": 14,
+      "episodeNumber": 1
+    }
+  },
+  {
+    "id": "0857199099",
+    "title": "The Psychology of Money",
+    "author": "Morgan Housel",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0857199099.jpg",
+    "amazonUrl": "https://www.amazon.com/Psychology-Money-hardback-Timeless-happiness/dp/0857199099",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Holiday Special 2023",
+      "seasonNumber": 13,
+      "episodeNumber": 5
+    }
+  },
+  {
+    "id": "0143129252",
+    "title": "The Artist's Way",
+    "author": "Julia Cameron",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0143129252.jpg",
+    "amazonUrl": "https://www.amazon.com/Artists-Way-25th-Anniversary/dp/0143129252",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Holiday Special 2023",
+      "seasonNumber": 13,
+      "episodeNumber": 5
+    }
+  },
+  {
+    "id": "B07QGRGDKJ",
+    "title": "Transitions",
+    "author": "William Bridges",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B07QGRGDKJ.jpg",
+    "amazonUrl": "https://www.amazon.com/Transitions-Making-Sense-Lifes-Changes-ebook/dp/B07QGRGDKJ",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Holiday Special 2023",
+      "seasonNumber": 13,
+      "episodeNumber": 5
+    }
+  },
+  {
+    "id": "0374533555",
+    "title": "Thinking, Fast and Slow",
+    "author": "Daniel Kahneman",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0374533555.jpg",
+    "amazonUrl": "https://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Holiday Special 2023",
+      "seasonNumber": 13,
+      "episodeNumber": 5
+    }
+  },
+  {
+    "id": "1849961387",
+    "title": "Electronic Value Exchange Origins of the Visa Electronic Payment System",
+    "author": "David L. Stearns",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1849961387.jpg",
+    "amazonUrl": "https://www.amazon.com/dp/1849961387",
+    "category": "Technology & Innovation",
+    "episodeRef": {
+      "name": "Visa",
+      "seasonNumber": 13,
+      "episodeNumber": 4
+    }
+  },
+  {
+    "id": "0159004799",
+    "title": "VISA : The Power of an Idea",
+    "author": "Paul Chutkow",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0159004799.jpg",
+    "amazonUrl": "https://www.amazon.com/VISA-Power-Idea-Paul-Chutkow/dp/0159004799",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Visa",
+      "seasonNumber": 13,
+      "episodeNumber": 4
+    }
+  },
+  {
+    "id": "1576753328",
+    "title": "One from Many",
+    "author": "Dee Hock",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1576753328.jpg",
+    "amazonUrl": "https://www.amazon.com/One-Many-VISA-Chaordic-Organization/dp/1576753328",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Visa",
+      "seasonNumber": 13,
+      "episodeNumber": 4
+    }
+  },
+  {
+    "id": "B00AYIDT74",
+    "title": "A Piece of the Action",
+    "author": "Joseph Nocera",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B00AYIDT74.jpg",
+    "amazonUrl": "https://www.amazon.com/Piece-Action-Middle-Class-Joined-ebook/dp/B00AYIDT74",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Visa",
+      "seasonNumber": 13,
+      "episodeNumber": 4
+    }
+  },
+  {
+    "id": "0765377136",
+    "title": "The Final Empire",
+    "author": "Brandon Sanderson",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0765377136.jpg",
+    "amazonUrl": "https://www.amazon.com/Mistborn-Final-Empire-Brandon-Sanderson/dp/0765377136",
+    "category": "Fiction & Literature",
+    "episodeRef": {
+      "name": "Visa",
+      "seasonNumber": 13,
+      "episodeNumber": 4
+    }
+  },
+  {
+    "id": "0988680602",
+    "title": "Sol Price",
+    "author": "Robert E. Price",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0988680602.jpg",
+    "amazonUrl": "https://www.amazon.com/Price-Retail-Revolutionary-Social-Innovator/dp/0988680602",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "Costco",
+      "seasonNumber": 13,
+      "episodeNumber": 2
+    }
+  },
+  {
+    "id": "1501135910",
+    "title": "Shoe Dog",
+    "author": "Phil Knight",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1501135910.jpg",
+    "amazonUrl": "https://www.amazon.com/Shoe-Dog-Memoir-Creator-Nike/dp/1501135910",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Nike",
+      "seasonNumber": 13,
+      "episodeNumber": 1
+    }
+  },
+  {
+    "id": "0151874301",
+    "title": "Swoosh",
+    "author": "J. B. Strasser",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0151874301.jpg",
+    "amazonUrl": "https://www.amazon.com/Swoosh-Unauthorized-Story-Played-There/dp/0151874301",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "Nike",
+      "seasonNumber": 13,
+      "episodeNumber": 1
+    }
+  },
+  {
+    "id": "1558504796",
+    "title": "Just Do It",
+    "author": "Donald R. Katz",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1558504796.jpg",
+    "amazonUrl": "https://www.amazon.com/Just-Do-Spirit-Corporate-World/dp/1558504796",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "Nike",
+      "seasonNumber": 13,
+      "episodeNumber": 1
+    }
+  },
+  {
+    "id": "1538705591",
+    "title": "Emotion by Design",
+    "author": "Greg Hoffman",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1538705591.jpg",
+    "amazonUrl": "https://www.amazon.com/Emotion-Design-Creative-Leadership-Lessons/dp/1538705591",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Nike",
+      "seasonNumber": 13,
+      "episodeNumber": 1
+    }
+  },
+  {
+    "id": "1838660518",
+    "title": "Nike: Better Is Temporary",
+    "author": "Sam Grawe",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1838660518.jpg",
+    "amazonUrl": "https://www.amazon.com/Nike-Better-Temporary-Sam-Grawe/dp/1838660518",
+    "category": "Economics & Finance",
+    "episodeRef": {
+      "name": "Nike",
+      "seasonNumber": 13,
+      "episodeNumber": 1
+    }
+  },
+  {
+    "id": "184126234X",
+    "title": "Out of Nowhere",
+    "author": "Geoff Hollister",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/184126234X.jpg",
+    "amazonUrl": "https://www.amazon.com/Out-Nowhere-Marketed-Culture-Running/dp/184126234X",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Nike",
+      "seasonNumber": 13,
+      "episodeNumber": 1
+    }
+  },
+  {
+    "id": "0062917773",
+    "title": "Win at All Costs",
+    "author": "Matt Hart",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0062917773.jpg",
+    "amazonUrl": "https://www.amazon.com/Win-All-Costs-Running-Deception/dp/0062917773",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Nike",
+      "seasonNumber": 13,
+      "episodeNumber": 1
+    }
+  },
+  {
+    "id": "1612198430",
+    "title": "University of Nike",
+    "author": "Joshua Hunt",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1612198430.jpg",
+    "amazonUrl": "https://www.amazon.com/Nike-Effect-Education-Organized-Competition/dp/1612198430",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Nike",
+      "seasonNumber": 13,
+      "episodeNumber": 1
+    }
+  },
+  {
+    "id": "0761961496",
+    "title": "Nike Culture",
+    "author": "Goldman, Robert",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0761961496.jpg",
+    "amazonUrl": "https://www.amazon.com/Nike-Culture-Swoosh-Cultural-Icons/dp/0761961496",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Nike",
+      "seasonNumber": 13,
+      "episodeNumber": 1
+    }
+  },
+  {
+    "id": "1594867313",
+    "title": "Bowerman and the Men of Oregon",
+    "author": "Kenny Moore",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1594867313.jpg",
+    "amazonUrl": "https://www.amazon.com/Bowerman-Men-Oregon-Legendary-Cofounder/dp/1594867313",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "Nike",
+      "seasonNumber": 13,
+      "episodeNumber": 1
+    }
+  },
+  {
+    "id": "0998116319",
+    "title": "7 Powers",
+    "author": "Hamilton Helmer",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0998116319.jpg",
+    "amazonUrl": "https://www.amazon.com/7-Powers-Foundations-Business-Strategy/dp/0998116319",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Nike",
+      "seasonNumber": 13,
+      "episodeNumber": 1
+    }
+  },
+  {
+    "id": "0837617693",
+    "title": "Porsche: Excellence Was Expected",
+    "author": "Karl Ludvigsen",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0837617693.jpg",
+    "amazonUrl": "https://www.amazon.com/Porsche-Excellence-Was-Expected-2019/dp/0837617693",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Porsche",
+      "seasonNumber": 12,
+      "episodeNumber": 6
+    }
+  },
+  {
+    "id": "0312192371",
+    "title": "Beyond the Horizons",
+    "author": "Walter J. Boyne",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0312192371.jpg",
+    "amazonUrl": "https://www.amazon.com/Beyond-Horizon-Story-Lockheed-Thomas/dp/0312192371",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "Lockheed Martin",
+      "seasonNumber": 12,
+      "episodeNumber": 5
+    }
+  },
+  {
+    "id": "0316743003",
+    "title": "Skunk Works : A Personal Memoir of My Years at Lockheed",
+    "author": "Ben R. Rich",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0316743003.jpg",
+    "amazonUrl": "https://www.amazon.com/Skunk-Works-Personal-Memoir-Lockheed/dp/0316743003",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "Lockheed Martin",
+      "seasonNumber": 12,
+      "episodeNumber": 5
+    }
+  },
+  {
+    "id": "1568586973",
+    "title": "Prophets of War",
+    "author": "William D. Hartung",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1568586973.jpg",
+    "amazonUrl": "https://www.amazon.com/Prophets-War-Lockheed-Military-Industrial-Complex/dp/1568586973",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Lockheed Martin",
+      "seasonNumber": 12,
+      "episodeNumber": 5
+    }
+  },
+  {
+    "id": "B0060AY98I",
+    "title": "Game Over",
+    "author": "David Sheff",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B0060AY98I.jpg",
+    "amazonUrl": "https://www.amazon.com/Game-Over-Nintendo-Conquered-World-ebook/dp/B0060AY98I",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Nintendo's Origins",
+      "seasonNumber": 12,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "B00FJ379XE",
+    "title": "Console Wars",
+    "author": "Blake J. Harris",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B00FJ379XE.jpg",
+    "amazonUrl": "https://www.amazon.com/Console-Wars-Nintendo-Defined-Generation-ebook/dp/B00FJ379XE",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Nintendo's Origins",
+      "seasonNumber": 12,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "0486801497",
+    "title": "Power-Up",
+    "author": "Chris Kohler",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0486801497.jpg",
+    "amazonUrl": "https://www.amazon.com/Power-Up-Japanese-Video-Games-World/dp/0486801497",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Nintendo's Origins",
+      "seasonNumber": 12,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "197472154X",
+    "title": "Ask Iwata",
+    "author": "Satoru Iwata",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/197472154X.jpg",
+    "amazonUrl": "https://www.amazon.com/Ask-Iwata-Wisdom-Nintendos-Legendary/dp/197472154X",
+    "category": "Economics & Finance",
+    "episodeRef": {
+      "name": "Nintendo's Origins",
+      "seasonNumber": 12,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "B07H1ZYWTM",
+    "title": "Range",
+    "author": "David J. Epstein",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B07H1ZYWTM.jpg",
+    "amazonUrl": "https://www.amazon.com/Range-Generalists-Triumph-Specialized-World-ebook/dp/B07H1ZYWTM",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Nintendo's Origins",
+      "seasonNumber": 12,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "0761536434",
+    "title": "The Ultimate History of Video Games",
+    "author": "Steven L. Kent",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0761536434.jpg",
+    "amazonUrl": "https://www.amazon.com/Ultimate-History-Video-Games-Pokemon/dp/0761536434",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "Nintendo's Origins",
+      "seasonNumber": 12,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "1984825437",
+    "title": "The Ultimate History of Video Games, Volume 2",
+    "author": "Steven L. Kent",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1984825437.jpg",
+    "amazonUrl": "https://www.amazon.com/Ultimate-History-Video-Games-Billion-Dollar/dp/1984825437",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "Nintendo's Origins",
+      "seasonNumber": 12,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "0747512027",
+    "title": "The Taste of Luxury",
+    "author": "Nadège Forestier",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0747512027.jpg",
+    "amazonUrl": "https://www.amazon.com/Taste-Luxury-Bernard-Arnault-Moet-Hennessy/dp/0747512027",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "LVMH",
+      "seasonNumber": 12,
+      "episodeNumber": 2
+    }
+  },
+  {
+    "id": "B07S9G2GWJ",
+    "title": "Les Trois Mousquetaires",
+    "author": "Alexandre Dumas",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B07S9G2GWJ.jpg",
+    "amazonUrl": "https://www.amazon.com/Deluxe-Dana-Thomas-audiobook/dp/B07S9G2GWJ",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "LVMH",
+      "seasonNumber": 12,
+      "episodeNumber": 2
+    }
+  },
+  {
+    "id": "B008YUEDFG",
+    "title": "The Luxury Strategy",
+    "author": "Jean-Noël Kapferer",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B008YUEDFG.jpg",
+    "amazonUrl": "https://www.amazon.com/Luxury-Strategy-Break-Marketing-Brands-ebook/dp/B008YUEDFG",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "LVMH",
+      "seasonNumber": 12,
+      "episodeNumber": 2
+    }
+  },
+  {
+    "id": "0375725067",
+    "title": "America's Game",
+    "author": "Michael Maccambridge",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0375725067.jpg",
+    "amazonUrl": "https://www.amazon.com/Americas-Game-Football-Captured-Nation/dp/0375725067",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "The NFL",
+      "seasonNumber": 12,
+      "episodeNumber": 1
+    }
+  },
+  {
+    "id": "1541618645",
+    "title": "The League",
+    "author": "John Eisenberg",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1541618645.jpg",
+    "amazonUrl": "https://www.amazon.com/League-Rivals-Created-Launched-Sports/dp/1541618645",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "The NFL",
+      "seasonNumber": 12,
+      "episodeNumber": 1
+    }
+  },
+  {
+    "id": "B00VQVPQPQ",
+    "title": "Pigskin",
+    "author": "Robert W. Peterson",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B00VQVPQPQ.jpg",
+    "amazonUrl": "https://www.amazon.com/Pigskin-Early-Years-Pro-Football-ebook/dp/B00VQVPQPQ",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "The NFL",
+      "seasonNumber": 12,
+      "episodeNumber": 1
+    }
+  },
+  {
+    "id": "0767911792",
+    "title": "Conspiracy of Fools",
+    "author": "Kurt Eichenwald",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0767911792.jpg",
+    "amazonUrl": "https://www.amazon.com/Conspiracy-Fools-Story-Kurt-Eichenwald/dp/0767911792",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Enron",
+      "seasonNumber": 11,
+      "episodeNumber": 7
+    }
+  },
+  {
+    "id": "0814408184",
+    "title": "The Qualcomm Equation",
+    "author": "Dave Mock",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0814408184.jpg",
+    "amazonUrl": "https://www.amazon.com/Qualcomm-Equation-Fledgling-Telecom-Company/dp/0814408184",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Qualcomm",
+      "seasonNumber": 11,
+      "episodeNumber": 6
+    }
+  },
+  {
+    "id": "B075GX66QM",
+    "title": "Principles of Communication Engineering",
+    "author": "John M. Wozencraft",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B075GX66QM.jpg",
+    "amazonUrl": "https://www.amazon.com/Principles-Communication-Engineering-Jacobs-Wozencraft/dp/B075GX66QM",
+    "category": "Science & Engineering",
+    "episodeRef": {
+      "name": "Qualcomm",
+      "seasonNumber": 11,
+      "episodeNumber": 6
+    }
+  },
+  {
+    "id": "B08TB1TP7H",
+    "title": "Amazon Unbound",
+    "author": "Brad Stone",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B08TB1TP7H.jpg",
+    "amazonUrl": "https://www.amazon.com/Amazon-Unbound-Invention-Global-Empire-ebook/dp/B08TB1TP7H",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Amazon Web Services",
+      "seasonNumber": 11,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "B00YBA7PGW",
+    "title": "The Left Hand of Darkness",
+    "author": "Ursula K. Le Guin",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B00YBA7PGW.jpg",
+    "amazonUrl": "https://www.amazon.com/Left-Hand-Darkness-Science-Fiction-ebook/dp/B00YBA7PGW",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Amazon.com",
+      "seasonNumber": 11,
+      "episodeNumber": 2
+    }
+  },
+  {
+    "id": "0553562835",
+    "title": "Sam Walton",
+    "author": "Sam Walton",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0553562835.jpg",
+    "amazonUrl": "https://www.amazon.com/Sam-Walton-Made-America/dp/0553562835",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Walmart",
+      "seasonNumber": 11,
+      "episodeNumber": 1
+    }
+  },
+  {
+    "id": "0143038788",
+    "title": "The Wal-Mart Effect : How the World's Most Powerful Company Really Works-- and How It's Transforming the American Economy - 1. Ed.",
+    "author": "Charles Fishman",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0143038788.jpg",
+    "amazonUrl": "https://www.amazon.com/Wal-Mart-Effect-Powerful-Works-Transforming/dp/0143038788",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Walmart",
+      "seasonNumber": 11,
+      "episodeNumber": 1
+    }
+  },
+  {
+    "id": "0812932978",
+    "title": "In Sam We Trust",
+    "author": "Bob Ortega",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0812932978.jpg",
+    "amazonUrl": "https://www.amazon.com/Sam-We-Trust-Wal-Mart-Powerful/dp/0812932978",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "Walmart",
+      "seasonNumber": 11,
+      "episodeNumber": 1
+    }
+  },
+  {
+    "id": "0451205766",
+    "title": "The Godfather",
+    "author": "Mario Puzo",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0451205766.jpg",
+    "amazonUrl": "https://www.amazon.com/Godfather-Mario-Puzo-dp-0451205766/dp/0451205766",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Walmart",
+      "seasonNumber": 11,
+      "episodeNumber": 1
+    }
+  },
+  {
+    "id": "B09LV21K49",
+    "title": "Running with Purpose",
+    "author": "James Weber",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B09LV21K49.jpg",
+    "amazonUrl": "https://www.amazon.com/Running-Purpose-Outpaced-Goliath-Competitors-ebook/dp/B09LV21K49",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Arena Show Part II: Brooks Running (with CEO Jim Weber)",
+      "seasonNumber": 10,
+      "episodeNumber": 8
+    }
+  },
+  {
+    "id": "B096RSDCVK",
+    "title": "Memory's Legion",
+    "author": "James S. A. Corey",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B096RSDCVK.jpg",
+    "amazonUrl": "https://www.amazon.com/Memorys-Legion-Complete-Expanse-Collection-ebook/dp/B096RSDCVK",
+    "category": "Fiction & Literature",
+    "episodeRef": {
+      "name": "Nvidia Part II: The Machine Learning Company (2006-2022)",
+      "seasonNumber": 10,
+      "episodeNumber": 6
+    }
+  },
+  {
+    "id": "0618126945",
+    "title": "Sony: A Private Life",
+    "author": "John Nathan",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0618126945.jpg",
+    "amazonUrl": "https://www.amazon.com/Sony-Private-Life-John-Nathan/dp/0618126945",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "SONY",
+      "seasonNumber": 10,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "0385347421",
+    "title": "Becoming Steve Jobs",
+    "author": "Brent Schlender",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0385347421.jpg",
+    "amazonUrl": "https://www.amazon.com/Becoming-Steve-Jobs-Evolution-Visionary/dp/0385347421",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "SONY",
+      "seasonNumber": 10,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "1912587556",
+    "title": "Taylor Swift",
+    "author": "Michael Francis Taylor",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1912587556.jpg",
+    "amazonUrl": "https://www.amazon.com/Taylor-Swift-Loves-Global-Sensation/dp/1912587556",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "Taylor Swift (Acquired’s Version)",
+      "seasonNumber": 10,
+      "episodeNumber": 1
+    }
+  },
+  {
+    "id": "1501122185",
+    "title": "All You Need to Know About the Music Business",
+    "author": "Donald S. Passman",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1501122185.jpg",
+    "amazonUrl": "https://www.amazon.com/Need-Know-About-Music-Business/dp/1501122185",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Taylor Swift (Acquired’s Version)",
+      "seasonNumber": 10,
+      "episodeNumber": 1
+    }
+  },
+  {
+    "id": "B08HY29VM2",
+    "title": "Rabbits",
+    "author": "Terry Miles",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B08HY29VM2.jpg",
+    "amazonUrl": "https://www.amazon.com/Rabbits-Novel-Terry-Miles-ebook/dp/B08HY29VM2",
+    "category": "Fiction & Literature",
+    "episodeRef": {
+      "name": "Not Boring (with Packy McCormick)",
+      "seasonNumber": 9,
+      "episodeNumber": 6
+    }
+  },
+  {
+    "id": "book-84",
+    "title": "Titan",
+    "author": "Ron Chernow",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/book-84.jpg",
+    "amazonUrl": "https://www.amazon.com/gp/product/1400077303",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Standard Oil Part I",
+      "seasonNumber": 9,
+      "episodeNumber": 4
+    }
+  },
+  {
+    "id": "B07B2HS77M",
+    "title": "Who Is Michael Ovitz?",
+    "author": "Michael Ovitz",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B07B2HS77M.jpg",
+    "amazonUrl": "https://www.amazon.com/dp/B07B2HS77M",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "TSMC",
+      "seasonNumber": 9,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "B00JT1NZF8",
+    "title": "Fabless: The Transformation of the Semiconductor Industry",
+    "author": "Daniel Nenni",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B00JT1NZF8.jpg",
+    "amazonUrl": "https://www.amazon.com/Fabless-Transformation-Semiconductor-Daniel-Nenni-ebook-dp-B00JT1NZF8/dp/B00JT1NZF8/",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "TSMC (Remastered)",
+      "seasonNumber": 9,
+      "episodeNumber": 3,
+      "slug": "tsmc-remastered"
+    },
+    "addedAt": "2026-04-18T21:34:10.828Z",
+    "source": "automated"
+  },
+  {
+    "id": "110196703X",
+    "title": "Childhood’s End",
+    "author": "Arthur C. Clarke",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/110196703X.jpg",
+    "amazonUrl": "https://www.amazon.com/Childhoods-End-Arthur-C-Clarke/dp/110196703X",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Andreessen Horowitz Part II",
+      "seasonNumber": 9,
+      "episodeNumber": 2
+    }
+  },
+  {
+    "id": "0062273205",
+    "title": "The Hard Thing About Hard Things",
+    "author": "Ben Horowitz",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0062273205.jpg",
+    "amazonUrl": "https://www.amazon.com/Hard-Thing-About-Things-Building/dp/0062273205",
+    "category": "Startups & Venture Capital",
+    "episodeRef": {
+      "name": "Andreessen Horowitz Part I",
+      "seasonNumber": 9,
+      "episodeNumber": 1
+    }
+  },
+  {
+    "id": "0190495995",
+    "title": "The Elephant in the Brain",
+    "author": "Kevin Simler",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0190495995.jpg",
+    "amazonUrl": "https://www.amazon.com/Elephant-Brain-Hidden-Motives-Everyday/dp/0190495995",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Andreessen Horowitz Part I",
+      "seasonNumber": 9,
+      "episodeNumber": 1
+    }
+  },
+  {
+    "id": "0062886142",
+    "title": "The Infinite Machine",
+    "author": "Camila Russo",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0062886142.jpg",
+    "amazonUrl": "https://www.amazon.com/Infinite-Machine-Crypto-hackers-Building-Internet/dp/0062886142",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Ethereum (with Packy McCormick)",
+      "seasonNumber": 8,
+      "episodeNumber": 8
+    }
+  },
+  {
+    "id": "0553380966",
+    "title": "The Diamond Age",
+    "author": "Neal Stephenson",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0553380966.jpg",
+    "amazonUrl": "https://www.amazon.com/Diamond-Age-Illustrated-Primer-Spectra/dp/0553380966",
+    "category": "Fiction & Literature",
+    "episodeRef": {
+      "name": "Ethereum (with Packy McCormick)",
+      "seasonNumber": 8,
+      "episodeNumber": 8
+    }
+  },
+  {
+    "id": "0857199129",
+    "title": "Complete Financial History of Berkshire Hathaway",
+    "author": "Adam J. Mead",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0857199129.jpg",
+    "amazonUrl": "https://www.amazon.com/Complete-Financial-History-Berkshire-Hathaway/dp/0857199129",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "Berkshire Hathaway Part III",
+      "seasonNumber": 8,
+      "episodeNumber": 7
+    }
+  },
+  {
+    "id": "0471445509",
+    "title": "Common Stocks and Uncommon Profits and Other Writings",
+    "author": "Philip A. Fisher",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0471445509.jpg",
+    "amazonUrl": "https://www.amazon.com/Common-Stocks-Uncommon-Profits-Writings/dp/0471445509",
+    "category": "Economics & Finance",
+    "episodeRef": {
+      "name": "Berkshire Hathaway Part III",
+      "seasonNumber": 8,
+      "episodeNumber": 7
+    }
+  },
+  {
+    "id": "book-96",
+    "title": "Damn Right",
+    "author": "Janet Lowe",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/book-96.jpg",
+    "amazonUrl": "https://www.amazon.com/gp/product/0471446912",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Berkshire Hathaway Part II",
+      "seasonNumber": 8,
+      "episodeNumber": 6
+    }
+  },
+  {
+    "id": "B003E20ZRY",
+    "title": "Liar's Poker",
+    "author": "Michael Lewis",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B003E20ZRY.jpg",
+    "amazonUrl": "https://www.amazon.com/Liars-Poker-Norton-Paperback-Michael-ebook/dp/B003E20ZRY",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Berkshire Hathaway Part II",
+      "seasonNumber": 8,
+      "episodeNumber": 6
+    }
+  },
+  {
+    "id": "0812979273",
+    "title": "Buffett",
+    "author": "Roger Lowenstein",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0812979273.jpg",
+    "amazonUrl": "https://www.amazon.com/Buffett-American-Capitalist-Roger-Lowenstein/dp/0812979273",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "Berkshire Hathaway Part I",
+      "seasonNumber": 8,
+      "episodeNumber": 5
+    }
+  },
+  {
+    "id": "1578645018",
+    "title": "Poor Charlie's Almanack",
+    "author": "Charles T. Munger",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1578645018.jpg",
+    "amazonUrl": "https://www.amazon.com/Poor-Charlies-Almanack-Charles-Expanded/dp/1578645018",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Berkshire Hathaway Part I",
+      "seasonNumber": 8,
+      "episodeNumber": 5
+    }
+  },
+  {
+    "id": "0553805096",
+    "title": "The Snowball",
+    "author": "Alice Schroeder",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0553805096.jpg",
+    "amazonUrl": "https://www.amazon.com/Snowball-Warren-Buffett-Business-Life/dp/0553805096",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Berkshire Hathaway Part I",
+      "seasonNumber": 8,
+      "episodeNumber": 5
+    }
+  },
+  {
+    "id": "B08BCCT6MW",
+    "title": "Invent and Wander",
+    "author": "Walter Isaacson",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B08BCCT6MW.jpg",
+    "amazonUrl": "https://www.amazon.com/Invent-Wander-Collected-Writings-Introduction-ebook/dp/B08BCCT6MW",
+    "category": "Startups & Venture Capital",
+    "episodeRef": {
+      "name": "Rec Room Part II",
+      "seasonNumber": 8,
+      "episodeNumber": 4
+    }
+  },
+  {
+    "id": "B081TTY4NX",
+    "title": "Extraterrestrial",
+    "author": "Avi Loeb",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B081TTY4NX.jpg",
+    "amazonUrl": "https://www.amazon.com/Extraterrestrial-First-Intelligent-Beyond-Earth-ebook/dp/B081TTY4NX",
+    "category": "Fiction & Literature",
+    "episodeRef": {
+      "name": "Meituan",
+      "seasonNumber": 8,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "book-103",
+    "title": "The Trust",
+    "author": "Susan E. Tifft",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/book-103.jpg",
+    "amazonUrl": "https://www.amazon.com/gp/product/0316836311",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "The New York Times Company",
+      "seasonNumber": 8,
+      "episodeNumber": 2
+    }
+  },
+  {
+    "id": "B0058Z4NOQ",
+    "title": "The Kingdom and the Power: Behind the Scenes at the New York Times",
+    "author": "Gay Talese",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B0058Z4NOQ.jpg",
+    "amazonUrl": "https://www.amazon.com/dp/B0058Z4NOQ",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "The New York Times Company",
+      "seasonNumber": 8,
+      "episodeNumber": 2
+    }
+  },
+  {
+    "id": "B000XUDGHG",
+    "title": "Titan",
+    "author": "Ron Chernow",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B000XUDGHG.jpg",
+    "amazonUrl": "https://www.amazon.com/Titan-Life-John-Rockefeller-Sr-ebook/dp/B000XUDGHG",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "The New York Times Company",
+      "seasonNumber": 8,
+      "episodeNumber": 2
+    }
+  },
+  {
+    "id": "0316388416",
+    "title": "The Upstarts",
+    "author": "Brad Stone",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0316388416.jpg",
+    "amazonUrl": "https://www.amazon.com/Upstarts-Airbnb-Battle-Silicon-Valley/dp/0316388416",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "AirBnb",
+      "seasonNumber": 7,
+      "episodeNumber": 8
+    }
+  },
+  {
+    "id": "B01EFDEMS8",
+    "title": "Foundation Complete Series Set, 7 Books. Foundation, Second Foundation, Foundation and Empire, Foundation's Edge, Prelude to Foundation, Foundation and Earth, Forward the Foundation",
+    "author": "Isaac Asimov",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B01EFDEMS8.jpg",
+    "amazonUrl": "https://www.amazon.com/Complete-Asimovs-Foundation-Foundations-Prelude/dp/B01EFDEMS8",
+    "category": "Science & Engineering",
+    "episodeRef": {
+      "name": "Epic Games",
+      "seasonNumber": 7,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "1594206724",
+    "title": "How to Make a Spaceship",
+    "author": "Julian Guthrie",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1594206724.jpg",
+    "amazonUrl": "https://www.amazon.com/How-Make-Spaceship-Renegades-Spaceflight/dp/1594206724",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Pinduoduo",
+      "seasonNumber": 7,
+      "episodeNumber": 1
+    }
+  },
+  {
+    "id": "0307394875",
+    "title": "Oprah",
+    "author": "Kitty Kelley",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0307394875.jpg",
+    "amazonUrl": "https://www.amazon.com/Oprah-Biography-Kitty-Kelley/dp/0307394875",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "Oprah (Harpo Studios)",
+      "seasonNumber": 6,
+      "episodeNumber": 8
+    }
+  },
+  {
+    "id": "006230125X",
+    "title": "Elon Musk",
+    "author": "Ashlee Vance",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/006230125X.jpg",
+    "amazonUrl": "https://www.amazon.com/Elon-Musk-SpaceX-Fantastic-Future/dp/006230125X",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "SpaceX",
+      "seasonNumber": 6,
+      "episodeNumber": 7
+    }
+  },
+  {
+    "id": "B0036S4B2G",
+    "title": "Only the Paranoid Survive",
+    "author": "Andrew S. Grove",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B0036S4B2G.jpg",
+    "amazonUrl": "https://www.amazon.com/Only-Paranoid-Survive-Exploit-Challenge-ebook/dp/B0036S4B2G",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Adapting Episode 3: Intel",
+      "seasonNumber": 6,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "B07CJRM4DX",
+    "title": "Andrew S. Grove's Swimming Across",
+    "author": "Richard S. Tedlow",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B07CJRM4DX.jpg",
+    "amazonUrl": "https://www.amazon.com/Swimming-Across-Andrew-S-Grove-ebook/dp/B07CJRM4DX",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Adapting Episode 3: Intel",
+      "seasonNumber": 6,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "B07PF6XTD8",
+    "title": "The Ride of a Lifetime",
+    "author": "Robert Iger",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B07PF6XTD8.jpg",
+    "amazonUrl": "https://www.amazon.com/Ride-Lifetime-Lessons-Learned-Company-ebook/dp/B07PF6XTD8",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "Disney Plus",
+      "seasonNumber": 5,
+      "episodeNumber": 7
+    }
+  },
+  {
+    "id": "0875849385",
+    "title": "Done Deals",
+    "author": "Udayan Gupta",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0875849385.jpg",
+    "amazonUrl": "https://www.amazon.com/dp/0875849385",
+    "category": "Startups & Venture Capital",
+    "episodeRef": {
+      "name": "Sequoia Capital (Part 1)",
+      "seasonNumber": 5,
+      "episodeNumber": 4
+    }
+  },
+  {
+    "id": "B06ZZ1YDTX",
+    "title": "Troublemakers",
+    "author": "Leslie Berlin",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B06ZZ1YDTX.jpg",
+    "amazonUrl": "https://www.amazon.com/Troublemakers-Silicon-Valleys-Coming-Age-ebook/dp/B06ZZ1YDTX",
+    "category": "Startups & Venture Capital",
+    "episodeRef": {
+      "name": "Sequoia Capital (Part 1)",
+      "seasonNumber": 5,
+      "episodeNumber": 4
+    }
+  },
+  {
+    "id": "B07QV2YM3X",
+    "title": "VC: An American History",
+    "author": "Tom Nicholas",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B07QV2YM3X.jpg",
+    "amazonUrl": "https://www.amazon.com/VC-American-History-Tom-Nicholas-ebook/dp/B07QV2YM3X",
+    "category": "Startups & Venture Capital",
+    "episodeRef": {
+      "name": "Sequoia Capital (Part 1)",
+      "seasonNumber": 5,
+      "episodeNumber": 4
+    }
+  },
+  {
+    "id": "B09DD17H3N",
+    "title": "The Pilgrim's Progress",
+    "author": "John Bunyan",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B09DD17H3N.jpg",
+    "amazonUrl": "https://www.amazon.com/The-Expanse-9-book-series/dp/B09DD17H3N",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Google Maps",
+      "seasonNumber": 5,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "B00B7NPRY8",
+    "title": "Dune",
+    "author": "Frank Herbert",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B00B7NPRY8.jpg",
+    "amazonUrl": "https://www.amazon.com/Dune-Frank-Herbert-ebook/dp/B00B7NPRY8",
+    "category": "Fiction & Literature",
+    "episodeRef": {
+      "name": "Huawei",
+      "seasonNumber": 5,
+      "episodeNumber": 1
+    }
+  },
+  {
+    "id": "B077RHYC4G",
+    "title": "Boom Town",
+    "author": "Sam Anderson",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B077RHYC4G.jpg",
+    "amazonUrl": "https://www.amazon.com/Boom-Town-Fantastical-Basketball-World-class-ebook/dp/B077RHYC4G",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Instagram Revisited (with Emily White)",
+      "seasonNumber": 4,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "B009G1T74O",
+    "title": "The Outsiders",
+    "author": "William Thorndike",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B009G1T74O.jpg",
+    "amazonUrl": "https://www.amazon.com/Outsiders-Unconventional-Radically-Rational-Blueprint-ebook/dp/B009G1T74O",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "ESPN",
+      "seasonNumber": 4,
+      "episodeNumber": 1
+    }
+  },
+  {
+    "id": "031652719X",
+    "title": "The Broken Earth Trilogy: The Fifth Season, the Obelisk Gate, the Stone Sky",
+    "author": "N. K. Jemisin",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/031652719X.jpg",
+    "amazonUrl": "https://www.amazon.com/Broken-Earth-Trilogy-Season-Obelisk/dp/031652719X",
+    "category": "Fiction & Literature",
+    "episodeRef": {
+      "name": "Netflix (Part 1)",
+      "seasonNumber": 3,
+      "episodeNumber": 8
+    }
+  },
+  {
+    "id": "B00L0M749M",
+    "title": "Narrative of the Life of Frederick Douglass",
+    "author": "Frederick Douglass",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B00L0M749M.jpg",
+    "amazonUrl": "https://www.amazon.com/dp/B00L0M749M",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "Venmo (SF live show with Andrew Kortina)",
+      "seasonNumber": 3,
+      "episodeNumber": 7
+    }
+  },
+  {
+    "id": "B079WN554H",
+    "title": "The Messy Middle",
+    "author": "Scott Belsky",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B079WN554H.jpg",
+    "amazonUrl": "https://www.amazon.com/dp/B079WN554H",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Behance (with Scott Belsky)",
+      "seasonNumber": 3,
+      "episodeNumber": 6
+    }
+  },
+  {
+    "id": "B0124PP3AA",
+    "title": "Alibaba: The House That Jack Ma Built",
+    "author": "Duncan Clark",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B0124PP3AA.jpg",
+    "amazonUrl": "https://www.amazon.com/dp/B0124PP3AA",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Alibaba",
+      "seasonNumber": 3,
+      "episodeNumber": 5
+    }
+  },
+  {
+    "id": "B00JIDTFRO",
+    "title": "A Tale of Two Cities",
+    "author": "Charles Dickens",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B00JIDTFRO.jpg",
+    "amazonUrl": "https://www.amazon.com/Three-Kingdoms-Chinese-Loyalty-Translation-ebook/dp/B00JIDTFRO",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Alibaba",
+      "seasonNumber": 3,
+      "episodeNumber": 5
+    }
+  },
+  {
+    "id": "B074LQKJJC",
+    "title": "Brotopia",
+    "author": "Emily Chang",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B074LQKJJC.jpg",
+    "amazonUrl": "https://www.amazon.com/Brotopia-Breaking-Boys-Silicon-Valley-ebook/dp/B074LQKJJC",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "The Sonos IPO",
+      "seasonNumber": 3,
+      "episodeNumber": 3
+    }
+  },
+  {
+    "id": "B003XF1LKW",
+    "title": "Mindfulness in Plain English",
+    "author": "Bhante Gunaratana",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B003XF1LKW.jpg",
+    "amazonUrl": "https://www.amazon.com/dp/B003XF1LKW",
+    "category": "Fiction & Literature",
+    "episodeRef": {
+      "name": "PowerPoint",
+      "seasonNumber": 2,
+      "episodeNumber": 7
+    }
+  },
+  {
+    "id": "B000FC1HTG",
+    "title": "eBoys",
+    "author": "Randall E. Stross",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B000FC1HTG.jpg",
+    "amazonUrl": "https://www.amazon.com/eBoys-Inside-Account-Venture-Capitalists-ebook/dp/B000FC1HTG",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "SoftBank, Fortress and the Vision Fund",
+      "seasonNumber": 2,
+      "episodeNumber": 4
+    }
+  },
+  {
+    "id": "B00IQO403K",
+    "title": "Three-Body Problem",
+    "author": "Liu Cixin",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B00IQO403K.jpg",
+    "amazonUrl": "https://www.amazon.com/Three-Body-Problem-Remembrance-Earths-Past-ebook/dp/B00IQO403K",
+    "category": "Science & Engineering",
+    "episodeRef": {
+      "name": "SoftBank, Fortress and the Vision Fund",
+      "seasonNumber": 2,
+      "episodeNumber": 4
+    }
+  },
+  {
+    "id": "B004J4WKUQ",
+    "title": "Ready Player One",
+    "author": "Ernest Cline",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B004J4WKUQ.jpg",
+    "amazonUrl": "https://www.amazon.com/Ready-Player-One-Ernest-Cline-ebook/dp/B004J4WKUQ",
+    "category": "Fiction & Literature",
+    "episodeRef": {
+      "name": "Raising a Seed Round with Against Gravity CEO Nick Fajt",
+      "seasonNumber": 2,
+      "episodeNumber": 2
+    }
+  },
+  {
+    "id": "B00LZWV8JO",
+    "title": "Seveneves",
+    "author": "Neal Stephenson",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B00LZWV8JO.jpg",
+    "amazonUrl": "https://www.amazon.com/Seveneves-Novel-Neal-Stephenson-ebook/dp/B00LZWV8JO",
+    "category": "Fiction & Literature",
+    "episodeRef": {
+      "name": "Raising a Seed Round with Against Gravity CEO Nick Fajt",
+      "seasonNumber": 2,
+      "episodeNumber": 2
+    }
+  },
+  {
+    "id": "B000PC0S0K",
+    "title": "Gulliver's Travels",
+    "author": "Jonathan Swift",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B000PC0S0K.jpg",
+    "amazonUrl": "https://www.amazon.com/Einstein-Life-Universe-Walter-Isaacson-ebook/dp/B000PC0S0K",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Zappos (with Alfred Lin)",
+      "seasonNumber": 2,
+      "episodeNumber": 1
+    }
+  },
+  {
+    "id": "B000FBJG4U",
+    "title": "Benjamin Franklin",
+    "author": "Walter Isaacson",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B000FBJG4U.jpg",
+    "amazonUrl": "https://www.amazon.com/Benjamin-Franklin-American-Walter-Isaacson-ebook/dp/B000FBJG4U",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "Zappos (with Alfred Lin)",
+      "seasonNumber": 2,
+      "episodeNumber": 1
+    }
+  },
+  {
+    "id": "0375847227",
+    "title": "His Dark Materials",
+    "author": "Philip Pullman",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0375847227.jpg",
+    "amazonUrl": "https://www.amazon.com/Materials-Omnibus-Golden-Compass-Spyglass/dp/0375847227",
+    "category": "Fiction & Literature",
+    "episodeRef": {
+      "name": "2017 Holiday Special",
+      "seasonNumber": 1,
+      "episodeNumber": 51
+    }
+  },
+  {
+    "id": "0071453393",
+    "title": "Wooden on Leadership",
+    "author": "John Wooden",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0071453393.jpg",
+    "amazonUrl": "https://www.amazon.com/Wooden-Leadership-Create-Winning-Organization/dp/0071453393",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "2017 Holiday Special",
+      "seasonNumber": 1,
+      "episodeNumber": 51
+    }
+  },
+  {
+    "id": "B01LYJI4UO",
+    "title": "Coach Wooden and Me",
+    "author": "Kareem Abdul-Jabbar",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B01LYJI4UO.jpg",
+    "amazonUrl": "https://www.amazon.com/Coach-Wooden-Me-50-Year-Friendship-ebook/dp/B01LYJI4UO",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "The Stitch Fix IPO",
+      "seasonNumber": 1,
+      "episodeNumber": 49
+    }
+  },
+  {
+    "id": "B01BNSK4V2",
+    "title": "Born to Run",
+    "author": "Dave Marsh",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B01BNSK4V2.jpg",
+    "amazonUrl": "https://www.amazon.com/Born-Run-Bruce-Springsteen-ebook/dp/B01BNSK4V2",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "The Atlassian IPO",
+      "seasonNumber": 1,
+      "episodeNumber": 47
+    }
+  },
+  {
+    "id": "B00BMBANYY",
+    "title": "Give and Take",
+    "author": "Adam Grant",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B00BMBANYY.jpg",
+    "amazonUrl": "https://www.amazon.com/Give-Take-Revolutionary-Approach-Success/dp/B00BMBANYY",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "AOL - Time Warner (with the Internet History Podcast)",
+      "seasonNumber": 1,
+      "episodeNumber": 44
+    }
+  },
+  {
+    "id": "B005C6FDFY",
+    "title": "Season of the Witch: Enchantment, Terror and Deliverance in the City of Love",
+    "author": "David Talbot",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B005C6FDFY.jpg",
+    "amazonUrl": "https://www.amazon.com/dp/B005C6FDFY",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "AOL - Time Warner (with the Internet History Podcast)",
+      "seasonNumber": 1,
+      "episodeNumber": 44
+    }
+  },
+  {
+    "id": "B01M5IJN1P",
+    "title": "A Mind at Play: How Claude Shannon Invented the Information Age",
+    "author": "Jimmy Soni",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B01M5IJN1P.jpg",
+    "amazonUrl": "https://www.amazon.com/dp/B01M5IJN1P",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "AOL - Time Warner (with the Internet History Podcast)",
+      "seasonNumber": 1,
+      "episodeNumber": 44
+    }
+  },
+  {
+    "id": "B00DQ845EA",
+    "title": "The Hard Thing About Hard Things: Building a Business When There Are No Easy Answers",
+    "author": "Ben Horowitz",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B00DQ845EA.jpg",
+    "amazonUrl": "https://www.amazon.com/dp/B00DQ845EA",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Opsware (with special guest Michel Feaster)",
+      "seasonNumber": 1,
+      "episodeNumber": 42
+    }
+  },
+  {
+    "id": "B01L7NJNVU",
+    "title": "Just Around Midnight: Rock and Roll and the Racial Imagination",
+    "author": "Jack Hamilton",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B01L7NJNVU.jpg",
+    "amazonUrl": "https://www.amazon.com/dp/B01L7NJNVU/",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "The LA Clippers",
+      "seasonNumber": 1,
+      "episodeNumber": 36
+    }
+  },
+  {
+    "id": "B000XUBD8U",
+    "title": "Dark Valley",
+    "author": "Piers Brendon",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B000XUBD8U.jpg",
+    "amazonUrl": "https://www.amazon.com/Dark-Valley-Panorama-1930s-ebook/dp/B000XUBD8U/",
+    "category": "Biographies & History",
+    "episodeRef": {
+      "name": "Overture (with the Internet History Podcast)",
+      "seasonNumber": 1,
+      "episodeNumber": 33
+    }
+  },
+  {
+    "id": "1599869772",
+    "title": "The Art of War",
+    "author": "Sun Tzu",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1599869772.jpg",
+    "amazonUrl": "https://www.amazon.com/Art-War-Sun-Tzu/dp/1599869772",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "The Snap Inc. IPO",
+      "seasonNumber": 1,
+      "episodeNumber": 32
+    }
+  },
+  {
+    "id": "B01HZFB3X0",
+    "title": "The Upstarts",
+    "author": "Brad Stone",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B01HZFB3X0.jpg",
+    "amazonUrl": "https://www.amazon.com/Upstarts-Airbnb-Companies-Silicon-Changing-ebook/dp/B01HZFB3X0",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "The Uber - Didi Chuxing Merger",
+      "seasonNumber": 1,
+      "episodeNumber": 31
+    }
+  },
+  {
+    "id": "B00ICN066A",
+    "title": "Sapiens",
+    "author": "Yuval Noah Harari",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B00ICN066A.jpg",
+    "amazonUrl": "https://www.amazon.com/Sapiens-Humankind-Yuval-Noah-Harari-ebook/dp/B00ICN066A",
+    "category": "Technology & Innovation",
+    "episodeRef": {
+      "name": "The Uber - Didi Chuxing Merger",
+      "seasonNumber": 1,
+      "episodeNumber": 31
+    }
+  },
+  {
+    "id": "0307273601",
+    "title": "Daily Rituals",
+    "author": "Mason Currey",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0307273601.jpg",
+    "amazonUrl": "https://www.amazon.com/Daily-Rituals-How-Artists-Work/dp/0307273601",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "P.A. Semi + AuthenTec",
+      "seasonNumber": 1,
+      "episodeNumber": 30
+    }
+  },
+  {
+    "id": "B0090RVGW0",
+    "title": "On Writing Well",
+    "author": "William Zinsser",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B0090RVGW0.jpg",
+    "amazonUrl": "https://www.amazon.com/Writing-Well-30th-Anniversary-Nonfiction-ebook/dp/B0090RVGW0",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Special: 2016 Review and 2017 Predictions",
+      "seasonNumber": 1,
+      "episodeNumber": 29
+    }
+  },
+  {
+    "id": "0743235274",
+    "title": "The Creative Habit",
+    "author": "Twyla Tharp",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0743235274.jpg",
+    "amazonUrl": "https://www.amazon.com/Creative-Habit-Learn-Use-Life/dp/0743235274",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Special: 2016 Review and 2017 Predictions",
+      "seasonNumber": 1,
+      "episodeNumber": 29
+    }
+  },
+  {
+    "id": "B01GI6S7EK",
+    "title": "Hamlet",
+    "author": "William Shakespeare",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B01GI6S7EK.jpg",
+    "amazonUrl": "https://www.amazon.com/Undoing-Project-Friendship-Changed-Minds-ebook/dp/B01GI6S7EK",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "The Amazon IPO",
+      "seasonNumber": 1,
+      "episodeNumber": 28
+    }
+  },
+  {
+    "id": "B015VABIRC",
+    "title": "Connectography",
+    "author": "Parag Khanna",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B015VABIRC.jpg",
+    "amazonUrl": "https://www.amazon.com/Connectography-Mapping-Future-Global-Civilization-ebook/dp/B015VABIRC",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "The Facebook IPO",
+      "seasonNumber": 1,
+      "episodeNumber": 25
+    }
+  },
+  {
+    "id": "B015CKNWJI",
+    "title": "Algorithms to Live By",
+    "author": "Brian Christian",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B015CKNWJI.jpg",
+    "amazonUrl": "https://www.amazon.com/Algorithms-Live-Computer-Science-Decisions-ebook/dp/B015CKNWJI",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Inside the M&A Press with Bloomberg's Alex Sherman",
+      "seasonNumber": 1,
+      "episodeNumber": 21
+    }
+  },
+  {
+    "id": "B00BWQW73E",
+    "title": "The Everything Store",
+    "author": "Brad Stone",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B00BWQW73E.jpg",
+    "amazonUrl": "https://www.amazon.com/Everything-Store-Jeff-Bezos-Amazon-ebook/dp/B00BWQW73E",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Jet",
+      "seasonNumber": 1,
+      "episodeNumber": 19
+    }
+  },
+  {
+    "id": "B000FCKPHG",
+    "title": "Mindset",
+    "author": "Carol S. Dweck",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B000FCKPHG.jpg",
+    "amazonUrl": "https://www.amazon.com/Mindset-Psychology-Success-Carol-Dweck-ebook/dp/B000FCKPHG",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Special‚ An Acquirer's View into M&A with Taylor Barada, head of Corp Dev at Adobe",
+      "seasonNumber": 1,
+      "episodeNumber": 18
+    }
+  },
+  {
+    "id": "B002G54Y04",
+    "title": "The Score Takes Care of Itself",
+    "author": "Walsh, Bill",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B002G54Y04.jpg",
+    "amazonUrl": "https://www.amazon.com/Score-Takes-Care-Itself-Philosophy-ebook/dp/B002G54Y04",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "ExactTarget (acquired by Salesforce) with Scott Dorsey",
+      "seasonNumber": 1,
+      "episodeNumber": 15
+    }
+  },
+  {
+    "id": "1439102120",
+    "title": "The Facebook Effect",
+    "author": "David Kirkpatrick",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/1439102120.jpg",
+    "amazonUrl": "https://www.amazon.com/Facebook-Effect-Inside-Company-Connecting/dp/1439102120",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "LinkedIn",
+      "seasonNumber": 1,
+      "episodeNumber": 14
+    }
+  },
+  {
+    "id": "B00L1TPCKW",
+    "title": "Business Adventures",
+    "author": "John Brooks",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/B00L1TPCKW.jpg",
+    "amazonUrl": "https://www.amazon.com/Business-Adventures-Twelve-Classic-Street-ebook/dp/B00L1TPCKW",
+    "category": "Startups & Venture Capital",
+    "episodeRef": {
+      "name": "Virgin America",
+      "seasonNumber": 1,
+      "episodeNumber": 10
+    }
+  },
+  {
+    "id": "0593070100",
+    "title": "Creativity, Inc.",
+    "author": "Ed Catmull",
+    "coverUrl": "https://pub-d21319a05b8646c1928e289444e77283.r2.dev/covers/0593070100.jpg",
+    "amazonUrl": "https://www.amazon.com/Creativity-Overcoming-Unseen-Forces-Inspiration/dp/0593070100",
+    "category": "Business & Leadership",
+    "episodeRef": {
+      "name": "Pixar",
+      "seasonNumber": 1,
+      "episodeNumber": 1
+    }
+  }
+]
