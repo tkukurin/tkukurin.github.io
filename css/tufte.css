@@ -295,6 +295,13 @@ a.count:hover::after { content: "view all posts →"; }
 }
 
 /* === See also === */
+.see-also::before {
+    color: var(--rubric);
+    content: "∮";
+    display: block;
+    text-align: center;
+    margin: 1rem;
+  }
 .see-also {
   margin-top: 4rem;
   font-size: 0.88rem;
@@ -308,14 +315,7 @@ a.count:hover::after { content: "view all posts →"; }
   color: var(--ink-3);
   margin-right: 0.4em;
 }
-.see-also-label::before {
-  content: "§";
-  color: var(--rubric);
-  font-variant: normal;
-  letter-spacing: normal;
-  position: absolute;
-  left: -1.1em;
-}
+/*.see-also-label::before {content: "§";color: var(--rubric);font-variant: normal;letter-spacing: normal; position: absolute; left: -1.1em; }*/
 .post-content .see-also a:hover { color: var(--rubric); }
 
 /* === Footer === */
