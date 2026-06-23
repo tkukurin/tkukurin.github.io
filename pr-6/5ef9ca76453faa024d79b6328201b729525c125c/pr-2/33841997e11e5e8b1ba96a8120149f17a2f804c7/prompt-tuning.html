@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    <title>Simple Few-Shot Learning with Language Models</title>
+    <meta name="description" content="FAIR/UCL: Few-shot learning with LMs. Not that interesting results, but cool overview of existing prompt techniques. Focus on masked LM (unlike LTR in e.g. L...">
+    <link rel="canonical" href="https://tkukurin.github.io/prompt-tuning">
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/light.css">
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  simple-few-shot-learning-with-language-models">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">~</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">caveat emptor</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <div class="page-sidebar">
+        
+            
+            <h1 id="page-title" class="page-title p-name">Simple Few-Shot Learning with Language Models
+</h1>
+        
+        <div class="page-author h-card p-author"><div class="author-info">
+    <time class="page-date dt-published" datetime="2021-07-25T00:00:00+00:00"><a class="u-url" href="">Jul 25, 2021</a>
+</time>
+
+  </div>
+</div>
+
+        
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">nlp</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p><a href="https://arxiv.org/pdf/2106.13353.pdf">FAIR/UCL: Few-shot learning with LMs</a>.
+Not that interesting results, but cool overview of existing prompt techniques.
+Focus on <em>masked LM</em> (unlike LTR in e.g. Li and Liang (2021)).
+Smaller models (RoBERTa, ALBERT) compared to previous work.</p>
+
+<p>TL;DR fine-tune some parameters to make prompt optimization less important.</p>
+
+<blockquote>
+  <p>[Updating only bias terms] can achieve competitive or better few-shot accuracy
+than standard finetuning while only updating 0.1% of the parameters.</p>
+</blockquote>
+
+<p>Manually-engineered prompts from previous work still outperform automated ones;
+the latter can match manual w/ some caveats, e.g. Gao et al. (2021) achieve
+comparable results using large generative models and careful validation.
+Concatenating <code class="language-plaintext highlighter-rouge">input|[MASK]</code> (cf. A3) can perform similar to prompt engineering.</p>
+
+<h2 id="fine-tuning-styles">Fine-tuning styles</h2>
+
+<p><em>In-context</em> (IC) is the name for the prompt-only style few-shot learning.
+LM remains frozen, you literally ask it to pattern-match your text:</p>
+<blockquote>
+  <p>{Q1} and {Q2} have different meanings. {Q3} and {Q4} have similar meanings.
+{Q5} and {Q6} have [MASK] meanings.</p>
+</blockquote>
+
+<p><em>Prompt-only</em> does no parameter update, just searches for a good prompt:</p>
+<ul>
+  <li>AutoPrompt</li>
+  <li>Prompt tuning (short)</li>
+  <li>Prompt tuning (long)</li>
+</ul>
+
+<p><em>Prompt-based finetuning</em> updates some or all LM parameters.
+Seems to achieve better perf in previous work than IC with small models.
+Their experiments with partial updates:</p>
+<ul>
+  <li>Adapters, \(O(10^7)\) params</li>
+  <li>BitFit (theirs - update only bias term), \(O(10^5)\) params</li>
+  <li>LM head tuning, \(O(10^3)\) params</li>
+  <li>Affine transformation on top of the verbalizer token logits, \(O(10)\) params</li>
+</ul>
+
+<p>Trained on only 16 examples, BitFit performs best.
+Seems adapters have too many params to be useful for this setting.</p>
+
+<p>Previous work claims fine-tuning performs on par with prompt-only tuning, but
+has been done only on LTR (GPT-style) and larger language models.
+In their experiments prompt-only tuning fails miserably.</p>
+
+<h2 id="setup">Setup</h2>
+
+<p>Vocabulary of the pre-trained LM \(T \subseteq T^*\).
+Training pairs \(x_i \in X, y_i \in Y\).
+Pattern \(P: X \rightarrow T^*\) maps inputs to cloze Qs (one <code class="language-plaintext highlighter-rouge">[MASK]</code> token).
+Verbalizer \(v: Y \rightarrow T\) maps label to in-vocab token.</p>
+
+<p>Sample 2K examples/label, and determine best hyperparams w/ 4-fold CV. After
+fixing hp’s, train on the 1st K (=16) and early stop on the 2nd K examples.</p>
+
+<blockquote>
+  <p>Since few-shot learning can be high variance, we sample the examples with 10
+different random seeds and report [metrics’ mean and variance].</p>
+</blockquote>
+
+<blockquote>
+  <p>Welch’s t-test to determine if there is a significant difference in accuracy
+for each pair of methods.</p>
+</blockquote>
+
+<h2 id="prompt-styles">Prompt styles</h2>
+
+<p>From Table A1 (Schick and Schutze, Gao et al.’s prompts).
+Authors don’t say how the prompts were obtained (validation on a dev dataset?).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Prompt</th>
+      <th>Verbalizer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>BoolQ</td>
+      <td><code class="language-plaintext highlighter-rouge">{P}. Question: {Q}? Answer: [MASK]</code></td>
+      <td>true, false</td>
+    </tr>
+    <tr>
+      <td>CB</td>
+      <td><code class="language-plaintext highlighter-rouge">{P}? [SEP] [MASK], {H}</code></td>
+      <td>yes, no, maybe</td>
+    </tr>
+    <tr>
+      <td>MNLI</td>
+      <td><code class="language-plaintext highlighter-rouge">{S1}? [SEP] [MASK], {S2}</code></td>
+      <td>yes, no, maybe</td>
+    </tr>
+    <tr>
+      <td>MRPC</td>
+      <td><code class="language-plaintext highlighter-rouge">{S1} and {S2} have [MASK] meanings</code></td>
+      <td>different, similar</td>
+    </tr>
+    <tr>
+      <td>QNLI</td>
+      <td><code class="language-plaintext highlighter-rouge">{Q}? [SEP] [MASK], {S}</code></td>
+      <td>yes, no</td>
+    </tr>
+    <tr>
+      <td>QQP</td>
+      <td><code class="language-plaintext highlighter-rouge">{Q1} and {Q1} have [MASK] meanings</code></td>
+      <td>different, similar</td>
+    </tr>
+    <tr>
+      <td>SST-2</td>
+      <td><code class="language-plaintext highlighter-rouge">{S} It was [MASK]</code></td>
+      <td>terrible, great</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>From Table A2. WTF MRPC and QQP, they bias the model to respond “the same”?</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Prompt</th>
+      <th>Verbalizer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>BoolQ</td>
+      <td><code class="language-plaintext highlighter-rouge">Passage: {P} Question: {Q} Answer: [MASK]</code></td>
+      <td>true, false</td>
+    </tr>
+    <tr>
+      <td>CB</td>
+      <td><code class="language-plaintext highlighter-rouge">Premise: {P} Hypothesis: {H} Label: [MASK]</code></td>
+      <td>yes, no, maybe</td>
+    </tr>
+    <tr>
+      <td>MNLI</td>
+      <td><code class="language-plaintext highlighter-rouge">Premise: {S1} Hypothesis: {S2} Label: [MASK]</code></td>
+      <td>yes, no, maybe</td>
+    </tr>
+    <tr>
+      <td>MRPC</td>
+      <td><code class="language-plaintext highlighter-rouge">{S1} and {S2} are the [MASK]</code></td>
+      <td>different, same</td>
+    </tr>
+    <tr>
+      <td>QNLI</td>
+      <td><code class="language-plaintext highlighter-rouge">Question: {Q} Sentence: {S} Label: [MASK]</code></td>
+      <td>yes, no</td>
+    </tr>
+    <tr>
+      <td>QQP</td>
+      <td><code class="language-plaintext highlighter-rouge">{Q1} and {Q1} are the [MASK]</code></td>
+      <td>different, same</td>
+    </tr>
+    <tr>
+      <td>SST-2</td>
+      <td><code class="language-plaintext highlighter-rouge">{S} overall my impression is [MASK]</code></td>
+      <td>bad, good</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>From Table A3 (null prompts). Why do they change the verbalizer?</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Prompt</th>
+      <th>Verbalizer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>BoolQ</td>
+      <td><code class="language-plaintext highlighter-rouge">{P} {Q} [MASK]</code></td>
+      <td>yes, no</td>
+    </tr>
+    <tr>
+      <td>CB</td>
+      <td><code class="language-plaintext highlighter-rouge">{P} [MASK] {H}</code></td>
+      <td>yes, no, maybe</td>
+    </tr>
+    <tr>
+      <td>MNLI</td>
+      <td><code class="language-plaintext highlighter-rouge">{S1} [MASK] {S2}</code></td>
+      <td>yes, no, maybe</td>
+    </tr>
+    <tr>
+      <td>MRPC</td>
+      <td><code class="language-plaintext highlighter-rouge">{S1} {S2} [MASK]</code></td>
+      <td>different, similar</td>
+    </tr>
+    <tr>
+      <td>QNLI</td>
+      <td><code class="language-plaintext highlighter-rouge">{Q} [MASK] {S}</code></td>
+      <td>yes, no</td>
+    </tr>
+    <tr>
+      <td>QQP</td>
+      <td><code class="language-plaintext highlighter-rouge">{Q1} {Q1} [MASK]</code></td>
+      <td>different, similar</td>
+    </tr>
+    <tr>
+      <td>SST-2</td>
+      <td><code class="language-plaintext highlighter-rouge">{S} [MASK]</code></td>
+      <td>terrible, great</td>
+    </tr>
+  </tbody>
+</table>
+
+
+        </div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/learning-to-communicate-shared-abstractions">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Learning to communicate about shared procedural abstractions
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/jane-wang-learning-salon">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Learning salon: Jane Wang
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://twitter.com/tkukurin"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/tkukurin"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="https://www.linkedin.com/in/toni/"><i class="fab fa-linkedin fa-2x" title="LinkedIn"></i></a></div><div class="copyright">
+    
+      
+
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>
