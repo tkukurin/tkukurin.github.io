@@ -36,9 +36,21 @@ html.verdana .topbar a {
   text-decoration: underline;
   color: #333333;
 }
+html.verdana .leaflet-link { border-bottom: none; }
 
 /* Fixed 705px table-width shell, like the source site */
 html.verdana .shell { max-width: 705px; padding: 0 1rem; }
+
+/* Signature orange + teal stripes at the very top of the page */
+html.verdana body::before {
+  content: "";
+  display: block;
+  height: 8px;
+  background:
+    linear-gradient(to bottom,
+      #e28000 0, #e28000 2px,   /* 2px orange */
+      #66c2aa 2px, #66c2aa 8px); /* 6px teal */
+}
 
 /* Neutralize italics / small-caps / ornamental letter-spacing */
 html.verdana .mark,
@@ -82,8 +94,8 @@ html.verdana .mark            { font-weight: bold; font-size: 0.9rem; }
 html.verdana .intro h1        { font-weight: bold; font-size: 1.5rem; }
 html.verdana .post .t         { font-weight: bold; font-size: 1rem; }
 html.verdana .post .d         { font-size: 0.9rem; }
-html.verdana .sec .l          { font-weight: bold; font-size: 0.75rem; }
-html.verdana .sec .r h2       { font-weight: bold; font-size: 0.95rem; }
+html.verdana .sec .l          { font-weight: bold; font-size: 0.78rem; text-transform: uppercase; }
+html.verdana .sec .r h2       { font-weight: bold; font-size: 0.78rem; text-transform: uppercase; }
 html.verdana .post-content h1 { font-weight: bold; font-size: 1.6rem; }
 html.verdana .post-content h2,
 html.verdana .post-content h3 { font-weight: bold; font-size: 1.1rem; }
@@ -110,8 +122,44 @@ html.verdana .post-content p,
 html.verdana .post-content ol,
 html.verdana .post-content ul { font-size: 0.95rem; line-height: 1.5; }
 
-html.verdana .intro  { padding: 1.5rem 0 1.2rem; }
-html.verdana .row    { padding: 0.6rem 0; }
+/* Collapse the sidebar-grid layouts to a single left-aligned column,
+   like the source site's plain <ul>/table flow. */
+html.verdana .intro,
+html.verdana .sec,
+html.verdana .row {
+  grid-template-columns: 1fr;
+  gap: 0.25rem;
+  padding-left: 0;
+}
+html.verdana .intro .l,
+html.verdana .sec .l {
+  text-align: left;
+  display: block;
+  margin-bottom: 0.15rem;
+}
+html.verdana .sec .r { padding-top: 0; }
+
+html.verdana .intro  { padding: 1.2rem 0 1rem; }
+html.verdana .row    { padding: 0.35rem 0; border-top: none; }
+html.verdana .row:hover { background: transparent; }
+html.verdana .marg {
+  justify-content: flex-start;
+  text-align: left;
+  display: inline;
+  font-size: 0.75rem;
+}
+html.verdana .marg .kind,
+html.verdana .marg .day { display: inline; white-space: normal; }
+html.verdana .marg .arrow { display: none; }
+
+html.verdana .list { padding-left: 0; }
+html.verdana .post .t { display: inline; }
+html.verdana .post .d { display: inline; margin-left: 0.4rem; }
+html.verdana .post .d::before { content: "— "; }
+
+/* Archive two-column list: keep the columns but make rows plain (no hairlines) */
+html.verdana .col-list li { border-top: none; padding: 0.2rem 0; }
+html.verdana .col-list.flow-cols { column-gap: 2rem; }
 
 /* === Theme switch button === */
 .theme-switch {
