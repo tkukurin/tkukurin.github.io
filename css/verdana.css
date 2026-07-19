@@ -59,6 +59,7 @@ html.verdana .lhs {
   align-self: stretch;     /* fill grid track = main content height */
   position: sticky;        /* pin to viewport top while main scrolls */
   top: 0;
+  min-height: 0;            /* override grid default min-height:auto so max-height can bite */
   max-height: 100vh;        /* cap at viewport → enables internal scroll */
   overflow-y: auto;         /* scroll archive items within the sidebar */
   background: #ffffff;
