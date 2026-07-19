@@ -63,7 +63,7 @@ title: almost worth reading.
 </section>
 
 <ul class="col-list flow-cols">
-  {% for post in archive limit: 30 %}
+  {% for post in archive limit: 20 %}
   <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a><span class="col-date">{{ post.date | date: "%b %Y" }}</span></li>
   {% endfor %}
 </ul>
