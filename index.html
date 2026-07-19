@@ -56,16 +56,18 @@ title: almost worth reading.
 
 {% assign archive = marginalia | concat: symposia | sort: "date" | reverse %}
 {% if archive.size > 0 %}
+<aside class="lhs">
 <section class="sec">
   <div class="l">Archive</div>
   <div class="r"><h2>Marginalia &amp; symposia</h2><a class="count" href="{{ '/archive' | relative_url }}"><span class="count-num">{{ archive.size }} entries</span></a></div>
 </section>
 
 <ul class="col-list flow-cols">
-  {% for post in archive limit: 20 %}
+  {% for post in archive limit: 30 %}
   <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a><span class="col-date">{{ post.date | date: "%b %Y" }}</span></li>
   {% endfor %}
 </ul>
+</aside>
 {% endif %}
 
 {% if site.opera.size > 0 %}

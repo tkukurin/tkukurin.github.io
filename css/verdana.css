@@ -41,6 +41,81 @@ html.verdana .leaflet-link { border-bottom: none; }
 /* Fixed 705px table-width shell, like the source site */
 html.verdana .shell { max-width: 705px; padding: 0 1rem; }
 
+/* Two-column layout: LHS archive sidebar + main content.
+   .lhs spans all rows explicitly (span 100 — the `-1` keyword is
+   unreliable on implicit grids and was likely why it stacked).
+   Every other direct child of .shell lands in column 2. */
+html.verdana .shell {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+html.verdana .shell > *:not(.lhs) { grid-column: 2; }
+html.verdana .lhs {
+  display: block;          /* override .lhs{display:contents} from tufte.css */
+  grid-column: 1;
+  grid-row: 1 / span 100;
+  align-self: stretch;     /* fill grid track = main content height */
+  position: sticky;        /* pin to viewport top while main scrolls */
+  top: 0;
+  max-height: 100vh;        /* cap at viewport → enables internal scroll */
+  overflow-y: auto;         /* scroll archive items within the sidebar */
+  background: #ffffff;
+  color: #000000;
+  border-right: 1px solid #cccccc;
+  padding: 0.6rem 1rem 0.6rem 0;
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+/* Sidebar section header: compact single-column */
+html.verdana .lhs .sec {
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding: 0 0 0.4rem;
+  border-bottom: 1px solid #cccccc;
+  margin-bottom: 0.3rem;
+}
+html.verdana .lhs .sec .l {
+  text-align: left;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #000000;
+}
+html.verdana .lhs .sec .r { padding-top: 0; }
+html.verdana .lhs .sec .r h2 { font-size: 0.72rem; text-transform: uppercase; }
+html.verdana .lhs .count,
+html.verdana .lhs .count-num { color: #666666; font-size: 0.7rem; }
+/* Sidebar post list: single column (override .flow-cols 2-col) */
+html.verdana .lhs .col-list { margin-left: 0; width: auto; }
+html.verdana .lhs .col-list.flow-cols {
+  display: block;
+  grid-template-columns: none;
+  grid-auto-flow: row;
+  column-gap: 0;
+}
+html.verdana .lhs .col-list li {
+  border-top: none;
+  padding: 0.25rem 0;
+  display: block;
+}
+html.verdana .lhs .col-list li a {
+  color: #333333;
+  text-decoration: underline;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+}
+html.verdana .lhs .col-list li a:visited { color: #66c2aa; }
+html.verdana .lhs .col-list li a:hover { color: #e28000; }
+html.verdana .lhs .col-date {
+  display: block;
+  font-size: 0.66rem;
+  color: #666666;
+  margin-top: 0.05rem;
+}
+
 /* Signature orange + teal stripes at the very top of the page */
 html.verdana body::before {
   content: "";
@@ -124,14 +199,6 @@ html.verdana .post-content ul { font-size: 0.95rem; line-height: 1.5; }
 
 html.verdana .intro  { padding: 1.2rem 0 1rem; }
 html.verdana .row    { padding: 0.35rem 0; border-top: none; }
-/* Orange hover on main posts — the agents2001 signature accent */
-html.verdana .row:hover { background: #e28000; }
-html.verdana .row:hover .marg,
-html.verdana .row:hover .post .t,
-html.verdana .row:hover .post .d,
-html.verdana .row:hover .marg .day,
-html.verdana .row:hover .marg .kind { color: #ffffff; }
-html.verdana .row:hover .post { color: #ffffff; }
 
 /* Archive two-column list: keep the columns but make rows plain (no hairlines) */
 html.verdana .col-list li { border-top: none; padding: 0.2rem 0; }

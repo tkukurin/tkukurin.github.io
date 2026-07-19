@@ -54,6 +54,10 @@ a { color: inherit; text-decoration: none; }
   margin: 0 auto;
   padding: 0 2.5rem;
 }
+/* .lhs is a transparent wrapper in the base stylesheet; in Garamond mode
+   its children (.sec + .col-list) should behave as if direct children of
+   .shell. Verdana mode overrides with display:block. */
+.lhs { display: contents; }
 
 /* === Topbar === */
 .topbar {
