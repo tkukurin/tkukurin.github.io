@@ -141,7 +141,14 @@ html.verdana .sec .r { padding-top: 0; }
 
 html.verdana .intro  { padding: 1.2rem 0 1rem; }
 html.verdana .row    { padding: 0.35rem 0; border-top: none; }
-html.verdana .row:hover { background: transparent; }
+/* Orange hover on main posts — the agents2001 signature accent */
+html.verdana .row:hover { background: #e28000; }
+html.verdana .row:hover .marg,
+html.verdana .row:hover .post .t,
+html.verdana .row:hover .post .d,
+html.verdana .row:hover .marg .day,
+html.verdana .row:hover .marg .kind { color: #ffffff; }
+html.verdana .row:hover .post { color: #ffffff; }
 html.verdana .marg {
   justify-content: flex-start;
   text-align: left;
