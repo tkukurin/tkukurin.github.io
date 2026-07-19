@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    <title>Learning salon: Zenna Tavares</title>
+    <meta name="description" content="Causal probabilistic programming for AI. Presentation starts @05m14s. “I will mostly speculate” since this is not a conference but a salon.">
+    <link rel="canonical" href="https://tkukurin.github.io/learning-salon-zenna-tavares">
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/light.css">
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  learning-salon-zenna-tavares">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">~</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">caveat emptor</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <div class="page-sidebar">
+        
+            
+            <h1 id="page-title" class="page-title p-name">Learning salon: Zenna Tavares
+</h1>
+        
+        <div class="page-author h-card p-author"><div class="author-info">
+    <time class="page-date dt-published" datetime="2021-05-29T00:00:00+00:00"><a class="u-url" href="">May 29, 2021</a>
+</time>
+
+  </div>
+</div>
+
+        
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">neuro</li><li class="page-taxonomy">philosophy</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>Causal probabilistic programming for AI.
+Presentation starts <a href="https://youtu.be/V_yV8GxhUlc?t=05m14s">@05m14s</a>.
+“I will mostly speculate” since this is not a conference but a salon.</p>
+
+<p>Example: perfect spheres for planets.
+Galileo: “I feel sure that the surface of the moon is not spherical.”
+How? Essentially Bayesian reasoning.
+Some imagined generative program a person may use <a href="https://youtu.be/V_yV8GxhUlc?t=11m13s">@11m13s</a>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>theory ~ t_sphere(p_sphere) or t_rugged(1-p_sphere)
+if theory == t_sphere:
+  color ~ some_color_distribution
+  sphere := Sphere(color)
+else if theory == t_rugged:
+  relief ~ some_relief_distribution
+  moon := Surface(relief)
+image := render(moon)
+</code></pre></div></div>
+
+<p>What changed Galileo’s posterior? Telescope [sensory input].
+His proposal: extend generative program above with a new language (?).
+We need to be able to <a href="https://youtu.be/V_yV8GxhUlc?t=19m05s">encode “soft” arguments in math</a>.
+[I’m not sure how this is different from current math language?]</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>theory Ptolemy
+Earth: Object
+Moon: HeavenlyBody
+
+law constant (center Earth)
+law center Earth = center Universe
+
+law forall b in HeavenlyBodies,
+  circularMotion b
+
+law forall b in HeavenlyBodies,
+  revolvesAround b Earth
+</code></pre></div></div>
+
+<p><a href="https://openreview.net/pdf/c0d8f67d1bc7c02b4c73c1601730d188521165ea.pdf">Application to grid world domains</a>.
+<a href="https://youtu.be/V_yV8GxhUlc?t=25m02s">Claims</a>:</p>
+<ol>
+  <li>Automatic probabilistic and causal inference currently most compelling for
+reasoning machines</li>
+  <li>Next generations of formalisms for inference will inherit from thm provers</li>
+  <li>Human reasoning remains far beyond any formalisms. [ Assumes a single
+concept of “human reasoning;” doesn’t necessarily seem correct.  ]</li>
+</ol>
+
+<h1 id="discussion"><a href="https://youtu.be/V_yV8GxhUlc?t=26m30s">Discussion</a></h1>
+
+<p>John: is this just a CS metaphor?
+<a href="https://youtu.be/V_yV8GxhUlc?t=29m45s">The space of theories is infinite, yet we pick one</a></p>
+
+<p><a href="https://youtu.be/V_yV8GxhUlc?t=32m35s">How do humans turn “nice clothes, thus rich” into implicit Bayesian algo</a>?
+Some inferences are made using the deductive system itself.
+Cf. cognitive scientists; Peter Battaglia and block of towers experiments.</p>
+
+<p>Zenna: ice-cream spoon falls in another room, I only hear the sound.
+But I have a model of the world and make an instant inference.
+<a href="https://youtu.be/V_yV8GxhUlc?t=38m51s">Every kind of reasoning is algorithmic</a>.</p>
+
+<p>John: So you have an elaborate causal model of the world in your mind?
+Zenna: Yes. Knowledge representation is orthogonal to reasoning.
+[They <a href="https://youtu.be/V_yV8GxhUlc?t=2h10m6s">come back to that at the end</a>.
+When you implement these things, you make a lot of representation choices. ]</p>
+
+<p>John: Sophistication of your world models is at the core of human reasoning.
+This theory has nothing to say about that.</p>
+
+<p>Ida: <a href="https://youtu.be/V_yV8GxhUlc?t=47m28s">Widely accepted Bayesian are not neurally plausible</a>.
+<a href="https://youtu.be/V_yV8GxhUlc?t=53m21s">Why use them for more abstract reasoning</a>?
+Question about cognitive science; engineers can implement whatever.
+[I don’t think he gave an answer really? “I just believe”]</p>
+
+<p>John: What does reasoning mean?
+Is it just within a single theory?
+<a href="https://youtu.be/V_yV8GxhUlc?t=59m55s">Is reasoning the inference step, or the construction itself</a>?
+<a href="https://youtu.be/V_yV8GxhUlc?t=01h01m13s">Athens &amp; “Poseidon must be angry”</a>.
+“Gods control the weather” and “given that gods control weather, X” both Bayes?
+Even a cat could use the same reasoning, doesn’t feel the same. <a href="https://youtu.be/V_yV8GxhUlc?t=01h12m11s">@1h12m11s</a>
+Zenna: agree that our formalisms don’t come close to explaining “meaning”.</p>
+
+<p>Tennenbaum <a href="https://youtu.be/V_yV8GxhUlc?t=01h16m54s">@1h16m54s</a>:
+inference vs. where meaning comes from are two different problems to tackle.
+[Yup]</p>
+
+<p>Kepler took much longer than Galileo to come up with the same theory.
+<a href="https://youtu.be/V_yV8GxhUlc?t=01h22m">Maybe because of how perception works</a>.</p>
+
+<p>Ida + Tennenbaum: don’t think Bayesian model captures reasoning + extrapolation.</p>
+
+<p>Logical propositions vs. perceptual reasoning.
+<a href="https://youtu.be/V_yV8GxhUlc?t=1h33m52s">Qualitative difference</a>?
+Different models + different reasoning.
+Galileo saw the moon, put the inference in argument form, then disseminated.</p>
+
+<p>Early Bayesian inference example from Aristotle:
+<a href="https://youtu.be/V_yV8GxhUlc?t=1h35m27s">good inference but bad priors</a>.</p>
+
+<p>Melanie: <a href="https://youtu.be/V_yV8GxhUlc?t=1h40m17s">how literal are you about programs in the mind</a>?
+It’s convenient to make an analogy between programming and the brain.
+[Everything that we know is to some extent modeled by the world, I don’t see
+why that would be a very controversial statement.]</p>
+
+<p>Melanie: “The idea of the brain.” Analogies are useful but limiting.
+[Yeah ok hammer and nail, but paradigms need to be ground in <em>something</em>]</p>
+
+<p><a href="https://youtu.be/V_yV8GxhUlc?t=1h47m14s">What kind of inferences are ML models making</a>?
+Abductive is just inductive on a different representation.</p>
+
+<p>Ida: <a href="https://youtu.be/V_yV8GxhUlc?t=2h5m48s">about knowledge representations</a>.
+What types of representations would integrate well with Zenna’s approach?
+Hybrid of a KG and these reasoning languages.
+Seems like a powerful avenue to explore.</p>
+
+<p><a href="https://youtu.be/V_yV8GxhUlc?t=2h8m55s">Querying multiple databases</a>.</p>
+
+<p>Andrew: <a href="https://youtu.be/V_yV8GxhUlc?t=2h13m35s">is GPT-3 a candidate for a Bayesian probabilistic model</a>?
+Depends on what level.
+Would GPT-3 trained on something else (e.g. description of an experiment to
+generate theories) be an implementation of Zenna’s framework? Video cuts off.</p>
+
+
+        </div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/jonathan-blow-programming-language-for-games">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Ideas about a new programming language for games
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/apperception-code">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Making Sense of Sensory Input; Apperception code
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://twitter.com/tkukurin"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/tkukurin"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="https://www.linkedin.com/in/toni/"><i class="fab fa-linkedin fa-2x" title="LinkedIn"></i></a></div><div class="copyright">
+    
+      
+
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

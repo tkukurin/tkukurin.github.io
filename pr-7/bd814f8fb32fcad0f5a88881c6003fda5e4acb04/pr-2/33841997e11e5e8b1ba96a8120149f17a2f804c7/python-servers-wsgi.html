@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    <title>Python servers and WSGI</title>
+    <meta name="description" content="Python servers (e.g. Gunicorn) nowadays I guess mostly implement the WSGI protocol spec. WSGI was originally motivated by the need to consolidate a growing l...">
+    <link rel="canonical" href="https://tkukurin.github.io/python-servers-wsgi">
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/light.css">
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  python-servers-and-wsgi">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">~</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">caveat emptor</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <div class="page-sidebar">
+        
+            
+            <h1 id="page-title" class="page-title p-name">Python servers and WSGI
+</h1>
+        
+        <div class="page-author h-card p-author"><div class="author-info">
+    <time class="page-date dt-published" datetime="2021-04-28T00:00:00+00:00"><a class="u-url" href="">Apr 28, 2021</a>
+</time>
+
+  </div>
+</div>
+
+        
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">eng</li><li class="page-taxonomy">py</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>Python servers (e.g. <a href="https://github.com/benoitc/gunicorn/blob/master/gunicorn/app/wsgiapp.py">Gunicorn</a>)
+nowadays I guess mostly implement the <a href="https://wsgi.readthedocs.io/en/latest/what.html">WSGI</a>
+protocol spec. WSGI was originally motivated by the need to consolidate
+<a href="https://www.python.org/dev/peps/pep-3333/#original-rationale-and-goals-from-pep-333">a growing list of Python web frameworks</a>,
+kinda similar to Java’s servlet API, and apparently succeeded in its goals.</p>
+
+<p>WSGI flow:
+(1) client sends HTTP requests (does it have to be HTTP? Not sure) over the
+internet; (2) for each request, server calls <code class="language-plaintext highlighter-rouge">app(env, start_response)</code>; (3)
+Web application responds by calling <code class="language-plaintext highlighter-rouge">start_response(status, headers, exc=None)</code>
+and then yields response strings.</p>
+
+<p>Running a simple WSGI server will yield a working response.
+Luckily <a href="https://docs.python.org/3/library/wsgiref.html"><code class="language-plaintext highlighter-rouge">wsgiref</code></a>
+is a part of Python since 2.5 (also cf. <a href="https://github.com/django/django/blob/6e742dabc95b00ba896434293556adeb4dbaee8a/django/core/servers/basehttp.py">Django</a>).
+The simplest server implementation:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">wsgiref.simple_server</span> <span class="kn">import</span> <span class="n">make_server</span>
+
+<span class="k">def</span> <span class="nf">app</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">):</span>
+  <span class="n">start_response</span><span class="p">(</span><span class="s">'200 OK'</span><span class="p">,</span> <span class="p">[(</span><span class="s">'Content-type'</span><span class="p">,</span> <span class="s">'text/plain; charset=utf-8'</span><span class="p">)])</span>
+  <span class="k">yield</span> <span class="s">'Heyo'</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
+  <span class="k">yield</span> <span class="k">from</span> <span class="p">(</span><span class="sa">f</span><span class="s">'</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s">:</span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="se">\n</span><span class="s">'</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">environ</span><span class="p">.</span><span class="n">items</span><span class="p">())</span>
+
+<span class="k">class</span> <span class="nc">PointOutVimMiddleware</span><span class="p">:</span>
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app</span><span class="p">):</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">app</span> <span class="o">=</span> <span class="n">app</span>
+  <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span> <span class="n">start_response</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">.</span><span class="n">app</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">start_response</span><span class="p">):</span>
+      <span class="k">yield</span> <span class="n">part</span> <span class="o">+</span> <span class="p">(</span><span class="s">'&lt;---'</span> <span class="k">if</span> <span class="s">'vim'</span> <span class="ow">in</span> <span class="n">part</span> <span class="k">else</span> <span class="s">''</span><span class="p">)</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">PointOutVimMiddleware</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">make_server</span><span class="p">(</span><span class="s">''</span><span class="p">,</span> <span class="mi">8000</span><span class="p">,</span> <span class="n">app</span><span class="p">)</span> <span class="k">as</span> <span class="n">httpd</span><span class="p">:</span>
+  <span class="n">httpd</span><span class="p">.</span><span class="n">serve_forever</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Ta-daa, there is a WSGI webserver.
+<a href="https://docs.djangoproject.com/en/3.2/howto/deployment/wsgi/">Similar description in Django’s official docs</a>.</p>
+
+<p>For server internals, cf. <a href="https://github.com/python/cpython/blob/3cc481b9de43c234889c8010e7da3af7c0f42319/Lib/http/server.py"><code class="language-plaintext highlighter-rouge">server.py</code></a>.
+The <a href="https://github.com/python/cpython/blob/b5711c940f70af89f2b4cf081a3fcd83924f3ae7/Lib/socketserver.py#L215"><code class="language-plaintext highlighter-rouge">serve_forever</code></a>
+method of <code class="language-plaintext highlighter-rouge">socketserver.py</code> does what you’d expect it to.</p>
+
+<h2 id="gunicorn">GUnicorn</h2>
+
+<p>Seems <a href="https://docs.gunicorn.org/en/latest/index.html">Green Unicorn</a>
+is one of the more popular threading servers for Python.</p>
+
+<p>From <a href="https://github.com/benoitc/gunicorn">the code</a>.
+<a href="https://github.com/benoitc/gunicorn/blob/cf55d2cec277f220ebd605989ce78ad1bb553c46/gunicorn/config.py#L121">Worker class</a>
+loaded from config.
+<code class="language-plaintext highlighter-rouge">BaseApplication</code>
+<a href="https://github.com/benoitc/gunicorn/blob/cf55d2cec277f220ebd605989ce78ad1bb553c46/gunicorn/app/base.py#L72">calls</a>
+the worker-managing
+<a href="https://github.com/benoitc/gunicorn/blob/cf55d2cec277f220ebd605989ce78ad1bb553c46/gunicorn/arbiter.py#L21">Arbiter</a>.
+Arbiter <a href="https://github.com/benoitc/gunicorn/blob/cf55d2cec277f220ebd605989ce78ad1bb553c46/gunicorn/arbiter.py#L567">spawns workers</a>
+while jobs are available.
+Cf. its <a href="https://github.com/benoitc/gunicorn/blob/cf55d2cec277f220ebd605989ce78ad1bb553c46/gunicorn/arbiter.py#L196">master loop</a>,
+which does periodic <a href="https://github.com/benoitc/gunicorn/blob/cf55d2cec277f220ebd605989ce78ad1bb553c46/gunicorn/arbiter.py#L208">checkups</a>
+on worker health.
+If no workers are available, master goes to sleep and <a href="https://github.com/benoitc/gunicorn/blob/cf55d2cec277f220ebd605989ce78ad1bb553c46/gunicorn/arbiter.py#L351">waits on pipe input</a>
+(cf. <a href="https://github.com/benoitc/gunicorn/blob/cf55d2cec277f220ebd605989ce78ad1bb553c46/gunicorn/arbiter.py#L334">wakeup</a>)
+Workers that <a href="https://github.com/benoitc/gunicorn/blob/cf55d2cec277f220ebd605989ce78ad1bb553c46/gunicorn/arbiter.py#L499">exceed some predefined timeout threshold</a>
+are sent the kill signal and aborted.
+Then the size of the currently active threadpool is adjusted.
+E.g. <a href="https://github.com/benoitc/gunicorn/blob/cf55d2cec277f220ebd605989ce78ad1bb553c46/gunicorn/arbiter.py#L545">spawn new or kill extra workers</a>.
+NOTE: seems weird they sort and pop <a href="https://github.com/benoitc/gunicorn/blob/cf55d2cec277f220ebd605989ce78ad1bb553c46/gunicorn/arbiter.py#L554">from start of list</a>.
+Could possibly be extremely inefficient here.</p>
+
+<h2 id="in-practice">In practice</h2>
+
+<p>I guess vanilla Python server implementations might use something like
+<a href="http://supervisord.org/introduction.html">supervisor</a> or systemd
+to manage and monitor,
+<a href="https://docs.gunicorn.org/en/latest/deploy.html">nginx to proxy</a>,
+gunicorn as server,
+and then a framework such as Django for the actual business logic implementation.</p>
+
+<p>That’s kind of what <a href="https://docs.djangoproject.com/en/3.2/howto/deployment/wsgi/gunicorn/">Django docs</a>
+seem to advocate, anyway.
+OK cool.</p>
+
+
+        </div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/storing-episodic-memory">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Storing episodic memory: place and grid cells
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/studying-and-prompts">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Studying and prompts
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://twitter.com/tkukurin"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/tkukurin"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="https://www.linkedin.com/in/toni/"><i class="fab fa-linkedin fa-2x" title="LinkedIn"></i></a></div><div class="copyright">
+    
+      
+
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>
