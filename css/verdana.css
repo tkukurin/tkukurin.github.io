@@ -1,0 +1,131 @@
+/* === Verdana / Agents-2001 style ===
+   Toggled by adding the `verdana` class to <html>.
+   Overrides the tufte :root variables and neutralizes the
+   fancy typography so the page reads like a plain 2001 site. */
+
+html.verdana {
+  --serif: Verdana, 'Trebuchet MS', Arial, Helvetica, sans-serif;
+  --mono:  'Courier New', Courier, monospace;
+  --paper:   #ffffff;
+  --paper-2: #f2f2f2;
+  --ink:     #000000;
+  --ink-2:   #333333;
+  --ink-3:   #666666;
+  --rule:    #cccccc;
+  --rubric:  #e28000;
+  --measure: 40em;
+  --sidebar: 9rem;
+  --gap:     1.5rem;
+}
+
+html.verdana body {
+  font-size: 13px;
+  line-height: 1.45;
+  font-feature-settings: normal;
+  font-variant-numeric: normal;
+}
+
+/* Classic 2001 link colors: dark-gray, teal visited, orange hover */
+html.verdana a              { color: #333333; text-decoration: underline; }
+html.verdana a:visited      { color: #66c2aa; }
+html.verdana a:hover        { color: #e28000; }
+
+html.verdana .post-content a,
+html.verdana .topbar a {
+  border-bottom: none;
+  text-decoration: underline;
+  color: #333333;
+}
+
+/* Fixed 705px table-width shell, like the source site */
+html.verdana .shell { max-width: 705px; padding: 0 1rem; }
+
+/* Neutralize italics / small-caps / ornamental letter-spacing */
+html.verdana .mark,
+html.verdana .post-meta,
+html.verdana .intro .l .label,
+html.verdana .intro h1 em,
+html.verdana .intro p,
+html.verdana .sec .l,
+html.verdana .sec .r h2,
+html.verdana .marg .day,
+html.verdana .marg .kind,
+html.verdana .post .t,
+html.verdana .post .t em,
+html.verdana .post .d,
+html.verdana .post .d em,
+html.verdana .post-content .subtitle,
+html.verdana .post-content h2,
+html.verdana .post-content h3,
+html.verdana .post-content blockquote,
+html.verdana .foot,
+html.verdana .see-also,
+html.verdana .post-kicker,
+html.verdana .speaker,
+html.verdana .col-date {
+  font-style: normal;
+  font-variant: normal;
+  font-feature-settings: normal;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+/* Drop the ornamental § and ∮ glyphs and blockquote curly-quotes */
+html.verdana .post-content h2::before,
+html.verdana .post-content h3::before,
+html.verdana .see-also::before                         { content: none; }
+html.verdana .post-content blockquote > p:first-child::before,
+html.verdana .post-content blockquote > p:last-of-type::after { content: none; }
+
+/* Plain bold headings */
+html.verdana .mark            { font-weight: bold; font-size: 0.9rem; }
+html.verdana .intro h1        { font-weight: bold; font-size: 1.5rem; }
+html.verdana .post .t         { font-weight: bold; font-size: 1rem; }
+html.verdana .post .d         { font-size: 0.9rem; }
+html.verdana .sec .l          { font-weight: bold; font-size: 0.75rem; }
+html.verdana .sec .r h2       { font-weight: bold; font-size: 0.95rem; }
+html.verdana .post-content h1 { font-weight: bold; font-size: 1.6rem; }
+html.verdana .post-content h2,
+html.verdana .post-content h3 { font-weight: bold; font-size: 1.1rem; }
+html.verdana .post-kicker     { color: #e28000; font-size: 0.7rem; font-weight: bold; }
+html.verdana .speaker         { color: #e28000; font-weight: bold; }
+
+/* Blockquote: plain indented, no rubric quotes */
+html.verdana .post-content blockquote {
+  border-left: 2px solid #cccccc;
+  padding-left: 1rem;
+  margin-left: 0;
+  color: #000000;
+}
+
+/* Code blocks stay light regardless of OS dark-mode */
+html.verdana code { background: #f2f2f2; }
+html.verdana pre  { background: #f2f2f2; }
+
+/* Foot + see-also: plain, no italic flourish */
+html.verdana .foot,
+html.verdana .foot a { font-style: normal; }
+
+html.verdana .post-content p,
+html.verdana .post-content ol,
+html.verdana .post-content ul { font-size: 0.95rem; line-height: 1.5; }
+
+html.verdana .intro  { padding: 1.5rem 0 1.2rem; }
+html.verdana .row    { padding: 0.6rem 0; }
+
+/* === Theme switch button === */
+.theme-switch {
+  font-family: inherit;
+  font-size: 0.72rem;
+  background: transparent;
+  border: 1px solid var(--rule);
+  color: var(--ink-3);
+  padding: 0.05rem 0.45rem;
+  cursor: pointer;
+  border-radius: 2px;
+  font-style: normal;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  line-height: 1.4;
+}
+.theme-switch:hover { color: var(--rubric); border-color: var(--rubric); }
