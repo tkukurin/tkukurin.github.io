@@ -42,9 +42,12 @@ html.verdana .leaflet-link { border-bottom: none; }
 html.verdana .shell { max-width: 705px; padding: 0 1rem; }
 
 /* Two-column layout: LHS archive sidebar + main content.
-   .lhs spans all rows explicitly (span 100 — the `-1` keyword is
-   unreliable on implicit grids and was likely why it stacked).
-   Every other direct child of .shell lands in column 2. */
+   .lhs occupies a single grid row (row 1) — spanning multiple rows
+   distributes its content across implicit tracks and inflates the
+   grid/body height. Single row + align-self:start keeps the sidebar
+   from stretching the track; max-height:100vh + overflow-y:auto
+   contain it. Every other direct child of .shell lands in column 2,
+   each in its own implicit row, so main content stacks naturally. */
 html.verdana .shell {
   display: grid;
   grid-template-columns: 170px 1fr;
@@ -55,11 +58,11 @@ html.verdana .shell > *:not(.lhs) { grid-column: 2; }
 html.verdana .lhs {
   display: block;          /* override .lhs{display:contents} from tufte.css */
   grid-column: 1;
-  grid-row: 1 / span 100;
-  align-self: stretch;     /* fill grid track = main content height */
+  grid-row: 1;             /* single row — no span, content stays in one track */
+  align-self: start;       /* don't stretch the track to fit sidebar content */
   position: sticky;        /* pin to viewport top while main scrolls */
   top: 0;
-  min-height: 0;            /* override grid default min-height:auto so max-height can bite */
+  min-height: 0;           /* override grid default min-height:auto so max-height can bite */
   max-height: 100vh;        /* cap at viewport → enables internal scroll */
   overflow-y: auto;         /* scroll archive items within the sidebar */
   background: #ffffff;
