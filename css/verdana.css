@@ -39,38 +39,30 @@ html.verdana .topbar a {
 html.verdana .leaflet-link { border-bottom: none; }
 
 /* Fixed 705px table-width shell, like the source site */
-html.verdana .shell { max-width: 705px; padding: 0 1rem; }
-
-/* Two-column layout: LHS archive sidebar + main content.
-   .lhs occupies a single grid row (row 1) — spanning multiple rows
-   distributes its content across implicit tracks and inflates the
-   grid/body height. Single row + align-self:start keeps the sidebar
-   from stretching the track; max-height:100vh + overflow-y:auto
-   contain it. Every other direct child of .shell lands in column 2,
-   each in its own implicit row, so main content stacks naturally. */
 html.verdana .shell {
-  display: grid;
-  grid-template-columns: 170px 1fr;
-  gap: 1.5rem;
-  align-items: start;
+  max-width: 705px;
+  padding: 0 1rem 0 calc(170px + 1.5rem);  /* reserve room for the fixed sidebar + gap */
+  margin: 0 auto;
 }
-html.verdana .shell > *:not(.lhs) { grid-column: 2; }
 html.verdana .lhs {
-  display: block;          /* override .lhs{display:contents} from tufte.css */
-  grid-column: 1;
-  grid-row: 1;             /* single row — no span, content stays in one track */
-  align-self: start;       /* don't stretch the track to fit sidebar content */
-  position: sticky;        /* pin to viewport top while main scrolls */
+  display: block;           /* override .lhs{display:contents} from tufte.css */
+  position: fixed;         /* out of flow: doesn't size any grid/flex track, body height stays = main */
   top: 0;
-  min-height: 0;           /* override grid default min-height:auto so max-height can bite */
-  max-height: 100vh;        /* cap at viewport → enables internal scroll */
-  overflow-y: auto;         /* scroll archive items within the sidebar */
+  left: max(0px, calc((100vw - 705px) / 2));  /* align with .shell's left edge (centered) */
+  width: 170px;
+  height: 100vh;
+  overflow-y: auto;         /* scroll archive items within the fixed sidebar */
   background: #ffffff;
   color: #000000;
   border-right: 1px solid #cccccc;
   padding: 0.6rem 1rem 0.6rem 0;
   font-size: 0.78rem;
   line-height: 1.35;
+}
+@media (max-width: 760px) {
+  /* Sidebar would overlap content on narrow screens — hide it. */
+  html.verdana .lhs { display: none; }
+  html.verdana .shell { padding: 0 1rem; }
 }
 /* Sidebar section header: compact single-column */
 html.verdana .lhs .sec {
