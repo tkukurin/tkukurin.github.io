@@ -436,6 +436,12 @@ a.count:hover::after { content: "view all posts →"; }
 }
 .post-content a:hover, .topbar a:hover { color: var(--rubric); }
 
+.leaflet-link {
+  border-bottom: 5px double var(--rubric);
+  color: var(--ink);
+}
+.leaflet-link:hover { color: var(--rubric); }
+
 .post-content ul, .post-content ol { padding-left: 1.5rem; }
 .post-content li { margin: 0.3rem 0; }
 
