@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    <title>Learning salon: Kimberly Stachenfeld</title>
+    <meta name="description" content="Kimberly Stachenfeld: how do humans and animals learn structure about the world &amp;amp; use it to rapidly solve new problems? How do we get machines to do the ...">
+    <link rel="canonical" href="https://tkukurin.github.io/kim-stachenfeld">
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/light.css">
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  learning-salon-kimberly-stachenfeld">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">~</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">caveat emptor</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <div class="page-sidebar">
+        
+            
+            <h1 id="page-title" class="page-title p-name">Learning salon: Kimberly Stachenfeld
+</h1>
+        
+        <div class="page-author h-card p-author"><div class="author-info">
+    <time class="page-date dt-published" datetime="2021-08-04T00:00:00+00:00"><a class="u-url" href="">Aug 4, 2021</a>
+</time>
+
+  </div>
+</div>
+
+        
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">neuro</li><li class="page-taxonomy">rl</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p><a href="https://youtu.be/cFW0AfEMcl4?t=4m9s">Kimberly Stachenfeld</a>: how do humans and
+animals learn structure about the world &amp; use it to rapidly solve new problems?
+How do we get machines to do the same?</p>
+
+<p>TL;DR Does really interesting work on representation in the brain, cf.</p>
+<ul>
+  <li><a href="https://neurokim.com/2019/09/13/representing-states-spaces-ccn2019-tutorial-by-kimtim/">Representing States &amp; Spaces (w/ Tim Behrens)</a>
+    <ul>
+      <li><a href="https://www.youtube.com/watch?v=YM6OADRbSnQ">YouTube tutorial (~3h)</a></li>
+      <li><a href="https://github.com/Summer-MIND/mind_2019/tree/master/tutorials/stachenfeld_lab">GitHub repo</a></li>
+      <li><a href="https://docs.google.com/document/d/1baI3oN_jCkGfxJ6RZCFeAes8qi7bKxwnDi3vYFX2u7s/edit#heading=h.11ilzmyktwka">Notes from the workshop</a></li>
+    </ul>
+  </li>
+  <li><a href="https://www.nature.com/articles/s41593-021-00831-7.epdf?sharing_token=nzEjjHplz6kQPSnFWnhy-tRgN0jAjWel9jnR3ZoTv0PsmOupqSJ0DUCdIN9pPy4hX45Su_uEAHA1E8DGEsV1m-dlxWj8vkMKrFbam2AxMNifNpF2H2DZDbhrLnygSTppdfyeRM6p1pPfvAYtTerBoJsM6OI4NQSTB4QEWwUFB7c%3D">Flexible modulation of seq. generation in the entorhinal–hippocampal system</a>
+    <ul>
+      <li>Cf. <a href="https://www.youtube.com/watch?v=D0Q6mj4cKUs">Sam Gershman’s salon</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>History:</p>
+<ol>
+  <li>Thorndike 1898: Learning actions directly from reward.</li>
+  <li>Skinner 1948:  Learning from reward in complex state spaces.</li>
+  <li>Tolman: Cognitive maps in mice and men, cf. <a href="https://youtu.be/YM6OADRbSnQ?t=4m30s">CCN2019 tutorial @4m30s</a>.
+O’Keele and Dostrovsky: <em>place cells</em> as literal maps in the hippocampus.
+Q: What do state spaces look like?</li>
+  <li>Harlow 1949: Can we make better state spaces to make learning easy?</li>
+</ol>
+
+<p>Place and grid cells: not just for tasks like physical space <a href="https://youtu.be/cFW0AfEMcl4?t=7m30s">@7m30s</a>.
+Idea that hippocampus represents different discrete spaces.
+Spatial envs give us a lot of structure that’s useful for generalizing.</p>
+
+<p>RL can be hard in complex problems:</p>
+<ul>
+  <li>Throws away a lot of information (ha has this inspired “Reward is enough”)</li>
+  <li>Exploration is hard</li>
+</ul>
+
+<p>Learning benefits from structure. <a href="https://youtu.be/cFW0AfEMcl4?t=11m26s">@11m26s</a>
+[Case for hierarchical RL?]</p>
+
+<p>RL representation <a href="https://youtu.be/cFW0AfEMcl4?t=13m3s">@13m3s</a>:</p>
+<ol>
+  <li>What structure should we learn? Represent states in terms of predictions.</li>
+  <li>How do we make it generalize? Compression: as short a state as possible.</li>
+</ol>
+
+<p>Cf. her work on <a href="https://www.biorxiv.org/content/10.1101/097170v4">Hippocampus as a predictive map</a>.</p>
+
+<p>Relational deep learning <a href="https://youtu.be/cFW0AfEMcl4?t=15m42s">@15m42s</a>,
+Peter Battaglia’s work at DeepMind (really cool!), DiffPool by Ying et al.
+GraphNets with Spectral Message Passing.</p>
+
+<p>She’s interested in hierarchical reasoning.
+A lot of human creations compose hierarchies in interesting ways.</p>
+<blockquote>
+  <p>Don’t require hierarchy as a solution but rather because a lot of examples of
+interesting and intelligent behavior by humans and to some extent animals seem
+to apply hierarchical abstractions in a very creative and compositional way.
+I have this underlying faith that hierarchy is going to be really important.</p>
+</blockquote>
+
+<p>Open-endedness spectrum <a href="https://youtu.be/cFW0AfEMcl4?t=22m14s">@22m14s</a> and
+list of current interesting work in neuro <a href="https://youtu.be/cFW0AfEMcl4?t=23m46s">@23m46s</a>.</p>
+
+<h2 id="discussion"><a href="https://youtu.be/cFW0AfEMcl4?t=25m57s">Discussion</a></h2>
+
+<p>John: is RL going to be the answer to creativity?
+Humans learn from others, why autonomous learning? <a href="https://youtu.be/cFW0AfEMcl4?t=30m">@30m</a>
+Kim: Maybe machines can go beyond the things we already know. [Yes!]</p>
+
+<p>Jovo: I think about representations differently than you propose.
+How far can you push this successor representation idea? <a href="https://youtu.be/cFW0AfEMcl4?t=37m48s">@37m48s</a></p>
+<blockquote>
+  <p>The way I learned about it is my brain represents the stuff out there. Motor
+cortex represents the angle of my joints, visual cortex represents where stuff
+is, and then hippocampus represents kind of where I am. You propose [that]
+there’s a successor representation and [value and rewards involved].</p>
+</blockquote>
+
+<p>Neurosci team at DM discusses interpretability and grounded language. <a href="https://youtu.be/cFW0AfEMcl4?t=1h49m16s">@1h49m16s</a>
+Neuroscientific methods (I guess e.g. RSA?) might be useful for interpreting.</p>
+
+<p>Compositionality and relation, what are they? <a href="https://youtu.be/cFW0AfEMcl4?t=1h4m21s">@1h4m21s</a>
+Compositionality in AI: combining different concepts using some mechanism
+(composition as function is not the same compositionality).
+Associative learning is a way of thinking about relational concepts. <a href="https://youtu.be/cFW0AfEMcl4?t=1h8m7s">@1h8m7s</a>
+Composition vs. hierarchy. <a href="https://youtu.be/cFW0AfEMcl4?t=1h9m1s">@1h9m1s</a>
+<a href="https://arxiv.org/abs/1710.11089">Marlos Machado: Eigenoptions</a> as abstract
+versions of standard RL options close to successor representations.</p>
+
+<p>John: taxonomic relations. Are they amenable to graphs? <a href="https://youtu.be/cFW0AfEMcl4?t=1h10m59s">@1h10m59s</a>
+Kim: Yes! Scene representations.
+John: Yeah, but how about when you need to infer what’s happening? E.g. tallest
+people go in back, shortest in front. More than just spatial. <a href="https://youtu.be/cFW0AfEMcl4?t=1h12m40s">@1h12m40s</a>
+Kim: Yes, still fundamentally relational problems.
+[Was John’s question about <em>how</em> rather then <em>are they</em>?]</p>
+
+<p>Melanie: The brain is a thing of dynamic structure. Hierarchy in most ML models
+seems to be static. <a href="https://youtu.be/cFW0AfEMcl4?t=1h17m31s">@1h17m31s</a></p>
+
+<p><a href="https://en.wikipedia.org/wiki/Entorhinal_cortex">Entorhinal cortex</a>.
+Longer interesting block starting around <a href="https://youtu.be/cFW0AfEMcl4?t=1h23m14s">@1h23m14s</a>.
+John: IIUC sparse coding is in the place cells.
+I have no idea what most cells in entorhinal cortex even do; there could be a
+lot of functionality and only some of it is realized.
+I think of grid cells as a compact repr bc they have multiple firing fields.
+Place cells in theory only have one.
+Jovo: different notions of sparsity, sparsity of firing vs density. <a href="https://youtu.be/cFW0AfEMcl4?t=1h26m15s">@1h26m15s</a>
+John: I was imagining the final layers of a neural net [i.e. one-hot classes,
+wouldn’t that imply an explicit categorical representation in the brain?].
+Subspaces of huge populations of neurons vs. sparsity.
+Ida: place field is not just triggered by one cell.
+Kim: I def think hippocampus is sparse, doesn’t always mean high-d.
+Entorhinal cortex as more compact and less sparse in some sense.</p>
+
+<p>What is the output of the hippocampus in this framework? <a href="https://youtu.be/cFW0AfEMcl4?t=1h31m9s">@1h31m9s</a>
+According to our model, in CA1 the output is the successor representation
+(\(\approx N \times N\) matrix <a href="https://youtu.be/cFW0AfEMcl4?t=46m7">@46m7s</a>).</p>
+
+<p>About some interesting experiments. <a href="https://youtu.be/cFW0AfEMcl4?t=1h33m50s">@1h33m50s</a></p>
+
+<p>Do you think pooling and broadcasting is something that happens in the brain?
+Or is it very different like in hippocampus.</p>
+
+<blockquote>
+  <p>Pooling is a specific architectural element for aggregating lots of inputs.
+to apply some aggregate function over them. Model of hippocampus I currently
+think about it as having a sparser and less compact representation that can
+represent the flexibility of the task as you currently understand it. You
+compress that and you sum many states onto one state or many many neurons onto
+one neuron to have a more compressed representation in entorhinal cortex and
+that these exist in a loop and continually inform each other.</p>
+</blockquote>
+
+<p>Pooling is just compressing or gathering information from many sources and
+summarizing it with some statistic.</p>
+
+<p>Neuro+DL research recommendations. <a href="https://youtu.be/cFW0AfEMcl4?t=1h51m42s">@1h51m42s</a></p>
+
+
+        </div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/jane-wang-learning-salon">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Learning salon: Jane Wang
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/kg-based-world-models">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        KG-based world models
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://twitter.com/tkukurin"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/tkukurin"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="https://www.linkedin.com/in/toni/"><i class="fab fa-linkedin fa-2x" title="LinkedIn"></i></a></div><div class="copyright">
+    
+      
+
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

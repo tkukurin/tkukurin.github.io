@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    <title>Learning Salon: Blake Richards</title>
+    <meta name="description" content="Blake Richards on the Learning Salon.">
+    <link rel="canonical" href="https://tkukurin.github.io/learning-salon-blake-richards">
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/light.css">
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  learning-salon-blake-richards">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">~</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">caveat emptor</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <div class="page-sidebar">
+        
+            
+            <h1 id="page-title" class="page-title p-name">Learning Salon: Blake Richards
+</h1>
+        
+        <div class="page-author h-card p-author"><div class="author-info">
+    <time class="page-date dt-published" datetime="2021-02-28T00:00:00+00:00"><a class="u-url" href="">Feb 28, 2021</a>
+</time>
+
+  </div>
+</div>
+
+        
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">rl</li><li class="page-taxonomy">research</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p><a href="https://youtu.be/8q_E00xZDuU">Blake Richards on the Learning Salon</a>.</p>
+
+<h2 id="presentation">Presentation</h2>
+
+<p>Broad types of long-term memory:</p>
+<ul>
+  <li>episodic (personal experience)</li>
+  <li>semantic (reasoning)</li>
+  <li>procedural (<em>actionable</em>?)</li>
+</ul>
+
+<p>Key features of <strong>episodic memory</strong> <a href="https://youtu.be/8q_E00xZDuU?t=15m37s">YT</a>
+(according to Tolding) are</p>
+<ul>
+  <li>autonoetic (means by which you know yourself)</li>
+  <li>one-shot (moments experienced only once)</li>
+  <li>specific (sound, smell, etc)</li>
+  <li>contextualized (e.g. time and place)</li>
+  <li>transient (fast to be forgotten)</li>
+  <li>transformable (can be transformed; not perfect snapshots; eventually become
+<em>semantic</em>)</li>
+</ul>
+
+<p>Episodic memory is <em>almost</em> replay memory in modern RL (seems like actual
+episodic memory is less perfect).</p>
+
+<p><a href="https://papers.nips.cc/paper/2007/file/1f4477bad7af3616c1f933a02bfabe4e-Paper.pdf">“Third way” of episodic memory</a>
+initiated this line of research.
+<a href="http://proceedings.mlr.press/v70/pritzel17a/pritzel17a.pdf">Neural epsiodic control from DeepMind</a>
+stores Q-values per episodic memory latent
+space representation.
+Result: works better with <em>fewer training examples</em>.</p>
+
+<p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6601977/">Memory transformation in dynamic environments by Santoro et al</a>.
+Better handles delayed rewards.
+Santoro has an even more recent paper on this topic.</p>
+
+<p><a href="https://arxiv.org/pdf/2102.12425.pdf">Greg Wayne on Long-range temporal credit assignment</a>.
+Another memory bank as external module.</p>
+
+<p>What’s missing?</p>
+<ul>
+  <li>Good mechanisms for contextual segregation (mixing similar episodes?)</li>
+  <li>Schematic structure (typically we store hidden states).
+    <ul>
+      <li>animals encode laps when going around a maze?</li>
+    </ul>
+  </li>
+  <li>causal semanticization (x happened because y?)</li>
+  <li>optimal forgetting
+    <ul>
+      <li>some perfectly remember everything, not happy about it (Jill Price), usually
+people are not high functioning</li>
+      <li>OTOH, people who have trouble remembering seem functional</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="discussion">Discussion</h2>
+
+<p>Ida: lots of different types of forgetting.</p>
+
+<p>Blake: Actively trying to stop associating episodic with hippocampal and
+semantic with neocortical memories.</p>
+
+<p>Where should successor representations sit?
+<a href="https://youtu.be/8q_E00xZDuU?t=47m30s">YT</a>.</p>
+
+<p>Jovo: kNN is optimal in the ideal case.
+In contrast with Blake’s view; Blake claims the ideal case is not what we
+observe in the real world, hence kNN shouldn’t work.
+Our world probably doesn’t change in a consistent way throughout time.
+[Hm]</p>
+
+<p>Santoro: not sure about forgetting, because in 30 yrs we’ll have enough compute.
+Blake is not convinced; he thinks retrieval will remain bottleneck.</p>
+
+<p>John: Blake’s claims are modularized.
+How many modules will we need?
+Blake: what is a module?</p>
+
+<p>Some patients lose concept knowledge.
+<a href="https://youtu.be/8q_E00xZDuU?t=58m05s">YT</a>.
+This also affects semantic knoweldge.
+In HM, there was a dissociation between procedural and episodic learning.</p>
+
+<p>Semantic knowledge? Blake is not sure
+[See Santoro’s work, Richard Evans’ work.]</p>
+
+<p>Knowledge vs. memory? When is it useful to forget episodes?
+Depends on what you call memory.
+Knowledge maybe is subtype of memory.
+Knowledge is episodic, removed of your subjective feeling (?).
+How do we (biologically) do retrieval?
+There’s nothing biologically wrong with assuming attention mechanisms since
+they’re Hopfield networks.</p>
+
+<p>Additional structure.</p>
+
+<p>John: Differences in knowledge and episodic versions of events, “flashbulb
+memories”. Emotionally tied to event → retain episodic.
+<a href="https://youtu.be/8q_E00xZDuU?t=1h16m11s">YT</a>.</p>
+
+<p>Ida: Typically episode is a sequence of events that are related to eachother.
+How is <em>relatedness</em> computed though? Ongoing work I guess.</p>
+
+<p>When do you switch between procedural and episodic systems? Ongoing work.
+Initially expected: switches big prediction errors; turns out, harder problem.
+E.g. how do you smooth these rules out?</p>
+
+<p>To what extent does human episodic memory reflect statistical distribution or
+lack of stationarity that humans encountered during evolution?
+<a href="https://youtu.be/8q_E00xZDuU?t=1h27m07s">YT</a>.</p>
+
+<p>Jovo: How convinced are you this is the correct categorization?
+<a href="https://youtu.be/8q_E00xZDuU?t=1h27m27s">YT</a>.
+Good reasons to suspect this, but not very convinced.
+Ongoing work.</p>
+
+<p>Brad: There’s no obviously privileged time course in which we anchor memory
+representations (beyond seconds). <a href="https://youtu.be/8q_E00xZDuU?t=1h40m09s">YT</a>.
+When we’re born, we don’t know which times will be most important for us.
+[How about preferences for outlier traumatic/rewarding events?]
+Cf. “time cells”?</p>
+
+<p>Brad: Phenomenology is a slippery ground to stand on.
+For him, objective accuracy of how you can retrieve information.
+<em>Heterophenomenology</em>.</p>
+
+<p>Lakoff: We remember abstract knowledge in terms of experiences. [Yes!]
+E.g. “Life is a journey” situated in some previous episodic memory.
+<a href="https://youtu.be/8q_E00xZDuU?t=1h40m09s">YT</a>.</p>
+
+<p>Even episodic memory can be further fractioned (e.g. temporal vs. perceptual).
+<em>It’s sub-systems all the way down</em>.</p>
+
+
+        </div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/semantic-grounding-novel-spoken-words">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Semantic Grounding of Novel Spoken Words in the Primary Visual Cortex
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/kotlin">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Kotlin codebase
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://twitter.com/tkukurin"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/tkukurin"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="https://www.linkedin.com/in/toni/"><i class="fab fa-linkedin fa-2x" title="LinkedIn"></i></a></div><div class="copyright">
+    
+      
+
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

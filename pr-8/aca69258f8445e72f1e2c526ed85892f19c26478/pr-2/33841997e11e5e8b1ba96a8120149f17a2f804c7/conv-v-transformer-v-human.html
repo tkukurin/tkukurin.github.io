@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    <title>Are Convolutional NNs or Transformers more like Human Vision?</title>
+    <meta name="description" content="ArXiv and Git repo. Compares human recognition of images to CNNs/Transformers.">
+    <link rel="canonical" href="https://tkukurin.github.io/conv-v-transformer-v-human">
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/light.css">
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  are-convolutional-nns-or-transformers-more-like-human-vision">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">~</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">caveat emptor</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <div class="page-sidebar">
+        
+            
+            <h1 id="page-title" class="page-title p-name">Are Convolutional NNs or Transformers more like Human Vision?
+</h1>
+        
+        <div class="page-author h-card p-author"><div class="author-info">
+    <time class="page-date dt-published" datetime="2021-05-19T00:00:00+00:00"><a class="u-url" href="">May 19, 2021</a>
+</time>
+
+  </div>
+</div>
+
+        
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">research</li><li class="page-taxonomy">neuro</li><li class="page-taxonomy">vision</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p><a href="https://arxiv.org/pdf/2105.07197.pdf">ArXiv</a> and <a href="https://github.com/shikhartuli/cnn_txf_bias">Git repo</a>.
+Compares human recognition of images to CNNs/Transformers.</p>
+
+<p>Error consistency measured via Cohen’s Kappa as with some previous work:</p>
+
+\[\kappa_{i,j} = \frac{c_{\textrm{obs}_{i,j}} - c_{\textrm{exp}_{i,j}}}{1 - c_{\textrm{exp}_{i,j}}}\]
+
+<p>Kappa is unable to qualitatively measure two systems’ errors, though, so they
+granularize ImageNet classes to 16 higher-level categories to obtain a feasible
+confusion matrix: <em>airplane, bear, bicycle, bird, boat, bottle, car, cat, chair,
+clock, dog, elephant, keyboard, knife, oven and truck</em> (as in <a href="https://arxiv.org/abs/1811.12231">previous work</a>).
+Each class’ confusion is quantified by Jensen-Shannon distance (symmetrized and
+smoothed Kullback-Leibler):</p>
+
+\[\textrm{JS}(p,q) = \sqrt{\frac{D(p\parallel m) + D(q \parallel m)}{2}}\]
+
+<p>Where \(m\) is the point-wise mean (\(m_i = \frac{p_i+q_i}{2}\)) of two
+probability distributions. \(p_i\) are distributions over classifier errors:</p>
+
+\[p_i = \frac{e_i}{\sum_j e_j} \forall i \in \{1 \ldots C\}\]
+
+<p>And we compute distributions by collapsing the confusion matrix along the
+predicted labels axis:</p>
+
+\[e_i = \sum_j \textrm{CM}_{i,j} \forall j \neq i\]
+
+<h2 id="interesting-things">Interesting things</h2>
+
+<p>Measures above are used to compare errors between humans and ML models.
+I.e. higher Kappa and lower JS distance imply higher consistency.</p>
+
+<p>Error consistency doesn’t necessarily track accuracy.</p>
+
+<p>They also measure “shape bias”:</p>
+
+<blockquote>
+  <p>The shape bias has been defined as the percentage of the time the model
+correctly predicts the shape for trials on which either shape or texture
+prediction is correct. We tested this by evaluating performance on the SIN
+dataset. This dataset contains images where the shape and texture of the
+object in each image conflict.</p>
+</blockquote>
+
+<p>According to fig. 7, humans bias heavily towards shape <em>except for</em> planes,
+knives and boats?! I don’t get it. How does shape/texture conflict exactly?</p>
+
+<p><a href="https://twitter.com/tyrell_turing/status/1395073954776240131">Blake Richards</a>:</p>
+
+<blockquote>
+  <p>I find it slightly odd that anyone is ever surprised that ANNs trained using
+nothing but still images focus on shape less than humans (who live in a 3D
+world where they can actually <em>feel</em> shapes with their hands)…
+Still it’s interesting that transformers do that a bit less.
+Nonetheless, my bet is no architecture trained on still images would ever
+focus on shape to the extent humans do unless forced to by some really strong
+inductive biases.</p>
+</blockquote>
+
+<p><a href="https://arxiv.org/abs/2103.14586">Understanding Robustness of Transformers for Image Classification</a>
+notes that shape accuracy in transformers is primarily related to patch size:</p>
+
+<p><img src="https://pbs.twimg.com/media/E1xP7T2WYAMNefM?format=png" alt="Shape accuracy is a function of patch size" /></p>
+
+<hr />
+
+<p>TL;DR transformers seem more consistent with humans according to their
+experiments. Some interesting ideas for future work:</p>
+<ul>
+  <li>comparing between different transformers</li>
+  <li>JS to analyze “concept-level” similarity (dogs v cats v knives)
+    <ul>
+      <li>humans may be using “concepts” for classification (<a href="https://arxiv.org/abs/1612.03975">ConceptNet</a>)</li>
+    </ul>
+  </li>
+  <li>more human-like models / neurosci stuff</li>
+</ul>
+
+
+        </div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/studying-and-prompts">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Studying and prompts
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/jonathan-blow-programming-language-for-games">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Ideas about a new programming language for games
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://twitter.com/tkukurin"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/tkukurin"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="https://www.linkedin.com/in/toni/"><i class="fab fa-linkedin fa-2x" title="LinkedIn"></i></a></div><div class="copyright">
+    
+      
+
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

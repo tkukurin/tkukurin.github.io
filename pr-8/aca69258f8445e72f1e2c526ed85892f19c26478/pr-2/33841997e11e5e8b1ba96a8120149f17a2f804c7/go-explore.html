@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    <title>Go Explore</title>
+    <meta name="description" content="Go-explore by Ecoffet et al. (Uber AI). Cf. also Quality Diversity Algorithms and Jeff’s presentation. TL;DR solve Montezuma’s revenge and Pitfall using evol...">
+    <link rel="canonical" href="https://tkukurin.github.io/go-explore">
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/light.css">
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  go-explore">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">~</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">caveat emptor</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <div class="page-sidebar">
+        
+            
+            <h1 id="page-title" class="page-title p-name">Go Explore
+</h1>
+        
+        <div class="page-author h-card p-author"><div class="author-info">
+    <time class="page-date dt-published" datetime="2020-12-13T00:00:00+00:00"><a class="u-url" href="">Dec 13, 2020</a>
+</time>
+
+  </div>
+</div>
+
+        
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">rl</li><li class="page-taxonomy">research</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p><a href="https://arxiv.org/pdf/1901.10995.pdf">Go-explore by Ecoffet et al. (Uber AI)</a>.
+Cf. also Quality Diversity Algorithms
+and <a href="https://www.youtube.com/watch?v=SWcuTgk2di8">Jeff’s presentation</a>.
+<strong>TL;DR</strong> solve Montezuma’s revenge and Pitfall using evolutionary strategies.</p>
+
+<p>Grand challenge in RL: deceptive and sparse rewards. Canonical exmaple is
+Montezuma’s revenge (MR), usually not well handled by traditional RL algo’s and
+tackled by variants of Intrinsic Motivation (IM) - pseudo-counts, #exploration,
+RND, Deep Curiosity Search, Prediction, Bootstrapped DQN,…</p>
+
+<p>Hypothesized reasons why IM doesn’t work:</p>
+<ol>
+  <li><em>Detachment</em> is the idea that an agent driven by IM could become detached
+from the frontiers of high Intrinsic Reward (IR) after once exploring a specific
+solution space.</li>
+  <li><em>Derailment</em> is the idea that exploration can detract agents from getting
+back to actually promising states (i.e. policy perturbation <em>hurts</em> performance).</li>
+</ol>
+
+<p>They propose to remedy these issue by a novel algorithm which works amazingly
+well in MR. First <em>solve</em>, then <em>robustify</em>.</p>
+
+<h2 id="proposed-idea">Proposed idea</h2>
+
+<ol>
+  <li>Go: Use a heuristic to find good cells.</li>
+  <li>Explore: Random actions to find new places.</li>
+</ol>
+
+<p>The exploration phase is somewhat Dijkstra-like. For each cell, store:</p>
+<ol>
+  <li>Full trajectory</li>
+  <li>Environment state</li>
+  <li>Total reward</li>
+  <li>Total length</li>
+</ol>
+
+<p>Then robustify the environment to stochastic noise, by “backwards” Imitation
+Learning (IL) algorithm.</p>
+<ol>
+  <li>No-ops (wait a random number of frames)</li>
+  <li>Sticky (can’t change action on every frame)</li>
+</ol>
+
+<p>Solves MR with superhuman performance under some major caveats.
+CIs are also enormous in a lot of the experiments.</p>
+
+<h2 id="criticisms">Criticisms</h2>
+
+<p>Perhaps this paper is more about uncovering ways in which existing RL envs are
+too simple.</p>
+
+<p>Evolutionary algo’s are a cool tool to have, but the entire approach seems
+extremely domain-specific. Paper discusses generalizability in the abstract,
+while only demonstrating performance in MR and Pitfall.
+Could’ve been beneficial to at least try other Atari games using this technique.</p>
+
+<p>They claim the procedure would work for any environment for which we can
+construct a simulation, but actually requires:</p>
+<ol>
+  <li>Deterministic simulation</li>
+  <li>Low-dimensional state representation</li>
+</ol>
+
+<p>The downsampling operation works only under assumption that the state space is
+clearly representable by low-d visual artefacts.
+Otherwise you would need to <strong>learn</strong> the representation, which seems the most
+difficult part (they do tackle this in <a href="https://arxiv.org/abs/2004.12919">First Return then Explore</a>).</p>
+
+<p>The 2nd problem is <strong>random exploration.</strong>
+The paper assumes a (simulation) environment in which completely random actions
+will suffice to explore. The random actions are supposed to always be admissible
+and <em>uncover</em> areas of good reward. What if we don’t find good trajectories
+during Phase I?
+How far can you bound the number of “cells” and still solve this problem?</p>
+
+<p>The 3rd problem is <strong>determinism.</strong>
+You have to be guaranteed that you are able to get to an existing state.</p>
+
+<p>Sparked a debate: when should we require stochasticity? Test time only (current
+go-explore assumption)? Training time too?</p>
+<ol>
+  <li>Robust solution, but don’t care about implementation: robotics, realistic
+characters in video games, complex industrial processes,… - most RL will
+require a simulator (unsafe actions, sample inefficient) - might as well use it.</li>
+  <li><strong>Useless for</strong> real world training,  understanding biological learning…</li>
+</ol>
+
+<p>There is also a problem of seemingly randomly chosen heuristics and missing
+ablation studies. How does the method perform with different heuristics, and
+what are they actually saying that “Go-Explore” consists of?</p>
+
+
+        </div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/looney-tunes">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Autonomous navigation of stratospheric looney tunes using RL
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/spatiotemporal-reasoning-dm">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Object-based attention for spatio-temporal reasoning
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://twitter.com/tkukurin"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/tkukurin"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="https://www.linkedin.com/in/toni/"><i class="fab fa-linkedin fa-2x" title="LinkedIn"></i></a></div><div class="copyright">
+    
+      
+
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

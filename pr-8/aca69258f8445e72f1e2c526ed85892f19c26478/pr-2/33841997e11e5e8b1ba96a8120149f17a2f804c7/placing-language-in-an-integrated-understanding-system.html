@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    <title>Placing language in an integrated understanding system: Next steps toward human-level performance in neural language models</title>
+    <meta name="description" content="By James McClelland, Felix Hill, Maja Rudolph, Jason Baldridge, Hinrich Schutze.">
+    <link rel="canonical" href="https://tkukurin.github.io/placing-language-in-an-integrated-understanding-system">
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/light.css">
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  placing-language-in-an-integrated-understanding-system-next-steps-toward-human-level-performance-in-neural-language-models">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">~</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">caveat emptor</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <div class="page-sidebar">
+        
+            
+            <h1 id="page-title" class="page-title p-name">Placing language in an integrated understanding system: Next steps toward human-level performance in neural language models
+</h1>
+        
+        <div class="page-author h-card p-author"><div class="author-info">
+    <time class="page-date dt-published" datetime="2020-11-16T00:00:00+00:00"><a class="u-url" href="">Nov 16, 2020</a>
+</time>
+
+  </div>
+</div>
+
+        
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">nlu</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p><a href="https://web.stanford.edu/~jlmcc/papers/McCEtAl20PlacingLanguageInAnIntegratedUnderstandingSystem.pdf">By James McClelland, Felix Hill, Maja Rudolph, Jason Baldridge, Hinrich Schutze</a>.</p>
+
+<hr />
+
+<p>Most our current models focus on <em>language-internal tasks</em>, limiting their
+ability to perform tasks that depend on understanding situations.
+Lack memory for recalling prior situations.
+This paper sketches a framework for future models of understanding.</p>
+
+<p>Cf. Rumelhart’s handwriting (in context can be read: went vs. event).</p>
+
+<p><img src="/assets/img/2020-11-16-rumelhart.png" alt="Rumelhart's handwriting" /></p>
+
+<p>“A boy hit a man with a [bat|beard]”</p>
+<ul>
+  <li>Semantics: “bat” as the instrument used to hit</li>
+  <li>Syntax: “bat” as part of the sentence verb phrase: “hit with a bat”</li>
+  <li>Syntax: “beard” as part of the noun phrase: “man with a beard”</li>
+</ul>
+
+<p>Elman: “boy [who sees girls] chases dogs” [reduced relative clause].
+Model predicting correct verb form (“chases”) - shows sensitivity to syntactic
+language structure.</p>
+
+<p>Elman trained with tiny, toy languages. NLP ruled by n-grams and structure.
+In recent 10 years, co-occurence relationships (word2vec I guess).</p>
+
+<p>The model manages to understand hierarchical clustering (?).</p>
+
+<blockquote>
+  <p>John put some beer in a cooler and went out with his friends to play
+volleyball. Soon after he left, someone took the [beer|ice] out of the cooler.
+John and his friends were thirsty after the game, and went back to his place
+for some beers. When John opened the cooler, he discovered that the beer was</p>
+</blockquote>
+
+<p>Expect: beer → “gone”, ice → “warm”; too hard for RNN.
+LSTMs don’t fully alleviate the context bottleneck: internal state is fixed
+vector (how does the 2nd follow from 1st?).</p>
+
+<p>Query-based attention (QBA)
+works “as Rumelhart envisioned (?)” by <em>mutual constraint satisfaction</em>.
+I.e. BERT stacks layers of multi-head attention transformers, each
+<em>constraining</em> the meaning of the corresponding attention head in layer below.
+BERT’s representations capture structure without it being built-in; emergence.</p>
+
+<p>GPT-3 still fails on “common sense physics”.</p>
+
+<h2 id="language-in-an-integrated-understanding-system">Language in an integrated understanding system</h2>
+
+<p>What they call situations are actually “categories”?
+Situations can be concrete, abstract, nested, etc.</p>
+
+<p>Ex. <code class="language-plaintext highlighter-rouge">[[[cat on a mat] in a house] in west virginia]</code> are nested categories.</p>
+
+<p>Evidence that humans construct situation representations from language comes
+from classic work by <a href="https://www.sciencedirect.com/science/article/abs/pii/0010028572900035">Bransford and colleagues</a>:</p>
+<ol>
+  <li>We understand and remember texts better when we can relate the text to a
+familiar situation;</li>
+  <li>relevant information can come from a picture accompanying the text;</li>
+  <li>what we remember from a text depends on the framing context;</li>
+  <li>we represent implied objects in memory; and</li>
+  <li>after hearing a sentence describing spatial or conceptual relationships, we
+remember these relationships, not the language itself.</li>
+</ol>
+
+<blockquote>
+  <p>Given “Three turtles rested beside a floating log and a fish swam under it,”
+the situation changes if “it” is replaced by “them.” After hearing the
+original sentence, people reject the variant with “it” in it as the sentence
+they heard before, but if the initial sentence said “Three turtles rested on a
+floating log,” the situation is unchanged by replacing “it” with “them,” and
+people accept this variant.  Evidence from eye movements shows that people use
+lin- guistic and nonlinguistic input jointly and immediately (46). Just after
+hearing “The man will drink,” participants look at a full wine glass rather
+than an empty beer glass (47). After hearing “The man drank,” they look at the
+empty beer glass.</p>
+</blockquote>
+
+<p>Complementary learning systems (CLSs) theory:
+connections within the <em>neocortex</em> gradually acquire the knowledge that allows a
+human to understand objects and their properties, link words to objects,
+understand and communicate about generic and familiar situations.</p>
+
+<p>The <em>Medial Temporal Lobe</em> (MTL) stores an integrated representation of the
+neocortical system state arising from a situation.</p>
+
+<p><img src="/assets/img/2020-11-16-brain-understanding-system.png" alt="Sketch of the brain's understanding system" /></p>
+
+<p>People w/MTL damage have difficulty understanding or producing extended
+narratives.
+GPT-3 after training can be viewed as a human without MTL.</p>
+
+<h2 id="next-steps-toward-a-brain-and-ai-inspired-model">Next steps toward a brain and AI-inspired model</h2>
+
+<p>Principles</p>
+<ol>
+  <li>Mutual constraint satisfaction (think BERT layers)</li>
+  <li>Emergence (think insights “just appearing”)</li>
+</ol>
+
+<p>Evaluation via microsituations consisting of Picture-Description (PD) pairs
+grouped to scenes that form story-length narratives.
+Language conveyed by text.</p>
+
+<p>The human learner is afforded the opportunity to experience the compositional
+structure of the environment through his own actions.</p>
+
+<p>They tried some LSTM in this context: F. Hill et al. <a href="/systematicity-generalization-situated-agent">Environmental drivers of
+systematicity and generalization in a situated agent</a>.
+TL;DR lift 20 objects trained to put 10 in some location, can still place the
+remaining ones with 90% accuracy.</p>
+
+
+        </div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/frame-semantics">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Frame semantics
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/impala">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Importance-weighted Actor-Learner Architecture
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://twitter.com/tkukurin"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/tkukurin"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="https://www.linkedin.com/in/toni/"><i class="fab fa-linkedin fa-2x" title="LinkedIn"></i></a></div><div class="copyright">
+    
+      
+
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>
