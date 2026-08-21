@@ -1,0 +1,47 @@
+baseURL = 'https://tkukurin.github.io/'
+locale = 'en-us'
+title = 'toni kukurin'
+theme = 'archie'
+
+# Code Highlight
+pygmentsstyle = "monokai"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+[pagination]
+  pagerSize = 3 # articles per page
+
+[params]
+	mode="auto" # color-mode → light,dark,toggle or auto
+	useCDN=true # don't use CDNs for fonts and icons, instead serve them locally.
+	subtitle = "just miscellanea. [toni.leaflet.pub](https://toni.leaflet.pub)"
+	mathjax = false # enable MathJax support
+	katex = false # enable KaTeX support
+
+# Social Tags
+
+[[params.social]]
+name = "git"
+icon = "github"
+url = "https://github.com/tkukurin"
+
+[[params.social]]
+name = "x"
+icon = "twitter"
+url = "https://twitter.com/tkukurin/"
+
+[[params.social]]
+name = "bluesky"
+icon = "simple:bluesky"
+url = "https://bsky.app/profile/tkukurin.bsky.social"
+
+[[params.social]]
+name = "li"
+icon = "simple:linkedin"
+url = "https://linkedin.com/in/toni"
+
+# Main menu Items
+# [[menu.main]]
+# name = "Home"
+# url = "/"
+# weight = 1
